@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie matrix">
+<head>
+    <meta charset="UTF-8" />
+    <title>Unit vector</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="LEN">randRange(2,5)</var>
+        <var id="VA">genVector(LEN)</var>
+        <var id="VB">genVector(LEN)</var>
+        <var id="DOT">dotProduct(VA,VB)</var>
+        <var id="DOT1">dotProduct(VA,VA)</var>
+        <var id="DOT2">dotProduct(VB,VB)</var>
+        <var id="SOL">DOT/(Math.sqrt(DOT1)*Math.sqrt(DOT2))</var>
+        <var id="ROUND">Math.round(SOL*100)/100</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+
+                <p data-tt="question1"><var>writeVector(makeUnitVector(VA))</var>Determine the unit vector for <code>\color{#6495ED}{\vec a} = <var>writeVector(VA)</var> </code> </p>
+
+<p>Round to 2 decimals.</p>
+            </div>
+            <div class = "solution" data-type="decimal"><var>ROUND</var></div>
+
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">To make a unit vector, divide the elements of the vector by its length. <br> Formula <code>\vec e = \frac{\vec a}{|| \vec a ||} </code></p>
+
+        <p>First, we calculate the length of <code>\vec a</code> by taking the square root of the dot product of the vector with itself.</p>
+
+            <p>
+             <code>\color{#6495ED}{\vec a}</code>: <code>\sqrt{<var>showDot(VA,VA)</var>} </code><br>
+            </p>
+        <p>
+        	<code>\color{#6495ED}{\vec a}</code>: <code> \sqrt{<var>showHalfdot(VA,VA)</var>} </code><br>
+        </p>
+        <p>
+             <code>\color{#6495ED}{\vec a} = \sqrt{<var>DOT1</var>}</code><br>
+        </p>
+        <p>
+            
+         </p>
+        </div></div>
+    </div>
+    </div>
+</body>
+</html>
