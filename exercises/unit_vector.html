@@ -10,12 +10,8 @@
     <div class="vars">
         <var id="LEN">randRange(2,5)</var>
         <var id="VA">genVector(LEN)</var>
-        <var id="VB">genVector(LEN)</var>
-        <var id="DOT">dotProduct(VA,VB)</var>
         <var id="DOT1">dotProduct(VA,VA)</var>
-        <var id="DOT2">dotProduct(VB,VB)</var>
-        <var id="SOL">DOT/(Math.sqrt(DOT1)*Math.sqrt(DOT2))</var>
-        <var id="ROUND">Math.round(SOL*100)/100</var>
+        <var id="VLEN">Math.sqrt(DOT1)</var>
     </div>
 
     <div class="problems">
@@ -26,7 +22,7 @@
 
 <p>Round to 2 decimals.</p>
             </div>
-            <div class = "solution" data-type="decimal"><var>ROUND</var></div>
+            <div class = "solution" data-type="decimal"><var>2</var></div>
 
         </div>
     </div>
@@ -46,9 +42,23 @@
              <code>\color{#6495ED}{\vec a} = \sqrt{<var>DOT1</var>}</code><br>
         </p>
         <p>
-            
+            Then, we divide each element in <code>\color{#6495ED}{\vec a}</code> by <code> \sqrt{<var>DOT1</var>}</code>:
          </p>
-        </div></div>
+         <p>
+            <code>\frac{<var>writeVector(VA)</var>}{\sqrt{<var>DOT1</var>}}</code>
+         </p>
+        <p>
+            <code> = <var>writeVector(divVec(VA,VLEN))</var></code>
+        </p>
+        <p>
+            <code> = <var>writeVector(makeUnitVector(VA))</var>
+        </p>
+        <p>
+            <code> = <var>writeVector(roundVec(makeUnitVector(VA)))</var></code>
+        </p>
+        </div>
+        
+        </div>
     </div>
     </div>
 </body>

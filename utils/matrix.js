@@ -246,6 +246,30 @@ $.extend(KhanUtil, {
       return vector;
     },
     
+    roundVec: function(vector){
+        var temp = 0;
+        var roundVec = [];
+        for(var i=0; i < vector.length; i++){
+            temp = Math.round(vector[i]*100)/100;
+            roundVec.push(temp);
+            console.log(roundVec);
+        }
+        return roundVec;
+    },
+    
+    //Written by Elise, will return an array consisting of each element of vec divided by str, formatted as a latex fraction
+    divVec: function(vec, str){
+        var begStr = '\\frac{';
+        var endStr = '}{'+ str +'}' 
+        var strAr = [];
+        for(var i=0; i < vec.length; i++){
+            newStr = begStr + vec[i] + endStr;
+            strAr.push(newStr);
+            console.log(strAr);
+        }
+        return strAr;
+    },
+    
     makeUnitVector: function(a){
       var len = this.lengthVec(a);
       var vec = [];
