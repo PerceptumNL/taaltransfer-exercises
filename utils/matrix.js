@@ -246,15 +246,27 @@ $.extend(KhanUtil, {
       return vector;
     },
     
+    //Written by Elise, will round every element in a vector to 2 decimals
     roundVec: function(vector){
         var temp = 0;
         var roundVec = [];
         for(var i=0; i < vector.length; i++){
             temp = Math.round(vector[i]*100)/100;
             roundVec.push(temp);
-            console.log(roundVec);
         }
         return roundVec;
+    },
+    
+    vecToText: function(vector){
+      var str = "[";
+      for(var i=0; i < vector.length; i++){
+        str = str + vector[i];
+        if(i < vector.length-1){
+          str = str + ",";
+        }
+      }
+      str = str + "]";
+      return str;
     },
     
     //Written by Elise, will return an array consisting of each element of vec divided by str, formatted as a latex fraction
@@ -265,7 +277,6 @@ $.extend(KhanUtil, {
         for(var i=0; i < vec.length; i++){
             newStr = begStr + vec[i] + endStr;
             strAr.push(newStr);
-            console.log(strAr);
         }
         return strAr;
     },
@@ -294,6 +305,21 @@ $.extend(KhanUtil, {
         middleString = middleString.concat(el + " \\\\ ");
       }
       return beginString + middleString + endString;
+    },
+    
+    //Written by Elise, will format a matrix to look like the linear algebra book
+    /*writeMatrix: function(matrix){
+      var bestr = "<code\\left[ \\begin{matrix}{rr}";
+      var endstr = " \\end{matrix} \\right]</code>";
+      var middleString = "";
+      for 
+    },*/
+    
+    //Written by Elise, computes cross product between two vectors
+    crossProduct: function(a,b){
+      var first = 0;
+      var second = 0;
+      var third = 0;
     },
     
     //Written by Elise, will show complete calculation of dotproduct
