@@ -257,6 +257,7 @@ $.extend(KhanUtil, {
         return roundVec;
     },
     
+    //Written by Elise, turns an array into a string for solution-checking purposes
     vecToText: function(vector){
       var str = "[";
       for(var i=0; i < vector.length; i++){
@@ -321,7 +322,6 @@ $.extend(KhanUtil, {
       var second = a[2]*b[0]-a[0]*b[2];
       var third = a[0]*b[1]-a[1]*b[0];
       var vector = [first, second, third];
-      console.log("vector is: " + vector);
       return vector;
     },
     
@@ -335,9 +335,10 @@ $.extend(KhanUtil, {
     
     //Written by Elise, formats crossproduct for halfway hint
     drawHalfCross: function(a,b){
-      var first = 
-      var second =
-      var third =
+      var first = "<code>" + a[1]*b[2] + " - " + a[2]*b[1] + "</code>";
+      var second = "<code>" + a[2]*b[0] + " - " + a[0]*b[2] + "</code>";
+      var third = "<code>" + a[0]*b[1] + " - " + a[1]*b[0] + "</code>";
+      return [first, second, third];
     },
     
     //Written by Elise, will show complete calculation of dotproduct
