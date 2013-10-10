@@ -317,9 +317,27 @@ $.extend(KhanUtil, {
     
     //Written by Elise, computes cross product between two vectors
     crossProduct: function(a,b){
-      var first = 0;
-      var second = 0;
-      var third = 0;
+      var first = a[1]*b[2]-a[2]*b[1];
+      var second = a[2]*b[0]-a[0]*b[2];
+      var third = a[0]*b[1]-a[1]*b[0];
+      var vector = [first, second, third];
+      console.log("vector is: " + vector);
+      return vector;
+    },
+    
+    //Written by Elise, formats crossproduct for hint
+    drawCross: function(a,b){
+      var first = "<code>(\\color{#6495ED}{"+a[1]+"} \\times \\color{#28AE7B}{"+b[2]+"}) - (\\color{#6495ED}{"+a[2]+"} \\times \\color{#28AE7B}{"+b[1]+"})</code>";
+      var second = "<code>(\\color{#6495ED}{"+a[2]+"} \\times \\color{#28AE7B}{"+b[0]+"}) - (\\color{#6495ED}{"+a[0]+"} \\times \\color{#28AE7B}{"+b[2]+"})</code>";
+      var third = "<code>(\\color{#6495ED}{"+a[0]+"} \\times \\color{#28AE7B}{"+b[1]+"}) - (\\color{#6495ED}{"+a[1]+"} \\times \\color{#28AE7B}{"+b[0]+"})</code>";
+      return [first, second, third];
+    },
+    
+    //Written by Elise, formats crossproduct for halfway hint
+    drawHalfCross: function(a,b){
+      var first = 
+      var second =
+      var third =
     },
     
     //Written by Elise, will show complete calculation of dotproduct

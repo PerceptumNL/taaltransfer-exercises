@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie matrix">
+<head>
+    <meta charset="UTF-8" />
+    <title>Cross product</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="VA">genVector(3)</var>
+        <var id="VB">genVector(3)</var>
+        <var id="DOT">dotProduct(VA,VB)</var>
+        <var id="DOT1">dotProduct(VA,VA)</var>
+        <var id="DOT2">dotProduct(VB,VB)</var>
+        <var id="SOL">DOT/(Math.sqrt(DOT1)*Math.sqrt(DOT2))</var>
+        <var id="ROUND">Math.round(SOL*100)/100</var>
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+
+                <p data-tt="question1"><var>crossProduct(VA,VB)</var><var>writeVector(drawCross(VA,VB))</var>There are two vectors, <code>\color{#6495ED}{\vec a} = <var>writeVector(VA)</var> </code> and <code> \color{#28AE7B}{\vec b} = <var>writeVector(VB)</var></code></p>
+<p>What is <code>\color{#6495ED}{\vec a} \times \color{#28AE7B}{\vec b}</code>?</p>
+            </div>
+            <div class = "solution" data-type="decimal"><var>ROUND</var></div>
+
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">To calculate the cross product between two vectors, we use the formula <code><var>writeVector(["a_1","a_2","a_3"])</var> \times <var>writeVector(["b_1","b_2","b_3"])</var> =  <var>writeVector(["a_2b_3-a_3b_2","a_3b_1-a_1b_3","a_1b_2-a_2b_1"])</var> </code>
+        
+        <p>
+          <code><var>writeVector(["a_1","a_2","a_3"])</var> \times <var>writeVector(["b_1","b_2","b_3"])</var>=<var>writeVector(VA)</var> \times <var>writeVector(VB)</var> </code>
+        </p>
+        
+        <p>
+          <code>= <var>writeVector(drawCross(VA,VB))</var></code>
+        </p>
+        
+        </div>
+    </div>
+    </div>
+</body>
+</html>
