@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie matrix">
+<head>
+    <meta charset="UTF-8" />
+    <title>Multiplying a vector by a scalar</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure="SCALAR !=1">
+		<var id="LEN">randRange(2,5)</var>
+        <var id="VA">genVector(LEN)</var>
+        <var id="VB">genVector(LEN)</var>        
+        <var id="SCALAR">randRangeNonZero(-9,9)</var>
+
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+
+                <p data-tt="question1">Vector <code>\color{#6495ED}{\vec a} = <var>writeVector(VA)</var> </code></p>
+<p>What is <code><var>SCALAR</var>\color{#6495ED}{\vec a}</code>? <var>writeVector(scaleVec(VA,SCALAR))</var></p>
+            </div>
+            <div class = "solution" data-type="text"><var>vecToText(SOL)</var></div>
+
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">To calculate the cross product between two vectors, we use the formula <code><var>writeVector(["a_1","a_2","a_3"])</var> \times <var>writeVector(["b_1","b_2","b_3"])</var> =  <var>writeVector(["a_2b_3-a_3b_2","a_3b_1-a_1b_3","a_1b_2-a_2b_1"])</var> </code>
+        
+        
+        </div>
+    </div>
+    </div>
+</body>
+</html>

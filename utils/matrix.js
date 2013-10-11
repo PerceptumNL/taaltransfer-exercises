@@ -282,6 +282,17 @@ $.extend(KhanUtil, {
         return strAr;
     },
     
+    //Written by Elise, this will multiply a vector with a scalar
+    scaleVec: function(vec, sca){
+        var strAr = [];
+        var newEl = 0;
+        for(var i=0; i < vec.length; i++){
+            newEl = vec[i]*sca;
+            strAr.push(newEl);
+        }
+        return strAr;
+    },
+    //Written by Elise, this will turn a vector into its unit vector
     makeUnitVector: function(a){
       var len = this.lengthVec(a);
       var vec = [];
