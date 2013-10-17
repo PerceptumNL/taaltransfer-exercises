@@ -340,6 +340,36 @@ $.extend(KhanUtil, {
       return str;
     },
     
+    //Written by Elise, returns sum of two matrices
+    
+    sumMatrix: function(ma, mb){
+      var mn = [];
+      var tmp = 0;
+      while(mn.push([]) < ma.length);
+      for(var i=0; i<ma.length; i++){
+        for(var j=0; j<ma[i].length; j++){
+          tmp = ma[i][j]+mb[i][j];
+          mn[i][j] = tmp;
+        }
+      }
+      return mn;
+    },
+    
+    //
+    showSumMatrix: function(ma,mb){
+      var formula = [];
+      while (formula.push([]) < ma.length);
+      console.log("hoi");
+      for(var i=0; i < ma.length; i++){
+        for(var j=0; j<ma[i].length; j++){
+          console.log("this el for ma: " + ma[i][j] + " this el for mb: " + mb);
+          formula[i][j]="<code>\\color{#6495ED}{" + ma[i][j] + "} \\times \\color{#28AE7B}{" + mb[i][j] + "}</code>";
+        }
+      }   
+      console.log(formula); 
+      return formula;
+    },
+    
     //Written by Elise, turns an array into a string for solution-checking purposes
     matrixToText: function(matrix){
       var str = "[";

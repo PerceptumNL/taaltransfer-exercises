@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie matrix">
+<head>
+    <meta charset="UTF-8" />
+    <title>Adding two matrices</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure="SCALAR !=1">
+		<var id="ROW">randRange(2,5)</var>
+		<var id="COL">randRange(2,5)</var>
+        <var id="SCALAR">randRangeNonZero(-9,9)</var>
+        <var id="MAA">genMatrix(ROW,COL)</var>
+        <var id="MAB">genMatrix(ROW,COL)</var>
+
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+
+                <p data-tt="question1"> Given the matrices <code>A = <var>writeMatrix(MAA)</var></code> and <code>B = <var>writeMatrix(MAB)</var></code></p>
+            </div>
+            <p>Determine <code>A + B</code>. <var>writeMatrix(sumMatrix(MAA,MAB))</var></p>
+            <div class = "solution" data-type="text"><var>matrixToText(transMatrix(MAA))</var></div>
+
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">Adding two matrices is nothing more than adding every element in <code>A</code> to every corresponding element in <code>B</code>.</p>
+        <p>hi<var>showSumMatrix(MAA,MAAB)</var></p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
