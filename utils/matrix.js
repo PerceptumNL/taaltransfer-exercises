@@ -292,6 +292,17 @@ $.extend(KhanUtil, {
         }
         return strAr;
     },
+    
+    //Written by Elise, this will return a vector with the formula filled in
+    showScale: function(vec,sca){
+      console.log("hoi");
+      var formula = [];
+      for(var i=0; i < vec.length; i++){
+        formula.push("<code>\\color{#6495ED}{" + vec[i] + "} \\times \\color{#28AE7B}{" + sca + "}</code>");
+      }    
+      return formula;
+    },
+    
     //Written by Elise, this will turn a vector into its unit vector
     makeUnitVector: function(a){
       var len = this.lengthVec(a);
