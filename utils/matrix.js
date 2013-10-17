@@ -331,12 +331,24 @@ $.extend(KhanUtil, {
     },
     
     //Written by Elise, will format a matrix to look like the linear algebra book
-    /*writeMatrix: function(matrix){
-      var bestr = "<code\\left[ \\begin{matrix}{rr}";
-      var endstr = " \\end{matrix} \\right]</code>";
+    writeMatrix: function(matrix){
+      var bestr = "<code>\\begin{bmatrix}";
+      var endstr = " \\end{bmatrix}</code>";
       var middleString = "";
-      for 
-    },*/
+      var tmp;
+      for(var i=0; i<matrix.length; i++){ //loop over rows
+        for(var j=0; j<matrix[i].length; j++){ //loop over each element in row
+          middleString = middleString.concat(matrix[i][j]);
+          if(j < matrix[i].length-1){
+            middleString = middleString.concat("&");
+          }
+        }
+        if(i<matrix.length-1){
+          middleString = middleString.concat("\\\\");
+        }
+      } 
+      return bestr+middleString+endstr;
+    },
     
     //Written by Elise, computes cross product between two vectors
     crossProduct: function(a,b){
