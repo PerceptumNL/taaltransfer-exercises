@@ -357,7 +357,6 @@ $.extend(KhanUtil, {
         }
       }
       str = str + "]";
-      console.log(str);
       return str;
     },
     
