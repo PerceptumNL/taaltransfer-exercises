@@ -235,6 +235,76 @@ $.extend(KhanUtil, {
       return Math.sqrt(thisLong);      
     },
     
+    //Written by Elise, will generate a matrix with r rows and c columns
+    
+    genMatrix: function(r,c){
+      var matrix = [];
+      var tmp = [];
+      for(var i=0; i<r; i++){ //generate r vectors with c elements 
+        tmp = this.genVector(c);
+        matrix.push(tmp);
+      }
+      return matrix;
+    },
+    
+    //Written by Elise, will transpose a matrix
+    transMatrix: function(matrix){
+      var newMat = []; 
+      while(newMat.push([]) < matrix[1].length);
+      var tmp = 0;
+      for(var i=0; i<matrix.length; i++){ //loop through rows
+        for(var j=0; j<matrix[i].length; j++){ //loop through rowelements
+          tmp = matrix[i][j];
+          newMat[j][i] = tmp;
+        }
+      }
+      return newMat;
+    },
+        
+     //Written by Elise, formats a single vector as a row
+    writeRow: function(vector){
+
+      var beginString = "<code>\\left[ \\begin{array}{rr}";
+
+      var endString = "\\end{array} \\right]</code>";
+
+      var middleString = "";
+
+      for(var i=0; i < vector.length; i++){
+        var el = vector[i].toString();
+        middleString = middleString.concat(el);
+        if(i<vector.length-1){
+          middleString = middleString.concat("&");
+        }
+      }
+      return beginString + middleString + endString;
+    },
+    //Written by Elise, will transpose a vector
+   /* transVec: function(vector){
+      var newMat = [];
+      while(newMat.push([]) < vector.length);
+      for(var i=0; i<vector.length; i++){
+        newMat[i] = vector[i];
+      }
+      for(var j=0; j<newMat.length; j++){
+       }
+       return newMat;
+    },*/    
+    
+    //Written by Elise, will break matrix down into rows and rewrite them as vectors
+    writeMatRows: function(matrix){
+      var begin = "<ul>";
+      var end = "</ul>";
+      var middle = "";
+      for(var i=0; i<matrix.length; i++){ //loop through rows
+        middle = middle.concat("<li> Row <var>writeRow([" + matrix[i] + "])</var> becomes column <var>writeVector([" + matrix[i] + "])</var></li>");
+        if(i==(matrix.length-2)){
+          middle = middle.concat(" and " );
+        }
+      }
+      return middle;
+    },    
+        
     //Written by Elise, will generate a vector of length len
     genVector: function(len){
       var vector = [];
@@ -270,6 +340,27 @@ $.extend(KhanUtil, {
       return str;
     },
     
+    //Written by Elise, turns an array into a string for solution-checking purposes
+    matrixToText: function(matrix){
+      var str = "[";
+      for(var i=0; i < matrix.length; i++){
+        str = str + "[";
+        for(var j=0; j<matrix[i].length; j++){
+          str = str + matrix[i][j];
+          if(j < matrix[i].length-1){
+            str = str + ",";
+          }
+        }
+        str = str + "]";
+        if(i<matrix.length-1){
+          str = str + ",";
+        }
+      }
+      str = str + "]";
+      console.log(str);
+      return str;
+    },
+    
     //Written by Elise, will return an array consisting of each element of vec divided by str, formatted as a latex fraction
     divVec: function(vec, str){
         var begStr = '\\frac{';
@@ -295,7 +386,6 @@ $.extend(KhanUtil, {
     
     //Written by Elise, this will return a vector with the formula filled in
     showScale: function(vec,sca){
-      console.log("hoi");
       var formula = [];
       for(var i=0; i < vec.length; i++){
         formula.push("<code>\\color{#6495ED}{" + vec[i] + "} \\times \\color{#28AE7B}{" + sca + "}</code>");

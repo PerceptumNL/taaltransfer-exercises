@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html data-translatable data-require="math math-format graphie matrix">
+<head>
+    <meta charset="UTF-8" />
+    <title>Transpose of a matrix</title>
+    <script src="../khan-exercise.js"></script>
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars" data-ensure="SCALAR !=1">
+		<var id="ROW">randRange(2,5)</var>
+		<var id="COL">randRange(2,5)</var>
+        <var id="SCALAR">randRangeNonZero(-9,9)</var>
+        <var id="MATRIX">genMatrix(ROW,COL)</var>
+
+    </div>
+
+    <div class="problems">
+        <div>
+            <div class="question">
+
+                <p data-tt="question1"> Given the <code><var>ROW</var> \times <var>COL</var></code> matrix <code> A = <var>writeMatrix(MATRIX)</var></code>, determine <code>A^T</code>.</p>
+            </div>
+            <div class = "solution" data-type="text"><var>matrixToText(transMatrix(MATRIX))</var></div>
+
+        </div>
+    </div>
+
+    <div class="hints">
+        <p data-tt="hint1">To find <code>A^T</code> we take the transpose of <code>A</code>.</p>
+        <p>To transpose a matrix, we switch the rows and columns of the original matrix.</p>
+        <p>Since <code>A</code> is a <code><var>ROW</var> \times <var>COL</var></code> matrix, <code>A^T</code> is a <code><var>COL</var> \times <var>ROW</var></code> matrix. </p>
+        <p>That means that:<br><var>writeMatRows(MATRIX)</var></p>
+        <p>When we put the columns together, we get <code>A^T</code>.</p>
+        <p><code>A^T = <var>writeMatrix(transMatrix(MATRIX))</var></code></p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
