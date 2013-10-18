@@ -239,13 +239,29 @@ $.extend(KhanUtil, {
     rowEchelon: function(matrix){
       var pivot = 0;
       var mat = [];
-      while(mat.push([]) < matrix[0].length);
+      var pivots = [];
+      while(mat.push([]) < matrix.length);
       for(var i = 0; i <matrix[0].length; i++){ //loop through columns
         pivot = this.getPivotRow(matrix, i);
-        console.log("there is a pivot in column " + i + " and it is in row " + matrix[pivot] + " and it is " + matrix[pivot][i]);
-        mat.push(matrix[pivot]);
-        console.log("mat is now: " + mat);
+        //console.log("there is a pivot in column " + i + " and it is in row " + matrix[pivot] + " and it is " + matrix[pivot][i]);
+        if(pivots.indexOf(pivot) == -1){
+          mat.push(matrix[pivot]);
+          pivots.push(pivot);
+        }
+        else{
+          console.log("nope2");
+        }
       }
+      if(matrix.length > matrix[0].length){
+        for(var j=i; j<matrix.length; j++){
+          mat.push(matrix[j]);
+        }
+      }
+      else {
+        console.log("nope");
+      }  
+      console.log("mat: " + mat);
+      return mat;
     },
     
     //Written by Elise, returns the pivot row in a matrix
@@ -271,19 +287,17 @@ $.extend(KhanUtil, {
     },*/
     
     setPivotOne: function(matrix,row){
-      //console.log("this row: " + row);
       for(var j=0; j<matrix[row].length; j++){
         if(matrix[row][j] != 0){
           var pivot = matrix[row][j];
           break;
         }
       }
-      console.log("pivot: " + pivot);
       for(var i=0; i<matrix[row].length; i++){
-        console.log("rowel: " + matrix[row][i]);
         matrix[row][i] = matrix[row][i]/pivot;
       }
       console.log(matrix[row]);
+      return matrix[row];
     },
     
     //Written by Elise, will generate a matrix with r rows and c columns
