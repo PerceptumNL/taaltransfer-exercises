@@ -235,21 +235,58 @@ $.extend(KhanUtil, {
       return Math.sqrt(thisLong);      
     },
     
-    getPivotRow: function(matrix){
-      var pivot = [];
-      for(var i=0; i<matrix.length; i++){
-        for(var j=0; j<matrix[i].length; j++){
-          if(matrix[i][j]!=0){
-            pivot = matrix[i];
-            console.log("pivot is: " + pivot + " i is: " + i + " j is: " + j);
-            return pivot;
-          }
-        } 
+    //Written by Elise, contains control logic
+    rowEchelon: function(matrix){
+      var pivot = 0;
+      var mat = [];
+      while(mat.push([]) < matrix[0].length);
+      for(var i = 0; i <matrix[0].length; i++){ //loop through columns
+        pivot = this.getPivotRow(matrix, i);
+        console.log("there is a pivot in column " + i + " and it is in row " + matrix[pivot] + " and it is " + matrix[pivot][i]);
+        mat.push(matrix[pivot]);
+        console.log("mat is now: " + mat);
       }
     },
     
-    //Written by Elise, will generate a matrix with r rows and c columns
+    //Written by Elise, returns the pivot row in a matrix
+    getPivotRow: function(matrix, column){
+      var pivot = [];
+      for(var i=0; i<matrix.length; i++){
+        if(matrix[i][column]!=0){
+          pivot = matrix[i];
+          return i;
+        }
+      } 
+      return -1;
+    },
     
+    //Written by Elise, moves the pivot row up
+   /* setPivotFirst: function(matrix, row, col){
+      var pivot = this.getPivotRow(matrix);
+      var pivotRow = matrix[row];
+      matrix.splice(row, 1);
+      matrix.splice(col, 0, pivotRow);
+      console.log("mat is now: " + matrix + " and column was: " + col);
+      return matrix;
+    },*/
+    
+    setPivotOne: function(matrix,row){
+      //console.log("this row: " + row);
+      for(var j=0; j<matrix[row].length; j++){
+        if(matrix[row][j] != 0){
+          var pivot = matrix[row][j];
+          break;
+        }
+      }
+      console.log("pivot: " + pivot);
+      for(var i=0; i<matrix[row].length; i++){
+        console.log("rowel: " + matrix[row][i]);
+        matrix[row][i] = matrix[row][i]/pivot;
+      }
+      console.log(matrix[row]);
+    },
+    
+    //Written by Elise, will generate a matrix with r rows and c columns
     genMatrix: function(r,c){
       var matrix = [];
       var tmp = [];
