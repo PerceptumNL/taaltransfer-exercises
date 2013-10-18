@@ -235,6 +235,19 @@ $.extend(KhanUtil, {
       return Math.sqrt(thisLong);      
     },
     
+    getPivotRow: function(matrix){
+      var pivot = [];
+      for(var i=0; i<matrix.length; i++){
+        for(var j=0; j<matrix[i].length; j++){
+          if(matrix[i][j]!=0){
+            pivot = matrix[i];
+            console.log("pivot is: " + pivot + " i is: " + i + " j is: " + j);
+            return pivot;
+          }
+        } 
+      }
+    },
+    
     //Written by Elise, will generate a matrix with r rows and c columns
     
     genMatrix: function(r,c){
@@ -353,9 +366,9 @@ $.extend(KhanUtil, {
         }
       }
       return mn;
-    },
+    },    
     
-    //
+    //Shows the matrix filled with sums
     showSumMatrix: function(ma,mb){
       var formula = [];
       while (formula.push([]) < ma.length);
