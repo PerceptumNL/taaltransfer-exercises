@@ -359,14 +359,11 @@ $.extend(KhanUtil, {
     showSumMatrix: function(ma,mb){
       var formula = [];
       while (formula.push([]) < ma.length);
-      console.log("hoi");
       for(var i=0; i < ma.length; i++){
         for(var j=0; j<ma[i].length; j++){
-          console.log("this el for ma: " + ma[i][j] + " this el for mb: " + mb);
-          formula[i][j]="<code>\\color{#6495ED}{" + ma[i][j] + "} \\times \\color{#28AE7B}{" + mb[i][j] + "}</code>";
+          formula[i][j]="<code>\\color{#6495ED}{" + ma[i][j] + "} + \\color{#28AE7B}{" + mb[i][j] + "}</code>";
         }
       }   
-      console.log(formula); 
       return formula;
     },
     
