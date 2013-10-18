@@ -279,8 +279,8 @@ $.extend(KhanUtil, {
           for(var j = 0; j<matrix[i].length; j++){ //loop through rowelements
             var matEl = matrix[i][j]; //current element
             var pivEl = matrix[i][col]; //pivotelement in the current row
-            var subEl = matrix[pivot][i]; //current element in the pivotRow
-            //console.log("matEl : " + matEl + " pivEl: " + pivEl + " subEl: " + subEl);
+            var subEl = matrix[pivot][j]; //current element in the pivotRow
+            console.log(" pivEl: " + pivEl + " subEl: " + subEl);
             matrix[i][j] = matEl - (pivEl*subEl);
             console.log("matel went from " + matEl + " to " + matrix[i][j]  + " where i = " + i + " ; j = " + j);
           }
