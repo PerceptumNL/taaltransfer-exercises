@@ -243,10 +243,10 @@ $.extend(KhanUtil, {
       while(mat.push([]) < matrix.length);
       for(var i = 0; i <matrix[0].length; i++){ //loop through columns
         pivot = this.getPivotRow(matrix, i);
-        //console.log("there is a pivot in column " + i + " and it is in row " + matrix[pivot] + " and it is " + matrix[pivot][i]);
         if(pivots.indexOf(pivot) == -1){
-          mat.push(matrix[pivot]);
+          mat.push(/*this.setPivotOne(matrix,pivot)*/matrix[pivot]);
           pivots.push(pivot);
+          this.subtractRows(this.setPivotOne(matrix, pivot), pivot, i);
         }
         else{
           console.log("nope2");
@@ -260,8 +260,30 @@ $.extend(KhanUtil, {
       else {
         console.log("nope");
       }  
-      console.log("mat: " + mat);
       return mat;
+    },
+    
+    
+    subtractRows: function(matrix, pivot, col){
+      var pivotRow = matrix[pivot];
+      var tmp = 0;
+      for(var i=0; i<matrix.length; i++){
+        if(matrix[i][col] != 0 && i != pivot){
+          //dostuff
+          for(var j = 0; j<matrix[i].length; j++){
+            var matEl = matrix[i][j];
+            var firstEl = matrix[i][col];
+            var subEl = matrix[pivot][col]
+            console.log("matEl : " + matEl + " firstEl: " + firstEl + " subEl: " + subEl);
+            matrix[i][j] = matEl - (firstEl*subEl);
+            //console.log("matrix: " + matrix);
+          }
+        }
+        else{
+          console.log("is dus wel nul/is de pivotrij " + matrix[i][col]);
+          //dont do that stuff
+        }
+      } console.log("hier: " + matrix);
     },
     
     //Written by Elise, returns the pivot row in a matrix
