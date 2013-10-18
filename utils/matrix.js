@@ -240,17 +240,23 @@ $.extend(KhanUtil, {
       var pivot = 0;
       var mat = [];
       var pivots = [];
+      var setOne = [];
+      while(setOne.push([]) < matrix.length);
       while(mat.push([]) < matrix.length);
       for(var i = 0; i <matrix[0].length; i++){ //loop through columns
         pivot = this.getPivotRow(matrix, i);
         if(pivots.indexOf(pivot) == -1){
           mat.push(/*this.setPivotOne(matrix,pivot)*/matrix[pivot]);
           pivots.push(pivot);
-          this.subtractRows(this.setPivotOne(matrix, pivot), pivot, i);
+          setOne.push(this.setPivotOne(matrix, pivot));
         }
         else{
           console.log("nope2");
         }
+      }
+      for(var x=0; x<matrix[0].length; x++){
+        pivot = this.getPivotRow(matrix, x);
+        console.log(this.subtractRows(matrix, pivot, x));
       }
       if(matrix.length > matrix[0].length){
         for(var j=i; j<matrix.length; j++){
@@ -265,18 +271,18 @@ $.extend(KhanUtil, {
     
     
     subtractRows: function(matrix, pivot, col){
+      console.log("dump: matrix: " + matrix + " pivot: " + pivot + " col: " + col); 
       var pivotRow = matrix[pivot];
       var tmp = 0;
-      for(var i=0; i<matrix.length; i++){
-        if(matrix[i][col] != 0 && i != pivot){
-          //dostuff
-          for(var j = 0; j<matrix[i].length; j++){
-            var matEl = matrix[i][j];
-            var firstEl = matrix[i][col];
-            var subEl = matrix[pivot][col]
-            console.log("matEl : " + matEl + " firstEl: " + firstEl + " subEl: " + subEl);
-            matrix[i][j] = matEl - (firstEl*subEl);
-            //console.log("matrix: " + matrix);
+      for(var i=0; i<matrix.length; i++){ //loop through rows
+        if(matrix[i][col] != 0 && i != pivot){ //if there is a value !=0 in the pivot column and we're not in the pivotRow
+          for(var j = 0; j<matrix[i].length; j++){ //loop through rowelements
+            var matEl = matrix[i][j]; //current element
+            var pivEl = matrix[i][col]; //pivotelement in the current row
+            var subEl = matrix[pivot][i]; //current element in the pivotRow
+            //console.log("matEl : " + matEl + " pivEl: " + pivEl + " subEl: " + subEl);
+            matrix[i][j] = matEl - (pivEl*subEl);
+            console.log("matel went from " + matEl + " to " + matrix[i][j]  + " where i = " + i + " ; j = " + j);
           }
         }
         else{
