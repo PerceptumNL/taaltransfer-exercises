@@ -276,9 +276,10 @@ $.extend(KhanUtil, {
       var tmp = 0;
       for(var i=0; i<matrix.length; i++){ //loop through rows
         if(matrix[i][col] != 0 && i != pivot){ //if there is a value !=0 in the pivot column and we're not in the pivotRow
-          for(var j = 0; j<matrix[i].length; j++){ //loop through rowelements
+          var pivEl = matrix[i][col]; //pivotelement in the current row
+          for(var j = 0; j<matrix.length; j++){ //loop through rowelements
             var matEl = matrix[i][j]; //current element
-            var pivEl = matrix[i][col]; //pivotelement in the current row
+
             var subEl = matrix[pivot][j]; //current element in the pivotRow
             console.log(" pivEl: " + pivEl + " subEl: " + subEl);
             matrix[i][j] = matEl - (pivEl*subEl);
