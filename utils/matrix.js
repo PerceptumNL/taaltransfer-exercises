@@ -238,18 +238,64 @@ $.extend(KhanUtil, {
     
     
     rref: function(matrix){
-    
-      matrix = this.fixRows(matrix);
-      matrix = this.divideByC(matrix);
-//      this.eliminate(matrix);
+      var length = matrix.length;
+      var elements = matrix[0].length;
+      for(var i=0; i<elements; i++){
+        var row = this.fixRows(matrix, i);
+        console.log("row: " + row);
+        this.divideByC(matrix, row, i);
+        console.log(matrix);
+      }
+
       return matrix;
     
     },
     
+  divideByC: function(matrix,row,col){
+    c = matrix[row][col];
+    console.log("c is: " + c);
+    console.log("matrix[i] is: " + matrix[row]);
+    matrix[row] = this.divideRow(matrix[row], c);
+    return matrix;
+    },
+    
+    divideRow: function(row, c){
+      var length = row.length;
+      for(var i=0; i<length; i++){
+        row[i] = row[i]/c;
+      }
+      return row;
+    },
+    
+  fixRows: function(matrix,col){
+      var x = 0;
+      var length = matrix.length;
+      console.log("length: " + length);
+      for(var i=0; i<length; i++){
+        console.log("element: " + matrix[i]);
+        if(matrix[i][col] !=0){
+          return i;
+        }
+        else {
+          for(var j=i; j<length;){
+            if(matrix[j][col] == 0){
+              j++
+            }
+            else{
+              matrix = this.replaceRow(i,j, matrix);
+              break;
+            }
+          } 
+        }
+      } return -1;
+    },
+    
+
+    
     eliminate: function(matrix){
       var length = matrix.length;
       var elements = matrix[0].length;
-      for(var i=0; i<length; i++){
+      for(var i=length-1; i>=0; i--){
         var rowLead = 0;
         var whichEl = 0;
         for(var j=i; j<elements;){
@@ -287,58 +333,7 @@ $.extend(KhanUtil, {
       }
     },
     
-    divideByC: function(matrix){
-      var c = 0;
-      var length = matrix.length;
-      var elements = matrix[0].length;
-      
-      for(var i=0; i<length; i++){
-        for(var j=i; j<elements;){
-          if(matrix[i][j] !=0){
-            c = matrix[i][j];
-            matrix[i] = this.divideRow(matrix[i], c);
-            j++;
-            break;
-          }
-          else {
-            j++;
-          }
-        }
-      }
-      return matrix;
-    },
-    
-    divideRow: function(row, c){
-      var length = row.length;
-      for(var i=0; i<length; i++){
-        row[i] = row[i]/c;
-      }
-      return row;
-    },
-    
-    fixRows: function(matrix){
-      var x = 0;
-      var length = matrix.length;
-      for(var i=0; i<length; i++){
-        if(matrix[i][x] !=0){
-          x++
-        }
-        else {
-          for(var j=i; j<length;){
-            if(matrix[j][x] == 0){
-              j++
-            }
-            else{
-              matrix = this.replaceRow(i,j, matrix);
-              break;
-            }
-          } 
-          x++;
-        }
-      }
-      return matrix;
-    
-    },
+
     
     replaceRow: function(wrong, right, matrix){
       var i = matrix[wrong];
