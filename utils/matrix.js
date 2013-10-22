@@ -242,19 +242,24 @@ $.extend(KhanUtil, {
       var rows = [];
       var newMat = matrix; //make new matrix to store rows in
       var arrays = [];
-      for(var i=0; i<matrix.length; i++){ //loop over rows
+      var length = matrix.length;
+      for(var i=0; i<length; i++){ //loop over rows
         var row = this.getRow(i, matrix, rows);
 
         rows.push(row);
-        arrays[i] = row;
         matrix = this.moveToi(matrix, row, i);
 
         this.divideC(matrix, row, i);
-
-        this.subtractR(matrix, row, i);
+        console.log("i: " + i + " length-1: " + (length-1));
+        if(i < length-1){
+          this.subtractR(matrix, row, i); //if last row is all zeros, it gets deleted.
+        }
+        else{
+          return matrix;
+        }
       }
       //console.log("arrays: " + arrays); //index of array is the index of the leading var
-      return matrix;
+      return matrix; //IF ROW = ONLY ZEROS IT GETS REMOVED. WHY
     },
     
     divideC: function(matrix, row, i){
