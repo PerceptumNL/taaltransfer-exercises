@@ -238,14 +238,16 @@ $.extend(KhanUtil, {
     
     
     rref: function(matrix){
+      var rows = [];
       var newMat = matrix; //make new matrix to store rows in
       var arrays = [];
       for(var i=0; i<matrix.length; i++){ //loop over rows
-        var row = this.getRow(i, matrix);
+        var row = this.getRow(i, matrix, rows);
+        rows.push(row);
         arrays[i] = row;
         matrix = this.moveToi(matrix, row, i);
         this.divideC(matrix, row, i);
-        //this.subtractR(matrix, row, i);
+        this.subtractR(matrix, row, i);
       }
       //console.log("arrays: " + arrays); //index of array is the index of the leading var
       return matrix;
@@ -266,13 +268,26 @@ $.extend(KhanUtil, {
       return matrix;
     },
     
-    /*subtractR: function(matrix, row, i){
-      
-    },*/
+    subtractR: function(matrix, row, i){
+      var pivotRow = matrix[row];
+      var pivot = pivotRow[i];
+      var length = matrix.length;
+      var elements = matrix[0].length;
+      for(var z=0; z<length; z++){ //loop over rows
+        if(z!=row){
+          var checkRow = matrix[z];
+          var checkPivot = checkRow[i];
+          for(var y=0; y<elements; y++){
+            matrix[z][y] = (matrix[z][y] - (checkPivot*matrix[row][y]));
+          }
+        }
+      }
+      return matrix;
+    },
     
-    getRow: function(lead, matrix){
+    getRow: function(lead, matrix, rows){
       for(var j=0; j<matrix.length; j++){ //loop over rows
-        if(matrix[j][lead] != 0){
+        if(matrix[j][lead] != 0 && rows.indexOf(j)==-1){
           return j;
         }
       }
