@@ -238,15 +238,19 @@ $.extend(KhanUtil, {
     
     
     rref: function(matrix){
+
       var rows = [];
       var newMat = matrix; //make new matrix to store rows in
       var arrays = [];
       for(var i=0; i<matrix.length; i++){ //loop over rows
         var row = this.getRow(i, matrix, rows);
+
         rows.push(row);
         arrays[i] = row;
         matrix = this.moveToi(matrix, row, i);
+
         this.divideC(matrix, row, i);
+
         this.subtractR(matrix, row, i);
       }
       //console.log("arrays: " + arrays); //index of array is the index of the leading var
@@ -255,16 +259,12 @@ $.extend(KhanUtil, {
     
     divideC: function(matrix, row, i){
       var line = matrix[row];
-      console.log("-----------------------\n c is " + line[i]);
-      console.log("row: " + row + " i: " + i); 
-      console.log("line 1: " + line);
       var c = line[i];
       var length = line.length;
       for(var j=0; j<length; j++){
         line[j] = line[j]/c;
       }
       matrix[row] = line;
-      console.log("line 2: " + line);
       return matrix;
     },
     
@@ -273,15 +273,19 @@ $.extend(KhanUtil, {
       var pivot = pivotRow[i];
       var length = matrix.length;
       var elements = matrix[0].length;
-      for(var z=0; z<length; z++){ //loop over rows
-        if(z!=row){
-          var checkRow = matrix[z];
-          var checkPivot = checkRow[i];
-          for(var y=0; y<elements; y++){
-            matrix[z][y] = (matrix[z][y] - (checkPivot*matrix[row][y]));
+      console.log("els: " + elements + " i: " + i); 
+      if((i+1) != elements){
+        for(var z=0; z<length; z++){ //loop over rows
+          if(z!=row){
+            var checkRow = matrix[z];
+            var checkPivot = checkRow[i];
+            for(var y=0; y<elements; y++){
+              matrix[z][y] = (matrix[z][y] - (checkPivot*matrix[row][y]));
+            }
           }
         }
       }
+      console.log("mat no " + i + " is " + matrix);
       return matrix;
     },
     
