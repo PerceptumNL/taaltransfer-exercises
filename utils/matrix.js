@@ -240,9 +240,51 @@ $.extend(KhanUtil, {
     rref: function(matrix){
     
       matrix = this.fixRows(matrix);
-      this.divideByC(matrix);
+      matrix = this.divideByC(matrix);
+//      this.eliminate(matrix);
       return matrix;
     
+    },
+    
+    eliminate: function(matrix){
+      var length = matrix.length;
+      var elements = matrix[0].length;
+      for(var i=0; i<length; i++){
+        var rowLead = 0;
+        var whichEl = 0;
+        for(var j=i; j<elements;){
+          if(matrix[i][j]!=0){
+            rowLead = matrix[i][j];
+            whichEl = j;
+            j++
+            break;
+          }
+          else{
+            j++;
+          }
+        }
+        console.log("rowLead: " + rowLead); //now we have the rowLead for this row
+        for(var z=0; z<length; z++){
+          if(z==i){
+            console.log("stahp");
+          }
+          else{
+            var leadEl = matrix[z][whichEl];
+            console.log("leadEl: " + leadEl);
+            if(leadEl != 0){
+              for(var y=0; y<elements; y++){
+                console.log("element is first: " + matrix[z][y]);
+                var derp = rowLead * matrix[z][whichEl];
+                console.log(rowLead + " * " + matrix[z][whichEl] + " = " + rowLead*matrix[z][whichEl]);
+                matrix[z][y] = matrix[z][y] - derp;
+                matrix[z][y] = Math.round(matrix[z][y] * 100)/100
+                console.log("element is now: " + matrix[z][y]);
+                console.log("--------------------------------");
+              }
+            }
+          }
+        }
+      }
     },
     
     divideByC: function(matrix){
@@ -254,7 +296,7 @@ $.extend(KhanUtil, {
         for(var j=i; j<elements;){
           if(matrix[i][j] !=0){
             c = matrix[i][j];
-            this.divideRow(matrix[i], c);
+            matrix[i] = this.divideRow(matrix[i], c);
             j++;
             break;
           }
@@ -262,27 +304,27 @@ $.extend(KhanUtil, {
             j++;
           }
         }
-        console.log("c: " + c + " in loop " + i); 
       }
+      return matrix;
     },
     
     divideRow: function(row, c){
-      console.log("row is first: " + row);
       var length = row.length;
       for(var i=0; i<length; i++){
         row[i] = row[i]/c;
       }
-      console.log("row is now: " + row);
+      return row;
     },
     
     fixRows: function(matrix){
       var x = 0;
-      for(var i=0; i<matrix.length; i++){
+      var length = matrix.length;
+      for(var i=0; i<length; i++){
         if(matrix[i][x] !=0){
           x++
         }
         else {
-          for(var j=i; j<matrix.length;){
+          for(var j=i; j<length;){
             if(matrix[j][x] == 0){
               j++
             }
@@ -301,10 +343,8 @@ $.extend(KhanUtil, {
     replaceRow: function(wrong, right, matrix){
       var i = matrix[wrong];
       var j = matrix[right];
-      console.log("matrix is first: " + matrix);
       matrix[right] = i;
       matrix[wrong] = j;
-      console.log("matrix is now: " + matrix);
       return matrix;
     },    
     //Written by Elise, contains control logic
