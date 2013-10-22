@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-translatable data-require="math math-format graphie matrix">
+<html data-require="math math-format graphie matrix">
 <head>
     <meta charset="UTF-8" />
     <title>Gaussian</title>
@@ -20,7 +20,7 @@
         <div>
             <div class="question">
 
-                <p data-tt="question1"><var>writeMatrix([[0,0,0,6], [2,1,7,4], [4,5,8,6]])</var>:<var>writeMatrix(rref([[0,0,0,6], [2,1,7,4], [4,5,8,6]]))</var> </p>
+                <p data-tt="question1"><var>writeMatrix([[1,2,3], [4,5,6]])</var>:<var>writeMatrix(rref([[1,2,3], [4,5,6]]))</var> </p>
             </div>
             <div class = "solution" data-type="text"><var>matrixToText(sumMatrix(MAA,MAB))</var></div>
 
@@ -28,7 +28,7 @@
     </div>
 
     <div class="hints">
-        <p data-tt="hint1">Adding two matrices is nothing more than adding every element in <code>\color{#6495ED}{A}</code> to every corresponding element in <code>\color{#28AE7B}{B}</code>.</p>
+        <p>Adding two matrices is nothing more than adding every element in <code>\color{#6495ED}{A}</code> to every corresponding element in <code>\color{#28AE7B}{B}</code>.</p>
         <p>That gives us: <br> <code>\color{#6495ED}{A} + \color{#28AE7B}{B} = <var>writeMatrix(showSumMatrix(MAA,MAB))</var></code></p>
         <p><code>\color{#6495ED}{A} + \color{#28AE7B}{B} = <var>writeMatrix(sumMatrix(MAA, MAB))</var></code></p>
         </div>

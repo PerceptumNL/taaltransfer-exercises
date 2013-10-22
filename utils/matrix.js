@@ -238,19 +238,51 @@ $.extend(KhanUtil, {
     
     
     rref: function(matrix){
-      var foundVars = 0;
-      var length = matrix.length;
-      var elements = matrix[0].length;
-      for(var i=0; i<elements; i++){ //for every element in a row
-        var row = this.fixRows(matrix, i, foundVars);
-        console.log("rowhere: " + row + " i: " + i);
-        if(row>-1){
-          this.divideByC(matrix, row, i);
-          foundVars++;
+      var newMat = matrix; //make new matrix to store rows in
+      var arrays = [];
+      for(var i=0; i<matrix.length; i++){ //loop over rows
+        var row = this.getRow(i, matrix);
+        arrays[i] = row;
+        matrix = this.moveToi(matrix, row, i);
+        this.divideC(matrix, row, i);
+        //this.subtractR(matrix, row, i);
+      }
+      //console.log("arrays: " + arrays); //index of array is the index of the leading var
+      return matrix;
+    },
+    
+    divideC: function(matrix, row, i){
+      var line = matrix[row];
+      console.log("-----------------------\n c is " + line[i]);
+      console.log("row: " + row + " i: " + i); 
+      console.log("line 1: " + line);
+      var c = line[i];
+      var length = line.length;
+      for(var j=0; j<length; j++){
+        line[j] = line[j]/c;
+      }
+      matrix[row] = line;
+      console.log("line 2: " + line);
+      return matrix;
+    },
+    
+    /*subtractR: function(matrix, row, i){
+      
+    },*/
+    
+    getRow: function(lead, matrix){
+      for(var j=0; j<matrix.length; j++){ //loop over rows
+        if(matrix[j][lead] != 0){
+          return j;
         }
       }
-      return matrix;
+    },
     
+    moveToi: function(matrix, row, i){
+      var tmp = matrix[i];
+      matrix[i] = matrix[row];
+      matrix[row] = tmp;
+      return matrix;
     },
     
   divideByC: function(matrix,row,col){
