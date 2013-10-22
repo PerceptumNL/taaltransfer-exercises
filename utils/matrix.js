@@ -235,6 +235,78 @@ $.extend(KhanUtil, {
       return Math.sqrt(thisLong);      
     },
     
+    
+    
+    rref: function(matrix){
+    
+      matrix = this.fixRows(matrix);
+      this.divideByC(matrix);
+      return matrix;
+    
+    },
+    
+    divideByC: function(matrix){
+      var c = 0;
+      var length = matrix.length;
+      var elements = matrix[0].length;
+      
+      for(var i=0; i<length; i++){
+        for(var j=i; j<elements;){
+          if(matrix[i][j] !=0){
+            c = matrix[i][j];
+            this.divideRow(matrix[i], c);
+            j++;
+            break;
+          }
+          else {
+            j++;
+          }
+        }
+        console.log("c: " + c + " in loop " + i); 
+      }
+    },
+    
+    divideRow: function(row, c){
+      console.log("row is first: " + row);
+      var length = row.length;
+      for(var i=0; i<length; i++){
+        row[i] = row[i]/c;
+      }
+      console.log("row is now: " + row);
+    },
+    
+    fixRows: function(matrix){
+      var x = 0;
+      for(var i=0; i<matrix.length; i++){
+        if(matrix[i][x] !=0){
+          x++
+        }
+        else {
+          for(var j=i; j<matrix.length;){
+            if(matrix[j][x] == 0){
+              j++
+            }
+            else{
+              matrix = this.replaceRow(i,j, matrix);
+              break;
+            }
+          } 
+          x++;
+        }
+      }
+      return matrix;
+    
+    },
+    
+    replaceRow: function(wrong, right, matrix){
+      var i = matrix[wrong];
+      var j = matrix[right];
+      console.log("matrix is first: " + matrix);
+      matrix[right] = i;
+      matrix[wrong] = j;
+      console.log("matrix is now: " + matrix);
+      return matrix;
+    },    
     //Written by Elise, contains control logic
     rowEchelon: function(matrix){
       var pivot = 0;
@@ -251,7 +323,7 @@ $.extend(KhanUtil, {
           setOne.push(this.setPivotOne(matrix, pivot));
         }
         else{
-          console.log("nope2");
+          console.log("no pivots found");
         }
       }
       for(var x=0; x<matrix[0].length; x++){
@@ -264,7 +336,7 @@ $.extend(KhanUtil, {
         }
       }
       else {
-        console.log("nope");
+        console.log("meer of gelijk aantal kolommen als rijen");
       }  
       return mat;
     },
