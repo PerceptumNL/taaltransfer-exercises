@@ -238,28 +238,29 @@ $.extend(KhanUtil, {
     
     
     rref: function(matrix){
+      var foundVars = 0;
       var length = matrix.length;
       var elements = matrix[0].length;
-      for(var i=0; i<elements; i++){
-        var row = this.fixRows(matrix, i);
-        console.log("row: " + row);
-        this.divideByC(matrix, row, i);
-        console.log(matrix);
+      for(var i=0; i<elements; i++){ //for every element in a row
+        var row = this.fixRows(matrix, i, foundVars);
+        console.log("rowhere: " + row + " i: " + i);
+        if(row>-1){
+          this.divideByC(matrix, row, i);
+          foundVars++;
+        }
       }
-
       return matrix;
     
     },
     
   divideByC: function(matrix,row,col){
     c = matrix[row][col];
-    console.log("c is: " + c);
-    console.log("matrix[i] is: " + matrix[row]);
+    console.log("row is: " + row + "col is: " + col); //this function keep receiving 0 for row
     matrix[row] = this.divideRow(matrix[row], c);
     return matrix;
     },
     
-    divideRow: function(row, c){
+    divideRow: function(row, c){ //divide all elements in a row by the coefficient
       var length = row.length;
       for(var i=0; i<length; i++){
         row[i] = row[i]/c;
@@ -267,29 +268,41 @@ $.extend(KhanUtil, {
       return row;
     },
     
-  fixRows: function(matrix,col){
-      var x = 0;
+  fixRows: function(matrix,col, foundVars){
+      var matrixTwo = matrix;
       var length = matrix.length;
-      console.log("length: " + length);
-      for(var i=0; i<length; i++){
-        console.log("element: " + matrix[i]);
+      for(var i=foundVars; i<=length; i++){
+        console.log("Im here and i= " + i + " and length= " + length);
+        console.log("el: " + matrix[i][col]);
         if(matrix[i][col] !=0){
           return i;
         }
-        else {
+        else { //find row that has a leading var for col
           for(var j=i; j<length;){
+            console.log("else j= " + j);
+            console.log("el2: " + matrix[j][col]);
             if(matrix[j][col] == 0){
               j++
+              console.log("j is: " + j);
+              
             }
             else{
+              console.log("im in the else: " + j );
               matrix = this.replaceRow(i,j, matrix);
-              break;
+              return i;
             }
           } 
         }
       } return -1;
     },
     
+    replaceRow: function(wrong, right, matrix){
+      var i = matrix[wrong];
+      var j = matrix[right];
+      matrix[right] = i;
+      matrix[wrong] = j;
+      return matrix;
+    },    
 
     
     eliminate: function(matrix){
@@ -335,13 +348,7 @@ $.extend(KhanUtil, {
     
 
     
-    replaceRow: function(wrong, right, matrix){
-      var i = matrix[wrong];
-      var j = matrix[right];
-      matrix[right] = i;
-      matrix[wrong] = j;
-      return matrix;
-    },    
+
     //Written by Elise, contains control logic
     rowEchelon: function(matrix){
       var pivot = 0;
