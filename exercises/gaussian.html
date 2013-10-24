@@ -12,25 +12,30 @@
 		<var id="COL">randRange(2,5)</var>
         <var id="SCALAR">randRangeNonZero(-9,9)</var>
         <var id="MAA">genMatrix(ROW,COL)</var>
-        <var id="MAB">genMatrix(ROW,COL)</var>
-
+        <var id="MAB">MAA</var>
+        
     </div>
 
     <div class="problems">
         <div>
             <div class="question">
 
-                <p data-tt="question1"><var>MAA</var><var>writeMatrix(MAA)</var>:<var>writeMatrix(rref(MAA))</var></p>
+                <p data-tt="question1">Given the matrix <code>A = <var>writeMatrix(MAA)</var></code>, determine <code>A_{rref}</code>.<!--<var>writeMatrix(roundElements(rref(MAA)))</var>--></p>
             </div>
-            <div class = "solution" data-type="text"><var>matrixToText(sumMatrix(MAA,MAB))</var></div>
+            <div class = "solution" data-type="text"><var>matrixToText(MAA)</var></div>
 
         </div>
     </div>
 
     <div class="hints">
-        <p>Adding two matrices is nothing more than adding every element in <code>\color{#6495ED}{A}</code> to every corresponding element in <code>\color{#28AE7B}{B}</code>.</p>
-        <p>That gives us: <br> <code>\color{#6495ED}{A} + \color{#28AE7B}{B} = <var>writeMatrix(showSumMatrix(MAA,MAB))</var></code></p>
-        <p><code>\color{#6495ED}{A} + \color{#28AE7B}{B} = <var>writeMatrix(sumMatrix(MAA, MAB))</var></code></p>
+        <p>To determine <code>A_{rref}</code>, we apply the algorithm found in Bretscher section 1.2: </p>
+        <p>For leading variable <code>x_j</code>, we find the first row (<code>r_n</code>) where <code>x_j</code> is non-zero.</p>
+        <p>Then, we find the coefficient <code>c</code> of <code>x_j</code> in <code>r_n</code>. For <code>x_0</code> for example, <code> c = <var>MAA[0][0]</var></code></p>
+        <p>Now that we have <code>c</code>, we divide all elements in <code>r_n</code> by <code>c</code>, so that <code>x_j</code> equals 1.</p>
+        <p>Then, we go over the rest of the rows and set <code>x_j</code> to <code>0</code> by subtracting multiples of <code>r_n</code> from each row.</p>
+        <p>To figure out how many times we should subtract <code>r_n</code> from an arbitrary row <code>r_i</code>, we use the element in <code>r_i</code> in the same column as <code>x_j</code> as a divisor <code>d_i</code>.</p>
+         <p>We then subtract <code>r_n \times d_i</code> from <code>r_i</code>. </p>
+         <p>Repeat the last two steps for each <code>r_i</code> except <code>r_n</code>.</p>
         </div>
     </div>
     </div>

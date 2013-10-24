@@ -235,76 +235,83 @@ $.extend(KhanUtil, {
       return Math.sqrt(thisLong);      
     },
     
-    
+    roundTo: function(precision, num) {
+        var factor = Math.pow(10, precision).toFixed(5);
+        return Math.round((num * factor).toFixed(5)) / factor;
+    },
     
     rref: function(matri){
-
-      var rows = [];
-      var newMat = matri; //make new matrix to store rows in
-      var arrays = [];
-      var length = matri.length;
-      var elements = matri[0].length;
-      for(var i=0; i<length; i++){ //loop over rows
-        var row = this.getRow(i, matri, rows);
-        rows.push(row);
-        console.log("row: " + row + " i: " + i + " elements: " + elements + " length: " + length);
-        if(this.rowZero(matri[row])){
-          console.log("all zeros: " + matri[row]);
+      var rows = []; 								//store rows that have been found to contain a leading var
+      var length = matri.length; 					//for optimization
+      var elements = matri[0].length; 				//for optimization
+      
+      //for testing purposes:
+      var str="rref([";
+      for(var k=0;k<length;k++){
+        str = str.concat("[" + matri[k] + "]");
+        if(k!=length-1){
+          str = str.concat(",");
         }
-
-        if(row > -1 && !this.rowZero(matri[row])){
-          matri = this.moveToi(matri, row, i);
+      }
+      str=str.concat("])");
+      console.log(str);
+      
+      for(var i=0; i<length; i++){ 					//loop over rows
+        var row = this.getRow(i, matri, rows); 		//get the row that contains leading var for column i
+        rows.push(row); 							//add to row storage
+        if(row > -1 && !this.rowZero(matri[row])){ 	//if a row can be found & the row is not all zeros
+          matri = this.moveToi(matri, row, i);		//move the row to the correct index
  
-          if(i < length){
-            this.divideC(matri, row, i);
-            this.subtractR(matri, row, i);
-            console.log("10: " + matri + ":" + matri[i]);
+          if(i < length){ 							//if not at the last column
+            this.divideC(matri, row, i); 			// set leading var in row to 1
+            this.subtractR(matri, row, i); 			//subtract row from other rows as necessary
           }
-          else{
+          else { 									//if at the last var
             return matri;
           }
         }
-        else{
-          console.log("nope");
+      }  
+      return matri;
+    },
+    
+    
+    roundElements: function(matri){ 				//round all elements to two decimals
+      var length = matri.length;
+      var elements = matri[0].length;
+      var tmp = 0;
+      for(var i=0; i<length;i++){
+        for(var j=0; j<elements;j++){
+          tmp = matri[i][j];
+          if(tmp%1!==0){ 							//only round non-whole numbers
+            matri[i][j] = this.roundTo(2, tmp);
+          }
         }
-        console.log(matri);
-        console.log("-------------");
       }
-      return matri; //IF ROW = ONLY ZEROS IT GETS REMOVED. WHY
+      return matri;
     },
     
-    padDigitsToNum: function(digits, num) {
-        digits = digits.slice(0);
-        while (digits.length < num) {
-            digits.push(0);
-        }
-        return digits;
-    },
-    
-    rowZero: function(row){
+    rowZero: function(row){ //check if a row contains only 0s
       var zeros = 0;
-      for(var i=0; i<row.length;i++){
+      var elements = row.length;
+      for(var i=0; i<elements;i++){
         if(row[i]==0){
           zeros ++
         }
       }
-      if(zeros == row.length){
+      if(zeros == elements){
         return true;
       }
-      else{
+      else {
         return false;
       }
     },
     
     divideC: function(matri, row, i){
       var line = matri[row];
-      console.log("line: " + line);
       var c = line[i];
-      console.log("c: " + c);
       var length = line.length;
-      console.log("length: " + length);
       for(var j=0; j<length; j++){
-        line[j] = Math.round((line[j]/c)*100)/100;
+        line[j] = line[j]/c
       }
       matri[row] = line;
       return matri;
@@ -315,28 +322,34 @@ $.extend(KhanUtil, {
       var pivot = pivotRow[i];
       var length = matri.length;
       var elements = matri[0].length;
-      ///if((i+1) != elements){
+      var checkRow = [];
+      var checkPivot = 0;
+      var tmp = 0;
+      var elPivot = 0;
         for(var z=0; z<length; z++){ //loop over rows
           if(z!=row){
-            var checkRow = matri[z];
-            var checkPivot = checkRow[i];
+            checkRow = matri[z];
+            checkPivot = checkRow[i];
             for(var y=0; y<elements; y++){
-              console.log("1: " + checkRow + "\n");
-              matri[z][y] = (matri[z][y] - (checkPivot*matri[row][y]));
+              tmp = matri[z][y];
+              elPivot = matri[row][y];
+              matri[z][y] = (tmp - (checkPivot*elPivot));
             }
           }
-        //}
-      }
+        }
       return matri;
     },
     
     getRow: function(lead, matri, rows){
-      for(var j=0; j<matri.length; j++){ //loop over rows
-        if(matri[j][lead] != 0 && rows.indexOf(j)==-1){
+      var length = matri.length;
+      var tmp = 0;
+      for(var j=0; j<length; j++){ //loop over rows
+        tmp = matri[j][lead];
+        if(tmp != 0 && rows.indexOf(j)==-1){
           return j;
         }
       }
-      return -1;
+      return -1; //return -1 if no row is found
     },
     
     moveToi: function(matri, row, i){
@@ -345,188 +358,7 @@ $.extend(KhanUtil, {
       matri[row] = tmp;
       return matri;
     },
-    
-  divideByC: function(matrix,row,col){
-    c = matrix[row][col];
-    matri[row] = this.divideRow(matri[row], c);
-    return matri;
-    },
-    
-    divideRow: function(row, c){ //divide all elements in a row by the coefficient
-      var length = row.length;
-      for(var i=0; i<length; i++){
-        row[i] = row[i]/c;
-      }
-      return row;
-    },
-    
-  fixRows: function(matri,col, foundVars){
-      var length = matri.length;
-      for(var i=foundVars; i<=length; i++){
-        if(matri[i][col] !=0){
-          return i;
-        }
-        else { //find row that has a leading var for col
-          for(var j=i; j<length;){
-            if(matri[j][col] == 0){
-              j++
-              
-            }
-            else{
-              matri = this.replaceRow(i,j, matri);
-              return i;
-            }
-          } 
-        }
-      } return -1;
-    },
-    
-    replaceRow: function(wrong, right, matri){
-      var i = matri[wrong];
-      var j = matri[right];
-      matri[right] = i;
-      matri[wrong] = j;
-      return matri;
-    },    
-
-    
-    eliminate: function(matrix){
-      var length = matrix.length;
-      var elements = matrix[0].length;
-      for(var i=length-1; i>=0; i--){
-        var rowLead = 0;
-        var whichEl = 0;
-        for(var j=i; j<elements;){
-          if(matrix[i][j]!=0){
-            rowLead = matrix[i][j];
-            whichEl = j;
-            j++
-            break;
-          }
-          else{
-            j++;
-          }
-        }
-        console.log("rowLead: " + rowLead); //now we have the rowLead for this row
-        for(var z=0; z<length; z++){
-          if(z==i){
-            console.log("stahp");
-          }
-          else{
-            var leadEl = matrix[z][whichEl];
-            console.log("leadEl: " + leadEl);
-            if(leadEl != 0){
-              for(var y=0; y<elements; y++){
-                console.log("element is first: " + matrix[z][y]);
-                var derp = rowLead * matrix[z][whichEl];
-                console.log(rowLead + " * " + matrix[z][whichEl] + " = " + rowLead*matrix[z][whichEl]);
-                matrix[z][y] = matrix[z][y] - derp;
-                matrix[z][y] = Math.round(matrix[z][y] * 100)/100
-                console.log("element is now: " + matrix[z][y]);
-                console.log("--------------------------------");
-              }
-            }
-          }
-        }
-      }
-    },
-    
-
-    
-
-    //Written by Elise, contains control logic
-    rowEchelon: function(matrix){
-      var pivot = 0;
-      var mat = [];
-      var pivots = [];
-      var setOne = [];
-      while(setOne.push([]) < matrix.length);
-      while(mat.push([]) < matrix.length);
-      for(var i = 0; i <matrix[0].length; i++){ //loop through columns
-        pivot = this.getPivotRow(matrix, i);
-        if(pivots.indexOf(pivot) == -1){
-          mat.push(/*this.setPivotOne(matrix,pivot)*/matrix[pivot]);
-          pivots.push(pivot);
-          setOne.push(this.setPivotOne(matrix, pivot));
-        }
-        else{
-          console.log("no pivots found");
-        }
-      }
-      for(var x=0; x<matrix[0].length; x++){
-        pivot = this.getPivotRow(matrix, x);
-        console.log(this.subtractRows(matrix, pivot, x));
-      }
-      if(matrix.length > matrix[0].length){
-        for(var j=i; j<matrix.length; j++){
-          mat.push(matrix[j]);
-        }
-      }
-      else {
-        console.log("meer of gelijk aantal kolommen als rijen");
-      }  
-      return mat;
-    },
-    
-    
-    subtractRows: function(matrix, pivot, col){
-      console.log("dump: matrix: " + matrix + " pivot: " + pivot + " col: " + col); 
-      var pivotRow = matrix[pivot];
-      var tmp = 0;
-      for(var i=0; i<matrix.length; i++){ //loop through rows
-        if(matrix[i][col] != 0 && i != pivot){ //if there is a value !=0 in the pivot column and we're not in the pivotRow
-          var pivEl = matrix[i][col]; //pivotelement in the current row
-          for(var j = 0; j<matrix.length; j++){ //loop through rowelements
-            var matEl = matrix[i][j]; //current element
-
-            var subEl = matrix[pivot][j]; //current element in the pivotRow
-            console.log(" pivEl: " + pivEl + " subEl: " + subEl);
-            matrix[i][j] = matEl - (pivEl*subEl);
-            console.log("matel went from " + matEl + " to " + matrix[i][j]  + " where i = " + i + " ; j = " + j);
-          }
-        }
-        else{
-          console.log("is dus wel nul/is de pivotrij " + matrix[i][col]);
-          //dont do that stuff
-        }
-      } console.log("hier: " + matrix);
-    },
-    
-    //Written by Elise, returns the pivot row in a matrix
-    getPivotRow: function(matrix, column){
-      var pivot = [];
-      for(var i=0; i<matrix.length; i++){
-        if(matrix[i][column]!=0){
-          pivot = matrix[i];
-          return i;
-        }
-      } 
-      return -1;
-    },
-    
-    //Written by Elise, moves the pivot row up
-   /* setPivotFirst: function(matrix, row, col){
-      var pivot = this.getPivotRow(matrix);
-      var pivotRow = matrix[row];
-      matrix.splice(row, 1);
-      matrix.splice(col, 0, pivotRow);
-      console.log("mat is now: " + matrix + " and column was: " + col);
-      return matrix;
-    },*/
-    
-    setPivotOne: function(matrix,row){
-      for(var j=0; j<matrix[row].length; j++){
-        if(matrix[row][j] != 0){
-          var pivot = matrix[row][j];
-          break;
-        }
-      }
-      for(var i=0; i<matrix[row].length; i++){
-        matrix[row][i] = matrix[row][i]/pivot;
-      }
-      console.log(matrix[row]);
-      return matrix[row];
-    },
+           
     
     //Written by Elise, will generate a matrix with r rows and c columns
     genMatrix: function(r,c){
@@ -571,18 +403,7 @@ $.extend(KhanUtil, {
       }
       return beginString + middleString + endString;
     },
-    //Written by Elise, will transpose a vector
-   /* transVec: function(vector){
-      var newMat = [];
-      while(newMat.push([]) < vector.length);
-      for(var i=0; i<vector.length; i++){
-        newMat[i] = vector[i];
-      }
-      for(var j=0; j<newMat.length; j++){
-       }
-       return newMat;
-    },*/    
-    
+
     //Written by Elise, will break matrix down into rows and rewrite them as vectors
     writeMatRows: function(matrix){
       var begin = "<ul>";
