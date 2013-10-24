@@ -262,11 +262,9 @@ $.extend(KhanUtil, {
 
         if(row > -1 && !this.rowZero(matri[row])){ 	//if a row can be found & the row is not all zeros
           matri = this.moveToi(matri, row, i);		//move the row to the correct index
-          console.log("-: " + matri); 
           rows.push(row); 							//add to row storage  
           if(i < length){ 							//if not at the last column
             matri = this.divideC(matri, row, i); 			// set leading var in row to 1
-            console.log(i + ":" + matri);
             matri = this.subtractR(matri, row, i); 			//subtract row from other rows as necessary
           }
           else { 									//if at the last var
@@ -274,7 +272,6 @@ $.extend(KhanUtil, {
           }
         }
       }  
-      console.log("rows: " + rows);
       return matri;
     },
     
@@ -379,6 +376,16 @@ $.extend(KhanUtil, {
       }
       return matrix;
     },
+      
+    genMatrixZ: function(r,c){
+      var matrix = [];
+      var tmp = [];
+      for(var i=0; i<r; i++){ //generate r vectors with c elements 
+        tmp = this.genVectorZ(c);
+        matrix.push(tmp);
+      }
+      return matrix;
+    },
     
     //Written by Elise, will transpose a matrix
     transMatrix: function(matrix){
@@ -438,6 +445,15 @@ $.extend(KhanUtil, {
       return vector;
     },
     
+    genVectorZ: function(len){
+      var vector = [];
+      for(var i = 0; i < len; i++){
+        var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+        var worth = Math.floor((Math.random()*10));
+        vector.push(worth*plusOrMinus);
+      }  
+      return vector;
+    },
     //Written by Elise, will round every element in a vector to 2 decimals
     roundVec: function(vector){
         var temp = 0;
