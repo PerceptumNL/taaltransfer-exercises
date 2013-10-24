@@ -237,83 +237,115 @@ $.extend(KhanUtil, {
     
     
     
-    rref: function(matrix){
+    rref: function(matri){
 
       var rows = [];
-      var newMat = matrix; //make new matrix to store rows in
+      var newMat = matri; //make new matrix to store rows in
       var arrays = [];
-      var length = matrix.length;
+      var length = matri.length;
+      var elements = matri[0].length;
       for(var i=0; i<length; i++){ //loop over rows
-        var row = this.getRow(i, matrix, rows);
-
+        var row = this.getRow(i, matri, rows);
         rows.push(row);
-        matrix = this.moveToi(matrix, row, i);
-
-        this.divideC(matrix, row, i);
-        console.log("i: " + i + " length-1: " + (length-1));
-        if(i < length-1){
-          this.subtractR(matrix, row, i); //if last row is all zeros, it gets deleted.
+        if(row > -1 ){
+          matri = this.moveToi(matri, row, i);
+          console.log("row: " + row + " i: " + i + " elements: " + elements + " length: " + length); 
+          if(i < length-1){
+            this.divideC(matri, row, i);
+          }
+          if(i < length-1){ 
+            this.subtractR(matri, row, i);
+            console.log("10: " + matri + ":" + matri[i]);
+          }
+          else{
+            return matri;
+          }
         }
         else{
-          return matrix;
+          console.log("nope");
         }
+        console.log(matri);
+        console.log("-------------");
       }
-      //console.log("arrays: " + arrays); //index of array is the index of the leading var
-      return matrix; //IF ROW = ONLY ZEROS IT GETS REMOVED. WHY
+      return matri; //IF ROW = ONLY ZEROS IT GETS REMOVED. WHY
     },
     
-    divideC: function(matrix, row, i){
-      var line = matrix[row];
+    padDigitsToNum: function(digits, num) {
+        digits = digits.slice(0);
+        while (digits.length < num) {
+            digits.push(0);
+        }
+        return digits;
+    },
+    
+    rowZero: function(row){
+      var zeros = 0;
+      for(var i=0; i<row.length;i++){
+        if(row[i]==0){
+          zeros ++
+        }
+      }
+      if(zeros == row.length){
+        return true;
+      }
+      else{
+        return false;
+      }
+    },
+    
+    divideC: function(matri, row, i){
+      var line = matri[row];
+      console.log("line: " + line);
       var c = line[i];
+      console.log("c: " + c);
       var length = line.length;
+      console.log("length: " + length);
       for(var j=0; j<length; j++){
         line[j] = line[j]/c;
       }
-      matrix[row] = line;
-      return matrix;
+      matri[row] = line;
+      return matri;
     },
     
-    subtractR: function(matrix, row, i){
-      var pivotRow = matrix[row];
+    subtractR: function(matri, row, i){
+      var pivotRow = matri[row];
       var pivot = pivotRow[i];
-      var length = matrix.length;
-      var elements = matrix[0].length;
-      console.log("els: " + elements + " i: " + i); 
+      var length = matri.length;
+      var elements = matri[0].length;
       if((i+1) != elements){
         for(var z=0; z<length; z++){ //loop over rows
           if(z!=row){
-            var checkRow = matrix[z];
+            var checkRow = matri[z];
             var checkPivot = checkRow[i];
             for(var y=0; y<elements; y++){
-              matrix[z][y] = (matrix[z][y] - (checkPivot*matrix[row][y]));
+              matri[z][y] = (matri[z][y] - (checkPivot*matri[row][y]));
             }
           }
         }
       }
-      console.log("mat no " + i + " is " + matrix);
-      return matrix;
+      return matri;
     },
     
-    getRow: function(lead, matrix, rows){
-      for(var j=0; j<matrix.length; j++){ //loop over rows
-        if(matrix[j][lead] != 0 && rows.indexOf(j)==-1){
+    getRow: function(lead, matri, rows){
+      for(var j=0; j<matri.length; j++){ //loop over rows
+        if(matri[j][lead] != 0 && rows.indexOf(j)==-1){
           return j;
         }
       }
+      return -1;
     },
     
-    moveToi: function(matrix, row, i){
-      var tmp = matrix[i];
-      matrix[i] = matrix[row];
-      matrix[row] = tmp;
-      return matrix;
+    moveToi: function(matri, row, i){
+      var tmp = matri[i];
+      matri[i] = matri[row];
+      matri[row] = tmp;
+      return matri;
     },
     
   divideByC: function(matrix,row,col){
     c = matrix[row][col];
-    console.log("row is: " + row + "col is: " + col); //this function keep receiving 0 for row
-    matrix[row] = this.divideRow(matrix[row], c);
-    return matrix;
+    matri[row] = this.divideRow(matri[row], c);
+    return matri;
     },
     
     divideRow: function(row, c){ //divide all elements in a row by the coefficient
@@ -324,27 +356,20 @@ $.extend(KhanUtil, {
       return row;
     },
     
-  fixRows: function(matrix,col, foundVars){
-      var matrixTwo = matrix;
-      var length = matrix.length;
+  fixRows: function(matri,col, foundVars){
+      var length = matri.length;
       for(var i=foundVars; i<=length; i++){
-        console.log("Im here and i= " + i + " and length= " + length);
-        console.log("el: " + matrix[i][col]);
-        if(matrix[i][col] !=0){
+        if(matri[i][col] !=0){
           return i;
         }
         else { //find row that has a leading var for col
           for(var j=i; j<length;){
-            console.log("else j= " + j);
-            console.log("el2: " + matrix[j][col]);
-            if(matrix[j][col] == 0){
+            if(matri[j][col] == 0){
               j++
-              console.log("j is: " + j);
               
             }
             else{
-              console.log("im in the else: " + j );
-              matrix = this.replaceRow(i,j, matrix);
+              matri = this.replaceRow(i,j, matri);
               return i;
             }
           } 
@@ -352,12 +377,12 @@ $.extend(KhanUtil, {
       } return -1;
     },
     
-    replaceRow: function(wrong, right, matrix){
-      var i = matrix[wrong];
-      var j = matrix[right];
-      matrix[right] = i;
-      matrix[wrong] = j;
-      return matrix;
+    replaceRow: function(wrong, right, matri){
+      var i = matri[wrong];
+      var j = matri[right];
+      matri[right] = i;
+      matri[wrong] = j;
+      return matri;
     },    
 
     
