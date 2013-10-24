@@ -239,7 +239,8 @@ $.extend(KhanUtil, {
         var factor = Math.pow(10, precision).toFixed(5);
         return Math.round((num * factor).toFixed(5)) / factor;
     },
-    
+
+    //Written by Elise, returns reduced row echelon form of a matrix
     rref: function(matri){
       var rows = []; 								//store rows that have been found to contain a leading var
       var length = matri.length; 					//for optimization
@@ -258,24 +259,28 @@ $.extend(KhanUtil, {
       
       for(var i=0; i<length; i++){ 					//loop over rows
         var row = this.getRow(i, matri, rows); 		//get the row that contains leading var for column i
-        rows.push(row); 							//add to row storage
+
         if(row > -1 && !this.rowZero(matri[row])){ 	//if a row can be found & the row is not all zeros
           matri = this.moveToi(matri, row, i);		//move the row to the correct index
- 
+          console.log("-: " + matri); 
+          rows.push(row); 							//add to row storage  
           if(i < length){ 							//if not at the last column
-            this.divideC(matri, row, i); 			// set leading var in row to 1
-            this.subtractR(matri, row, i); 			//subtract row from other rows as necessary
+            matri = this.divideC(matri, row, i); 			// set leading var in row to 1
+            console.log(i + ":" + matri);
+            matri = this.subtractR(matri, row, i); 			//subtract row from other rows as necessary
           }
           else { 									//if at the last var
             return matri;
           }
         }
       }  
+      console.log("rows: " + rows);
       return matri;
     },
     
     
-    roundElements: function(matri){ 				//round all elements to two decimals
+    roundElements: function(matr){ 				//round all elements to two decimals
+      var matri = matr;
       var length = matri.length;
       var elements = matri[0].length;
       var tmp = 0;
@@ -306,18 +311,20 @@ $.extend(KhanUtil, {
       }
     },
     
-    divideC: function(matri, row, i){
+    divideC: function(matr, row, i){
+      var matri = matr;
       var line = matri[row];
       var c = line[i];
       var length = line.length;
       for(var j=0; j<length; j++){
-        line[j] = line[j]/c
+        line[j] = line[j]/c;
       }
       matri[row] = line;
       return matri;
     },
     
-    subtractR: function(matri, row, i){
+    subtractR: function(matr, row, i){
+      var matri = matr;
       var pivotRow = matri[row];
       var pivot = pivotRow[i];
       var length = matri.length;
@@ -340,7 +347,8 @@ $.extend(KhanUtil, {
       return matri;
     },
     
-    getRow: function(lead, matri, rows){
+    getRow: function(lead, matr, rows){
+      var matri = matr;
       var length = matri.length;
       var tmp = 0;
       for(var j=0; j<length; j++){ //loop over rows
@@ -352,7 +360,8 @@ $.extend(KhanUtil, {
       return -1; //return -1 if no row is found
     },
     
-    moveToi: function(matri, row, i){
+    moveToi: function(matr, row, i){
+      var matri = matr;
       var tmp = matri[i];
       matri[i] = matri[row];
       matri[row] = tmp;
