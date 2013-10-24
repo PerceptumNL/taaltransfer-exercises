@@ -247,13 +247,16 @@ $.extend(KhanUtil, {
       for(var i=0; i<length; i++){ //loop over rows
         var row = this.getRow(i, matri, rows);
         rows.push(row);
-        if(row > -1 ){
+        console.log("row: " + row + " i: " + i + " elements: " + elements + " length: " + length);
+        if(this.rowZero(matri[row])){
+          console.log("all zeros: " + matri[row]);
+        }
+
+        if(row > -1 && !this.rowZero(matri[row])){
           matri = this.moveToi(matri, row, i);
-          console.log("row: " + row + " i: " + i + " elements: " + elements + " length: " + length); 
-          if(i < length-1){
+ 
+          if(i < length){
             this.divideC(matri, row, i);
-          }
-          if(i < length-1){ 
             this.subtractR(matri, row, i);
             console.log("10: " + matri + ":" + matri[i]);
           }
@@ -301,7 +304,7 @@ $.extend(KhanUtil, {
       var length = line.length;
       console.log("length: " + length);
       for(var j=0; j<length; j++){
-        line[j] = line[j]/c;
+        line[j] = Math.round((line[j]/c)*100)/100;
       }
       matri[row] = line;
       return matri;
@@ -312,16 +315,17 @@ $.extend(KhanUtil, {
       var pivot = pivotRow[i];
       var length = matri.length;
       var elements = matri[0].length;
-      if((i+1) != elements){
+      ///if((i+1) != elements){
         for(var z=0; z<length; z++){ //loop over rows
           if(z!=row){
             var checkRow = matri[z];
             var checkPivot = checkRow[i];
             for(var y=0; y<elements; y++){
+              console.log("1: " + checkRow + "\n");
               matri[z][y] = (matri[z][y] - (checkPivot*matri[row][y]));
             }
           }
-        }
+        //}
       }
       return matri;
     },
