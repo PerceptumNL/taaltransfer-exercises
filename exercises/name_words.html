@@ -11,11 +11,13 @@
         <var id="WORDS">readFile("words.csv")</var>
         <var id="SENTENCES">readFile("zinnen.csv")</var>
         <var id="PARTS">readFile("zinsdelen.csv")</var>
+        <var id="NUMBER">randRange(0,30)</var>
+        <var id="TUPLE">fixSentence(SENTENCES[NUMBER])</var>
     </div>
 
     <div class="problems">
         <div>
-            <p class="question">Test <var>WORDS</var></p>
+            <p class="question"><var>TUPLE[0]</var></p>
 
 
            
