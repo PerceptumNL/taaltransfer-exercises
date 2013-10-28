@@ -7,15 +7,13 @@
 // but not across them.
 
 $.extend(KhanUtil, {
-    
-    
-    readFile: function(file){
-      console.log(file);
-      //var words = $.ajax( "words.csv" );
-      jQuery.get(file, function(data){
-        var words = data;
-        console.log(words);
-      });
-    }
+
+  readFile: function(file){
+    console.log("Reading " + file + "...");
+    var words = $.ajax({type: "GET", url: file, async: false}).responseText;
+    console.log(words);
+    console.log(words.responseText);
+    return words;
+  }
 });
 
