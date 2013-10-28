@@ -27,6 +27,15 @@ $.extend(KhanUtil, {
     pair[0] = pair[0].replace(/(^\s*)|(\s*$)/gi,"");
     pair[0] = pair[0].concat(".");
     return pair;
+  },
+  
+  /***
+  ***/
+  fixParts: function(sentence){
+    var parts = sentence.split(",");
+    for(var i=0; i<parts.length;i=i+2){
+      console.log(parts[i] + " is " + parts[i+1]);
+    }
   }
 });
 
