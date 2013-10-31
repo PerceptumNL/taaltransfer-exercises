@@ -92,6 +92,13 @@ $.extend(KhanUtil, {
     return "";
   },
   
+  /***
+    Return the index that belongs to the tuple that contains the requested name. Returns
+    -1 if the name is not found in a populated element.
+    This function has almost the same functionality as findNameValue.
+    Type: number
+  ***/
+  
   findNameIndex: function(sentence, name){
     var length = sentence.length;
     var index = 0;
@@ -102,6 +109,15 @@ $.extend(KhanUtil, {
     }
     return -1;
   },
+  
+  /***
+    Return the sentence formatted as a question.
+    This function stores the 'pv' in a temporary variable, removes the 'pv'-tuple from
+    the array and adds the temporary variable as element 0 of the array. Capitalization
+    of other elements is removed, and the first letter in temp is capitalized. A question
+    mark is concatenated at the end. 
+    Type: string
+  ***/
   
   makeQuestion: function(sentence){
     var pv = this.findNameIndex(sentence, "pv");
@@ -117,6 +133,33 @@ $.extend(KhanUtil, {
     question = question.concat("?");
     question = question.replace(question[0], question[0].toUpperCase());
     return question;
+  },
+  
+  /***
+    Wrapper to make all HTML-elements with class "drag" draggable in jQuery.
+    Returns nothing.
+    Type: void
+  ***/
+  makeDrag: function(){
+  	$(document).ready(
+  		function(){
+    		$(".drag").draggable();
+    	}
+    )
+  },
+  
+  /***
+    Makes sentence parts draggable.
+    Type: void
+  ***/
+  dragParts: function(sentence){
+    var length = sentence.length;
+    for(var i=0; i<length;i++){
+      if(sentence[i][0] !== ""){
+        $("<span class='drag'>" + sentence[i][0] + "</span> ").appendTo('.hier');
+      }
+    }
+    $(".").appendTo('.hier');
   }
 });
 
