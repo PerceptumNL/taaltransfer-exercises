@@ -96,7 +96,7 @@ $.extend(KhanUtil, {
     var length = sentence.length;
     var index = 0;
     for(var i=0; i<length; i++){
-      if(sentence[i][1] == name){
+      if(sentence[i][1] == name && sentence[i][0] !==""){
         return i;
       }
     }
@@ -105,11 +105,8 @@ $.extend(KhanUtil, {
   
   makeQuestion: function(sentence){
     var pv = this.findNameIndex(sentence, "pv");
-    console.log(sentence);
     var tmp = sentence[pv];
-    console.log("tmp: "+ tmp);
     sentence.splice(pv,1);
-    console.log("sen: " + sentence);
     sentence.unshift(tmp);
     var question ="";
     for(var i=0; i<sentence.length; i++){
@@ -119,8 +116,6 @@ $.extend(KhanUtil, {
     }
     question = question.concat("?");
     question = question.replace(question[0], question[0].toUpperCase());
-    console.log("char1: " + question[0].toUpperCase());
-    console.log(question);
     return question;
   }
 });
