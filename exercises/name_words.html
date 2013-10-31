@@ -2,29 +2,31 @@
 <html data-require="math math-format graphie taaltransfer">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Title</title>
+    <title>Grammaticaal ontleden 1</title>
     <script src="../khan-exercise.js"></script>
 </head>
 <body>
     <div class="exercise">
     <div class="vars">
-        <var id="WORDS">readFile("words.csv")</var>
         <var id="SENTENCES">readFile("zinnen.csv")</var>
         <var id="PARTS">readFile("zinsdelen.csv")</var>
-        <var id="NUMBER">randRange(0,30)</var>
+        <var id="NUMBER">randRange(0,lastCatSentence(1, SENTENCES))</var>
         <var id="TUPLE">fixSentence(SENTENCES[NUMBER])</var>
+        <var id="GRAMMAR">fixParts(PARTS[NUMBER])</var>
     </div>
 
     <div class="problems">
         <div>
-            <p class="question"><var>TUPLE[0]</var> is in category <var>TUPLE[1]</var></p>
-            <p><var>fixParts(PARTS[NUMBER])</var></p>
+            <p class="question"><var>TUPLE[0]</var></p>
+            <p><var>GRAMMAR</var> <var>lastCatSentence(1, SENTENCES)</var> <var>findNameValue(TUPLE[0],"pv")</var></p>
 
 
-           
-            <div class="solution" data-type="text">
-                <p>hoi</p>
-            </div>
+			<span class="solution" data-type="multiple">
+				<p>Persoonsvorm:<p class="sol" data-type="text">hoi</p></p>
+				<p>Onderwerp:<p class="sol" data-type="text">doei</p></p>
+				<p>Werkwoordelijk gezegde:<p class="sol" data-type="text">doei</p></p>		
+				<p>Lijdend voorwerp:<p class="sol" data-type="text">doei</p></p>		
+			</span>
             
         </div>
     </div>
