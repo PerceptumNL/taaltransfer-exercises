@@ -17,15 +17,13 @@
 
     <div class="problems">
         <div>
-            <p class="question"><var>TUPLE[0]</var></p>
-            <p><var>GRAMMAR</var> <var>lastCatSentence(1, SENTENCES)</var> <var>findNameValue(TUPLE[0],"pv")</var></p>
-
-
+            <p class="question">Gegeven is de zin "<var>TUPLE[0]</var>". </p>
+            <p>Ontleed deze zin grammaticaal en vul de verschillende onderdelen in.</p>
 			<span class="solution" data-type="multiple">
-				<p>Persoonsvorm:<p class="sol" data-type="text">hoi</p></p>
-				<p>Onderwerp:<p class="sol" data-type="text">doei</p></p>
-				<p>Werkwoordelijk gezegde:<p class="sol" data-type="text">doei</p></p>		
-				<p>Lijdend voorwerp:<p class="sol" data-type="text">doei</p></p>		
+				<p>Persoonsvorm:<p class="sol" data-type="text"><var>findNameValue(GRAMMAR, "pv")</var></p></p>
+				<p>Onderwerp:<p class="sol" data-type="text"><var>findNameValue(GRAMMAR, "ond")</var></p></p>
+				<p>Werkwoordelijk gezegde:<p class="sol" data-type="text"><var>findNameValue(GRAMMAR, "wwg")</var></p></p>		
+				<p>Lijdend voorwerp:<p class="sol" data-type="text"><var>findNameValue(GRAMMAR, "lv")</var></p></p>		
 			</span>
             
         </div>

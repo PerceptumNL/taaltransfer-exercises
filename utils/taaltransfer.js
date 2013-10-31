@@ -40,7 +40,7 @@ $.extend(KhanUtil, {
   fixParts: function(sentence){
     var parts = sentence.split(",");
     var everything = [];
-    var length = parts.length/2;
+    var length = parts.length;
     var tmp = [];
     for(var i=0; i<length;i=i+2){
       tmp = [];    
@@ -74,13 +74,22 @@ $.extend(KhanUtil, {
   
   /***
     Return the value that belongs to the requested grammatical name, for example "pv".
-    This function checks all uneven indexes to see if the name is there, and if so,
-    returns the element before it.
+    This function takes the 2d array returned by fixParts and checks every 2nd element
+    of every 1d array to see if it is equal to that name. If so, it returns the 1st 
+    element of the 1d array. If nothing with the name is found, an empty string is 
+    returned.
     Type: string
   ***/
+  
   findNameValue: function(sentence, name){
-    console.log(sentence);
-    console.log(name);
+    var length = sentence.length;
+    var index = 0;
+    for(var i=0; i<length; i++){
+      if(sentence[i][1] == name){
+        return sentence[i][0];
+      }
+    }
+    return "";
   }
 });
 
