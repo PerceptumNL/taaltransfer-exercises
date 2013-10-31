@@ -141,11 +141,14 @@ $.extend(KhanUtil, {
     Type: void
   ***/
   makeDrag: function(){
-  	$(document).ready(
-  		function(){
+  	$(document).ready(function(){
     		$(".drag").draggable();
-    	}
-    )
+    		$(".drop").droppable({drop: function(evt, ui){
+    			//$this.addClass('.high')
+    			console.log("drop'd");
+    		}
+    	})
+  	})
   },
   
   /***
@@ -159,7 +162,6 @@ $.extend(KhanUtil, {
         $("<span class='drag'>" + sentence[i][0] + "</span> ").appendTo('.hier');
       }
     }
-    $(".").appendTo('.hier');
   }
 });
 

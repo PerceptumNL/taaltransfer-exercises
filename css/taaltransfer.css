@@ -3,3 +3,14 @@
   border:1px dotted grey;
   margin:1px;
 }
+
+.drop{
+  color:black;
+  border:1px solid black;
+  margin:10px;
+  background-color:white;
+}
+
+.high{
+	background-color: black;
+}
