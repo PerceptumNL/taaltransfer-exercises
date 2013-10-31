@@ -90,6 +90,38 @@ $.extend(KhanUtil, {
       }
     }
     return "";
+  },
+  
+  findNameIndex: function(sentence, name){
+    var length = sentence.length;
+    var index = 0;
+    for(var i=0; i<length; i++){
+      if(sentence[i][1] == name){
+        return i;
+      }
+    }
+    return -1;
+  },
+  
+  makeQuestion: function(sentence){
+    var pv = this.findNameIndex(sentence, "pv");
+    console.log(sentence);
+    var tmp = sentence[pv];
+    console.log("tmp: "+ tmp);
+    sentence.splice(pv,1);
+    console.log("sen: " + sentence);
+    sentence.unshift(tmp);
+    var question ="";
+    for(var i=0; i<sentence.length; i++){
+      if(sentence[i][0] !== ""){
+        question = question.concat(sentence[i][0].toLowerCase() + " ");
+      }
+    }
+    question = question.concat("?");
+    question = question.replace(question[0], question[0].toUpperCase());
+    console.log("char1: " + question[0].toUpperCase());
+    console.log(question);
+    return question;
   }
 });
 
