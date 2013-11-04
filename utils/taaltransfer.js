@@ -136,12 +136,13 @@ $.extend(KhanUtil, {
   },
   
   /***
-    Wrapper to make all HTML-elements with class "drag" draggable in jQuery.
+    Wrapper to make all HTML-elements with class "drag" draggable in jQuery, and to 
+    generate checks for correct/incorrect answers.
     Returns nothing.
     Type: void
   ***/
   
-  makeDrag: function(){
+  makeDrag: function(zin){
   	$(document).ready(function(){
   	    var correctAns = [];
         var wrongAns = [];
@@ -175,16 +176,18 @@ $.extend(KhanUtil, {
     	  }
     	});
     	$("#check-answer-button").click(function(){
-    	    var drags = correctAns;
+    	    var drags = wrongAns;
     		for(var i=0; i<drags.length; i++){
-    		  $(drags[i]).removeClass("correct");
-    		  $(drags[i]).addClass("incorrect");
+    		  $("#"+drags[i]).removeClass("correct");
+    		  $("#"+drags[i]).addClass("incorrect");
     		}
-    		var corr = wrongAns;
+    		var corr = correctAns;
     		for(var j=0; j<corr.length; j++){
-    		  console.log("'" + $(corr[j]).text() + "' staat op de goede plek.");
-    		  $(corr[j]).removeClass("incorrect");
-    		  $(corr[j]).addClass("correct");
+    		  $("#"+corr[j]).removeClass("incorrect");
+    		  $("#"+corr[j]).addClass("correct");
+    		}  	
+    		if(corr.length === zin){
+    		  console.log("correct!");
     		}
     	});
   	});
@@ -198,10 +201,45 @@ $.extend(KhanUtil, {
   
   dragParts: function(sentence){
     var length = sentence.length;
+    var els = 0;
     for(var i=0; i<length;i++){
       if(sentence[i][0] !== ""){
         $("<span class='drag' id ='" + sentence[i][1] + "' >" + sentence[i][0] + "</span> ").appendTo('.answers');
+        els++;
       }
+    }
+    return els;
+  },
+  
+  /***
+    Generate answerBoxes for each category
+    Type: void
+  ***/
+  
+  answerBoxes: function(level){
+    var selected = [];
+    var levelOne = ['pv'];
+    var levelTwo = ['pv','ond','rest'];
+    var levelThree = ['pv','ond','wwg','restpv'];
+    var levelFour = ['pv','ond','lv','wwg','restpv'];
+    
+    switch(level){
+      case 1: 
+        selected = levelOne;
+        break;      
+      case 2:
+        selected = levelTwo;
+        break;
+      case 3:
+        selected = levelThree;
+        break;
+      case 4:
+        selected = levelFour;
+        break;
+    }
+    var length = selected.length;
+    for(var i=0; i<length; i++){
+      $("<p class='drop' id ='" + selected[i] + "' >" + selected[i].toUpperCase() + "</span> ").appendTo('.boxes');
     }
   }
 });

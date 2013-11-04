@@ -2,39 +2,32 @@
   color:black;
   border:1px dotted grey;
   margin:1px;
+  padding:3px;
   width:100px;
   height:100px;
   border-radius:5px; 
-  z-index:50;
 }
 
 .drop{
-  color:black;
+  color:#777;
   width: 300px;
   height: 100px;
-  border:1px solid black;
+  border:1px solid #777;
   margin:10px;
   padding:2px;
   background-color:white;
   border-radius:5px;
-  z-index:-1;
-}
-
-.high{
-	background-color: black;
-	border-radius:5px;
 }
 
 .correct{
-  background-color:green;
+  background-color:#80ac07;
   border-radius:5px;
   color:white;
   padding:5px;
-  z-index:50;
 }
 
 .incorrect{
-  background-color:red;
+  background-color:#d55704;
   border-radius:5px;
   color:white;
   padding:5px;
