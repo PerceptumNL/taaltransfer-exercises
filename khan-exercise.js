@@ -835,7 +835,7 @@ var Khan = (function() {
         var initScripts = [
                 "../local-only/jquery.js",
                 "../local-only/jquery-migrate-1.1.1.js",
-                "../local-only/jquery.ui.core.js",
+                /**"../local-only/jquery.ui.core.js",
                 "../local-only/jquery.ui.widget.js",
                 "../local-only/jquery.ui.mouse.js",
                 "../local-only/jquery.ui.position.js",
@@ -844,7 +844,9 @@ var Khan = (function() {
                 "../local-only/jquery.ui.button.js",
                 "../local-only/jquery.ui.draggable.js",
                 "../local-only/jquery.ui.resizable.js",
-                "../local-only/jquery.ui.dialog.js",
+                "../local-only/jquery.ui.dialog.js",**/
+                "../local-only/ui/jquery-ui.js",
+                "../local-only/ui/jquery.ui.dialog.js",
                 "../local-only/jquery.qtip.js",
                 "../local-only/underscore.js",
                 "../local-only/kas.js",

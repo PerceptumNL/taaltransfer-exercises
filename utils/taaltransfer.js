@@ -140,26 +140,67 @@ $.extend(KhanUtil, {
     Returns nothing.
     Type: void
   ***/
+  
   makeDrag: function(){
   	$(document).ready(function(){
-    		$(".drag").draggable();
-    		$(".drop").droppable({drop: function(evt, ui){
-    			//$this.addClass('.high')
-    			console.log("drop'd");
+  	    var correctAns = [];
+        var wrongAns = [];
+    	$(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false});
+    	$(".drop").droppable({
+          drop:function(event, ui){
+    	    var dragID = ui.draggable.attr("id");
+    	    var dropID = $(this).attr('id');
+            var newDrag = "#" + dragID;
+            var indexR = correctAns.indexOf(dragID);
+            var indexW = wrongAns.indexOf(dragID);
+			if(dragID === dropID){
+			  if(indexR>-1){
+			    correctAns.splice(indexR, 1);
+			  }
+			  if(indexW>-1){
+			    wrongAns.splice(indexW, 1);
+			  }
+			  correctAns.push(dragID);
+			}
+			else{
+			  if(indexW>-1){
+			    wrongAns.splice(indexW, 1);
+			  }
+			  if(indexR>-1){
+			    correctAns.splice(indexR,1);
+			  }
+			  wrongAns.push(dragID);
+			}
+			console.log("right: " + correctAns + ", wrong: " + wrongAns);
+    	  }
+    	});
+    	$("#check-answer-button").click(function(){
+    	    var drags = correctAns;
+    		for(var i=0; i<drags.length; i++){
+    		  $(drags[i]).removeClass("correct");
+    		  $(drags[i]).addClass("incorrect");
     		}
-    	})
-  	})
+    		var corr = wrongAns;
+    		for(var j=0; j<corr.length; j++){
+    		  console.log("'" + $(corr[j]).text() + "' staat op de goede plek.");
+    		  $(corr[j]).removeClass("incorrect");
+    		  $(corr[j]).addClass("correct");
+    		}
+    	});
+  	});
   },
+  
   
   /***
     Makes sentence parts draggable.
     Type: void
   ***/
+  
   dragParts: function(sentence){
     var length = sentence.length;
     for(var i=0; i<length;i++){
       if(sentence[i][0] !== ""){
-        $("<span class='drag'>" + sentence[i][0] + "</span> ").appendTo('.hier');
+        $("<span class='drag' id ='" + sentence[i][1] + "' >" + sentence[i][0] + "</span> ").appendTo('.answers');
       }
     }
   }
