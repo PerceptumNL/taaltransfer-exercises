@@ -9,7 +9,7 @@ $.extend(KhanUtil, {
   
   readFile: function(file){
     console.log("Reading " + file + "...");
-    var words = $.ajax({type: "GET", url: file, async: false}).responseText;
+    var words = $.ajax({type: "GET", url: "../csv/" + file, async: false}).responseText;
     var wordArray = words.split(/\n/);
     return wordArray;
   },
