@@ -281,7 +281,7 @@ function handleAttempt(data) {
 
     if (localMode || Exercises.currentCard.get("preview")) {
         // Skip the server; just pretend we have success
-        return false;
+//        return false;
     }
 
     if (previewingItem) {
@@ -369,6 +369,11 @@ function onHintButtonClicked() {
 function onHintShown(e, data) {
     // Grow the scratchpad to cover the new hint
     Khan.scratchpad.resize();
+
+	// resize the container
+	if (typeof Khan.onItyEfResize == 'function'){
+		Khan.onItyEfResize();
+	}
 
     hintsUsed++;
     updateHintButtonText();

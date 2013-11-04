@@ -57,6 +57,39 @@
       history mode
 */
 
+function getURLParameters(paramName) 
+{
+        var sURL = window.document.URL.toString();  
+    if (sURL.indexOf("?") > 0)
+    {
+       var arrParams = sURL.split("?");         
+       var arrURLParams = arrParams[1].split("&");      
+       var arrParamNames = new Array(arrURLParams.length);
+       var arrParamValues = new Array(arrURLParams.length);     
+       var i = 0;
+       for (i=0;i<arrURLParams.length;i++)
+       {
+        var sParam =  arrURLParams[i].split("=");
+        arrParamNames[i] = sParam[0];
+        if (sParam[1] != "")
+            arrParamValues[i] = unescape(sParam[1]);
+        else
+            arrParamValues[i] = "No Value";
+       }
+
+       for (i=0;i<arrURLParams.length;i++)
+       {
+                if(arrParamNames[i] == paramName){
+            //alert("Param:"+arrParamValues[i]);
+                return arrParamValues[i];
+             }
+       }
+       return "No Parameters Found";
+    }
+    return ""
+
+}
+
 var Khan = (function() {
     // Numbers which are coprime to the number of bins, used for jumping through
     // exercises.  To quickly test a number in python use code like:
@@ -143,7 +176,8 @@ var Khan = (function() {
     assessmentMode,
 
     // The ID, filename, and name of the exercise -- these will only be set here in localMode
-    exerciseId = ((/([^\/.]+)(?:\.html)?$/.exec(window.location.pathname) || [])[1]) || "",
+    //exerciseId = ((/([^\/.]+)(?:\.html)?$/.exec(window.location.pathname) || [])[1]) || "",
+    exerciseId = getURLParameters("ity_ef_slug").replace("static:", ""),
     exerciseFile = exerciseId + ".html",
     exerciseName = deslugify(exerciseId),
 
@@ -244,6 +278,7 @@ var Khan = (function() {
                 document.getElementsByTagName("head")[0].appendChild(link);
             };
 
+            addLink("css/taaltransfer.css");
             addLink("css/khan-site.css");
             addLink("css/khan-exercise.css");
             addLink("local-only/katex/katex.css");
@@ -1419,6 +1454,11 @@ var Khan = (function() {
 
         // Add the problem into the page
         Khan.scratchpad.resize();
+
+		// resize the container
+		if (typeof Khan.onItyEfResize == 'function'){
+			Khan.onItyEfResize();
+		}
 
         // Enable the all answer input elements except the check answer button.
         $("#answercontent input").not("#check-answer-button")
