@@ -1,4 +1,3 @@
-var bool=false;
 $.extend(KhanUtil, {
 
   /***
@@ -10,7 +9,7 @@ $.extend(KhanUtil, {
   
   readFile: function(file){
     console.log("Reading " + file + "...");
-    var words = $.ajax({type: "GET", url: "../csv/" + file, async: false}).responseText;
+    var words = $.ajax({type: "GET", url: file, async: false}).responseText;
     var wordArray = words.split(/\n/);
     return wordArray;
   },
@@ -144,8 +143,8 @@ $.extend(KhanUtil, {
   ***/
   
   makeDrag: function(zin){
-    var bool=false;
-  	var correctAns = [];
+    var dfd = new $.Deferred();
+    var correctAns = [];
     var wrongAns = [];
     $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false});
     $(".drop").droppable({
@@ -156,46 +155,48 @@ $.extend(KhanUtil, {
         var indexR = correctAns.indexOf(dragID);
         var indexW = wrongAns.indexOf(dragID);
         if(dragID === dropID){
-  	      if(indexR>-1){
-	        correctAns.splice(indexR, 1);
-	      }
-	      if(indexW>-1){
-	        wrongAns.splice(indexW, 1);
-	      }
-	      correctAns.push(dragID);
-	    }
-	    else{
-	      if(indexW>-1){
-	        wrongAns.splice(indexW, 1);
-	      }
-	      if(indexR>-1){
-	        correctAns.splice(indexR,1);
-	      }
-	      wrongAns.push(dragID);
-	    }
-	    console.log("right: " + correctAns + ", wrong: " + wrongAns);
-      }
+          if(indexR>-1){
+            correctAns.splice(indexR, 1);
+          }
+          if(indexW>-1){
+            wrongAns.splice(indexW, 1);
+          }
+          correctAns.push(dragID);
+        }
+        else{
+          if(indexW>-1){
+            wrongAns.splice(indexW, 1);
+          }
+          if(indexR>-1){
+            correctAns.splice(indexR,1);
+          }
+          wrongAns.push(dragID);
+        }
+        console.log("right: " + correctAns + ", wrong: " + wrongAns);
+      }  
     });
-    $("#check-answer-button").click(function(event){
-      console.log("hoi");
+    $("#check-answer-button").click(function(){
       var drags = wrongAns;
       for(var i=0; i<drags.length; i++){
         $("#"+drags[i]).removeClass("correct");
-    	$("#"+drags[i]).addClass("incorrect");
+        $("#"+drags[i]).addClass("incorrect");
       }
       var corr = correctAns;
       for(var j=0; j<corr.length; j++){
         $("#"+corr[j]).removeClass("incorrect");
-    	$("#"+corr[j]).addClass("correct");
-      }  	
-      console.log("zin: " + zin + " arr: " + correctAns);
-      if(zin === corr.length){
+        $("#"+corr[j]).addClass("correct");
+      }          
+      if(corr.length === zin){
         bool = true;
-        return bool;
+        dfd.resolve("finally true");
+        console.log("truettt");
       }
-    });console.log("b: " + bool);
-  }, 
-  
+    });
+    $.when(dfd).done(function(){
+      $("<span id='bool' style='visibility:hidden'>" + bool + "</span>").appendTo(".question");
+      console.log("done");
+    });
+  },
   
   /***
     Makes sentence parts draggable.
@@ -246,4 +247,3 @@ $.extend(KhanUtil, {
     }
   }
 });
-
