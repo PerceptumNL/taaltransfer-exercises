@@ -155,6 +155,10 @@ $.extend(KhanUtil, {
         var indexR = correctAns.indexOf(dragID);
         var indexW = wrongAns.indexOf(dragID);
         if(dragID === dropID){
+          if(dragID === "pv"){
+            $('#pv2').remove();
+            $("<span class='fakeDrag' id='pv2'>" + $('#'+dragID).text() + "</span>").appendTo('#wwg.drop');
+          }
           if(indexR>-1){
             correctAns.splice(indexR, 1);
           }
@@ -164,6 +168,9 @@ $.extend(KhanUtil, {
           correctAns.push(dragID);
         }
         else{
+          if(dragID === "pv"){
+            $('#pv2').remove();
+          }
           if(indexW>-1){
             wrongAns.splice(indexW, 1);
           }
@@ -185,6 +192,7 @@ $.extend(KhanUtil, {
         $("#"+corr[j]).removeClass("incorrect");
         $("#"+corr[j]).addClass("correct");
       }          
+      $('#pv2').addClass("correct");
       if(corr.length === zin){
         bool = true;
         dfd.resolve("DONE");
@@ -240,7 +248,7 @@ $.extend(KhanUtil, {
     }
     var length = selected.length;
     for(var i=0; i<length; i++){
-      $("<p class='drop' id ='" + selected[i] + "' >" + selected[i].toUpperCase() + "</span> ").appendTo('.boxes');
+      $("<p class='drop' id ='" + selected[i] + "' >" + selected[i].toUpperCase() + "<br></span> ").appendTo('.boxes');
     }
   }
 });
