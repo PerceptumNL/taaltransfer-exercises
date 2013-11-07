@@ -136,6 +136,29 @@ $.extend(KhanUtil, {
   },
   
   /***
+    Check which element is clicked
+  ***/
+  elClicked: function(el){
+    var bla = false;
+    $('.els').live('click', function(){
+      if($(this).hasClass("fakeDrag")){
+        $(this).removeClass("fakeDrag");
+      }
+      else{
+        $(this).addClass("fakeDrag");
+      }
+    });
+  },
+  
+  getIds: function(cl){
+    var arr = [];
+    var def = new $.Deferred();
+    $("."+cl).each(function(){
+      arr.push($(this).attr('id'));
+      console.log(arr);
+    });
+  },
+  /***
     Wrapper to make all HTML-elements with class "drag" draggable in jQuery, and to 
     generate checks for correct/incorrect answers.
     Returns nothing.
@@ -220,6 +243,17 @@ $.extend(KhanUtil, {
     return els;
   },
   
+  regParts: function(sentence){
+    var length = sentence.length;
+    var els = 0;
+    for(var i=0; i<length;i++){
+      if(sentence[i][0] !== ""){
+        $("<span class='els' id ='" + sentence[i][1] + "' > " + sentence[i][0] + " </span> ").appendTo('.answers');
+        els++;
+      }
+    }
+    return els;
+  },
   /***
     Generate answerBoxes for each category
     Type: void
