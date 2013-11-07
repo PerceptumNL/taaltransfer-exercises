@@ -175,24 +175,26 @@ $.extend(KhanUtil, {
         console.log("right: " + correctAns + ", wrong: " + wrongAns);
       }  
     });
-    $("#check-answer-button").click(function(){
+    $("#check-answer-button").live('click',function(){
       var drags = wrongAns;
       for(var i=0; i<drags.length; i++){
         $("#"+drags[i]).removeClass("correct");
         $("#"+drags[i]).addClass("incorrect");
       }
+      console.log("wronglength: " + drags.length + " zin: " + zin);
       var corr = correctAns;
       for(var j=0; j<corr.length; j++){
         $("#"+corr[j]).removeClass("incorrect");
         $("#"+corr[j]).addClass("correct");
       }          
+      console.log("corlength: " + corr.length + " zin: " + zin);
       if(corr.length === zin){
         bool = true;
+        console.log("resolving dfd....");
         dfd.resolve("finally true");
-        console.log("truettt");
       }
     });
-    $.when(dfd).done(function(){
+    dfd.done(function(){
       $("<span id='bool' style='visibility:hidden'>" + bool + "</span>").appendTo(".question");
       console.log("done");
     });
