@@ -178,7 +178,7 @@ $.extend(KhanUtil, {
         var indexR = correctAns.indexOf(dragID);
         var indexW = wrongAns.indexOf(dragID);
         if(dragID === dropID){
-          if(dragID === "pv"){
+          if(dropID === "pv"){
             $('#pv2').remove();
             $("<span class='fakeDrag' id='pv2'>" + $('#'+dragID).text() + "</span>").appendTo('#wwg.drop');
           }
@@ -207,13 +207,13 @@ $.extend(KhanUtil, {
     $("#check-answer-button").live('mousedown',function(){
       var drags = wrongAns;
       for(var i=0; i<drags.length; i++){
-        $("#"+drags[i]).removeClass("correct");
-        $("#"+drags[i]).addClass("incorrect");
+        $("#"+drags[i].".drag").removeClass("correct");
+        $("#"+drags[i].".drag").addClass("incorrect");
       }
       var corr = correctAns;
       for(var j=0; j<corr.length; j++){
-        $("#"+corr[j]).removeClass("incorrect");
-        $("#"+corr[j]).addClass("correct");
+        $("#"+corr[j].".drag").removeClass("incorrect");
+        $("#"+corr[j].".drag").addClass("correct");
       }          
       $('#pv2').addClass("correct");
       if(corr.length === zin){
