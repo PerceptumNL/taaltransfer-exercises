@@ -7,7 +7,6 @@ $.extend(KhanUtil, {
   ***/
   
   readFile: function(file){
-    console.log("Reading " + file + "...");
     var words = $.ajax({type: "GET", url: file, async: false}).responseText;
     var wordArray = words.split(/\n/);
     return wordArray;
@@ -154,7 +153,6 @@ $.extend(KhanUtil, {
     var def = new $.Deferred();
     $("."+cl).each(function(){
       arr.push($(this).attr('id'));
-      console.log(arr);
     });
   },
   /***
@@ -322,8 +320,6 @@ $.extend(KhanUtil, {
     var end = -1;
     var corr = [];    
     var zinlen = this.getZin(zin);
-    console.log("len: " + zinlen);
-    
     $('.pipe').click(function(){
       $(this).toggleClass('clicked');
       click++;
@@ -331,7 +327,6 @@ $.extend(KhanUtil, {
         var herp = $('.clicked');
         var start = $(herp[0]).attr('id');
         var end = $(herp[1]).attr('id');
-        console.log("start: " + start + ", end: " + end);
         var selected = "";
         for(var z = start-20; z<=end-21; z++){
           selected = selected.concat($('#'+z).text());
@@ -345,19 +340,23 @@ $.extend(KhanUtil, {
           }
         }
         if(same){
-          $('<span class = "drag selected" id=' + eq + '>' + selected + '</span>').appendTo('.answers');
+          $('<span class="wrapwords"><span class = "drag selected" id=' + eq + '>' + selected + '</span><span class="delete">x</span></span>').appendTo('.answers');
         }
         else{
-          $('<span class = "drag selected" id=' + click + '>' + selected + '</span>').appendTo('.answers');
+          $('<span class="	wrapwords"><span class = "drag selected" id=' + click + '>' + selected + '</span><span class="delete">x</span></span>').appendTo('.answers');
         }
-        
+        $('.clicked').removeClass('clicked');
+        $('.delete').click(function(){
+           $(this).siblings().remove();
+           $(this).unwrap();
+           $(this).remove();
+         });
       }
       $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false});
       $(".drop").droppable({
         drop: function(event, ui){
           var dragID = ui.draggable.attr("id");
           var dropID = $(this).attr('id');
-          console.log("dropid: " + dropID + ", dragid: " + dragID);  
           var indexR = corr.indexOf(dragID);
           if(dropID===dragID){
             if(indexR < 0){
@@ -372,15 +371,10 @@ $.extend(KhanUtil, {
         }    
       });
     });
+
     $("#check-answer-button").mousedown(function(){
-      console.log("A: " + corr);
-      console.log("c: " + corr.length + ", z: " + zinlen);
-      console.log("c2: " + corr + ", z2: " + zin);
       if(corr.length == zinlen){
         $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
-      }
-      else{
-        console.log("YOU TRIED");
       }
     });
   },
