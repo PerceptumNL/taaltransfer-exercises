@@ -294,15 +294,15 @@ $.extend(KhanUtil, {
     }
     sentString = sentString.split(" ");
     var k = 20;
-    var l = 30;
     for(var j=0; j<sentString.length; j++){
       if(sentString[j] != ""){
-        $('<span class = "pipe" id = ' + k +'> | </span>').appendTo('.answers');
+        $('<span class = "pipe" id = ' + k +'>  </span>').appendTo('.answers');
         $('<span class = "userPick" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
-        $('<span class = "pipe" id = ' + l +'> | </span>').appendTo('.answers');
         k++;
-        l++;
-        }
+      }
+      if(j == sentString.length-1){
+        $('<span class ="pipe" id =' + k + '>  </span>').appendTo('.answers');
+      }
     }
   },
   
@@ -310,7 +310,7 @@ $.extend(KhanUtil, {
     var click = 0;
     var start = -1;
     var end = -1;
-    $('.userPick').click(function(){
+    $('.pipe').click(function(){
       $(this).toggleClass('clicked');
       click++;
       if($('.clicked').length === 2){
@@ -319,7 +319,7 @@ $.extend(KhanUtil, {
         var end = $(herp[1]).attr('id');
         console.log("start: " + start + ", end: " + end);
         var selected = "";
-        for(var z = start; z<=end; z++){
+        for(var z = start-20; z<=end-21; z++){
           selected = selected.concat($('#'+z).text());
         }
         var eq = "";

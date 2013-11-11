@@ -53,7 +53,14 @@
   padding:5px;
 }
 
+.pipe{
+  background-color:pink;
+  border-radius:5px;
+  padding:5px;
+}
+
 .clicked{
   background-color:grey;
   color:white;
 }
+
