@@ -47,9 +47,9 @@
 .wrong{color:red}
 
 .userPick{
-  background-color:white;
+  background-color:#F8F8F8;
   border-radius:5px;
-  color:grey;
+  color:black;
   padding:5px;
 }
 
@@ -57,7 +57,7 @@
   background-color:#E6E6E6;
   border: 1px dotted #E6E6E6;
   border-radius:5px;
-  padding:1px;
+  padding:3px;
 }
 
 .clicked{

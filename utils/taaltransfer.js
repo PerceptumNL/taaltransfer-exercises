@@ -294,12 +294,12 @@ $.extend(KhanUtil, {
     var k = 20;
     for(var j=0; j<sentString.length; j++){
       if(sentString[j] != ""){
-        $('<span class = "pipe" id = ' + k +'>  </span>').appendTo('.answers');
+        $('<span class = "pipe" id = ' + k +'></span>').appendTo('.answers');
         $('<span class = "userPick" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
         k++;
       }
       if(j == sentString.length-1){
-        $('<span class ="pipe" id =' + k + '>  </span>').appendTo('.answers');
+        $('<span class ="pipe" id =' + k + '></span>').appendTo('.answers');
       }
     }
   },
@@ -319,6 +319,7 @@ $.extend(KhanUtil, {
     var start = -1;
     var end = -1;
     var corr = [];    
+    var incorr = [];
     var zinlen = this.getZin(zin);
     $('.pipe').click(function(){
       $(this).toggleClass('clicked');
@@ -343,7 +344,7 @@ $.extend(KhanUtil, {
           $('<span class="wrapwords"><span class = "drag selected" id=' + eq + '>' + selected + '</span><span class="delete">x</span></span>').appendTo('.answers');
         }
         else{
-          $('<span class="	wrapwords"><span class = "drag selected" id=' + click + '>' + selected + '</span><span class="delete">x</span></span>').appendTo('.answers');
+          $('<span class="wrapwords"><span class = "drag selected" id=' + click + '>' + selected + '</span><span class="delete">x</span></span>').appendTo('.answers');
         }
         $('.clicked').removeClass('clicked');
         $('.delete').click(function(){
@@ -358,21 +359,49 @@ $.extend(KhanUtil, {
           var dragID = ui.draggable.attr("id");
           var dropID = $(this).attr('id');
           var indexR = corr.indexOf(dragID);
-          if(dropID===dragID){
-            if(indexR < 0){
-              corr.push(dragID); 
+          var indexW = incorr.indexOf(dragID);
+          if(dragID === dropID){
+            if(dropID === "pv"){
+              $('#pv2').remove();
+              $("<span class='fakeDrag' id='pv2'>" + $('#'+dragID).text() + "</span>").appendTo('#wwg.drop');
             }
+            if(indexR>-1){
+              corr.splice(indexR, 1);
+            }
+            if(indexW>-1){
+              incorr.splice(indexW, 1);
+            }
+            corr.push(dragID);
           }
           else{
-            if(indexR > 0){
+            if(dropID === "pv"){
+              $('#pv2').remove();
+              $("<span class='fakeDrag' id='pv2'>" + $('#'+dragID).text() + "</span>").appendTo('#wwg.drop');
+            }
+            if(indexW>-1){
+              incorr.splice(indexW, 1);
+            }
+            if(indexR>-1){
               corr.splice(indexR,1);
             }
+            incorr.push(dragID);
           }
+        console.log("c: " + corr + " ic: " + incorr);
         }    
       });
     });
 
     $("#check-answer-button").mousedown(function(){
+      for(var y=0; y<corr.length;y++){
+        console.log("goed: " + corr[y]);
+        $("#"+corr[y]).removeClass('incorrect');
+        $("#"+corr[y]).addClass('correct');
+      }
+      for(var z=0; z<incorr.length; z++){
+        console.log("fout: " + incorr[y]);
+        $("#"+incorr[y]).removeClass('correct');
+        $("#"+incorr[y]).addClass('incorrect');
+      }
       if(corr.length == zinlen){
         $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
       }
