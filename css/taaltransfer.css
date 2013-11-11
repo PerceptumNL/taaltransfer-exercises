@@ -47,12 +47,13 @@
 .wrong{color:red}
 
 .userPick{
-  background-color:blue;
+  background-color:white;
   border-radius:5px;
-  color:white;
+  color:grey;
   padding:5px;
 }
 
 .clicked{
-  background-color:green;
+  background-color:grey;
+  color:white;
 }

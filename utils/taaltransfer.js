@@ -1,5 +1,4 @@
 $.extend(KhanUtil, {
-
   /***
     Return array of sentence:category pairs
     The Ajax call will save the response text in var words, which is then split at
@@ -228,7 +227,7 @@ $.extend(KhanUtil, {
   
   /***
     Makes sentence parts draggable.
-    Type: void
+    Type: number
   ***/
   
   dragParts: function(sentence){
@@ -295,22 +294,46 @@ $.extend(KhanUtil, {
     }
     sentString = sentString.split(" ");
     for(var j=0; j<sentString.length; j++){
-      $('<span class = "userPick" id = ' + j +'> ' + sentString[j] + ' </span>').appendTo('.answers');
+      if(sentString[j] != ""){
+        $('<span class = "userPick" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
+        }
     }
   },
   
   userPick: function(){
+    var done = false;
     var click = 0;
-    console.log($('.userPick').text());
+    var start = -1;
+    var end = -1;
     $('.userPick').click(function(){
-      console.log("CLICKED");
       $(this).toggleClass('clicked');
       click++;
-      console.log(click);
       if($('.clicked').length === 2){
-        click = 0;
-        console.log($('.clicked').text());
+        var herp = $('.clicked');
+        var start = $(herp[0]).attr('id');
+        var end = $(herp[1]).attr('id');
+        console.log("start: " + start + ", end: " + end);
+        var selected = "";
+        for(var z = start; z<=end; z++){
+          selected = selected.concat($('#'+z).text());
+        }
+        $('<span class = "drag selected" id=' + click + '>' + selected + '</span>').appendTo('.answers');
       }
+      $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false});
+    });
+  },
+  
+  
+  userDrag: function(){
+    console.log('hoi');
+    $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false}); 
+    $(".drop").droppable({
+      drop: function(event, ui){
+        var dragID = ui.draggable.attr("id");
+        var dropID = $(this).attr('id');
+        console.log("dropid: " + dropID + ", dragid: " + dragID);  
+      }    
     });
   }
+  
 });
