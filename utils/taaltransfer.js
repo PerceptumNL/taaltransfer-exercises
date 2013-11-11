@@ -178,7 +178,7 @@ $.extend(KhanUtil, {
         var indexR = correctAns.indexOf(dragID);
         var indexW = wrongAns.indexOf(dragID);
         if(dragID === dropID){
-          if(dropID === "pv"){
+          if(dragID === "pv"){
             $('#pv2').remove();
             $("<span class='fakeDrag' id='pv2'>" + $('#'+dragID).text() + "</span>").appendTo('#wwg.drop');
           }
@@ -207,13 +207,13 @@ $.extend(KhanUtil, {
     $("#check-answer-button").live('mousedown',function(){
       var drags = wrongAns;
       for(var i=0; i<drags.length; i++){
-        $("#"+drags[i].".drag").removeClass("correct");
-        $("#"+drags[i].".drag").addClass("incorrect");
+        $("#"+drags[i]).removeClass("correct");
+        $("#"+drags[i]).addClass("incorrect");
       }
       var corr = correctAns;
       for(var j=0; j<corr.length; j++){
-        $("#"+corr[j].".drag").removeClass("incorrect");
-        $("#"+corr[j].".drag").addClass("correct");
+        $("#"+corr[j]).removeClass("incorrect");
+        $("#"+corr[j]).addClass("correct");
       }          
       $('#pv2').addClass("correct");
       if(corr.length === zin){
@@ -284,5 +284,33 @@ $.extend(KhanUtil, {
     for(var i=0; i<length; i++){
       $("<p class='drop' id ='" + selected[i] + "' >" + selected[i].toUpperCase() + "<br></span> ").appendTo('.boxes');
     }
+  },
+  
+  makePick: function(sentence){
+    var sentString = "";
+    for (var i=0; i<sentence.length; i++){
+      if(sentence[i][0] !=""){
+        sentString = sentString.concat(sentence[i][0] + " ");
+      }
+    }
+    sentString = sentString.split(" ");
+    for(var j=0; j<sentString.length; j++){
+      $('<span class = "userPick" id = ' + j +'> ' + sentString[j] + ' </span>').appendTo('.answers');
+    }
+  },
+  
+  userPick: function(){
+    var click = 0;
+    console.log($('.userPick').text());
+    $('.userPick').click(function(){
+      console.log("CLICKED");
+      $(this).toggleClass('clicked');
+      click++;
+      console.log(click);
+      if($('.clicked').length === 2){
+        click = 0;
+        console.log($('.clicked').text());
+      }
+    });
   }
 });
