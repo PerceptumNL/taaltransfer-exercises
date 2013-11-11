@@ -310,6 +310,7 @@ $.extend(KhanUtil, {
     var click = 0;
     var start = -1;
     var end = -1;
+    var corr = [];    
     $('.pipe').click(function(){
       $(this).toggleClass('clicked');
       click++;
@@ -341,19 +342,25 @@ $.extend(KhanUtil, {
       $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false});
       $(".drop").droppable({
         drop: function(event, ui){
-          var dragID = ui.draggable.attr("class");
+          var dragID = ui.draggable.attr("id");
           var dropID = $(this).attr('id');
           console.log("dropid: " + dropID + ", dragid: " + dragID);  
-          for(var x=0; x<zin.length;x++){
-            console.log("z: " + zin[x][0]);
-            console.log("c: " + $("."+selected).text());
-            console.log("----------");
-            if($("#"+dragID).text() == zin[x][0]){
-              console.log(zin[x] + " ==== " + $("#"+dragID).text());
+          var indexR = corr.indexOf(dragID);
+          if(dropID===dragID){
+            if(indexR < 0){
+              corr.push(dragID); 
+            }
+          }
+          else{
+            if(indexR > 0){
+              corr.splice(indexR,1);
             }
           }
         }    
       });
+    });
+    $("#check-answer-button").mousedown(function(){
+      console.log("A: " + corr);
     });
   },
   
