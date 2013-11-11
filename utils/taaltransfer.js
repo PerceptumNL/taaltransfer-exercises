@@ -306,11 +306,24 @@ $.extend(KhanUtil, {
     }
   },
   
+  getZin: function(zin){
+    var count = 0;
+    for(var i=0; i<zin.length; i++){
+      if(zin[i][0] != ""){
+        count++;
+      }
+    }
+    return count;
+  },
+  
   userPick: function(zin){
     var click = 0;
     var start = -1;
     var end = -1;
     var corr = [];    
+    var zinlen = this.getZin(zin);
+    console.log("len: " + zinlen);
+    
     $('.pipe').click(function(){
       $(this).toggleClass('clicked');
       click++;
@@ -361,6 +374,14 @@ $.extend(KhanUtil, {
     });
     $("#check-answer-button").mousedown(function(){
       console.log("A: " + corr);
+      console.log("c: " + corr.length + ", z: " + zinlen);
+      console.log("c2: " + corr + ", z2: " + zin);
+      if(corr.length == zinlen){
+        $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
+      }
+      else{
+        console.log("YOU TRIED");
+      }
     });
   },
   
