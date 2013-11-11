@@ -293,15 +293,20 @@ $.extend(KhanUtil, {
       }
     }
     sentString = sentString.split(" ");
+    var k = 20;
+    var l = 30;
     for(var j=0; j<sentString.length; j++){
       if(sentString[j] != ""){
+        $('<span class = "pipe" id = ' + k +'> | </span>').appendTo('.answers');
         $('<span class = "userPick" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
+        $('<span class = "pipe" id = ' + l +'> | </span>').appendTo('.answers');
+        k++;
+        l++;
         }
     }
   },
   
-  userPick: function(){
-    var done = false;
+  userPick: function(zin){
     var click = 0;
     var start = -1;
     var end = -1;
@@ -317,23 +322,41 @@ $.extend(KhanUtil, {
         for(var z = start; z<=end; z++){
           selected = selected.concat($('#'+z).text());
         }
-        $('<span class = "drag selected" id=' + click + '>' + selected + '</span>').appendTo('.answers');
+        var eq = "";
+        var same = false;
+        for(var y = 0; y<zin.length; y++){
+          if(selected.trim() == zin[y][0].trim()){
+            same = true;
+            eq = zin[y][1];
+          }
+        }
+        if(same){
+          $('<span class = "drag selected" id=' + eq + '>' + selected + '</span>').appendTo('.answers');
+        }
+        else{
+          $('<span class = "drag selected" id=' + click + '>' + selected + '</span>').appendTo('.answers');
+        }
+        
       }
       $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false});
+      $(".drop").droppable({
+        drop: function(event, ui){
+          var dragID = ui.draggable.attr("class");
+          var dropID = $(this).attr('id');
+          console.log("dropid: " + dropID + ", dragid: " + dragID);  
+          for(var x=0; x<zin.length;x++){
+            console.log("z: " + zin[x][0]);
+            console.log("c: " + $("."+selected).text());
+            console.log("----------");
+            if($("#"+dragID).text() == zin[x][0]){
+              console.log(zin[x] + " ==== " + $("#"+dragID).text());
+            }
+          }
+        }    
+      });
     });
   },
   
   
-  userDrag: function(){
-    console.log('hoi');
-    $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false}); 
-    $(".drop").droppable({
-      drop: function(event, ui){
-        var dragID = ui.draggable.attr("id");
-        var dropID = $(this).attr('id');
-        console.log("dropid: " + dropID + ", dragid: " + dragID);  
-      }    
-    });
-  }
-  
+ 
 });
