@@ -49,13 +49,18 @@ $.extend(KhanUtil, {
     return everything;
   },
   
+  /***
+    Return a number that corresponds to a sentence in one of the categories in cats
+    The array tmp contains one random number for each category. After tmp is filled, 
+    one number is randomly picked from the array and returned.
+    Type: number
+  ***/
   makeNumber: function(cats, sentences){
     var len = cats.length;
     var tmp = [KhanUtil.randRange(0,this.lastCatSentence(cats[0], sentences))];
     for(var i=1; i<len; i++){
       tmp.push(KhanUtil.randRange(this.lastCatSentence(cats[i]-1, sentences), this.lastCatSentence(cats[i], sentences)));
     }
-    console.log(tmp);
     return KhanUtil.randFromArray(tmp);
   },
   
@@ -142,6 +147,14 @@ $.extend(KhanUtil, {
     return question;
   },
   
+  /***
+    Concatenates all the words in the sentence by collecting all elements with class 
+    'els' in one string, split by a space. If the main verb is at the beginning of the
+    sentence, or the sentence starts with an interrogative word, add a question mark at
+    the end. Otherwise, at a period. Then, every word is added to the DOM as a separate
+    span-element.
+    Type: void
+  ***/
   makeAns: function(){
     var els = $('.els');
     var sent = "";
@@ -151,7 +164,7 @@ $.extend(KhanUtil, {
         sent = sent.concat(" ");
       }
     }
-    if($(els[0]).attr('id') == 'pv' || $(els[0]).text().trim() == "Waarom"){
+    if($(els[0]).attr('id') == 'pv' || $(els[0]).text().trim() == "Waarom" || $(els[0]).text().trim() == "Hoeveel"){
       sent = sent.concat("?");
     }
     else{
@@ -170,8 +183,12 @@ $.extend(KhanUtil, {
   },
   
   /***
-    Check which element is clicked
+    Toggles the class 'fakeDrag' on and off, indicating whether or not the user has
+    selected an element in class 'els'. Also removes the 'incorrect' class to reset
+    the element's style.
+    Type: void
   ***/
+  
   elClicked: function(el){
     $('.els').click(function(){
       $(this).toggleClass("fakeDrag");
@@ -179,21 +196,28 @@ $.extend(KhanUtil, {
     });
   },
   
+  /***
+    Once the user clicks the 'submit answer' button, all selected elements are collected
+    in the variable answers. Because the main verb is only one word, answer's length 
+    should be equal to 1. If the id in answers is equal to the id of the main verb,
+    append an invisible element that contains 'true'. Otherwise, append an invisible 
+    element that contains 'false'. This function adds the class 'correct' and removes the 
+    class 'incorrect' if the answer is correct and adds 'incorrect' if it is not.
+    Type: void
+  ***/
   checkClick: function(){
     $('#check-answer-button').mousedown(function(){
       var answers = $('.fakeDrag');
       if(answers.length === 1){
-        for (var i=0; i<answers.length; i++){
-          if($(answers[i]).attr('id') == 'pv'){
-            $("#bool").remove();
-            $('<span style="visibility:hidden" id="bool">true</span>').appendTo('.answers');
-            $('.fakeDrag').addClass("correct");          
-          }
-          else{
-            $("#bool").remove();
-            $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
-            $('.fakeDrag').addClass("incorrect");
-          }
+        if($(answers[0]).attr('id') == 'pv'){
+          $("#bool").remove();
+          $('<span style="visibility:hidden" id="bool">true</span>').appendTo('.answers');
+          $('.fakeDrag').addClass("correct");          
+        }
+        else{
+          $("#bool").remove();
+          $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
+          $('.fakeDrag').addClass("incorrect");
         }
       }
       else{
@@ -205,84 +229,11 @@ $.extend(KhanUtil, {
     });
   },
   
-  getIds: function(cl){
-    var arr = [];
-    var def = new $.Deferred();
-    $("."+cl).each(function(){
-      arr.push($(this).attr('id'));
-    });
-  },
-  /***
-    Wrapper to make all HTML-elements with class "drag" draggable in jQuery, and to 
-    generate checks for correct/incorrect answers.
-    Returns nothing.
-    Type: void
-  ***/
-  
-  makeDrag: function(zin){
-    var dfd = new $.Deferred();
-    var correctAns = [];
-    var wrongAns = [];
-    $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false});
-    $(".drop").droppable({
-      drop:function(event, ui){
-        var dragID = ui.draggable.attr("id");
-        var dropID = $(this).attr('id');
-        var newDrag = "#" + dragID;
-        var indexR = correctAns.indexOf(dragID);
-        var indexW = wrongAns.indexOf(dragID);
-        var drops = $('.drop');
-        if(dragID === dropID){
-          if(dragID === "pv"){
-            $('#pv2').remove();
-            $("<span class='fakeDrag' id='pv2'>" + $('#'+dragID).text() + "</span>").appendTo('#wwg.drop');
-          }
-          if(indexR>-1){
-            correctAns.splice(indexR, 1);
-          }
-          if(indexW>-1){
-            wrongAns.splice(indexW, 1);
-          }
-          correctAns.push(dragID);
-        }
-        else{
-          if(dragID === "pv"){
-            $('#pv2').remove();
-          }
-          if(indexW>-1){
-            wrongAns.splice(indexW, 1);
-          }
-          if(indexR>-1){
-            correctAns.splice(indexR,1);
-          }
-          wrongAns.push(dragID);
-        }
-      }  
-    });
-    $("#check-answer-button").live('mousedown',function(){
-      var drags = wrongAns;
-      for(var i=0; i<drags.length; i++){
-        $("#"+drags[i]).removeClass("correct");
-        $("#"+drags[i]).addClass("incorrect");
-      }
-      var corr = correctAns;
-      for(var j=0; j<corr.length; j++){
-        $("#"+corr[j]).removeClass("incorrect");
-        $("#"+corr[j]).addClass("correct");
-      }          
-      $('#pv2').addClass("correct");
-      if(corr.length === zin){
-        bool = true;
-        dfd.resolve("DONE");
-      }
-    });
-    dfd.done(function(){
-      $("<span id='bool' style='visibility:hidden'>" + bool + "</span>").appendTo(".question");
-    });
-  },
-  
   /***
     Makes sentence parts draggable.
+    For each element in the sentence, append an element with class 'drag'.
+    This function keeps track of all non-empty sentence-parts and returns the length
+    of the sentence.
     Type: number
   ***/
   
@@ -298,6 +249,15 @@ $.extend(KhanUtil, {
     return els;
   },
   
+  /***
+    Creates an invisible element for each word in the sentence by appending an element with
+    class 'els' for each word in the sentence. This way, the functions following it know
+    which word has which id.
+    This function keeps track of all non-empty words and returns the length of the 
+    sentence.
+    Type: number
+  ***/
+  
   regParts: function(sentence){
     var length = sentence.length;
     var els = 0;
@@ -309,6 +269,7 @@ $.extend(KhanUtil, {
     }
     return els;
   },
+  
   /***
     Generate answerBoxes for each category
     Type: void
@@ -341,6 +302,15 @@ $.extend(KhanUtil, {
     }
   },
   
+  /***
+    This function turns sentence-parts into a sentence, then splits it into an array 
+    separated by a space. For each word that is non-empty, a pipe-element and userPick 
+    element are appended. The pipe-element is a clickable element that wraps each word so
+    the user can select words, and the userPick element is an element that contains
+    the word. If the sentence starts with the main verb or an interrogative word, a 
+    question mark is added. If not, a period is added.
+    Type: void.
+  ***/
   makePick: function(sentence){
     var sentString = "";
     for (var i=0; i<sentence.length; i++){
@@ -350,7 +320,6 @@ $.extend(KhanUtil, {
     }
     sentString = sentString.split(" ");
     var k = 20;
-    console.log(sentence);
     var els = $('.els');
     for(var j=0; j<sentString.length; j++){
       if(sentString[j] != ""){
@@ -359,7 +328,7 @@ $.extend(KhanUtil, {
         k++;
       }
       if(j == sentString.length-1){
-        if(sentence[0][1] == 'pv' || sentence[0][0] == "Waarom"){
+        if(sentence[0][1] == 'pv' || sentence[0][0] == "Waarom" || sentence[0][0] == "Hoeveel"){
           $('<span class ="pipe" id =' + k + '></span>?').appendTo('.answers');
         }
         else{
@@ -368,6 +337,12 @@ $.extend(KhanUtil, {
       }
     }
   },
+  
+  /***
+    Function that returns the length of the sentence from the parts, not counting empty 
+    parts.
+    Type: number
+  ***/
   
   getZin: function(zin){
     var count = 0;
@@ -379,6 +354,10 @@ $.extend(KhanUtil, {
     return count;
   },
   
+  /***
+    This function stores all ids in an array and gets the sentence length. 
+    Type: void
+  ***/
   userPick: function(zin){
     var click = 0;
     var start = -1;
@@ -391,13 +370,28 @@ $.extend(KhanUtil, {
       ids.push($(drops[k]).attr('id'));
     }
     var zinlen = this.getZin(zin);
+    
+    /***
+    When an element with class 'pipe' is clicked the class 'clicked' is toggled on or off. 
+    When exactly two 'pipe'-elements are selected, it retrieves the ids of the two 
+    elements and stores them in the variables 'start' and 'end'. By subtracting 20 from 
+    start and 21 from end this function is able to retrieve ids of the elements between 
+    the two pipes. Using these ids, it creates a string of the selected words. Then, the 
+    function compares the selection to the actual parts, and if they're the same it saves 
+    the corresponding id in 'eq' and sets 'same' to true. However, if the array of ids 
+    does not contain the selection while it IS an actual part, 'eq' is set to 'restpv'.
+    If 'same' is set to true, a span-element with 'eq' as id is appended, otherwise a
+    span-element with the amount of clicks received so far as id is appended.
+    Then, it removes the class 'clicked' from all elements with class 'clicked'.
+    ***/
+    
     $('.pipe').click(function(){
       $(this).toggleClass('clicked');
       click++;
       if($('.clicked').length === 2){
-        var herp = $('.clicked');
-        var start = $(herp[0]).attr('id');
-        var end = $(herp[1]).attr('id');
+        var c = $('.clicked');
+        var start = $(c[0]).attr('id');
+        var end = $(c[1]).attr('id');
         var selected = "";
         for(var z = start-20; z<=end-21; z++){
           selected = selected.concat($('#'+z).text());
@@ -415,7 +409,6 @@ $.extend(KhanUtil, {
             }
           }
         }
-        console.log(ids);
         if(same){
           $('<span class = "drag selected" id=' + eq + '>' + selected + '<span class="delete">x</span></span>').appendTo('.answers');
         }
@@ -423,13 +416,35 @@ $.extend(KhanUtil, {
           $('<span class = "drag selected" id=' + click + '>' + selected + '<span class="delete">x</span></span>').appendTo('.answers');
         }
         $('.clicked').removeClass('clicked');
+        
+        /***
+          If an element with class 'delete' is clicked, the element itself, its siblings
+          and its parent will be removed. This function is used to provide an option to 
+          the user to remove selected elements.
+        ***/
+        
         $('.delete').click(function(){
            $(this).siblings().remove();
            $(this).parent().remove();
            $(this).remove();
          });
       }
+      
+      /***
+        All elements with class 'drag' are initialized as draggable items.
+      ***/
+      
       $(".drag").draggable({containment:'#workarea', cursor:'move', addClasses: false});
+      
+      /***
+        If a draggable element is dropped on a droppable element, the ids of both elements
+        are retrieved. The function checks if the draggable element was already added to
+        either the array with correct or the array with incorrect answers.
+        If both ids are equal, the class 'incorrect' is removed and the class 'correct' is
+        added. If both ids are not equal, the class 'correct' is removed and the class 
+        'incorrect' is added. This function adds a copy of the text in the main verb's
+        element to the element with id 'wwg', because the main verb is part of 'wwg'.
+      ***/
       
       $(".drop").droppable({
         drop: function(event, ui){
@@ -457,6 +472,13 @@ $.extend(KhanUtil, {
         });
       });
       
+      /***
+        When the 'submit answer' button is clicked, toggle classes so that correct answers
+        become green and incorrect answers become orange.
+        If the amount of correct answers is equal to the amount of sentence-parts, append
+        an invisible element that contains 'true'.
+      ***/
+      
     $("#check-answer-button").mousedown(function(){
       $('.corr').removeClass('incorrect');
       $('.corr').addClass('correct');
@@ -471,7 +493,5 @@ $.extend(KhanUtil, {
       }
     });
   },
-  
-  
- 
+   
 });
