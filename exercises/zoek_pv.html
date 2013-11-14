@@ -25,17 +25,18 @@
     
     <div class="problems">
         <div>
-            <p class="question">Ontleed de volgende zin redekundig en vul de onderdelen in: Laat ze ook zelf in stukken hakken</p>
-            <p class='answers'></p>                 
-            <var>elClicked("pv")</var>
+            <p class="question">Selecteer in onderstaande zin de persoonsvorm.</p>
+            <p class='answers'></p>       
+            <var>makeAns()</var>          
+            <var>elClicked("pv")</var><var>checkClick()</var>
             <span class="solution" data-type="custom">
               <div class="instruction">Klik op de persoonsvorm.</div>
-              <div class="guess">$('.fakeDrag')</div>
-              <div class="validator-function">console.log(guess);if(guess===true){return true}</div>
+              <div class="guess">$("#bool").text()</div>
+              <div class="validator-function">console.log("g: " + typeof(guess)); if(guess.trim() == "true"){return true}</div>
               <div class="show-guess">guess</div>        
             </span>
             
-            <var>makeDrag(ZIN)</var>
+            
         </div>
     </div>
 

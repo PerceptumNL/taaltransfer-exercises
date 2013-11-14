@@ -133,18 +133,61 @@ $.extend(KhanUtil, {
     return question;
   },
   
+  makeAns: function(){
+    var els = $('.els');
+    var sent = "";
+    for(var i=0;i<els.length;i++){
+      sent = sent.concat($(els[i]).text().trim());
+      if(i<els.length-1){
+        sent = sent.concat(" ");
+      }
+    }
+    sent = sent.split(" ");
+    console.log("n1: " + sent);
+    var pv = $('#pv');
+    for(var j=0; j<sent.length; j++){
+      console.log(sent[j]);
+      if(sent[j] === pv.text().trim()){
+        $('<span id="pv" class = "els">' + sent[j] + ' </span>').appendTo('.answers');
+      }
+      else{
+        $('<span class = "els">' + sent[j] + ' </span>').appendTo('.answers');
+      }
+    }
+  },
+  
   /***
     Check which element is clicked
   ***/
   elClicked: function(el){
-    var bla = false;
-    $('.els').live('click', function(){
-      if($(this).hasClass("fakeDrag")){
-        $(this).removeClass("fakeDrag");
+    $('.els').click(function(){
+      $(this).toggleClass("fakeDrag");
+    });
+  },
+  
+  checkClick: function(){
+    $('#check-answer-button').mousedown(function(){
+      var answers = $('.fakeDrag');
+      if(answers.length === 1){
+        for (var i=0; i<answers.length; i++){
+          if($(answers[i]).attr('id') == 'pv'){
+            $("#bool").remove();
+            $('<span style="visibility:hidden" id="bool">true</span>').appendTo('.answers');
+            $('.fakeDrag').addClass("correct");          
+          }
+          else{
+            $("#bool").remove();
+            $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
+            $('.fakeDrag').addClass("incorrect");
+          }
+        }
       }
       else{
-        $(this).addClass("fakeDrag");
+        $("#bool").remove();
+        $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
+        $('.fakeDrag').addClass("incorrect");        
       }
+      
     });
   },
   
@@ -245,7 +288,7 @@ $.extend(KhanUtil, {
     var els = 0;
     for(var i=0; i<length;i++){
       if(sentence[i][0] !== ""){
-        $("<span class='els' id ='" + sentence[i][1] + "' > " + sentence[i][0] + " </span> ").appendTo('.answers');
+        $("<span class='els' style='visibility:hidden' id ='" + sentence[i][1] + "' > " + sentence[i][0] + " </span> ").appendTo('.question');
         els++;
       }
     }
@@ -295,7 +338,7 @@ $.extend(KhanUtil, {
     for(var j=0; j<sentString.length; j++){
       if(sentString[j] != ""){
         $('<span class = "pipe" id = ' + k +'></span>').appendTo('.answers');
-        $('<span class = "userPick" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
+        $('<span class = "userPick els" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
         k++;
       }
       if(j == sentString.length-1){
