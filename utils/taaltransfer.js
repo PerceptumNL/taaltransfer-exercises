@@ -364,7 +364,7 @@ $.extend(KhanUtil, {
           if(dragID === dropID){
             if(dropID === "pv"){
               $('#pv2').remove();
-              $("<span class='fakeDrag corr2' id='pv2'>" + $('#'+dragID).text() + "</span>").appendTo('#wwg.drop');
+              $("<span class='fakeDrag corr2' id='pv2'>" + $('#'+dragID).clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
             }
             $("#" + dragID).removeClass("inc");
             $("#" + dragID).addClass("corr");
@@ -372,7 +372,7 @@ $.extend(KhanUtil, {
           else{
             if(dropID === "pv"){
               $('#pv2').remove();
-              $("<span class='fakeDrag inc2' id='pv2'>" + $('#'+dragID).text() + "</span>").appendTo('#wwg.drop');
+              $("<span class='fakeDrag inc2' id='pv2'>" + $('#'+dragID).clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
             }
             $("#" + dragID).removeClass("corr");
             $("#" + dragID).addClass("inc");
