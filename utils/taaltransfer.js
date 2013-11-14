@@ -45,9 +45,18 @@ $.extend(KhanUtil, {
       tmp.push(parts[i]);
       tmp.push(parts[i+1]);
       everything.push(tmp);
-   
     }
     return everything;
+  },
+  
+  makeNumber: function(cats, sentences){
+    var len = cats.length;
+    var tmp = [KhanUtil.randRange(0,this.lastCatSentence(cats[0], sentences))];
+    for(var i=1; i<len; i++){
+      tmp.push(KhanUtil.randRange(this.lastCatSentence(cats[i]-1, sentences), this.lastCatSentence(cats[i], sentences)));
+    }
+    console.log(tmp);
+    return KhanUtil.randFromArray(tmp);
   },
   
   /***
@@ -142,11 +151,15 @@ $.extend(KhanUtil, {
         sent = sent.concat(" ");
       }
     }
+    if($(els[0]).attr('id') == 'pv' || $(els[0]).text().trim() == "Waarom"){
+      sent = sent.concat("?");
+    }
+    else{
+      sent = sent.concat(".");
+    }
     sent = sent.split(" ");
-    console.log("n1: " + sent);
     var pv = $('#pv');
     for(var j=0; j<sent.length; j++){
-      console.log(sent[j]);
       if(sent[j] === pv.text().trim()){
         $('<span id="pv" class = "els">' + sent[j] + ' </span>').appendTo('.answers');
       }
@@ -218,6 +231,7 @@ $.extend(KhanUtil, {
         var newDrag = "#" + dragID;
         var indexR = correctAns.indexOf(dragID);
         var indexW = wrongAns.indexOf(dragID);
+        var drops = $('.drop');
         if(dragID === dropID){
           if(dragID === "pv"){
             $('#pv2').remove();
@@ -336,6 +350,8 @@ $.extend(KhanUtil, {
     }
     sentString = sentString.split(" ");
     var k = 20;
+    console.log(sentence);
+    var els = $('.els');
     for(var j=0; j<sentString.length; j++){
       if(sentString[j] != ""){
         $('<span class = "pipe" id = ' + k +'></span>').appendTo('.answers');
@@ -343,7 +359,12 @@ $.extend(KhanUtil, {
         k++;
       }
       if(j == sentString.length-1){
-        $('<span class ="pipe" id =' + k + '></span>').appendTo('.answers');
+        if(sentence[0][1] == 'pv' || sentence[0][0] == "Waarom"){
+          $('<span class ="pipe" id =' + k + '></span>?').appendTo('.answers');
+        }
+        else{
+          $('<span class ="pipe" id =' + k + '></span>.').appendTo('.answers');
+        }
       }
     }
   },
@@ -364,6 +385,11 @@ $.extend(KhanUtil, {
     var end = -1;
     var corr = [];    
     var incorr = [];
+    var ids = [];
+    var drops = $('.drop');
+    for(var k=0; k<drops.length;k++){
+      ids.push($(drops[k]).attr('id'));
+    }
     var zinlen = this.getZin(zin);
     $('.pipe').click(function(){
       $(this).toggleClass('clicked');
@@ -381,9 +407,15 @@ $.extend(KhanUtil, {
         for(var y = 0; y<zin.length; y++){
           if(selected.trim() == zin[y][0].trim()){
             same = true;
-            eq = zin[y][1];
+            if(ids.indexOf(zin[y][1]) > -1){
+              eq = zin[y][1];
+            }
+            else{
+              eq = 'restpv';
+            }
           }
         }
+        console.log(ids);
         if(same){
           $('<span class = "drag selected" id=' + eq + '>' + selected + '<span class="delete">x</span></span>').appendTo('.answers');
         }
