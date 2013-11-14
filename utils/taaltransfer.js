@@ -162,6 +162,7 @@ $.extend(KhanUtil, {
   elClicked: function(el){
     $('.els').click(function(){
       $(this).toggleClass("fakeDrag");
+      $('.els').removeClass("incorrect");
     });
   },
   
