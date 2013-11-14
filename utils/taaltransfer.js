@@ -137,7 +137,8 @@ $.extend(KhanUtil, {
     sentence.splice(pv,1);
     sentence.unshift(tmp);
     var question ="";
-    for(var i=0; i<sentence.length; i++){
+    var len = sentence.length;
+    for(var i=0; i<len; i++){
       if(sentence[i][0] !== ""){
         question = question.concat(sentence[i][0].toLowerCase() + " ");
       }
@@ -158,9 +159,10 @@ $.extend(KhanUtil, {
   makeAns: function(){
     var els = $('.els');
     var sent = "";
-    for(var i=0;i<els.length;i++){
+    var len = els.length;
+    for(var i=0;i<len;i++){
       sent = sent.concat($(els[i]).text().trim());
-      if(i<els.length-1){
+      if(i<len-1){
         sent = sent.concat(" ");
       }
     }
@@ -172,7 +174,8 @@ $.extend(KhanUtil, {
     }
     sent = sent.split(" ");
     var pv = $('#pv');
-    for(var j=0; j<sent.length; j++){
+    var sLen = sent.length;
+    for(var j=0; j<sLen; j++){
       if(sent[j] === pv.text().trim()){
         $('<span id="pv" class = "els">' + sent[j] + ' </span>').appendTo('.answers');
       }
@@ -205,10 +208,12 @@ $.extend(KhanUtil, {
     class 'incorrect' if the answer is correct and adds 'incorrect' if it is not.
     Type: void
   ***/
+  
   checkClick: function(){
     $('#check-answer-button').mousedown(function(){
       var answers = $('.fakeDrag');
-      if(answers.length === 1){
+      var len = answers.length;
+      if(len === 1){
         if($(answers[0]).attr('id') == 'pv'){
           $("#bool").remove();
           $('<span style="visibility:hidden" id="bool">true</span>').appendTo('.answers');
@@ -311,9 +316,11 @@ $.extend(KhanUtil, {
     question mark is added. If not, a period is added.
     Type: void.
   ***/
+  
   makePick: function(sentence){
     var sentString = "";
-    for (var i=0; i<sentence.length; i++){
+    var len = sentence.length;
+    for (var i=0; i<len; i++){
       if(sentence[i][0] !=""){
         sentString = sentString.concat(sentence[i][0] + " ");
       }
@@ -321,13 +328,14 @@ $.extend(KhanUtil, {
     sentString = sentString.split(" ");
     var k = 20;
     var els = $('.els');
-    for(var j=0; j<sentString.length; j++){
+    var sLen = sentString.length;
+    for(var j=0; j<sLen; j++){
       if(sentString[j] != ""){
         $('<span class = "pipe" id = ' + k +'></span>').appendTo('.answers');
         $('<span class = "userPick els" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
         k++;
       }
-      if(j == sentString.length-1){
+      if(j == sLen-1){
         if(sentence[0][1] == 'pv' || sentence[0][0] == "Waarom" || sentence[0][0] == "Hoeveel"){
           $('<span class ="pipe" id =' + k + '></span>?').appendTo('.answers');
         }
@@ -346,7 +354,8 @@ $.extend(KhanUtil, {
   
   getZin: function(zin){
     var count = 0;
-    for(var i=0; i<zin.length; i++){
+    var len = zin.length;
+    for(var i=0; i<len; i++){
       if(zin[i][0] != ""){
         count++;
       }
@@ -366,7 +375,8 @@ $.extend(KhanUtil, {
     var incorr = [];
     var ids = [];
     var drops = $('.drop');
-    for(var k=0; k<drops.length;k++){
+    var len = drops.length;
+    for(var k=0; k<len;k++){
       ids.push($(drops[k]).attr('id'));
     }
     var zinlen = this.getZin(zin);
@@ -388,7 +398,8 @@ $.extend(KhanUtil, {
     $('.pipe').click(function(){
       $(this).toggleClass('clicked');
       click++;
-      if($('.clicked').length === 2){
+      var len = $('.clicked').length;
+      if(len === 2){
         var c = $('.clicked');
         var start = $(c[0]).attr('id');
         var end = $(c[1]).attr('id');
@@ -398,7 +409,8 @@ $.extend(KhanUtil, {
         }
         var eq = "";
         var same = false;
-        for(var y = 0; y<zin.length; y++){
+        var zLen = zin.length;
+        for(var y = 0; y<zLen; y++){
           if(selected.trim() == zin[y][0].trim()){
             same = true;
             if(ids.indexOf(zin[y][1]) > -1){
@@ -488,7 +500,8 @@ $.extend(KhanUtil, {
       $('.inc2').removeClass('correct');
       $('.corr2').addClass('correct');
       $('.corr2').removeClass('incorrect');
-      if($('.corr').length == zinlen){
+      var cLen = $('.corr').length;
+      if(cLen == zinlen){
         $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
       }
     });
