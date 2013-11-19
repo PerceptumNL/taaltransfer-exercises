@@ -305,6 +305,7 @@ $.extend(KhanUtil, {
     for(var i=0; i<length; i++){
       $("<p class='drop' id ='" + selected[i] + "' >" + selected[i].toUpperCase() + "<br></span> ").appendTo('.boxes');
     }
+    return level;
   },
   
   /***
@@ -410,10 +411,11 @@ $.extend(KhanUtil, {
         var eq = "";
         var same = false;
         var zLen = zin.length;
+        
         for(var y = 0; y<zLen; y++){
           if(selected.trim() == zin[y][0].trim()){
             same = true;
-            if(ids.indexOf(zin[y][1]) > -1){
+            if(ids.indexOf(zin[y][1]) > -1){ //if there is a droppable with this id
               eq = zin[y][1];
             }
             else{
