@@ -22,20 +22,22 @@ $.extend(KhanUtil, {
     for(var i=0; i<len;i++){
       words.push(arr[i]);
     }
-    console.log(words);
     var wArr = [];
     var wordAll = [];
+    var type = allWords[0].split(",");
+    console.log(type);
     for(var j=0; j<len2;j++){
       wArr = allWords[j].split(",");
       for(var z=0; z<words.length;z++){
         for(var y=0; y<wArr.length; y++){
           if(words[z].toLowerCase() == wArr[y].toLowerCase() && wordAll.indexOf(words[z]) < 0){
-            wordAll.push(words[z]);
+            wordAll.push([words[z],type[y]]);
+            console.log(words[z] + " is of type " + type[y]);
           }
         }
       }
     }
-    console.log("W: " + wordAll);
+    console.log(wordAll);
     return 2;
   },
   
