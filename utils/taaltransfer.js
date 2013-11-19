@@ -336,8 +336,9 @@ $.extend(KhanUtil, {
         $('<span class = "userPick els" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
         k++;
       }
+      qWords = ['Waarom','Hoeveel','Waar','Hoe','Waarom','Wanneer'];
       if(j == sLen-1){
-        if(sentence[0][1] == 'pv' || sentence[0][0] == "Waarom" || sentence[0][0] == "Hoeveel"){
+        if(sentence[0][1] == 'pv' || qWords.indexOf(sentence[0][0]) >-1){
           $('<span class ="pipe" id =' + k + '></span>?').appendTo('.answers');
         }
         else{
