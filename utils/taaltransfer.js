@@ -284,8 +284,8 @@ $.extend(KhanUtil, {
     var selected = [];
     var levelOne = ['pv'];
     var levelTwo = ['pv','ond','rest'];
-    var levelThree = ['pv','ond','wwg','restpv'];
-    var levelFour = ['pv','ond','lv','wwg','restpv'];
+    var levelThree = ['pv','ond','wwg','rest'];
+    var levelFour = ['pv','ond','lv','wwg','rest'];
     
     switch(level){
       case 1: 
@@ -420,7 +420,7 @@ $.extend(KhanUtil, {
               eq = zin[y][1];
             }
             else{
-              eq = 'restpv';
+              eq = 'rest' + click;
             }
           }
         }
@@ -464,10 +464,11 @@ $.extend(KhanUtil, {
       $(".drop").droppable({
         drop: function(event, ui){
           var dragID = ui.draggable.attr("id");
+          var rest = dragID.slice(0,4);
           var dropID = $(this).attr('id');
           var indexR = corr.indexOf(dragID);
           var indexW = incorr.indexOf(dragID);
-          if(dragID === dropID){
+          if(dragID === dropID || dropID == rest){
             if(dropID === "pv"){
               $('#pv2').remove();
               $("<span class='fakeDrag corr2' id='pv2'>" + $('#'+dragID).clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
