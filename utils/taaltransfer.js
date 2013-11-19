@@ -25,22 +25,26 @@ $.extend(KhanUtil, {
     var wArr = [];
     var wordAll = [];
     var type = allWords[0].split(",");
-    console.log(type);
     for(var j=0; j<len2;j++){
       wArr = allWords[j].split(",");
       for(var z=0; z<words.length;z++){
         for(var y=0; y<wArr.length; y++){
-          if(words[z].toLowerCase() == wArr[y].toLowerCase() && wordAll.indexOf(words[z]) < 0){
-            wordAll.push([words[z],type[y]]);
-            console.log(words[z] + " is of type " + type[y]);
+          if(words[z].toLowerCase() == wArr[y].toLowerCase() && wordAll.indexOf(words[z]) === -1){
+            wordAll[z] = [words[z],type[y]];
           }
         }
       }
     }
     console.log(wordAll);
-    return 2;
+    return wordAll;
   },
   
+  showSentence: function(tuple){
+    console.log(tuple);
+    for(var i=0;i<tuple.length;i++){
+      $('<span class = ' + tuple[i][1] + '>' + tuple[i][0] + '</span>').appendTo('.question');
+    }
+  },
   /***
     Return an array that contains two elements: a sentence and a category.
     The sentence:category strings are split at the occurrence of a dot followed by a comma
