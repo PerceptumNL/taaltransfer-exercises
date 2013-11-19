@@ -12,6 +12,33 @@ $.extend(KhanUtil, {
     return wordArray;
   },
   
+  getWordID: function(sentence, allWords){
+    sentence = sentence.replace(".","");
+    var arr = sentence.split(" ");
+    var len = arr.length;
+    var tmp = "";
+    var words = [];
+    var len2 = allWords.length;
+    for(var i=0; i<len;i++){
+      words.push(arr[i]);
+    }
+    console.log(words);
+    var wArr = [];
+    var wordAll = [];
+    for(var j=0; j<len2;j++){
+      wArr = allWords[j].split(",");
+      for(var z=0; z<words.length;z++){
+        for(var y=0; y<wArr.length; y++){
+          if(words[z].toLowerCase() == wArr[y].toLowerCase() && wordAll.indexOf(words[z]) < 0){
+            wordAll.push(words[z]);
+          }
+        }
+      }
+    }
+    console.log("W: " + wordAll);
+    return 2;
+  },
+  
   /***
     Return an array that contains two elements: a sentence and a category.
     The sentence:category strings are split at the occurrence of a dot followed by a comma
@@ -19,7 +46,13 @@ $.extend(KhanUtil, {
      whitespace and then given a period.
     Type: Array of strings
   ***/
-  
+  fixSentence2: function(sentence){
+    var pair = sentence.split(/.,/);
+    pair[0] = pair[0].replace(/(^\s*)|(\s*$)/gi,"");
+    pair[0] = pair[0].concat(".");
+    return pair[0];
+  },
+    
   fixSentence: function(sentence){
     var pair = sentence.split(/.,/);
     pair[0] = pair[0].replace(/(^\s*)|(\s*$)/gi,"");
