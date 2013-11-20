@@ -40,28 +40,22 @@ $.extend(KhanUtil, {
     for(var j=1;j<wordAll.length;j++){
       temp = wordAll[j][1];
       var k = j-1;      
-      console.log(wordAll[k]);
       prev = wordAll[k][1];
+
       
       //exception for "zijn"
       if((temp == "hww" || temp == "zww" || temp == "hww") && (prev == "bez")){
-        console.log("eerst: " + wordAll[k][1]);
         wordAll[k][1] = "hww";
-        console.log("nu: " + wordAll[k][1]);
       }
       
       //exception for 2 znws
       if(temp == "znw" && prev == "znw"){
-        console.log("eerst: " + wordAll[j][1]);
-        wordAll[j][1] = "zww";
-        console.log("nu: " + wordAll[j][1]);        
+        wordAll[j][1] = "zww";     
       }
       
       //exception for znws without lidwoord
-      if(temp == "znw" && ((prev=="hww") || (prev=="zww") || (prev=="kww"))){
-        console.log("eerst: " + wordAll[k][1]);      
-        wordAll[k][1] = "bvn";
-        console.log("nu: " + wordAll[k][1]);        
+      if(temp == "znw" && ((prev=="hww") || (prev=="zww") || (prev=="kww"))){    
+        wordAll[k][1] = "bvn";   
       }
       
     }
@@ -72,7 +66,7 @@ $.extend(KhanUtil, {
     var begin = tuple[0][1];
     var len = tuple.length;
     var wws = ["ww","hww","zww"];
-    var qs = ["Waarom","Waar","Hoe","Waarom"]
+    var qs = ["Waarom","Waar","Hoe","Waarom","Wie","Hoeveel"]
     for(var i=0;i<len;i++){
       $('<span class = "click ' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.question');
       if(i == len-1){
@@ -91,7 +85,9 @@ $.extend(KhanUtil, {
     var answer = [];
     for(var i=0;i<len;i++){
       if($("."+desired[i]).text() !== ""){
-        answer.push($("."+desired[i]));
+        $("."+desired[i]).each(function(j){
+          answer.push($("."+desired[i])[j]);
+        })
       }
     }
     $('.click').click(function(){
@@ -99,6 +95,7 @@ $.extend(KhanUtil, {
     });
     $('#check-answer-button').mousedown(function(){
       var userAns = $('.chosen');
+      console.log(userAns.length + " : " + answer.length);
       if(userAns.length === answer.length){
         $('#bool').remove();
         $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
