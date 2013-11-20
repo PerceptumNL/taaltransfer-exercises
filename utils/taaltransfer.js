@@ -35,6 +35,36 @@ $.extend(KhanUtil, {
         }
       }
     }
+    var temp="";
+    var prev="";
+    for(var j=1;j<wordAll.length;j++){
+      temp = wordAll[j][1];
+      var k = j-1;      
+      console.log(wordAll[k]);
+      prev = wordAll[k][1];
+      
+      //exception for "zijn"
+      if((temp == "hww" || temp == "zww" || temp == "hww") && (prev == "bez")){
+        console.log("eerst: " + wordAll[k][1]);
+        wordAll[k][1] = "hww";
+        console.log("nu: " + wordAll[k][1]);
+      }
+      
+      //exception for 2 znws
+      if(temp == "znw" && prev == "znw"){
+        console.log("eerst: " + wordAll[j][1]);
+        wordAll[j][1] = "zww";
+        console.log("nu: " + wordAll[j][1]);        
+      }
+      
+      //exception for znws without lidwoord
+      if(temp == "znw" && ((prev=="hww") || (prev=="zww") || (prev=="kww"))){
+        console.log("eerst: " + wordAll[k][1]);      
+        wordAll[k][1] = "bvn";
+        console.log("nu: " + wordAll[k][1]);        
+      }
+      
+    }
     return wordAll;
   },
   
