@@ -91,40 +91,50 @@ $.extend(KhanUtil, {
       var index = desTemp.indexOf(tuple[z][1]);
       if(index>-1){
         desTemp.splice(index,1);
-        $('<p class = "dropWord" id ="' + tuple[z][1] + '">' + tuple[z][0] + ' = </p>').appendTo('.answers');
+        $('<span class = "dropWord" id ="' + tuple[z][1] + '">"' + tuple[z][0] + '" = </span>').appendTo('.answers');
       }
     }
-    $('<p class = "dropWord" id="geen"> Niet in deze zin = </p>').appendTo('.answers');
+    $('<span class = "dropWord" id="geen"> Niet in deze zin = </span>').appendTo('.answers');
     
-    $(".dragWord").draggable({containment:'#workarea', cursor:'move', addClasses: false});
+    $(".dragWord").draggable({containment:'#problemarea', cursor:'move', addClasses: false});
     var correct = [];    
     $(".dropWord").droppable({
       drop: function(event,ui){
         var drag = ui.draggable.attr('id');
         var drop = $(this).attr('id');
-        console.log("d: " + desTemp);
-        console.log("drag: " + drag + ", drop: " + drop);
         var index = desTemp.indexOf(drag)
         
         if(drag == drop || (index>-1 && drop == "geen")){ //if correctly dropped
-          console.log("match!");
+          if(ui.draggable.hasClass('incorrt')){
+            ui.draggable.removeClass('incorrt');
+          }
           ui.draggable.addClass('corrt');
-          console.log($('.corrt').text());
+          
         }
         else{ //if incorrectly dropped
-          console.log("no match :(");
           if(ui.draggable.hasClass('corrt')){
             ui.draggable.removeClass('corrt');
           }
-          console.log($('.corrt').text());
+          ui.draggable.addClass('incorrt');
         }
       }
     });
     $("#check-answer-button").mousedown(function(){
       var userPick = $('.corrt').length;
       console.log(userPick);
+      $('.corrt').each(function(){
+        $(this).removeClass('incorrect');
+        $(this).addClass('correct');
+      });
+      $('.incorrt').each(function(){
+        $(this).removeClass('correct');
+        $(this).addClass('incorrect');
+      });
       if(userPick === x){
         $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
+      }
+      else{
+        $('#bool').remove();
       }
     });
   },

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-require="math math-format graphie taaltransfer">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Woorden ontleden</title>
+    <script src="../khan-exercise.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/taaltransfer.css">
+
+    
+</head>
+<body>
+    <div class="exercise">
+    <div class="vars">
+        <var id="SENTENCES">readFile("../csv/zinnen.csv")</var>
+        <var id="WORDS">readFile("../csv/woorden.csv")</var>
+        <var id="CAT">[1,16,25,50]</var>
+        <var id="NUMBER">makeNumber(CAT, SENTENCES)</var>
+        <var id="NUMBER2">5238</var>
+        <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var>
+        <var id="TUPLE">getWordID(ZIN, WORDS)</var>
+
+    </div>
+    
+    <div class="problems">
+        <div>
+            <p class="question">Klik in onderstaande zin op alle zelfstandige naamwoorden.<br></p><p><var>showSentence(TUPLE,['znw','lw','bvn'])</var>
+            <!--<br><var>clickAns(TUPLE, ['znw','lw','bvn'])</var>--></p>
+            <p class='answers'></p>       
+            <span class="solution" data-type="custom">
+              <div class="instruction">Klik op de juiste woorden.</div>
+              <div class="guess">$("#bool").text()</div>
+              <div class="validator-function">if(guess.trim() == "true"){return true}</div>
+              <div class="show-guess">guess</div>        
+            </span>
+            
+            
+        </div>
+    </div>
+
+    <div class="hints">
+    </div>
+</body>
+</html>
