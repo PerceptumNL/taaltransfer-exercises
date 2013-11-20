@@ -86,3 +86,22 @@
   padding:3px;
   margin:3px;
 }
+
+.dragWord{
+  border: 1px dotted grey;
+  border-radius: 5px;
+  padding:3px;
+  margin:1px;
+  font-weight:normal;
+}
+
+.dropWord{
+  border: 1px solid grey;
+  background-color:white;
+  margin:3px;
+  padding:3px;
+  color:grey;
+  border-radius: 10px 5px 10px 5px
+  width:100px;
+  height:100px;
+}

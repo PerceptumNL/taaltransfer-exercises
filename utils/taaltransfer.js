@@ -65,14 +65,15 @@ $.extend(KhanUtil, {
     return wordAll;
   },
   
-  showSentence: function(tuple){
+  showSentence: function(tuple,desired){
+    var desTemp = desired;
     var begin = tuple[0][1].trim();
     var beginWord = tuple[0][0].trim();
     var len = tuple.length;
     var wws = ["ww","hww","zww"];
-    var qs = ["Waarom","Waar","Hoe","Wie","Hoeveel","Wanneer"];
+    var qs = ["Waarom","Waar","Hoe","Wie","Hoeveel","Wanneer","Wat"];
     for(var i=0;i<len;i++){
-      $('<span class = "click ' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.question');
+      $('<span class=' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.question');
       if(i == len-1){
         if(wws.indexOf(begin) > -1 || qs.indexOf(beginWord) > -1){
           $('<span>?</span>').appendTo('.question');
@@ -82,10 +83,21 @@ $.extend(KhanUtil, {
         }
       }
     }
+    var x = desired.length;
+    for(var j=0;j<x;j++){
+      $('<span class="dragWord ' + desired[j] + '"> ' + desired[j].toUpperCase() +'</span>').appendTo('.answers');
+    }
+    for(var z=0;z<x;z++){
+      var index = desTemp.indexOf(tuple[z][1]);
+      console.log(tuple[z][1] + " has index " + index);
+      if(index > -1){
+        desTemp.splice(index,1);
+        console.log("Destemp: " + desTemp);              
+        $('<p class="dropWord">' + tuple[z][0] + ' = </p>').appendTo('.question');
+      }
+    }
+    $(".dragWord").draggable({containment:'#workarea', cursor:'move', addClasses: false});
   },
-  
-  
-  
   
   clickAns: function(tuple,desired){
     var len = desired.length;
