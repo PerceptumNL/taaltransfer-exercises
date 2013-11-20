@@ -79,3 +79,10 @@
   color:red;
   z-index:-20;
 }
+
+.chosen{
+  border: 1px dotted grey;
+  border-radius:5px;
+  padding:3px;
+  margin:3px;
+}

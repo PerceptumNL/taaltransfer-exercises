@@ -35,16 +35,50 @@ $.extend(KhanUtil, {
         }
       }
     }
-    console.log(wordAll);
     return wordAll;
   },
   
   showSentence: function(tuple){
-    console.log(tuple);
-    for(var i=0;i<tuple.length;i++){
-      $('<span class = ' + tuple[i][1] + '>' + tuple[i][0] + '</span>').appendTo('.question');
+    var begin = tuple[0][1];
+    var len = tuple.length;
+    var wws = ["ww","hww","zww"];
+    var qs = ["Waarom","Waar","Hoe","Waarom"]
+    for(var i=0;i<len;i++){
+      $('<span class = "click ' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.question');
+      if(i == len-1){
+        if(wws.indexOf(begin) > -1 || qs.indexOf(begin) > -1){
+          $('<span>?</span>').appendTo('.question');
+        }
+        else{
+          $('<span>.</span>').appendTo('.question');
+        }
+      }
     }
   },
+  
+  clickAns: function(tuple,desired){
+    var len = desired.length;
+    var answer = [];
+    for(var i=0;i<len;i++){
+      if($("."+desired[i]).text() !== ""){
+        answer.push($("."+desired[i]));
+      }
+    }
+    $('.click').click(function(){
+      $(this).toggleClass('chosen');
+    });
+    $('#check-answer-button').mousedown(function(){
+      var userAns = $('.chosen');
+      if(userAns.length === answer.length){
+        $('#bool').remove();
+        $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
+      }
+      else{
+        $('#bool').remove();
+      }
+    });
+  },
+  
   /***
     Return an array that contains two elements: a sentence and a category.
     The sentence:category strings are split at the occurrence of a dot followed by a comma
