@@ -85,19 +85,42 @@ $.extend(KhanUtil, {
     }
     var x = desired.length;
     for(var j=0;j<x;j++){
-      $('<span class="dragWord ' + desired[j] + '"> ' + desired[j].toUpperCase() +'</span>').appendTo('.answers');
+      $('<br><span class="dragWord " id = "' + desired[j] + '"> ' + desired[j].toUpperCase() +'</span>').appendTo('.question');
     }
-    for(var z=0;z<x;z++){
+    for(var z=0; z<tuple.length; z++){
       var index = desTemp.indexOf(tuple[z][1]);
-      console.log(tuple[z][1] + " has index " + index);
-      if(index > -1){
+      if(index>-1){
         desTemp.splice(index,1);
-        console.log("Destemp: " + desTemp);              
-        $('<p class="dropWord">' + tuple[z][0] + ' = </p>').appendTo('.question');
+        $('<p class = "dropWord" id ="' + tuple[z][1] + '">' + tuple[z][0] + ' = </p>').appendTo('.answers');
       }
     }
+    $('<p class = "dropWord" id="geen"> Niet in deze zin = </p>').appendTo('.answers');
+    
     $(".dragWord").draggable({containment:'#workarea', cursor:'move', addClasses: false});
+    var correct = [];    
+    $(".dropWord").droppable({
+      drop: function(event,ui){
+        var drag = ui.draggable.attr('id');
+        var drop = $(this).attr('id');
+        console.log("d: " + desTemp);
+        console.log("drag: " + drag + ", drop: " + drop);
+        var index = desTemp.indexOf(drag)
+        if(drag == drop || (index>-1 && drop == "geen")){
+          console.log("match!");
+          console.log(drag);
+          correct.push(drag);
+          console.log(correct);
+        }
+        else{
+          console.log("no match :(");
+          console.log(drag);
+          correct.pop(index,1);
+          console.log(correct);
+        }
+      }
+    });
   },
+  
   
   clickAns: function(tuple,desired){
     var len = desired.length;
