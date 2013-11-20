@@ -43,18 +43,21 @@ $.extend(KhanUtil, {
       prev = wordAll[k][1];
 
       
-      //exception for "zijn"
+      //1: exception for "zijn"
       if((temp == "hww" || temp == "zww" || temp == "hww") && (prev == "bez")){
+        console.log("ex 4");
         wordAll[k][1] = "hww";
       }
       
-      //exception for 2 znws
+      //2: exception for 2 znws
       if(temp == "znw" && prev == "znw"){
+        console.log("ex 2");
         wordAll[j][1] = "zww";     
       }
       
-      //exception for znws without lidwoord
+      //3: exception for znws without lidwoord
       if(temp == "znw" && ((prev=="hww") || (prev=="zww") || (prev=="kww"))){    
+        console.log("ex 3");
         wordAll[k][1] = "bvn";   
       }
       
@@ -63,14 +66,15 @@ $.extend(KhanUtil, {
   },
   
   showSentence: function(tuple){
-    var begin = tuple[0][1];
+    var begin = tuple[0][1].trim();
+    var beginWord = tuple[0][0].trim();
     var len = tuple.length;
     var wws = ["ww","hww","zww"];
-    var qs = ["Waarom","Waar","Hoe","Waarom","Wie","Hoeveel"]
+    var qs = ["Waarom","Waar","Hoe","Wie","Hoeveel","Wanneer"];
     for(var i=0;i<len;i++){
       $('<span class = "click ' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.question');
       if(i == len-1){
-        if(wws.indexOf(begin) > -1 || qs.indexOf(begin) > -1){
+        if(wws.indexOf(begin) > -1 || qs.indexOf(beginWord) > -1){
           $('<span>?</span>').appendTo('.question');
         }
         else{
@@ -79,6 +83,9 @@ $.extend(KhanUtil, {
       }
     }
   },
+  
+  
+  
   
   clickAns: function(tuple,desired){
     var len = desired.length;
