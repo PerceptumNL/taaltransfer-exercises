@@ -105,18 +105,26 @@ $.extend(KhanUtil, {
         console.log("d: " + desTemp);
         console.log("drag: " + drag + ", drop: " + drop);
         var index = desTemp.indexOf(drag)
-        if(drag == drop || (index>-1 && drop == "geen")){
+        
+        if(drag == drop || (index>-1 && drop == "geen")){ //if correctly dropped
           console.log("match!");
-          console.log(drag);
-          correct.push(drag);
-          console.log(correct);
+          ui.draggable.addClass('corrt');
+          console.log($('.corrt').text());
         }
-        else{
+        else{ //if incorrectly dropped
           console.log("no match :(");
-          console.log(drag);
-          correct.pop(index,1);
-          console.log(correct);
+          if(ui.draggable.hasClass('corrt')){
+            ui.draggable.removeClass('corrt');
+          }
+          console.log($('.corrt').text());
         }
+      }
+    });
+    $("#check-answer-button").mousedown(function(){
+      var userPick = $('.corrt').length;
+      console.log(userPick);
+      if(userPick === x){
+        $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
       }
     });
   },
