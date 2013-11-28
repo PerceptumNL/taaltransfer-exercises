@@ -139,24 +139,58 @@ $.extend(KhanUtil, {
     });
   },
   
+  showSent: function(tuple, desired){
+    var desTemp = desired;
+    var begin = tuple[0][1].trim();
+    var beginWord = tuple[0][0].trim();
+    var len = tuple.length;
+    var wws = ["ww","hww","zww"];
+    var qs = ["Waarom","Waar","Hoe","Wie","Hoeveel","Wanneer","Wat"];
+    for(var i=0;i<len;i++){
+      if(desired.indexOf(tuple[i][1]) > -1){
+        $('<span class=" click desired ' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.question');   
+      } 
+      else{
+        $('<span class=" click ' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.question');
+      }
+      if(i == len-1){
+        if(wws.indexOf(begin) > -1 || qs.indexOf(beginWord) > -1){
+          $('<span>?</span>').appendTo('.question');
+        }
+        else{
+          $('<span>.</span>').appendTo('.question');
+        }
+      }
+    }
+  },
   
   clickAns: function(tuple,desired){
+    console.log(desired);
+    console.log(tuple);
     var len = desired.length;
     var answer = [];
     for(var i=0;i<len;i++){
-      if($("."+desired[i]).text() !== ""){
+      if($("."+desired[i]).text() !== " "){
+        console.log(desired[i] + " is not empty" );
         $("."+desired[i]).each(function(j){
           answer.push($("."+desired[i])[j]);
         })
       }
+      else{console.log(desired[i] + " is empty");}
     }
     $('.click').click(function(){
       $(this).toggleClass('chosen');
     });
     $('#check-answer-button').mousedown(function(){
       var userAns = $('.chosen');
-      console.log(userAns.length + " : " + answer.length);
-      if(userAns.length === answer.length){
+      var corrAns = 0;
+      userAns.each(function(j){
+        if($($(userAns)[j]).hasClass('desired')){
+          corrAns ++;
+        }
+      });
+      
+      if(corrAns === answer.length){
         $('#bool').remove();
         $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
       }
