@@ -123,12 +123,12 @@ $.extend(KhanUtil, {
       var userPick = $('.corrt').length;
       console.log(userPick);
       $('.corrt').each(function(){
-        $(this).removeClass('incorrect');
-        $(this).addClass('correct');
+        $(this).removeClass('incorrect2');
+        $(this).addClass('correct2');
       });
       $('.incorrt').each(function(){
-        $(this).removeClass('correct');
-        $(this).addClass('incorrect');
+        $(this).removeClass('correct2');
+        $(this).addClass('incorrect2');
       });
       if(userPick === x){
         $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
@@ -255,7 +255,8 @@ $.extend(KhanUtil, {
     for(var i=1; i<len; i++){
       tmp.push(KhanUtil.randRange(this.lastCatSentence(cats[i]-1, sentences), this.lastCatSentence(cats[i], sentences)));
     }
-    return KhanUtil.randFromArray(tmp);
+    var ret = KhanUtil.randFromArray(tmp);
+    return ret;
   },
   
   /***
@@ -389,7 +390,7 @@ $.extend(KhanUtil, {
   elClicked: function(el){
     $('.els').click(function(){
       $(this).toggleClass("fakeDrag");
-      $('.els').removeClass("incorrect");
+      $('.els').removeClass("incorrect2");
     });
   },
   
@@ -411,18 +412,18 @@ $.extend(KhanUtil, {
         if($(answers[0]).attr('id') == 'pv'){
           $("#bool").remove();
           $('<span style="visibility:hidden" id="bool">true</span>').appendTo('.answers');
-          $('.fakeDrag').addClass("correct");          
+          $('.fakeDrag').addClass("correct2");          
         }
         else{
           $("#bool").remove();
           $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
-          $('.fakeDrag').addClass("incorrect");
+          $('.fakeDrag').addClass("incorrect2");
         }
       }
       else{
         $("#bool").remove();
         $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
-        $('.fakeDrag').addClass("incorrect");        
+        $('.fakeDrag').addClass("incorrect2");        
       }
       
     });
@@ -516,7 +517,7 @@ $.extend(KhanUtil, {
     var sentString = "";
     var len = sentence.length;
     for (var i=0; i<len; i++){
-      if(sentence[i][0] !=""){
+      if(sentence[i][0] !=" "){
         sentString = sentString.concat(sentence[i][0] + " ");
       }
     }
@@ -530,7 +531,7 @@ $.extend(KhanUtil, {
         $('<span class = "userPick els" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
         k++;
       }
-      qWords = ['Waarom','Hoeveel','Waar','Hoe','Waarom','Wanneer'];
+      qWords = ['Waarom','Hoeveel','Waar','Hoe','Waarom','Wanneer','Welke'];
       if(j == sLen-1){
         if(sentence[0][1] == 'pv' || qWords.indexOf(sentence[0][0]) >-1){
           $('<span class ="pipe" id =' + k + '></span>?').appendTo('.answers');
@@ -619,10 +620,10 @@ $.extend(KhanUtil, {
           }
         }
         if(same){
-          $('<span class = "drag selected" id=' + eq + '>' + selected + '<span class="delete">x</span></span>').appendTo('.answers');
+          $('<br><span class = "drag selected" id=' + eq + '>' + selected + '<span class="delete">x</span></span>').appendTo('.boxes');
         }
         else{
-          $('<span class = "drag selected" id=' + click + '>' + selected + '<span class="delete">x</span></span>').appendTo('.answers');
+          $('<br><span class = "drag selected" id=' + click + '>' + selected + '<span class="delete">x</span></span>').appendTo('.boxes');
         }
         $('.clicked').removeClass('clicked');
         
@@ -665,22 +666,23 @@ $.extend(KhanUtil, {
           if(dragID === dropID || dropID == rest){
             if(dropID === "pv"){
               $('#pv2').remove();
-              $("<span class='fakeDrag corr2' id='pv2'>" + $('#'+dragID).clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
+              $("<span class='fakeDrag corr2' id='pv2'>" + $('#'+dragID + ".drag").clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
             }
-            $("#" + dragID).removeClass("inc");
-            $("#" + dragID).addClass("corr");
+            $("#" + dragID + ".drag").removeClass("inc");
+            $("#" + dragID + ".drag").addClass("corr");
           }
           else{
             if(dropID === "pv"){
               $('#pv2').remove();
-              $("<span class='fakeDrag inc2' id='pv2'>" + $('#'+dragID).clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
+              $("<span class='fakeDrag inc2' id='pv2'>" + $('#'+dragID + ".drag").clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
             }
-            $("#" + dragID).removeClass("corr");
-            $("#" + dragID).addClass("inc");
+            $("#" + dragID + ".drag").removeClass("corr");
+            $("#" + dragID + ".drag").addClass("inc");
           }
           }    
         });
       });
+      
       
       /***
         When the 'submit answer' button is clicked, toggle classes so that correct answers
@@ -690,14 +692,14 @@ $.extend(KhanUtil, {
       ***/
       
     $("#check-answer-button").mousedown(function(){
-      $('.corr').removeClass('incorrect');
-      $('.corr').addClass('correct');
-      $('.inc').removeClass('correct');
-      $('.inc').addClass('incorrect');
-      $('.inc2').addClass('incorrect');
-      $('.inc2').removeClass('correct');
-      $('.corr2').addClass('correct');
-      $('.corr2').removeClass('incorrect');
+      $('.corr').removeClass('incorrect2');
+      $('.corr').addClass('correct2');
+      $('.inc').removeClass('correct2');
+      $('.inc').addClass('incorrect2');
+      $('.inc2').addClass('incorrect2');
+      $('.inc2').removeClass('correct2');
+      $('.corr2').addClass('correct2');
+      $('.corr2').removeClass('incorrect2');
       var cLen = $('.corr').length;
       if(cLen == zinlen){
         $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
