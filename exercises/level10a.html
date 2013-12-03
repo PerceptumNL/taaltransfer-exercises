@@ -2,7 +2,7 @@
 <html data-require="math math-format graphie taaltransfer">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Redekundig ontleden: onderwerp en persoonsvorm</title>
+    <title>Redekundig ontleden - Meewerkend voorwerp</title>
     <script src="../khan-exercise.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/taaltransfer.css">
 
@@ -13,7 +13,7 @@
     <div class="vars">
         <var id="SENTENCES">readFile("../csv/zinnen.csv")</var>
         <var id="PARTS">readFile("../csv/zinsdelen.csv")</var>
-        <var id="CAT">[1,25,16,50]</var>
+        <var id="CAT">[3,29,30,14,46,47,15,48,20,59,60,24,65,65, 5,33]</var>
         <var id="NUMBER">makeNumber(CAT, SENTENCES)</var>
         <var id="TUPLE">fixSentence(SENTENCES[NUMBER])</var>
         <var id="GRAMMAR">fixParts(PARTS[NUMBER])</var>
@@ -21,7 +21,7 @@
         <var id="OND">findNameValue(GRAMMAR, "ond")</var>
         <var id="LV">findNameValue(GRAMMAR, "lv")</var>
         <var id="WWG">findNameValue(GRAMMAR, "wwg")</var>
-        <var id="LEVEL">answerBoxes(2)</var>
+        <var id="LEVEL">answerBoxes(10)</var>
     </div>
     
     <div class="problems">

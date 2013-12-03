@@ -28,14 +28,16 @@
   border-radius:5px;
 }
 
-.correct{
+.correct2{
+  width:200px;
   background-color:#80ac07;
   border-radius:5px;
   color:white;
   padding:5px;
 }
 
-.incorrect{
+.incorrect2{
+  width: 200px;
   background-color:#d55704;
   border-radius:5px;
   color:white;
@@ -102,12 +104,17 @@
   padding:3px;
   color:grey;
   border-radius: 10px 30px 10px 30px;
-  width:200px;
-  height:200px;
+  width:150px;
+  height:100px;
   float:left;
 }
 
-
+.userChoice{
+  border: 1px dotted grey;
+  border-radius:5px;
+  padding:3px;
+  margin:3px;
+}
 
 
 

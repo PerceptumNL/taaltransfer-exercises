@@ -73,19 +73,19 @@ $.extend(KhanUtil, {
     var wws = ["ww","hww","zww"];
     var qs = ["Waarom","Waar","Hoe","Wie","Hoeveel","Wanneer","Wat"];
     for(var i=0;i<len;i++){
-      $('<span class=' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.question');
+      $('<span class="' + tuple[i][1] + '"> ' + tuple[i][0] + '</span>').appendTo('.answers');
       if(i == len-1){
         if(wws.indexOf(begin) > -1 || qs.indexOf(beginWord) > -1){
-          $('<span>?</span>').appendTo('.question');
+          $('<span>?</span><br>').appendTo('.answers');
         }
         else{
-          $('<span>.</span>').appendTo('.question');
+          $('<span>.</span><br>').appendTo('.answers');
         }
       }
     }
     var x = desired.length;
     for(var j=0;j<x;j++){
-      $('<br><span class="dragWord " id = "' + desired[j] + '"> ' + desired[j].toUpperCase() +'</span>').appendTo('.question');
+      $('<span class="dragWord " id = "' + desired[j] + '"> ' + desired[j].toUpperCase() +'</span>').appendTo('.question');
     }
     for(var z=0; z<tuple.length; z++){
       var index = desTemp.indexOf(tuple[z][1]);
@@ -121,15 +121,15 @@ $.extend(KhanUtil, {
     });
     $("#check-answer-button").mousedown(function(){
       var userPick = $('.corrt').length;
-      console.log(userPick);
       $('.corrt').each(function(){
-        $(this).removeClass('incorrect');
-        $(this).addClass('correct');
+        $(this).removeClass('incorrect2');
+        $(this).addClass('correct2');
       });
       $('.incorrt').each(function(){
-        $(this).removeClass('correct');
-        $(this).addClass('incorrect');
+        $(this).removeClass('correct2');
+        $(this).addClass('incorrect2');
       });
+      $('#bool').remove();      
       if(userPick === x){
         $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
       }
@@ -165,18 +165,14 @@ $.extend(KhanUtil, {
   },
   
   clickAns: function(tuple,desired){
-    console.log(desired);
-    console.log(tuple);
     var len = desired.length;
     var answer = [];
     for(var i=0;i<len;i++){
       if($("."+desired[i]).text() !== " "){
-        console.log(desired[i] + " is not empty" );
         $("."+desired[i]).each(function(j){
           answer.push($("."+desired[i])[j]);
         })
       }
-      else{console.log(desired[i] + " is empty");}
     }
     $('.click').click(function(){
       $(this).toggleClass('chosen');
@@ -210,14 +206,15 @@ $.extend(KhanUtil, {
   fixSentence2: function(sentence){
     var pair = sentence.split(/.,/);
     pair[0] = pair[0].replace(/(^\s*)|(\s*$)/gi,"");
-    pair[0] = pair[0].concat(".");
+    //pair[0] = pair[0].concat(".");
+    console.log("2: " + pair[0]);
     return pair[0];
   },
     
   fixSentence: function(sentence){
     var pair = sentence.split(/.,/);
     pair[0] = pair[0].replace(/(^\s*)|(\s*$)/gi,"");
-    pair[0] = pair[0].concat(".");
+    //pair[0] = pair[0].concat(".");
     return pair;
   },
   
@@ -251,33 +248,41 @@ $.extend(KhanUtil, {
   ***/
   makeNumber: function(cats, sentences){
     var len = cats.length;
-    var tmp = [KhanUtil.randRange(0,this.lastCatSentence(cats[0], sentences))];
-    for(var i=1; i<len; i++){
-      tmp.push(KhanUtil.randRange(this.lastCatSentence(cats[i]-1, sentences), this.lastCatSentence(cats[i], sentences)));
+    var tmp = []; //[KhanUtil.randRange(0,this.lastCatSentence(cats[0], sentences))];
+    var begin = 0;
+    var end = 0;
+    for(var i=0; i<len; i++){
+      begin = this.lastCatSentence(cats[i]-1, sentences);
+      end = this.lastCatSentence(cats[i],sentences);
+      tmp.push(KhanUtil.randRange(begin,end));
     }
-    return KhanUtil.randFromArray(tmp);
+    var ret = KhanUtil.randFromArray(tmp);
+    //shortcut
+    Khan.taaltransfer_category = cats[tmp.indexOf(ret)];
+    return ret;
   },
   
   /***
     Return the line containing the last sentence in a certain category.
-    Every sentence is split using fixSentence, then its category is checked against the 
-    category following the one we want. If it is higher than that category, the line 
-    number of the current sentence gets returned.
+    Hardcoded for speed.
     Type: number
   ***/
   
   lastCatSentence: function(category, wordArr){
-    var length = wordArr.length;
-    var tmp = 0;
+    var catArray = [0,118,228,327,497,596,700,801,901,1001,1101,1201,1312,1414,1544,1644,1744,1844,1974,2082,2182,2345,2444,2543,2644,2744,2844,3009,3109,3209,3309,3409,3509,3609,3709,3809,3909,4009,4109,4209,4309,4409,4509,4609,4729,4829,4929,5029,5129,5230,5330,5430,5630,5730,5890,5990,6050,6150,6250,6350,6450,6550,6650,6750,6850,6950,7050,7150,7215,7315,7415,7515,7615,7715,7815,7920,8020,8120,8220,8320,8420,8520,8620,8680,8780,8880,8980,9080,9180,9280,9341,9441,9540,9640,9700,9800,9900,10002];
+    return catArray[category];
+  },
+    /*var length = wordArr.length;
+    var tmp = [];
     for(var i=0; i<length; i++){
       tmp = this.fixSentence(wordArr[i]);
+      console.log("CAT " + tmp[1] + "FOR: " + tmp[0] );
       if(tmp[1] == (category+1)){
+        console.log("TMP2: " + tmp[1] + " has i of " + i);      
         return (i);
       }
     }
-    return i;
-  },
-  
+    return i;*/
   /***
     Return the value that belongs to the requested grammatical name, for example "pv".
     This function takes the 2d array returned by fixParts and checks every 2nd element
@@ -361,14 +366,15 @@ $.extend(KhanUtil, {
       }
     }
     if($(els[0]).attr('id') == 'pv' || $(els[0]).text().trim() == "Waarom" || $(els[0]).text().trim() == "Hoeveel"){
-      sent = sent.concat("?");
+      sent = sent.concat(" ?");
     }
     else{
-      sent = sent.concat(".");
+      sent = sent.concat(" .");
     }
     sent = sent.split(" ");
     var pv = $('#pv');
     var sLen = sent.length;
+    var qWords = ['Waarom','Hoeveel','Waar','Hoe','Wanneer','Welke'];
     for(var j=0; j<sLen; j++){
       if(sent[j] === pv.text().trim()){
         $('<span id="pv" class = "els">' + sent[j] + ' </span>').appendTo('.answers');
@@ -379,6 +385,10 @@ $.extend(KhanUtil, {
     }
   },
   
+  getCat: function(sentences,number){
+    console.log(sentences[number]);
+  },
+  
   /***
     Toggles the class 'fakeDrag' on and off, indicating whether or not the user has
     selected an element in class 'els'. Also removes the 'incorrect' class to reset
@@ -386,12 +396,13 @@ $.extend(KhanUtil, {
     Type: void
   ***/
   
-  elClicked: function(el){
+  elClicked: function(){
     $('.els').click(function(){
       $(this).toggleClass("fakeDrag");
-      $('.els').removeClass("incorrect");
+      $('.els').removeClass("incorrect2");
     });
   },
+  
   
   /***
     Once the user clicks the 'submit answer' button, all selected elements are collected
@@ -411,21 +422,87 @@ $.extend(KhanUtil, {
         if($(answers[0]).attr('id') == 'pv'){
           $("#bool").remove();
           $('<span style="visibility:hidden" id="bool">true</span>').appendTo('.answers');
-          $('.fakeDrag').addClass("correct");          
+          $('.fakeDrag').addClass("correct2");          
         }
         else{
           $("#bool").remove();
           $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
-          $('.fakeDrag').addClass("incorrect");
+          $('.fakeDrag').addClass("incorrect2");
         }
       }
       else{
         $("#bool").remove();
         $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
-        $('.fakeDrag').addClass("incorrect");        
+        $('.fakeDrag').addClass("incorrect2");        
       }
       
     });
+  },
+  
+  
+  seeSelected: function(array){
+    var answers = [];
+    var tmp = "";
+    for(var i=0; i<array.length;i++){
+      tmp = $("."+array[i]).text();
+      if(tmp !==""){
+        answers.push(tmp.trim().toLowerCase());
+      }
+    }
+    
+   /** $('#check-answer-button').on('click', function(event){
+      var selected = [];
+      selected = $('.userChoice');
+      if(selected.length === 0){
+        event.stopImmediatePropagation();
+        console.log(event + " stopped" );        
+      }
+    });**/
+    
+    $('#check-answer-button').on("mousedown",function(){
+      var selected = [];
+      selected = $('.userChoice');
+      var check = [];      
+      for(var j=0;j<selected.length;j++){
+        tmp =  $(selected[j]).text();
+        check.push(tmp.trim().toLowerCase());
+      }
+      var count = 0;
+      var cLen = check.length;
+      var aLen = answers.length;
+      if(cLen === aLen){
+        for(var k=0; k<aLen;k++){
+          if(check[k] === answers[k]){
+            count++;
+          }
+        }
+      }
+      $("#bool").remove();
+      if(count === aLen){
+        $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
+      }
+    });
+  },
+  
+  clickSent: function(sentence){
+    $('.words').on('click',function(){
+      $(this).toggleClass('userChoice');
+    });
+  },
+  
+  makeSent: function(sentence){
+    var words = ['waarom','hoe','wanneer','welke','wie'];
+    var verbs = ['hww','kww','hww'];
+    for(var i=0; i<sentence.length;i++){
+      $('<span class = "words ' + sentence[i][1] + '"> ' + sentence[i][0] +'</span>').appendTo('.answers');
+    }
+    if(words.indexOf(sentence[0][0].trim().toLowerCase()) > -1 || verbs.indexOf(sentence[0][1].trim().toLowerCase()) > -1){
+      $('<span>?</span>').appendTo('.answers');      
+    } 
+    else{
+      $('<span>.</span>').appendTo('.answers');          
+    }
+    
   },
   
   /***
@@ -480,7 +557,11 @@ $.extend(KhanUtil, {
     var levelTwo = ['pv','ond','rest'];
     var levelThree = ['pv','ond','wwg','rest'];
     var levelFour = ['pv','ond','lv','wwg','rest'];
-    
+    var levelSix = ['pv','ond','lv','rest'];
+    var levelTen = ['pv','ond','lv','mwv','rest'];
+    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','rest'];
+    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','rest'];
+    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','rest'];    
     switch(level){
       case 1: 
         selected = levelOne;
@@ -493,6 +574,21 @@ $.extend(KhanUtil, {
         break;
       case 4:
         selected = levelFour;
+        break;
+      case 6:
+        selected = levelSix;
+        break;
+      case 10:
+        selected = levelTen;
+        break;
+      case 12:
+        selected = levelTwelve;
+        break;
+      case 14:
+        selected = levelFourteen;
+        break;
+      case 16:
+        selected = levelSixteen;
         break;
     }
     var length = selected.length;
@@ -516,7 +612,7 @@ $.extend(KhanUtil, {
     var sentString = "";
     var len = sentence.length;
     for (var i=0; i<len; i++){
-      if(sentence[i][0] !=""){
+      if(sentence[i][0] !=" "){
         sentString = sentString.concat(sentence[i][0] + " ");
       }
     }
@@ -530,7 +626,7 @@ $.extend(KhanUtil, {
         $('<span class = "userPick els" id = ' + j +'> ' + sentString[j] + '</span>').appendTo('.answers');
         k++;
       }
-      qWords = ['Waarom','Hoeveel','Waar','Hoe','Waarom','Wanneer'];
+      qWords = ['Waarom','Hoeveel','Waar','Hoe','Waarom','Wanneer','Welke'];
       if(j == sLen-1){
         if(sentence[0][1] == 'pv' || qWords.indexOf(sentence[0][0]) >-1){
           $('<span class ="pipe" id =' + k + '></span>?').appendTo('.answers');
@@ -557,6 +653,75 @@ $.extend(KhanUtil, {
       }
     }
     return count;
+  },
+
+  userPick2: function(zin){
+    var click = 0;
+    var start = -1;
+    var end = -1;
+    var corr = [];    
+    var incorr = [];
+    var ids = [];
+    var drops = $('.drop');
+    var len = drops.length;
+    for(var k=0; k<len;k++){
+      ids.push($(drops[k]).attr('id'));
+    }
+    var zinlen = this.getZin(zin);
+
+    $('.pipe').click(function(){
+      $(this).toggleClass('clicked');
+      click++;
+      var len = $('.clicked').length;
+      if(len === 2){
+        var c = $('.clicked');
+        var start = $(c[0]).attr('id');
+        var end = $(c[1]).attr('id');
+        var selected = "";
+        for(var z = start-20; z<=end-21; z++){
+          selected = selected.concat($('#'+z).text());
+        }
+        var eq = "";
+        var same = false;
+        var zLen = zin.length;
+        for(var y = 0; y<zLen; y++){
+          if(selected.trim() == zin[y][0].trim()){
+            same = true;
+            if(ids.indexOf(zin[y][1]) > -1){ //if there is a droppable with this id
+              eq = zin[y][1];
+            }
+            else{
+              eq = 'rest' + click;
+            }
+          }
+        }
+        if(same){
+          $('<span class = "drag selected c" id=' + eq + '>' + selected + '<span class="delete" id="' + eq +'">x</span></span><br>').appendTo('.boxes');
+        }
+        else{
+          $('<span class = "drag selected" id=' + click + '>' + selected + '<span class="delete" id="' + eq + '">x</span></span><br>').appendTo('.boxes');
+        }
+		if (typeof Khan.onItyEfResize == 'function'){
+			Khan.onItyEfResize();
+		}
+        $('.clicked').removeClass('clicked');
+      }
+    });
+    
+    $(document).on("click",".delete",function(){
+      $(this).siblings().remove();
+      $(this).parent().next().remove();
+      $(this).parent().remove();     
+      $(this).remove();    
+    });
+    
+    $('#check-answer-button').mousedown(function(){
+      var len = $(".c").length;
+      if(len === zinlen){
+        $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
+      }
+    });
+    
   },
   
   /***
@@ -590,7 +755,7 @@ $.extend(KhanUtil, {
     span-element with the amount of clicks received so far as id is appended.
     Then, it removes the class 'clicked' from all elements with class 'clicked'.
     ***/
-    
+       
     $('.pipe').click(function(){
       $(this).toggleClass('clicked');
       click++;
@@ -606,7 +771,6 @@ $.extend(KhanUtil, {
         var eq = "";
         var same = false;
         var zLen = zin.length;
-        
         for(var y = 0; y<zLen; y++){
           if(selected.trim() == zin[y][0].trim()){
             same = true;
@@ -619,11 +783,14 @@ $.extend(KhanUtil, {
           }
         }
         if(same){
-          $('<span class = "drag selected" id=' + eq + '>' + selected + '<span class="delete">x</span></span>').appendTo('.answers');
+          $('<span class = "drag selected" id=' + eq + '>' + selected + '<span class="delete">x</span></span><br>').appendTo('.boxes');
         }
         else{
-          $('<span class = "drag selected" id=' + click + '>' + selected + '<span class="delete">x</span></span>').appendTo('.answers');
+          $('<span class = "drag selected" id=' + click + '>' + selected + '<span class="delete">x</span></span><br>').appendTo('.boxes');
         }
+		if (typeof Khan.onItyEfResize == 'function'){
+			Khan.onItyEfResize();
+		}
         $('.clicked').removeClass('clicked');
         
         /***
@@ -634,6 +801,7 @@ $.extend(KhanUtil, {
         
         $('.delete').click(function(){
            $(this).siblings().remove();
+           $(this).parent().next().remove();           
            $(this).parent().remove();
            $(this).remove();
          });
@@ -665,22 +833,23 @@ $.extend(KhanUtil, {
           if(dragID === dropID || dropID == rest){
             if(dropID === "pv"){
               $('#pv2').remove();
-              $("<span class='fakeDrag corr2' id='pv2'>" + $('#'+dragID).clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
+              $("<span class='fakeDrag corr2' id='pv2'>" + $('#'+dragID + ".drag").clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
             }
-            $("#" + dragID).removeClass("inc");
-            $("#" + dragID).addClass("corr");
+            $("#" + dragID + ".drag").removeClass("inc");
+            $("#" + dragID + ".drag").addClass("corr");
           }
           else{
             if(dropID === "pv"){
               $('#pv2').remove();
-              $("<span class='fakeDrag inc2' id='pv2'>" + $('#'+dragID).clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
+              $("<span class='fakeDrag inc2' id='pv2'>" + $('#'+dragID + ".drag").clone().children().remove().end().text() + "</span>").appendTo('#wwg.drop');
             }
-            $("#" + dragID).removeClass("corr");
-            $("#" + dragID).addClass("inc");
+            $("#" + dragID + ".drag").removeClass("corr");
+            $("#" + dragID + ".drag").addClass("inc");
           }
           }    
         });
       });
+      
       
       /***
         When the 'submit answer' button is clicked, toggle classes so that correct answers
@@ -690,14 +859,14 @@ $.extend(KhanUtil, {
       ***/
       
     $("#check-answer-button").mousedown(function(){
-      $('.corr').removeClass('incorrect');
-      $('.corr').addClass('correct');
-      $('.inc').removeClass('correct');
-      $('.inc').addClass('incorrect');
-      $('.inc2').addClass('incorrect');
-      $('.inc2').removeClass('correct');
-      $('.corr2').addClass('correct');
-      $('.corr2').removeClass('incorrect');
+      $('.corr').removeClass('incorrect2');
+      $('.corr').addClass('correct2');
+      $('.inc').removeClass('correct2');
+      $('.inc').addClass('incorrect2');
+      $('.inc2').addClass('incorrect2');
+      $('.inc2').removeClass('correct2');
+      $('.corr2').addClass('correct2');
+      $('.corr2').removeClass('incorrect2');
       var cLen = $('.corr').length;
       if(cLen == zinlen){
         $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");

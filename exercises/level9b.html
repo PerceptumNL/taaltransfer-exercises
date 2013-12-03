@@ -2,7 +2,7 @@
 <html data-require="math math-format graphie taaltransfer">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Werkwoorden benoemen</title>
+    <title>Woorden benoemen - Vragend voornaamwoord</title>
     <script src="../khan-exercise.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/taaltransfer.css">
 
@@ -13,23 +13,19 @@
     <div class="vars">
         <var id="SENTENCES">readFile("../csv/zinnen.csv")</var>
         <var id="WORDS">readFile("../csv/woorden.csv")</var>
-        <var id="CAT">[1,2,16,18,25,27,50]</var>
+        <var id="CAT">[2,27,18,54,55,56,13,45,25,16,50,12,43,44]</var>
         <var id="NUMBER">makeNumber(CAT, SENTENCES)</var>
         <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var>
-        <var id="FIX">fixSentence(SENTENCES[NUMBER])</var>
         <var id="TUPLE">getWordID(ZIN, WORDS)</var>
 
     </div>
     
     <div class="problems">
         <div>
-            <p class="question">Klik in onderstaande zin op alle werkwoorden.</p>
-            <p class='answers'></p>    
-            <var>makeSent(TUPLE)</var>   
-            <var>clickSent(TUPLE)</var>          
-            <var>seeSelected(['hww','kww','zww'])</var>
+            <p class="question">Sleep in onderstaande zin de juiste naam naar de woorden in de vakken.</p><p><var>showSentence(TUPLE,['vz','aan','vra'])</var><br></p>
+            <p class='answers'></p>       
             <span class="solution" data-type="custom">
-              <div class="instruction">Klik op de werkwoorden.</div>
+              <div class="instruction">Sleep de juiste namen naar de corresponderende woorden.</div>
               <div class="guess">$("#bool").text()</div>
               <div class="validator-function">if(guess.trim() == "true"){return true}</div>
               <div class="show-guess">guess</div>        
@@ -40,8 +36,6 @@
     </div>
 
     <div class="hints">
-    <p>Klik op alle werkwoorden in de zin. </p>
-    </div>
     </div>
 </body>
 </html>

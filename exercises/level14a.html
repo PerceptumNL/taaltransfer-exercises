@@ -2,7 +2,7 @@
 <html data-require="math math-format graphie taaltransfer">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Redekundig ontleden: onderwerp en persoonsvorm</title>
+    <title>Redekundig ontleden - Bijwoordelijke bepaling</title>
     <script src="../khan-exercise.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/taaltransfer.css">
 
@@ -13,15 +13,11 @@
     <div class="vars">
         <var id="SENTENCES">readFile("../csv/zinnen.csv")</var>
         <var id="PARTS">readFile("../csv/zinsdelen.csv")</var>
-        <var id="CAT">[1,25,16,50]</var>
+        <var id="CAT">[25,29,30,31,32,33,43,44,45,48,49,54,55,56,59,60,64,65,88,68,69,70,71,76,77,78,79,82,83,85,87,88,90,93,94,96,97]</var>
         <var id="NUMBER">makeNumber(CAT, SENTENCES)</var>
         <var id="TUPLE">fixSentence(SENTENCES[NUMBER])</var>
         <var id="GRAMMAR">fixParts(PARTS[NUMBER])</var>
-        <var id="PV">findNameValue(GRAMMAR, "pv")</var>
-        <var id="OND">findNameValue(GRAMMAR, "ond")</var>
-        <var id="LV">findNameValue(GRAMMAR, "lv")</var>
-        <var id="WWG">findNameValue(GRAMMAR, "wwg")</var>
-        <var id="LEVEL">answerBoxes(2)</var>
+        <var id="LEVEL">answerBoxes(14)</var>
     </div>
     
     <div class="problems">
@@ -42,16 +38,6 @@
     </div>
 
     <div class="hints">
-    <p>Om achter de persoonsvorm te komen maken we van de zin een vraag. De persoonsvorm komt dan vooraan te staan:</p>
-    <p><var>makeQuestion(GRAMMAR)</var></p>
-    <p>De persoonsvorm is dus "<b><var>PV</var></b>".
-    <p>Om achter het onderwerp te komen, vragen we ons af <span style="font-style:italic">wie</span> er <b><var>PV</var></b>.</p>
-    <p>Dat is dus "<b><var>OND</var></b>".</p>
-    <p>Het werkwoordelijk gezegde bevat alle werkwoorden.</p>
-    <p>Dat is dus de persoonsvorm "<b><var>PV</var></b>" plus <span data-if="findNameIndex(GRAMMAR,'wwg')>-1">de</span> <span data-else>eventuele</span> andere werkwoorden:</p>
-    <p>Het werkwoordelijk gezegde is dus "<b><var>PV + " " + WWG</var></b>".</p>
-    <p data-if="findNameIndex(GRAMMAR, 'lv') > -1">Het lijdend voorwerp bepalen we door ons af te vragen wie of wat <var>OND.toLowerCase() + " " + PV + " " + WWG</var>.</p>
-    <p data-if="findNameIndex(GRAMMAR, 'lv') > -1">Dat is dus "<b><var>LV</var></b>".</p>
     </div>
     </div>
 </body>
