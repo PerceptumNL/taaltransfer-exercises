@@ -1,6 +1,6 @@
 {
  "category": 16,
- "date": "2013-12-13T20:10:53.769919",
+ "date": "2013-12-16T13:58:57.631525",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Slapen de kinderen       .",
+   "16",
+   "x",
+   "",
+   "",
+   "Slapen",
+   "",
+   "",
+   "",
+   "de kinderen",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Hebben de katten gegeten      .",
    "16",
@@ -381,25 +400,6 @@
    "",
    "",
    ""
-  ],
-  [
-   " Streeft het museum naar een hoger bezoeksaantal      .",
-   "17",
-   "x",
-   "",
-   "",
-   "Streeft",
-   "",
-   "",
-   "",
-   "het museum",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "naar een hoger bezoeksaantal"
   ]
  ]
 }

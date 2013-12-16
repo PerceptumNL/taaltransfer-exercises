@@ -1,6 +1,6 @@
 {
  "category": 10,
- "date": "2013-12-13T20:10:53.701732",
+ "date": "2013-12-16T13:58:57.563314",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Naar een nieuwe baan zal de ontevreden werknemer moeten zoeken     .",
+   "10",
+   "x",
+   "",
+   "",
+   "zal",
+   "",
+   "",
+   "",
+   "de ontevreden werknemer",
+   "",
+   "moeten zoeken",
+   "",
+   "",
+   "",
+   "",
+   "Naar een nieuwe baan"
+  ],
   [
    " Voor een beter evenwicht zal deze oefening zorgen     .",
    "10",
@@ -381,25 +400,6 @@
    "",
    "",
    "Voor harige spinnen"
-  ],
-  [
-   " Anticipeer op de nieuwe situatie       .",
-   "11",
-   "x",
-   "",
-   "",
-   "Anticipeer",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "op de nieuwe situatie"
   ]
  ]
 }

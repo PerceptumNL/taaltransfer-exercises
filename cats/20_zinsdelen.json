@@ -1,6 +1,6 @@
 {
  "category": 20,
- "date": "2013-12-13T20:10:53.816725",
+ "date": "2013-12-16T13:58:57.674517",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Heeft de agente de automobilist een waarschuwing gegeven    .",
+   "20",
+   "x",
+   "",
+   "",
+   "Heeft",
+   "de automobilist",
+   "",
+   "",
+   "de agente",
+   "een waarschuwing",
+   "gegeven",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Schenkt de herbergier zijn gasten een extra glaasje wijn  in   .",
    "20",
@@ -436,25 +455,6 @@
    "",
    "",
    "ond",
-   "",
-   ""
-  ],
-  [
-   " Ons werd de geschiedenis van het Nederlandse voetbal verteld     .",
-   "21",
-   "x",
-   "",
-   "",
-   "werd",
-   "Ons",
-   "",
-   "",
-   "de geschiedenis van het Nederlandse voetbal",
-   "",
-   "verteld",
-   "",
-   "",
-   "",
    "",
    ""
   ]

@@ -1,6 +1,6 @@
 {
  "category": 48,
- "date": "2013-12-14T14:55:27.364212",
+ "date": "2013-12-16T13:57:11.678724",
  "header": [
   "sentence",
   "category",
@@ -28,7 +28,8 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
   [
@@ -58,7 +59,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schenk nu een mooi bedrag aan het goede doel     .",
@@ -87,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig tijdens de ceremonie deze bloemen aan de Olympisch kampioene     .",
@@ -116,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schrijf nooit deze zware pijnstillers aan kinderen  voor   .",
@@ -145,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Draag na jouw nachtdienst dit dossier aan de dagploeg  over   .",
@@ -174,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Draag volgende maand jouw taken aan jouw collega  over   .",
@@ -203,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Verkoop alsjeblieft die oude viool aan de instrumentenhandelaar     .",
@@ -232,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leen toch jouw oude laptop aan je zusje     .",
@@ -261,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geef nooit jouw pincode aan vreemden     .",
@@ -290,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vertel morgen de datum van de herkansing aan de vijfdeklassers     .",
@@ -319,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Lees elke avond een mooi verhaaltje aan je kinderen  voor   .",
@@ -348,7 +359,8 @@
    "",
    "elke,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schenk na het voorgerecht een zoet wijntje voor de gasten  in   .",
@@ -377,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schenk ieder jaar een klein deel van jouw salaris aan onze stichting     .",
@@ -406,7 +419,8 @@
    "",
    "ieder,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vertel rond het kampvuur dat griezelige verhaal aan de brugklassers     .",
@@ -435,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schrijf in ieder geval een hoestdrank aan de verkouden presentator  voor   .",
@@ -464,7 +479,8 @@
    "",
    "ieder,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schrijf nooit bloedverdunners aan jonge kinderen  voor   .",
@@ -493,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schrijf in geen geval deze zware medicijnen aan jonge kinderen  voor   .",
@@ -522,7 +539,8 @@
    "",
    "geen,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geef nooit koekjes met chocola aan honden     .",
@@ -551,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Draag morgen de gevonden sieraden aan de rechtmatige eigenaar  over   .",
@@ -580,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig met een glimlach de rekening aan de klanten     .",
@@ -609,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Deel na het onderzoek jouw bevindingen aan ons  mee   .",
@@ -638,36 +659,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Geef dat boek onmiddellijk aan mij     .",
-   "49",
-   "",
-   "Geef,",
-   "boek,",
-   "",
-   "",
-   "mij,",
-   "",
-   "aan,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "dat,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "onmiddellijk,",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

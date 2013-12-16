@@ -1,6 +1,6 @@
 {
  "category": 12,
- "date": "2013-12-13T20:10:53.721724",
+ "date": "2013-12-16T13:58:57.584197",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Zing een vrolijk deuntje       .",
+   "12",
+   "x",
+   "",
+   "",
+   "Zing",
+   "",
+   "",
+   "",
+   "",
+   "een vrolijk deuntje",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Leg de krant weg      .",
    "12",
@@ -703,25 +722,6 @@
    "",
    "",
    "voor",
-   ""
-  ],
-  [
-   " Mooie tulpen hebben de toeristen gekocht     .",
-   "13",
-   "x",
-   "",
-   "",
-   "hebben",
-   "",
-   "",
-   "",
-   "de toeristen",
-   "Mooie tulpen",
-   "gekocht",
-   "",
-   "",
-   "",
-   "",
    ""
   ]
  ]

@@ -1,6 +1,6 @@
 {
  "category": 9,
- "date": "2013-12-13T20:10:53.691481",
+ "date": "2013-12-16T13:58:57.553503",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Mijn oma lijdt aan een milde vorm van dementie      .",
+   "9",
+   "x",
+   "",
+   "",
+   "lijdt",
+   "",
+   "",
+   "",
+   "Mijn oma",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "aan een milde vorm van dementie"
+  ],
   [
    " Een grote groep jongens heeft aan de danswedstrijd deelgenomen     .",
    "9",
@@ -381,25 +400,6 @@
    "",
    "",
    "op volle zalen"
-  ],
-  [
-   " Naar een nieuwe baan zal de ontevreden werknemer moeten zoeken     .",
-   "10",
-   "x",
-   "",
-   "",
-   "zal",
-   "",
-   "",
-   "",
-   "de ontevreden werknemer",
-   "",
-   "moeten zoeken",
-   "",
-   "",
-   "",
-   "",
-   "Naar een nieuwe baan"
   ]
  ]
 }

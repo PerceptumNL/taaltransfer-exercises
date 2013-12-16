@@ -1,6 +1,6 @@
 {
  "category": 13,
- "date": "2013-12-13T20:10:53.733359",
+ "date": "2013-12-16T13:58:57.596158",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Mooie tulpen hebben de toeristen gekocht     .",
+   "13",
+   "x",
+   "",
+   "",
+   "hebben",
+   "",
+   "",
+   "",
+   "de toeristen",
+   "Mooie tulpen",
+   "gekocht",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Een ontzettend spannend verhaal heeft die Surinaamse acteur verteld     .",
    "13",
@@ -414,25 +433,6 @@
    "mijn vriendin en ik",
    "De Italiaanse kust",
    "bezocht",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " De directeur van de platenmaatschappij heeft de bekende Amerikaanse zangeres een nieuw contract gegeven    .",
-   "14",
-   "x",
-   "",
-   "",
-   "heeft",
-   "de bekende Amerikaanse zangeres",
-   "",
-   "",
-   "De directeur van de platenmaatschappij",
-   "een nieuw contract",
-   "gegeven",
    "",
    "",
    "",

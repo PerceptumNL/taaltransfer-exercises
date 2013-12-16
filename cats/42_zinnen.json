@@ -1,6 +1,6 @@
 {
  "category": 42,
- "date": "2013-12-14T14:55:27.287842",
+ "date": "2013-12-16T13:57:11.594728",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Dring bij de burgemeester op een oplossing van het conflict aan     .",
+   "42",
+   "de,een,het,",
+   "Dring,",
+   "burgemeester,oplossing,conflict,",
+   "",
+   "",
+   "",
+   "",
+   "bij,op,van,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "aan,",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Stuur altijd op een vreedzame oplossing aan     .",
    "42",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geef nooit op je dierbaren af     .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Stem bij een ramp op de lokale nieuwszenders af     .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wijk onmiddellijk van de route af     .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Anticipeer razendsnel op zijn schijnbewegingen      .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Begin bij thuiskomst aan je huiswerk      .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Begin alsjeblieft met de reparatie van mijn computer      .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Begin meteen met deze herhalingsopgave      .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Neem op vrijwillige basis aan deze dansles deel     .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Denk altijd aan andere mensen      .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geniet tijdens de zomer van het mooie weer      .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geniet samen van jullie welverdiende vakantie      .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geniet met Kerstmis van de gezellige sfeer      .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geef ook om andere mensen      .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geef ook om het welzijn van dieren      .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hoop tijdens de finale op een Nederlandse overwinning      .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ga niet op zijn aanbod in     .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ga onmiddellijk op zijn aanbod in     .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kijk om acht uur naar het televisiejournaal      .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kijk nooit naar die schokkende beelden      .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Luister altijd naar het advies van je ouders      .",
@@ -638,7 +689,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Luister nooit naar geroddel      .",
@@ -667,7 +719,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Luister zeer aandachtig naar mijn uitleg      .",
@@ -696,7 +749,8 @@
    "zeer,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Luister goed naar de tekst van dat liedje      .",
@@ -725,7 +779,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Denk zeer goed over de gevolgen van jouw gedrag na     .",
@@ -754,36 +809,8 @@
    "zeer,",
    "",
    "",
-   "x"
-  ],
-  [
-   " Koop onmiddellijk dat boek      .",
-   "43",
-   "",
-   "Koop,",
-   "boek,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "dat,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "onmiddellijk,",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

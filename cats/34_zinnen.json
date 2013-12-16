@@ -1,6 +1,6 @@
 {
  "category": 34,
- "date": "2013-12-14T14:55:27.188429",
+ "date": "2013-12-16T13:57:11.488630",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Raad zwangere vrouwen dit geneesmiddel nooit aan    .",
+   "34",
+   "",
+   "Raad,",
+   "vrouwen,geneesmiddel,",
+   "",
+   "",
+   "",
+   "zwangere,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "dit,",
+   "",
+   "",
+   "",
+   "",
+   "aan,",
+   "nooit,",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Schenk het stadsarchief mijn verzameling stadsplattegronden na mijn dood     .",
    "34",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Draag jouw opvolger dit vertrouwelijke dossier tijdens de slotvergadering over    .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig de vermoeide hardlopers een flesje water na de finish     .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Verkoop hem jouw dierbare antiekverzameling nooit     .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leen jouw klasgenootje jouw passer toch     .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bied de bezoekers van de sauna een badjas bij binnenkomst aan    .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bied de Zweedse prinses dit kleine presentje na haar toespraak aan    .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Gun jouw grote rivaal de etappeoverwinning niet     .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ontfutsel de bankdirecteur de code van de kluis met een smoesje     .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ontneem criminelen hun dure auto's en sieraden na hun veroordeling     .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Deel de journalisten het vertrek van de minister van volksgezondheid tijdens de persconferentie mee    .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Beloof nieuwe klanten een extra hoge korting tijdens onze actieweken     .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Raad iedereen deze blessuregevoelige sport absoluut af    .",
@@ -406,7 +449,8 @@
    "",
    "iedereen,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Raad niemand die ontzettend voorspelbare film meer aan    .",
@@ -435,7 +479,8 @@
    "ontzettend,",
    "niemand,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vergeef hem die kwetsende opmerkingen toch     .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vergeef jouw broer zijn fouten toch     .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vergeef uw broer zijn slechte advies toch     .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leg de nieuwe studenten van de rijschool de ingewikkelde voorrangsregels zeer goed uit    .",
@@ -551,7 +599,8 @@
    "zeer,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vertel de leerlingen van de brugklas de datum van de toetsweek tijdens de eerste les     .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vergeef iedereen zijn fouten na een welgemeend excuus     .",
@@ -609,36 +659,8 @@
    "",
    "iedereen,",
    "",
-   "x"
-  ],
-  [
-   " De trouwringen heeft het mooie bruidsmeisje tijdens de huwelijksceremonie aan de bruidegom gegeven   .",
-   "35",
-   "De,het,de,de,",
-   "gegeven,",
-   "trouwringen,bruidsmeisje,huwelijksceremonie,bruidegom,",
-   "",
-   "",
-   "",
-   "mooie,",
-   "tijdens,aan,",
-   "",
-   "",
-   "heeft,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

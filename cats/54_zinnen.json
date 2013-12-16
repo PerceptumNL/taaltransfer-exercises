@@ -1,6 +1,6 @@
 {
  "category": 54,
- "date": "2013-12-14T14:55:27.443567",
+ "date": "2013-12-16T13:57:11.768303",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " In de verlenging miste de middenvelder van PSV een penalty     .",
+   "54",
+   "de,de,een,",
+   "miste,",
+   "verlenging,middenvelder,PSV,penalty,",
+   "",
+   "",
+   "",
+   "",
+   "In,van,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Met de hulp van zijn schoonzoon loste de puzzelfanaat het kruiswoordraadsel  op   .",
    "54",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Voor de tweede keer dit jaar heeft de automobilist een bekeuring gekregen    .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Enthousiast begroette het publiek de zangeres     .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Met een prachtige omhaal scoorde de spits de gelijkmaker     .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Trots bekeek de geslaagde studente haar diploma     .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Gisteren heb ik pannenkoeken gegeten    .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Elke morgen koopt mijn vader verse broodjes     .",
@@ -232,7 +269,8 @@
    "",
    "Elke,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Om acht uur bekijk ik het journaal     .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " In Haarlem heb ik dit schilderij gekocht    .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " In Parijs hebben wij de Eiffeltoren beklommen    .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bij de groenteboer heb ik verse andijvie gekocht    .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan de overkant van de rivier zag ik twee wilde beren lopen    .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " In onze appelboom heeft een merel haar nestje gebouwd    .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ongeduldig bekeken de toeschouwers de wedstrijd     .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Over een uur moet mijn klas een wiskundetoets maken    .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Na het dessert bestelden de gasten een kopje koffie     .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Tijdens de lange vergadering bespraken de docenten de resultaten van de leerlingen     .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Tijdens hun zomervakantie hebben de leden van de scouting het Poolse weeshuis opgeknapt    .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vandaag viert mijn vriendin haar verjaardag     .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Gisteren heeft haar neef zijn eerste bekeuring gekregen    .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op oudejaarsdag bezoekt mijn hele familie het graf van mijn oma     .",
@@ -638,7 +689,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Om de hoek kan je de lekkerste gebakjes van de stad kopen    .",
@@ -667,7 +719,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Met een touw en een zwemvest heeft de brandweer de drenkeling gered    .",
@@ -696,7 +749,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " In de tram hebben de zakkenrollers de toeriste bestolen    .",
@@ -725,7 +779,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Tijdens de huldiging heeft de Olympisch kampioene haar fanatieke supporters bedankt    .",
@@ -754,7 +809,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Straks gaan we het Rijksmuseum bezoeken    .",
@@ -783,7 +839,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op het bouwterrein ontdekten de werklieden het skelet van een dinosaurus     .",
@@ -812,7 +869,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Voor het middageten hebben de peuters een liedje gezongen    .",
@@ -841,7 +899,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " In het motel hebben de agenten de gezochte crimineel gearresteerd    .",
@@ -870,7 +929,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Per telefoon heeft de burgemeester de honderdjarige inwoner gefeliciteerd    .",
@@ -899,7 +959,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Met de armen in de lucht bereikte de marathonloper de finish     .",
@@ -928,7 +989,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Voor de zekerheid reserveerde de jubelaris een tafeltje     .",
@@ -957,7 +1019,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Door het gebrek aan vers gras moest de herder zijn kudde schapen bijvoeren    .",
@@ -986,36 +1049,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Hebben de hyena's ook de ingewanden van de zebra opgegeten    .",
-   "55",
-   "de,de,de,",
-   "opgegeten,",
-   "hyena's,ingewanden,zebra,",
-   "",
-   "",
-   "",
-   "",
-   "van,",
-   "",
-   "",
-   "Hebben,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "ook,",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

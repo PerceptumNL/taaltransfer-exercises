@@ -1,6 +1,6 @@
 {
  "category": 15,
- "date": "2013-12-14T14:55:26.942538",
+ "date": "2013-12-16T13:57:11.231841",
  "header": [
   "sentence",
   "category",
@@ -28,7 +28,8 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
   [
@@ -58,7 +59,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schenk een deel van jouw inkomen aan het goede doel      .",
@@ -87,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig deze oorkonde aan de jonge sporter      .",
@@ -116,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leen jouw zilveren armbandje aan haar      .",
@@ -145,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Verkoop die oude platen aan een verzamelaar      .",
@@ -174,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Deel de teleurstellende verkoopcijfers aan de aandeelhouders mee     .",
@@ -203,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Biecht jullie verhuisplannen aan de kinderen op     .",
@@ -232,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Raad deze vreselijke route aan iedereen af     .",
@@ -261,7 +269,8 @@
    "",
    "iedereen,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vertel de datum van de toets aan de leerlingen      .",
@@ -290,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leer een nieuw trucje aan de gehoorzame hond      .",
@@ -319,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vertel een leuke anekdote aan de klas      .",
@@ -348,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vertel geen smoesjes aan jouw huiswerkbegeleider      .",
@@ -377,7 +389,8 @@
    "",
    "geen,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Deel het goede nieuws aan de winnaars van de loterij mee     .",
@@ -406,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ontfutsel de code van de kluis aan de medewerker van de bank      .",
@@ -435,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig de sleutels aan de nieuwe eigenaar van het huis      .",
@@ -464,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schenk een beetje aandacht aan onze oude buurvrouw      .",
@@ -493,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geef een potje pruimenjam aan de buurman      .",
@@ -522,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geef een complimentje aan de ijverige leerling      .",
@@ -551,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schrijf dat medicijn aan de diabeticus voor     .",
@@ -580,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schrijf deze zalf aan mensen met brandwonden voor     .",
@@ -609,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schrijf deze alternatieve therapie aan de jonge vrouw voor     .",
@@ -638,36 +659,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Slapen de kinderen       .",
-   "16",
-   "de,",
-   "Slapen,",
-   "kinderen,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

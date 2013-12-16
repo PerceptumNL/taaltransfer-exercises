@@ -1,6 +1,6 @@
 {
  "category": 34,
- "date": "2013-12-13T20:10:53.968300",
+ "date": "2013-12-16T13:58:57.830396",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Raad zwangere vrouwen dit geneesmiddel nooit aan    .",
+   "34",
+   "x",
+   "",
+   "",
+   "Raad",
+   "zwangere vrouwen",
+   "nooit",
+   "",
+   "",
+   "dit geneesmiddel",
+   "",
+   "",
+   "",
+   "",
+   "aan",
+   ""
+  ],
   [
    " Schenk het stadsarchief mijn verzameling stadsplattegronden na mijn dood     .",
    "34",
@@ -395,25 +414,6 @@
    "",
    "zijn fouten",
    "",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " De trouwringen heeft het mooie bruidsmeisje tijdens de huwelijksceremonie aan de bruidegom gegeven   .",
-   "35",
-   "x",
-   "",
-   "",
-   "heeft",
-   "aan de bruidegom",
-   "tijdens de huwelijksceremonie",
-   "",
-   "het mooie bruidsmeisje",
-   "De trouwringen",
-   "gegeven",
    "",
    "",
    "",

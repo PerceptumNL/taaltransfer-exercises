@@ -1,6 +1,6 @@
 {
  "category": 21,
- "date": "2013-12-13T20:10:53.827998",
+ "date": "2013-12-16T13:58:57.686006",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Ons werd de geschiedenis van het Nederlandse voetbal verteld     .",
+   "21",
+   "x",
+   "",
+   "",
+   "werd",
+   "Ons",
+   "",
+   "",
+   "de geschiedenis van het Nederlandse voetbal",
+   "",
+   "verteld",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Mij is de stelling van Pythagoras uitgelegd     .",
    "21",
@@ -395,25 +414,6 @@
    "de datum van hun huwelijk",
    "",
    "ontfutseld",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " Dat verhaal werd hem verteld     .",
-   "22",
-   "x",
-   "",
-   "",
-   "werd",
-   "hem",
-   "",
-   "",
-   "Dat verhaal",
-   "",
-   "verteld",
    "",
    "",
    "",

@@ -1,6 +1,6 @@
 {
  "category": 19,
- "date": "2013-12-14T14:55:27.000592",
+ "date": "2013-12-16T13:57:11.286374",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Waren de hotelovernachtingen duur      .",
+   "19",
+   "de,",
+   "",
+   "hotelovernachtingen,",
+   "",
+   "",
+   "",
+   "duur,",
+   "",
+   "Waren,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Waren de kinderen heel erg verlegen      .",
    "19",
@@ -58,7 +89,8 @@
    "heel,erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is het leven van een topsporter zwaar      .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is Frits geloofwaardig      .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is het meubilair van mijn grootouders ouderwets      .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is de wonderdokter een oplichter gebleken     .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Waren die paddenstoelen giftig      .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is die chirurg bekwaam      .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wordt het Nederlands elftal wereldkampioen      .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Waren de dure bijlessen nuttig      .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Lijkt de spits dikker te zijn geworden     .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bleek het gedumpte afval gevaarlijk te zijn     .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Was de behandeling succesvol      .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Waren de leerlingen bang      .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is deze oefening te moeilijk      .",
@@ -435,7 +479,8 @@
    "te,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Was het televisieprogramma een kijkcijferhit geworden     .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Was de muziek te luid      .",
@@ -493,7 +539,8 @@
    "te,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Was de assistent van de dokter behulpzaam      .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is het schilderen van het plafond een tijdrovende klus      .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Waren de jonge kinderen bang      .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is de nieuwe behandelmethode een succes      .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zullen Anne en Marieke goede vrienden worden     .",
@@ -638,36 +689,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Heeft de agente de automobilist een waarschuwing gegeven    .",
-   "20",
-   "de,de,een,",
-   "gegeven,",
-   "agente,automobilist,waarschuwing,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "Heeft,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

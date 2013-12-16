@@ -1,6 +1,6 @@
 {
  "category": 55,
- "date": "2013-12-14T14:55:27.457013",
+ "date": "2013-12-16T13:57:11.784178",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Hebben de hyena's ook de ingewanden van de zebra opgegeten    .",
+   "55",
+   "de,de,de,",
+   "opgegeten,",
+   "hyena's,ingewanden,zebra,",
+   "",
+   "",
+   "",
+   "",
+   "van,",
+   "",
+   "",
+   "Hebben,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "ook,",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Hebben de verdwaalde toeristen goed de stadsplattegrond bekeken    .",
    "55",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de schaatser tijdens de eerste training van het seizoen zijn sleutelbeen gebroken    .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mag je tijdens de toets hulpmiddelen gebruiken    .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de stroper stiekem een val geplaatst    .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben medewerkers van het ministerie van volksgezondheid in de buurt van die fabriek de luchtverontreiniging gemeten    .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben sommige salamandersoorten echt kieuwen en longen     .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Haalt de gemeente iedere week het chemische afval  op   .",
@@ -232,7 +269,8 @@
    "",
    "iedere,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Gaan jullie volgende week de zolderverdieping verbouwen    .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de talentvolle verdediger als tussenstap een contract bij de Duitse middenmotor getekend    .",
@@ -290,7 +329,8 @@
    "",
    "als,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de wielrenner door de knappe etappezege veel tijd gewonnen    .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is de bokser door de harde stoot zijn bewustzijn verloren    .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Moeten huizenbezitters tegenwoordig het dak isoleren    .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Moesten de krijgsgevangenen tijdens hun gevangenschap een metersdiep kanaal graven    .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kregen Nederlandse vrouwen in 1919 actief kiesrecht     .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Moest de militaire eenheid tijdens de felle demonstratie de orde handhaven    .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft die Engelse tiener al de twee hoogste bergen ter wereld beklommen    .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de wetenschapper na jaren van onderzoek zijn gewaagde theorie moeten aanpassen    .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben jullie afgelopen zaterdag de volle maan gezien    .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Had een giftige slang tijdens jullie wandeling de ervaren gids gebeten    .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Exporteert Nederland momenteel steenkool     .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de tandarts uiteindelijk jouw verstandskiezen getrokken    .",
@@ -638,7 +689,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de doelman in blessuretijd de onterechte penalty gestopt    .",
@@ -667,7 +719,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zal het Nederlands voetbalelftal tijdens het WK de finale bereiken    .",
@@ -696,7 +749,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Moesten de derdeklassers tijdens de biologieles een koeienoog ontleden    .",
@@ -725,7 +779,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mag het journaal volgens jou schokkende beelden laten zien    .",
@@ -754,7 +809,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben jullie wel de inhoudsopgave bekeken    .",
@@ -783,36 +839,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Kleden jullie je snel  aan   .",
-   "56",
-   "",
-   "Kleden,",
-   "",
-   "",
-   "jullie,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "je,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "aan,",
-   "snel,",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

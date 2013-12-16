@@ -1,6 +1,6 @@
 {
  "category": 24,
- "date": "2013-12-13T20:10:53.860604",
+ "date": "2013-12-16T13:58:57.717278",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Heeft jouw broer de etensrestjes aan de hond gegeven    .",
+   "24",
+   "x",
+   "",
+   "",
+   "Heeft",
+   "aan de hond",
+   "",
+   "",
+   "jouw broer",
+   "de etensrestjes",
+   "gegeven",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Hebben de kinderen de stukjes brood aan de eenden gegeven    .",
    "24",
@@ -395,25 +414,6 @@
    "je",
    "jouw laptop",
    "geleend",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " De voetbalfans juichten uitbundig      .",
-   "25",
-   "x",
-   "",
-   "",
-   "juichten",
-   "",
-   "uitbundig",
-   "",
-   "De voetbalfans",
-   "",
-   "",
    "",
    "",
    "",

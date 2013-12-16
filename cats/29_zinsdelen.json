@@ -1,6 +1,6 @@
 {
  "category": 29,
- "date": "2013-12-13T20:10:53.914276",
+ "date": "2013-12-16T13:58:57.776754",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Ik geef morgen de boor aan mijn vader  terug  .",
+   "29",
+   "x",
+   "",
+   "",
+   "geef",
+   "aan mijn vader",
+   "morgen",
+   "",
+   "Ik",
+   "de boor",
+   "",
+   "",
+   "",
+   "",
+   "terug",
+   ""
+  ],
   [
    " De scheidsrechter gaf alweer een penalty aan de tegenpartij    .",
    "29",
@@ -399,25 +418,6 @@
    "",
    "",
    "af",
-   ""
-  ],
-  [
-   " Het bezorgde baasje overhandigde de parkiet heel voorzichtig aan de dierenarts    .",
-   "30",
-   "x",
-   "",
-   "",
-   "overhandigde",
-   "aan de dierenarts",
-   "heel voorzichtig",
-   "",
-   "Het bezorgde baasje",
-   "de parkiet",
-   "",
-   "",
-   "",
-   "",
-   "",
    ""
   ]
  ]

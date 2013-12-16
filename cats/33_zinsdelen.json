@@ -1,6 +1,6 @@
 {
  "category": 33,
- "date": "2013-12-13T20:10:53.957868",
+ "date": "2013-12-16T13:58:57.819741",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Geef hem onmiddellijk zijn pen  terug   .",
+   "33",
+   "x",
+   "",
+   "",
+   "Geef",
+   "hem",
+   "onmiddellijk",
+   "",
+   "",
+   "zijn pen",
+   "",
+   "",
+   "",
+   "",
+   "terug",
+   ""
+  ],
   [
    " Geef het ambulancepersoneel nu een beetje ruimte     .",
    "33",
@@ -380,25 +399,6 @@
    "",
    "",
    "",
-   ""
-  ],
-  [
-   " Raad zwangere vrouwen dit geneesmiddel nooit aan    .",
-   "34",
-   "x",
-   "",
-   "",
-   "Raad",
-   "zwangere vrouwen",
-   "nooit",
-   "",
-   "",
-   "dit geneesmiddel",
-   "",
-   "",
-   "",
-   "",
-   "aan",
    ""
   ]
  ]

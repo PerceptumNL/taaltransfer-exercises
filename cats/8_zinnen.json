@@ -1,6 +1,6 @@
 {
  "category": 8,
- "date": "2013-12-14T14:55:26.853521",
+ "date": "2013-12-16T13:57:11.131539",
  "header": [
   "sentence",
   "category",
@@ -28,7 +28,8 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
   [
@@ -58,7 +59,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heel erg behulpzaam was de nieuwe buurman      .",
@@ -87,7 +89,8 @@
    "Heel,erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Behoorlijk chagrijnig was de oppas geworden     .",
@@ -116,7 +119,8 @@
    "Behoorlijk,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heel erg mooi is het nieuwe album van mijn favoriete zangeres geworden     .",
@@ -145,7 +149,8 @@
    "Heel,erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ontroostbaar is de verliezend finaliste      .",
@@ -174,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zeer openhartig was de nieuwe koning      .",
@@ -203,7 +209,8 @@
    "Zeer,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bijzonder vervelend waren de opmerkingen van zijn oom      .",
@@ -232,7 +239,8 @@
    "Bijzonder,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Tevreden en trots waren de winnaars van de bronzen medaille      .",
@@ -261,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Erg pittig schijnt dat Indiase gerecht te zijn     .",
@@ -290,7 +299,8 @@
    "Erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een bijzondere stad schijnt Boedapest te zijn     .",
@@ -319,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heel vermoeiend was mijn nachtdienst      .",
@@ -348,7 +359,8 @@
    "Heel,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een vrolijke jongen is de oudste zoon van mijn zus geworden     .",
@@ -377,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een groot succes is de samenwerking tussen de twee universiteiten gebleken     .",
@@ -406,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Gemotiveerd zijn de deelnemers aan de voorleeswedstrijd      .",
@@ -435,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Landskampioen is mijn favoriete handbalteam geworden     .",
@@ -464,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zeer verkouden is mijn kleine broertje geworden     .",
@@ -493,7 +509,8 @@
    "Zeer,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een bekende architect is de vader van Suzanne      .",
@@ -522,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Erg matig waren de resultaten van het onderzoek      .",
@@ -551,7 +569,8 @@
    "Erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een grote liefhebber van klassieke muziek bleek die zanger te zijn     .",
@@ -580,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Helemaal fout bleek de routebschrijving van de agent      .",
@@ -609,36 +629,8 @@
    "Helemaal,",
    "",
    "",
-   "x"
-  ],
-  [
-   " Mijn oma lijdt aan een milde vorm van dementie      .",
-   "9",
-   "een,",
-   "lijdt,",
-   "oma,vorm,dementie,",
-   "Mijn,",
-   "",
-   "",
-   "milde,",
-   "van,aan,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

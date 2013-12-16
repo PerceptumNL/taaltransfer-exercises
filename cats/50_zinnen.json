@@ -1,6 +1,6 @@
 {
  "category": 50,
- "date": "2013-12-14T14:55:27.389130",
+ "date": "2013-12-16T13:57:11.704796",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Bij het boerenbedrijf hebben de werknemers gestaakt     .",
+   "50",
+   "het,de,",
+   "gestaakt,",
+   "boerenbedrijf,werknemers,",
+   "",
+   "",
+   "",
+   "",
+   "Bij,",
+   "",
+   "",
+   "hebben,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Waarom huilde jouw zusje      .",
    "50",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wanneer zal ons vliegtuig vertrekken     .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hoe kon die zeecontainer omslaan     .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op de gladde stoep is mijn oude buurvrouw uitgegleden     .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Na het eindsignaal hebben de supporters van de thuisploeg gejuicht     .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " In de laatste seconde van de verlenging heeft de spits van de tegenpartij gescoord     .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Tijdens elk feestje klagen onze buren      .",
@@ -232,7 +269,8 @@
    "",
    "elk,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Sinds twee maanden klemt mijn slaapkamerdeur      .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Na twee uurtjes moesten de wegwerkers pauzeren     .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Afgelopen week is die gevaarlijke crimineel ontsnapt     .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Na de zwemles bibberden de kleine kinderen      .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Waarom is zijn recordpoging mislukt     .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Waarom heb je gelogen     .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hoe reageerden de leraren      .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hoe laat landt het vliegtuig van jouw oma      .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " In 1886 brandde de toren van deze kerk  af    .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Na het bombardement zijn een aantal monumentale panden ingestort     .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Tijdens het wiskunde-examen had de eindexamenkandidate gespiekt     .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Na het optreden van de cabaretier heeft het publiek geapplaudisseerd     .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hoe laat landen we      .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Na het onverwachte verlies baalden de supporters      .",
@@ -638,7 +689,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Plotseling daalde het vliegtuig      .",
@@ -667,7 +719,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aanstaande woensdag zal mijn favoriete band optreden     .",
@@ -696,7 +749,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Waar zullen de kosmonauten landen     .",
@@ -725,7 +779,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Door de dijkdoorbraak waren veel koeien verdronken     .",
@@ -754,7 +809,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Waarom moest je lachen     .",
@@ -783,7 +839,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Na het ongeluk schreeuwde de geschrokken automobilist      .",
@@ -812,7 +869,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Door de airconditioning is de temperatuur gedaald     .",
@@ -841,7 +899,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Door de extreme hitte waren onze ijsjes gesmolten     .",
@@ -870,36 +929,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Is de penalty door de aanvoerder gemist     .",
-   "51",
-   "de,de,",
-   "gemist,",
-   "penalty,aanvoerder,",
-   "",
-   "",
-   "",
-   "",
-   "door,",
-   "",
-   "",
-   "Is,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

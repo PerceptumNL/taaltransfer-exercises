@@ -1,6 +1,6 @@
 {
  "category": 3,
- "date": "2013-12-13T20:10:53.630361",
+ "date": "2013-12-16T13:58:57.491686",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " De coach gaf een handtekening aan de supporters van het succesvolle voetbalteam     .",
+   "3",
+   "x",
+   "",
+   "",
+   "gaf",
+   "aan de supporters van het succesvolle voetbalteam",
+   "",
+   "",
+   "De coach",
+   "een handtekening",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " De acteur schenkt zijn salaris aan een goed doel     .",
    "3",
@@ -376,25 +395,6 @@
    "De verkoopster met de mooie glimlach",
    "het tasje",
    "",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " Hem heb ik dat boek geschonken    .",
-   "4",
-   "x",
-   "",
-   "",
-   "heb",
-   "Hem",
-   "",
-   "",
-   "ik",
-   "dat boek",
-   "geschonken",
    "",
    "",
    "",

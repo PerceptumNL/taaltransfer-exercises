@@ -1,6 +1,6 @@
 {
  "category": 18,
- "date": "2013-12-14T14:55:26.987756",
+ "date": "2013-12-16T13:57:11.272798",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Heb je vallende sterren gezien     .",
+   "18",
+   "",
+   "gezien,",
+   "sterren,",
+   "",
+   "je,",
+   "",
+   "vallende,",
+   "",
+   "",
+   "",
+   "Heb,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Moeten Jeroen en Lucas een presentatie houden     .",
    "18",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben de eksters een nieuw nest gebouwd     .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kan je de vuilnisbak verplaatsen     .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kunnen jullie het volkslied meezingen     .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mogen de bezoekers van het bos een kampvuurtje maken     .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de directeur van jullie school een toespraak gehouden     .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kreeg de bikkelharde verdediger geen gele kaart      .",
@@ -232,7 +269,8 @@
    "",
    "geen,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben jouw leerlingen goede resultaten behaald     .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de fotograaf mooie foto's van het natuurgebied gemaakt     .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Gaat zij die jurk kopen     .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de wilde beer haar jonkies beschermd     .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kan jij de tafel van dertien opzeggen     .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de astronaut een foto van de aarde gemaakt     .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de storm het dak van je huis verwoest     .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Begrijp je de Nederlandse spellingsregels      .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de hagelbui de fruitbomen beschadigd     .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Testte de arts je reflexen      .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Erkende de leraar zijn fout      .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft jullie docent de opdracht uitgelegd     .",
@@ -580,36 +629,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Waren de hotelovernachtingen duur      .",
-   "19",
-   "de,",
-   "",
-   "hotelovernachtingen,",
-   "",
-   "",
-   "",
-   "duur,",
-   "",
-   "Waren,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

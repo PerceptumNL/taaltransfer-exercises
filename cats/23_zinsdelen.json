@@ -1,6 +1,6 @@
 {
  "category": 23,
- "date": "2013-12-13T20:10:53.850335",
+ "date": "2013-12-16T13:58:57.706654",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Mij lijkt zijn voorstel een goed idee     .",
+   "23",
+   "x",
+   "",
+   "een goed idee",
+   "lijkt",
+   "Mij",
+   "",
+   "",
+   "zijn voorstel",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Zijn ouders leek de huiswerkklas een prima oplossing     .",
    "23",
@@ -433,25 +452,6 @@
    "het examen",
    "",
    "",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " Heeft jouw broer de etensrestjes aan de hond gegeven    .",
-   "24",
-   "x",
-   "",
-   "",
-   "Heeft",
-   "aan de hond",
-   "",
-   "",
-   "jouw broer",
-   "de etensrestjes",
-   "gegeven",
    "",
    "",
    "",

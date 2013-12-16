@@ -1,6 +1,6 @@
 {
  "category": 26,
- "date": "2013-12-13T20:10:53.881506",
+ "date": "2013-12-16T13:58:57.739288",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " De penalty werd door de reservekeeper gestopt     .",
+   "26",
+   "x",
+   "",
+   "",
+   "werd",
+   "",
+   "door de reservekeeper",
+   "",
+   "De penalty",
+   "",
+   "gestopt",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " De zebra werd door de leeuwin gegrepen     .",
    "26",
@@ -395,25 +414,6 @@
    "Ons nieuwe schoolgebouw",
    "",
    "ontworpen",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " Ik koop mijn brood bij die ambachtelijke bakkerij     .",
-   "27",
-   "x",
-   "",
-   "",
-   "koop",
-   "",
-   "bij die ambachtelijke bakkerij",
-   "",
-   "Ik",
-   "mijn brood",
-   "",
    "",
    "",
    "",

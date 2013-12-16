@@ -1,6 +1,6 @@
 {
  "category": 2,
- "date": "2013-12-13T20:10:53.620143",
+ "date": "2013-12-16T13:58:57.480921",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Willemijn aait de hond van de buren      .",
+   "2",
+   "x",
+   "",
+   "",
+   "aait",
+   "",
+   "",
+   "",
+   "Willemijn",
+   "de hond van de buren",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Zij heeft het concert van haar favoriete band bezocht     .",
    "2",
@@ -547,25 +566,6 @@
    "Ik",
    "me",
    "vergist",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " De coach gaf een handtekening aan de supporters van het succesvolle voetbalteam     .",
-   "3",
-   "x",
-   "",
-   "",
-   "gaf",
-   "aan de supporters van het succesvolle voetbalteam",
-   "",
-   "",
-   "De coach",
-   "een handtekening",
-   "",
    "",
    "",
    "",

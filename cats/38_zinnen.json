@@ -1,6 +1,6 @@
 {
  "category": 38,
- "date": "2013-12-14T14:55:27.237664",
+ "date": "2013-12-16T13:57:11.542017",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Die bekende presentator bleek eigenlijk heel gewoon te zijn    .",
+   "38",
+   "",
+   "",
+   "presentator,",
+   "",
+   "",
+   "",
+   "bekende,gewoon,",
+   "te,",
+   "zijn,",
+   "",
+   "bleek,",
+   "",
+   "",
+   "",
+   "Die,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "eigenlijk,",
+   "heel,",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Mijn klasgenoten waren vandaag heel erg druk     .",
    "38",
@@ -58,7 +89,8 @@
    "heel,erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De Amerikaanse president was vlak voor zijn toespraak behoorlijk zenuwachtig     .",
@@ -87,7 +119,8 @@
    "behoorlijk,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De zus van mijn beste vriendin wordt over drie maanden moeder     .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Jij bent altijd het drukste jongetje van de klas geweest    .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Die internationaal geroemde wetenschapper schijnt tot mijn verbazing een heel bescheiden man te zijn    .",
@@ -174,7 +209,8 @@
    "internationaal,heel,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een plaatsje bij de eerste drie lijkt dit jaar onmogelijk     .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn broertje wil later astronaut worden    .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De prijs van benzine is de afgelopen jaren heel erg hoog geworden    .",
@@ -261,7 +299,8 @@
    "heel,erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De reparatie van mijn auto zou volgens de monteur erg duur worden    .",
@@ -290,7 +329,8 @@
    "erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De vanillevla was volgens het testpanel het lekkerste toetje     .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het verfrommelde blaadje bleek na onderzoek een onbekend gedicht van Vondel te zijn    .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De treinreis door het noorden van Rusland bleek wederom een heel avontuur te zijn    .",
@@ -377,7 +419,8 @@
    "heel,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hij moet van zijn vader dokter worden    .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Eerlijkheid en trouw zijn volgens mij zeer belangrijke eigenschappen     .",
@@ -435,7 +479,8 @@
    "zeer,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De reactie van de voetballer was volgens de sportverslaggever zeer onsportief     .",
@@ -464,7 +509,8 @@
    "zeer,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Die zeer serieuze jongen uit ons leerjaar is volgens zijn coach een getalenteerde zeiler     .",
@@ -493,7 +539,8 @@
    "zeer,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het lamsvlees was door de goede bereiding van de kok heerlijk mals geworden    .",
@@ -522,7 +569,8 @@
    "heerlijk,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Onze klassenfoto is door de slechte belichting erg donker geworden    .",
@@ -551,7 +599,8 @@
    "erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn doelpunt bleek uiteindelijk de winnende treffer te zijn    .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De eindtijd van de marathonloper was volgens de commentator een nieuw wereldrecord     .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De dubieuze beslissing van de scheidsrechter bleek achteraf volledig correct te zijn    .",
@@ -638,7 +689,8 @@
    "volledig,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Onze overgrootoma wordt deze zomer honderd jaar     .",
@@ -667,36 +719,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Heel erg grappig bleek de zangeres tijdens het optreden te zijn    .",
-   "39",
-   "de,het,",
-   "",
-   "zangeres,optreden,",
-   "",
-   "",
-   "",
-   "grappig,",
-   "tijdens,te,",
-   "zijn,",
-   "",
-   "bleek,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "Heel,erg,",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

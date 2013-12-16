@@ -1,6 +1,6 @@
 {
  "category": 43,
- "date": "2013-12-14T14:55:27.300566",
+ "date": "2013-12-16T13:57:11.608221",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Koop onmiddellijk dat boek      .",
+   "43",
+   "",
+   "Koop,",
+   "boek,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "dat,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "onmiddellijk,",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Zing straks dat grappige liedje      .",
    "43",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leg tijdens het avondeten jouw boek weg     .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Lees uitvoerig de bijsluiters van medicijnen      .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Sluit altijd een goede reisverzekering af     .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Eet netjes je groente op     .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Drink elke dag een glas melk      .",
@@ -203,7 +239,8 @@
    "",
    "elke,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Versier morgen de stoel van jouw jarige klasgenootje      .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ruim na de picknick de rommel op     .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Doe elke dag de afwas      .",
@@ -290,7 +329,8 @@
    "",
    "elke,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Stofzuig iedere zaterdag de woonkamer      .",
@@ -319,7 +359,8 @@
    "",
    "iedere,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Onderzoek vandaag de geblesseerde atleet      .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bestudeer voor morgen de Franse woordjes      .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bel onmiddellijk de alarmlijn      .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Vergeet niet je lunchpakketje      .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Verlies nooit je portemonnee      .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schrijf morgen een kort verhaal      .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bedenk voor morgen een sprookje      .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Onthoud altijd je pincode      .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Haal bij de supermarkt verse broodjes      .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Pers elke morgen een vers glaasje sinaasappelsap      .",
@@ -609,36 +659,8 @@
    "",
    "elke,",
    "",
-   "x"
-  ],
-  [
-   " Koop dat prachtige boek onmiddellijk      .",
-   "44",
-   "",
-   "Koop,",
-   "boek,",
-   "",
-   "",
-   "",
-   "prachtige,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "dat,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "onmiddellijk,",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

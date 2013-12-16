@@ -1,6 +1,6 @@
 {
  "category": 28,
- "date": "2013-12-14T14:55:27.114254",
+ "date": "2013-12-16T13:57:11.410152",
  "header": [
   "sentence",
   "category",
@@ -28,7 +28,8 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
   [
@@ -58,7 +59,8 @@
    "",
    "elke,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De vriend van mijn zus koopt via internet zijn kleren     .",
@@ -87,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De hockeyer heeft bij de ongelukkige botsing zijn hand gebroken    .",
@@ -116,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De zangeres is tijdens het optreden haar stem verloren    .",
@@ -145,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De horlogemaker bekeek met grote zorgvuldigheid het kapotte uurwerk     .",
@@ -174,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De vuilnisman ontving na het ernstige ongeluk een schadevergoeding     .",
@@ -203,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De toeristen beklommen met veel moeite de kerktoren     .",
@@ -232,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De marktkoopman prees met veel lawaai zijn producten  aan   .",
@@ -261,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leeuwen proberen met een gerichte beet hun prooi te doden    .",
@@ -290,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De automonteur verwisselde binnen twintig minuten de voorbanden van mijn auto     .",
@@ -319,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De rechter heeft expliciet de laffe daad van de verdachte veroordeeld    .",
@@ -348,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Archeologen hebben twee jaar geleden een oude tombe opgegraven    .",
@@ -377,7 +389,8 @@
    "",
    "geleden,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De minister kon met moeite de lastige vragen beantwoorden    .",
@@ -406,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De Romeinen breidden in een mum van tijd hun gigantische rijk  uit   .",
@@ -435,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn oma verhuurt tegen een redelijke prijs haar zolderkamer     .",
@@ -464,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De brugklassers moesten met een liniaal de lengte van hun onderarm meten    .",
@@ -493,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hij heeft zonder veel moeite de namen van zijn collega's onthouden    .",
@@ -522,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het leger bestormde gisteren het gekaapte vliegtuig     .",
@@ -551,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De schrijver voltooide na acht jaar zijn laatste boek     .",
@@ -580,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Honden bakenen meestal hun territorium  af   .",
@@ -609,36 +629,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Ik geef morgen de boor aan mijn vader  terug  .",
-   "29",
-   "de,",
-   "geef,",
-   "boor,vader,",
-   "mijn,",
-   "Ik,",
-   "",
-   "",
-   "aan,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "terug,",
-   "morgen,",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

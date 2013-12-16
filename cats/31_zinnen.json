@@ -1,6 +1,6 @@
 {
  "category": 31,
- "date": "2013-12-14T14:55:27.151710",
+ "date": "2013-12-16T13:57:11.449397",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Hem zal ik mijn pen nooit lenen   .",
+   "31",
+   "",
+   "lenen,",
+   "pen,",
+   "mijn,",
+   "ik,",
+   "Hem,",
+   "",
+   "",
+   "",
+   "",
+   "zal,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "nooit,",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Ons wilde de choreograaf dat dansje niet leren   .",
    "31",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Haar heb ik dat nooit beloofd   .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mij heeft hij dat nooit verteld   .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De winnaars van de talentenjacht heeft de presentator de trofee uiteindelijk overhandigd   .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Niemand heb ik zijn geheimen vooralsnog verteld   .",
@@ -174,7 +209,8 @@
    "",
    "Niemand,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Jou heeft de tandarts jouw slechte eetgewoontes onmiddellijk afgeraden   .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn broertje en mij hebben onze ouders die boekjes vaak voorgelezen   .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Haar vervelende klasgenootje wilde zij haar aantekeningen absoluut niet lenen   .",
@@ -261,7 +299,8 @@
    "absoluut,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De dokter en zijn assistente heeft de bezorgde vrouw haar moedervlek tijdens het spreekuur laten zien   .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn vader heb ik de waarheid uiteindelijk verteld   .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hem heb ik de waarheid niet verteld   .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn oom heb ik die kwetsende opmerkingen nooit vergeven   .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan de geliefde voetballer gunde de bondscoach een paar speelminuten tijdens de wedstrijd tegen Duitsland    .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Haar heb ik die schuttingwoorden nooit geleerd   .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mij heeft hij dat boekje nooit geleend   .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn vader heb ik zijn verjaardagscadeau tijdens het ontbijt gegeven   .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan de bikkelharde verdediger gaf de scheidsrechter een gele kaart na zijn grove overtreding    .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan zijn directe concurrent gaf de wielrenner een duw tijdens de eindsprint    .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De politieagenten wilde de gearresteerde man zijn echte naam niet geven   .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ons heeft hij dat verhaal nooit verteld   .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Jou heb ik zoiets nooit beloofd   .",
@@ -638,7 +689,8 @@
    "",
    "zoiets,",
    "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

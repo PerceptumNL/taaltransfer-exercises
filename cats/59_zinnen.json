@@ -1,6 +1,6 @@
 {
  "category": 59,
- "date": "2013-12-14T14:55:27.507498",
+ "date": "2013-12-16T13:57:11.841855",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Weigerde de gefrustreerde ijshockeyer de scheidsrechter na de wedstrijd een hand te geven   .",
+   "59",
+   "de,de,de,een,",
+   "geven,",
+   "ijshockeyer,scheidsrechter,wedstrijd,hand,",
+   "",
+   "",
+   "",
+   "gefrustreerde,",
+   "na,te,",
+   "",
+   "",
+   "Weigerde,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Heeft de leverancier jou gisteren de bestelde goederen geleverd   .",
    "59",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kunnen ouders hun kinderen tot hun achttiende verjaardag tatoeages en piercings verbieden   .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de marktkoopman de toegesnelde politie vanmorgen de jeugdige zakkenroller overgedragen   .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geeft hij jou nooit een complimentje    .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heb jij hem echt mijn dagboek geleend   .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Probeerden de winkeldieven argeloze voorbijgangers met een smoesje hun gestolen waar te verkopen   .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Had zij hem vorige week die slechte film aangeraden   .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de dierenarts de eigenaar van de dikke kat tijdens het consult de kattensnoepjes afgeraden   .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Moest de scheikundedocent de leerlingen tijdens het practicum de veiligheidsmaatregelen uitleggen   .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wilde het betrokken meisje het goede doel na de overstromingen in Pakistan de helft van haar spaargeld schenken   .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft jouw klasgenoot jou tijdens het eindexamen het antwoord op vraag drie gevraagd   .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de oplichter zijn bejaarde slachtoffers op vreselijk brutale wijze hun spaargeld afgepakt   .",
@@ -377,7 +419,8 @@
    "vreselijk,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de roostermaker de leerlingen van de derde klas aan het begin van de dag de roosterwijziging meegedeeld   .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de organisator van het benefietduel het aidsfonds na afloop van de wedstrijd het opgehaalde geld geschonken   .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zal ik die meisjes straks een drankje aanbieden   .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heb ik hem echt een nieuwe telefoon beloofd   .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wilde de afgezette dictator de nieuwe regering niet zijn verantwoordelijkheden overdragen   .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zou de chagrijnige buurman ons misschien zijn gereedschapskist willen lenen   .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de onervaren arts jouw moeder per ongeluk de verkeerde medicijnen voorgeschreven   .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kan je mij misschien een spannend boek aanraden   .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

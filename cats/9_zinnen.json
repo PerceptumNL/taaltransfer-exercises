@@ -1,6 +1,6 @@
 {
  "category": 9,
- "date": "2013-12-14T14:55:26.865694",
+ "date": "2013-12-16T13:57:11.144289",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Mijn oma lijdt aan een milde vorm van dementie      .",
+   "9",
+   "een,",
+   "lijdt,",
+   "oma,vorm,dementie,",
+   "Mijn,",
+   "",
+   "",
+   "milde,",
+   "van,aan,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Een grote groep jongens heeft aan de danswedstrijd deelgenomen     .",
    "9",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De peuter was aan haar pop gehecht     .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Veel fans van het Nederlands elftal hopen op betere resultaten      .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De automobilisten keken naar het overstekende hertje      .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zijn oom lijdt aan een zeldzame ziekte      .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De leerlingen luisteren naar hun docent      .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De burgemeester van Vlissingen reageerde op het ernstige ongeluk      .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het bejaarde koppel praat over de kleinkinderen      .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De minister-president rekende op de steun van het volk      .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het meisje schrok van de schaduw      .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De voetballer smeekte om een penalty      .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het veilinghuis twijfelde aan de echtheid van het schilderij      .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De handbalploeg verloor van de grote concurrent      .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De imposante zwaan wachtte op haar kuikens      .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De ontroerde presentator zocht naar de juiste woorden      .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn vader zorgt voor zijn zieke zus      .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het oude vrouwtje zorgt voor de zwerfkatten      .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De drukke leerling werkt aan zijn concentratieprobleem      .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De zanger rekende op volle zalen      .",
@@ -580,36 +629,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Naar een nieuwe baan zal de ontevreden werknemer moeten zoeken     .",
-   "10",
-   "een,de,",
-   "zoeken,",
-   "baan,werknemer,",
-   "",
-   "",
-   "",
-   "nieuwe,ontevreden,",
-   "Naar,",
-   "",
-   "",
-   "zal,moeten,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

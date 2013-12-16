@@ -1,6 +1,6 @@
 {
  "category": 17,
- "date": "2013-12-13T20:10:53.780655",
+ "date": "2013-12-16T13:58:57.642452",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Streeft het museum naar een hoger bezoeksaantal      .",
+   "17",
+   "x",
+   "",
+   "",
+   "Streeft",
+   "",
+   "",
+   "",
+   "het museum",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "naar een hoger bezoeksaantal"
+  ],
   [
    " Klagen de docenten over de kleine lokalen      .",
    "17",
@@ -419,25 +438,6 @@
    "",
    "",
    "voor koud en regenachtig weer"
-  ],
-  [
-   " Heb je vallende sterren gezien     .",
-   "18",
-   "x",
-   "",
-   "",
-   "Heb",
-   "",
-   "",
-   "",
-   "je",
-   "vallende sterren",
-   "gezien",
-   "",
-   "",
-   "",
-   "",
-   ""
   ]
  ]
 }

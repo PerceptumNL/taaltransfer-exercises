@@ -1,6 +1,6 @@
 {
  "category": 35,
- "date": "2013-12-13T20:10:53.978534",
+ "date": "2013-12-16T13:58:57.841114",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " De trouwringen heeft het mooie bruidsmeisje tijdens de huwelijksceremonie aan de bruidegom gegeven   .",
+   "35",
+   "x",
+   "",
+   "",
+   "heeft",
+   "aan de bruidegom",
+   "tijdens de huwelijksceremonie",
+   "",
+   "het mooie bruidsmeisje",
+   "De trouwringen",
+   "gegeven",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Dat nieuwe tv-format heeft de bedenker vorige maand aan een Amerikaanse zender verkocht   .",
    "35",
@@ -376,25 +395,6 @@
    "hij",
    "Wat",
    "verteld",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " Dat boek heb ik hem vorig jaar gegeven   .",
-   "36",
-   "x",
-   "",
-   "",
-   "heb",
-   "hem",
-   "vorig jaar",
-   "",
-   "ik",
-   "Dat boek",
-   "gegeven",
    "",
    "",
    "",

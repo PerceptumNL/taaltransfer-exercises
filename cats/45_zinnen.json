@@ -1,6 +1,6 @@
 {
  "category": 45,
- "date": "2013-12-14T14:55:27.326255",
+ "date": "2013-12-16T13:57:11.637228",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Een zeer bijzonder fossiel heeft de wetenschapper in de oude steenlaag gevonden    .",
+   "45",
+   "Een,de,de,",
+   "gevonden,",
+   "fossiel,wetenschapper,steenlaag,",
+   "",
+   "",
+   "",
+   "oude,bijzonder,",
+   "in,",
+   "",
+   "",
+   "heeft,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "zeer,",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " De resten van een oude nederzetting hadden de tunnelbouwers tijdens hun graafwerkzaamheden gevonden    .",
    "45",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een onbekende planeet had de sterrenkundige met zijn telescoop ontdekt    .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een onbekend geldbedrag hebben de overvallers gisteren buitgemaakt    .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een zeer vervelende blessure heeft de wielrenner door de valpartij opgelopen    .",
@@ -145,7 +179,8 @@
    "zeer,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een nieuwe apensoort hebben de biologen tijdens hun expeditie ontdekt    .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een nieuwe heup heeft mijn oma gisteren gekregen    .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Veel oude mensen heeft de oplichter het afgelopen jaar benadeeld    .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Uw foto's kunnen wij meteen ontwikkelen    .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De actieve vulkaan hebben de avonturiers in twee dagen beklommen    .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het leven in de oceanen moeten wij beter gaan beschermen    .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het advies van zijn vader negeerde de jongen volledig     .",
@@ -348,7 +389,8 @@
    "volledig,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De samenvatting van hoofdstuk vijf lees ik tijdens de pauze door    .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het opdrachtenboek was ik per ongeluk vergeten    .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De bijsluiter van medicijnen moet je altijd doorlezen    .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zijn koppositie heeft de wielrenner tijdens de bergetappe kunnen verdedigen    .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De schuingedrukte woorden moest je voor vandaag leren    .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Harde kritiek uitte de onderzoekscommissie naar aanleiding van het uitgebreide onderzoek     .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Dat naaktmodel moesten wij tijdens de les natekenen    .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zijn eerste boek heeft de auteur op zijn zolderkamertje geschreven    .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De overstekende herten probeerde de automobilist behendig te ontwijken    .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een nieuwe scooter heeft mijn zus met dat spelletje gewonnen    .",
@@ -638,36 +689,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " De multimiljonair heeft tijdens het benefietconcert het goede doel een aanzienlijk bedrag geschonken   .",
-   "46",
-   "De,het,het,een,",
-   "geschonken,",
-   "multimiljonair,benefietconcert,doel,bedrag,",
-   "",
-   "",
-   "",
-   "goede,aanzienlijk,",
-   "tijdens,",
-   "",
-   "",
-   "heeft,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

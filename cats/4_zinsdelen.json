@@ -1,6 +1,6 @@
 {
  "category": 4,
- "date": "2013-12-13T20:10:53.641271",
+ "date": "2013-12-16T13:58:57.503082",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Hem heb ik dat boek geschonken    .",
+   "4",
+   "x",
+   "",
+   "",
+   "heb",
+   "Hem",
+   "",
+   "",
+   "ik",
+   "dat boek",
+   "geschonken",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Mijn collega heeft hij dat verteld    .",
    "4",
@@ -376,25 +395,6 @@
    "hij",
    "een nieuwe spelcomputer",
    "gevraagd",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " Geef de planten water      .",
-   "5",
-   "x",
-   "",
-   "",
-   "Geef",
-   "de planten",
-   "",
-   "",
-   "",
-   "water",
-   "",
    "",
    "",
    "",

@@ -1,6 +1,6 @@
 {
  "category": 24,
- "date": "2013-12-14T14:55:27.063775",
+ "date": "2013-12-16T13:57:11.354975",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Heeft jouw broer de etensrestjes aan de hond gegeven    .",
+   "24",
+   "de,de,",
+   "gegeven,",
+   "broer,etensrestjes,hond,",
+   "jouw,",
+   "",
+   "",
+   "",
+   "aan,",
+   "",
+   "",
+   "Heeft,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Hebben de kinderen de stukjes brood aan de eenden gegeven    .",
    "24",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Had de zwangere vrouw haar te krappe spijkerbroek aan haar vriendin gegeven    .",
@@ -87,7 +119,8 @@
    "te,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hadden de getuigen van de overval een duidelijk signalement van de dader aan de politie gegeven    .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de gefortuneerde tandarts dat bijzondere schilderijtje aan het museum voor moderne kunst geschonken    .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben de gasten van het benefietconcert een groot bedrag aan het goede doel geschonken    .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Had jouw opa zijn oorlogsdagboek aan het verzetsmuseum geschonken    .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geeft dat nieuwe pretpark gratis toegangskaartjes aan de eerste duizend bezoekers     .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geeft de dierenverzorger levende vissen aan de zeeleeuwen     .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Levert jouw slagerij biologisch vlees aan dat restaurant     .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft het ziekenhuis de zorg voor onze oma aan het verzorgingstehuis overgedragen    .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Had de oude man het grachtenpand aan zijn familie nagelaten    .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de eenzame vrouw haar hele erfenis aan haar kat nagelaten    .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandigde de voorzitter van de KNVB de schaal aan de kampioen     .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de directeur de waardebonnen aan zijn trouwste werknemer overhandigd    .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben de reizigers hun paspoorten aan de douanier overhandigd    .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de verkoper het garantiebewijs aan jou overhandigd    .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Had de postbode het pakketje aan jouw broer overhandigd    .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Verkoopt de kunstenaar zijn mooiste kunstwerk aan die vervelende man     .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de astronaut de bijzondere maanstenen aan een handelaar verkocht    .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heb je jouw laptop aan die onbetrouwbare jongen geleend    .",
@@ -609,36 +659,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " De voetbalfans juichten uitbundig      .",
-   "25",
-   "De,",
-   "juichten,",
-   "voetbalfans,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "uitbundig,",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

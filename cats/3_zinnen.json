@@ -1,6 +1,6 @@
 {
  "category": 3,
- "date": "2013-12-14T14:55:26.788843",
+ "date": "2013-12-16T13:57:11.065087",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " De coach gaf een handtekening aan de supporters van het succesvolle voetbalteam     .",
+   "3",
+   "De,een,de,het,",
+   "gaf,",
+   "coach,handtekening,supporters,voetbalteam,",
+   "",
+   "",
+   "",
+   "succesvolle,",
+   "van,aan,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " De acteur schenkt zijn salaris aan een goed doel     .",
    "3",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Deze slager levert zijn kwaliteitsproducten aan de beste restaurants van de stad     .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De oude docent wil de kennis van de Nederlandse grammatica aan de nieuwsgierige leerlingen overdragen    .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zij heeft haar spaargeld aan haar familie nagelaten    .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De burgemeester zal de eresleutel van de stad aan de oudste inwoner overhandigen    .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De corrupte voorzitter van de voetbalcub heeft een groot bedrag aan de scheidsrechter betaald    .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De marktkoopman verkocht de vier antieke stoelen aan de verzamelaar     .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De ijverige studente leende het studieboek aan haar vergeetachtige vriendin     .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De jonge vrouw wilde het goede nieuws aan haar ouders meedelen    .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De slimme oplichter heeft een beter leven aan zijn slachtoffers beloofd    .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een paard bewijst zijn trouw aan zijn verzorger     .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De bekende voetballer van Barcelona probeerde een trucje aan de groep vrienden te leren    .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Niemand vertelt zijn geheimen aan jou     .",
@@ -406,7 +449,8 @@
    "",
    "Niemand,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Verliefde pubers sturen briefjes aan elkaar     .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De organisator van de estafetteloop schenkt het opgehaalde bedrag aan het jeugdcentrum     .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Verschillende grote bedrijven leveren de onderdelen van de auto aan de fabriek     .",
@@ -493,7 +539,8 @@
    "",
    "Verschillende,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Je kan sommige aandoeningen aan jouw geliefde overdragen    .",
@@ -522,7 +569,8 @@
    "",
    "sommige,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Sommige mensen willen hun erfenis aan hun huisdieren nalaten    .",
@@ -551,7 +599,8 @@
    "",
    "Sommige,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De verkoopster met de mooie glimlach overhandigde het tasje aan de klant     .",
@@ -580,36 +629,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Hem heb ik dat boek geschonken    .",
-   "4",
-   "",
-   "geschonken,",
-   "boek,",
-   "",
-   "ik,",
-   "Hem,",
-   "",
-   "",
-   "",
-   "",
-   "heb,",
-   "",
-   "",
-   "",
-   "dat,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

@@ -1,6 +1,6 @@
 {
  "category": 36,
- "date": "2013-12-14T14:55:27.213148",
+ "date": "2013-12-16T13:57:11.515078",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Dat boek heb ik hem vorig jaar gegeven   .",
+   "36",
+   "",
+   "gegeven,",
+   "boek,jaar,",
+   "",
+   "ik,",
+   "hem,",
+   "vorig,",
+   "",
+   "",
+   "",
+   "heb,",
+   "",
+   "",
+   "",
+   "Dat,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Een zilveren armbandje heeft mijn broer zijn vriendin voor haar verjaardag gegeven   .",
    "36",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een flink bedrag heeft onze school de stichting na de sponsorloop kunnen overhandigen   .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het klassenboek heeft de leerling de docent aan het begin van de les overhandigd   .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn atlas zal ik mijn buurjongetje nooit lenen   .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het begrip tsunami heeft onze aardrijkskundedocent ons vorige week uitgelegd   .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De zakkenroller hebben de oplettende voorbijgangers de politie uiteindelijk kunnen overdragen   .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een veel te dure keuken heeft de verkoper ons afgelopen zaterdag aangesmeerd   .",
@@ -232,7 +269,8 @@
    "te,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Oud brood geeft mijn oma de eendjes tijdens haar ochtendwandeling    .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Dat dure restaurant heeft de culinair recensent zijn lezers wederom afgeraden   .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Die vraag heb ik hem nooit gesteld   .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn mening heeft hij mij nooit gevraagd   .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Goed advies heeft zij ons niet gegeven   .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Deze medicijnen heeft de apotheker mij gisteren aangeraden   .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Sigaretten en alcohol mogen winkeliers aan minderjarigen niet verkopen   .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een wortelkanaalbehandeling raadde de tandarts mijn vader na de controle  aan  .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een totaal ander kapsel had de kapper de punker uiteindelijk aangeraden   .",
@@ -493,7 +539,8 @@
    "totaal,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een gele kaart had de scheidsrechter de keeper van de tegenpartij voor zijn vervelende gedrag moeten geven   .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Die spectaculaire waterval wilde de gids ons tijdens de wandeling laten zien   .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een schitterend volksverhaal vertelde onze Surinaamse docent ons tijdens de les    .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

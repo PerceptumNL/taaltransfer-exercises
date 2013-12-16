@@ -1,6 +1,6 @@
 {
  "category": 19,
- "date": "2013-12-13T20:10:53.806203",
+ "date": "2013-12-16T13:58:57.663902",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Waren de hotelovernachtingen duur      .",
+   "19",
+   "x",
+   "",
+   "duur",
+   "Waren",
+   "",
+   "",
+   "",
+   "de hotelovernachtingen",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Waren de kinderen heel erg verlegen      .",
    "19",
@@ -415,25 +434,6 @@
    "",
    "",
    "worden",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " Heeft de agente de automobilist een waarschuwing gegeven    .",
-   "20",
-   "x",
-   "",
-   "",
-   "Heeft",
-   "de automobilist",
-   "",
-   "",
-   "de agente",
-   "een waarschuwing",
-   "gegeven",
-   "",
    "",
    "",
    "",

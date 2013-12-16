@@ -1,6 +1,6 @@
 {
  "category": 11,
- "date": "2013-12-13T20:10:53.711863",
+ "date": "2013-12-16T13:58:57.573225",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Anticipeer op de nieuwe situatie       .",
+   "11",
+   "x",
+   "",
+   "",
+   "Anticipeer",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "op de nieuwe situatie"
+  ],
   [
    " Begin aan een nieuw hoofdstuk       .",
    "11",
@@ -400,25 +419,6 @@
    "",
    "",
    "aan zijn antwoorden"
-  ],
-  [
-   " Zing een vrolijk deuntje       .",
-   "12",
-   "x",
-   "",
-   "",
-   "Zing",
-   "",
-   "",
-   "",
-   "",
-   "een vrolijk deuntje",
-   "",
-   "",
-   "",
-   "",
-   "",
-   ""
   ]
  ]
 }

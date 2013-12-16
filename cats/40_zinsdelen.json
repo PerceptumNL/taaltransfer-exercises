@@ -1,6 +1,6 @@
 {
  "category": 40,
- "date": "2013-12-13T20:10:54.031904",
+ "date": "2013-12-16T13:58:57.895554",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " De minister drong tijdens het debat op forse bezuinigingen  aan   .",
+   "40",
+   "x",
+   "",
+   "",
+   "drong",
+   "",
+   "tijdens het debat",
+   "",
+   "De minister",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "aan",
+   "op forse bezuinigingen"
+  ],
   [
    " De architect heeft na het overleg op het ontwerp van zijn collega's afgegeven    .",
    "40",
@@ -419,25 +438,6 @@
    "",
    "",
    "aan de fitheid van de spelers"
-  ],
-  [
-   " Op een snelle revalidatie hoopte de geblesseerde atleet na de geslaagde operatie     .",
-   "41",
-   "x",
-   "",
-   "",
-   "hoopte",
-   "",
-   "na de geslaagde operatie",
-   "",
-   "de geblesseerde atleet",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "Op een snelle revalidatie"
   ]
  ]
 }

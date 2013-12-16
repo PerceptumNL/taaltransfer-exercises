@@ -1,6 +1,6 @@
 {
  "category": 39,
- "date": "2013-12-13T20:10:54.021442",
+ "date": "2013-12-16T13:58:57.884864",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Heel erg grappig bleek de zangeres tijdens het optreden te zijn    .",
+   "39",
+   "x",
+   "",
+   "Heel erg grappig",
+   "bleek",
+   "",
+   "tijdens het optreden",
+   "",
+   "de zangeres",
+   "",
+   "",
+   "te zijn",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " Erg somber zijn de economische vooruitzichten volgens mij     .",
    "39",
@@ -400,25 +419,6 @@
    "",
    "",
    ""
-  ],
-  [
-   " De minister drong tijdens het debat op forse bezuinigingen  aan   .",
-   "40",
-   "x",
-   "",
-   "",
-   "drong",
-   "",
-   "tijdens het debat",
-   "",
-   "De minister",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "aan",
-   "op forse bezuinigingen"
   ]
  ]
 }

@@ -1,6 +1,6 @@
 {
  "category": 40,
- "date": "2013-12-14T14:55:27.263023",
+ "date": "2013-12-16T13:57:11.568242",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " De minister drong tijdens het debat op forse bezuinigingen  aan   .",
+   "40",
+   "De,het,",
+   "drong,",
+   "minister,debat,bezuinigingen,",
+   "",
+   "",
+   "",
+   "forse,",
+   "tijdens,op,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "aan,",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " De architect heeft na het overleg op het ontwerp van zijn collega's afgegeven    .",
    "40",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De Nederlandse bevolking moet bij nationale rampen op het televisiekanaal van de publieke omroep afstemmen    .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De zeezeiler moest door de naderende storm van zijn route afwijken    .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De verdediger heeft onmiddellijk op de counter van de tegenpartij geanticipeerd    .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn vriendin is gisteren met een nieuw dieet begonnen    .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Veel Nederlandse bands hebben zonder aarzeling aan het benefietconcert deelgenomen    .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De marktkoopman genoot tijdens zijn werk van het zonnetje     .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Haar ouders geven niks om geld     .",
@@ -261,7 +299,8 @@
    "",
    "niks,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De trainer hoopte na zijn aanwijzingen tijdens de rust op een betere tweede helft     .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Welke Nederlander houdt niet van drop     .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De burgemeester is direct op de klachten van de bewoners ingegaan    .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De bezoekers van de dierentuin kijken vol spanning naar de eerste stapjes van de baby-olifant     .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Veel West-Europeanen lijden door de overvloed aan vet eten aan obesitas     .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De huizenverkoper wil een dagje over het bod nadenken    .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn mannelijke collega's praatten na de verloren WK-finale over de misser van de Nederlandse spits     .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn vader wilde na de ouderavond met mijn mentor praten    .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De advocaat heeft tijdens de zitting op de aanklacht gereageerd    .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De organisator van het benefietduel rekende tijdens de voorbereidingen op een grote opkomst     .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De wandelaars schrokken ontzettend van het gehuil van de wolf     .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De teleurgestelde klas smeekte bij de docent om een herkansing     .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De coach twijfelde tijdens de voorbereiding aan de fitheid van de spelers     .",
@@ -638,36 +689,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Op een snelle revalidatie hoopte de geblesseerde atleet na de geslaagde operatie     .",
-   "41",
-   "een,de,de,",
-   "hoopte,",
-   "revalidatie,atleet,operatie,",
-   "",
-   "",
-   "",
-   "snelle,geblesseerde,geslaagde,",
-   "Op,na,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

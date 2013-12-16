@@ -1,6 +1,6 @@
 {
  "category": 52,
- "date": "2013-12-14T14:55:27.417020",
+ "date": "2013-12-16T13:57:11.735988",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Heeft de voetballer na de wedstrijd op de beslissingen van de scheidsrechter afgegeven    .",
+   "52",
+   "de,de,de,de,",
+   "afgegeven,",
+   "voetballer,wedstrijd,beslissingen,scheidsrechter,",
+   "",
+   "",
+   "",
+   "",
+   "na,op,van,",
+   "",
+   "",
+   "Heeft,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Heeft de docent tijdens de les op het drukke rooster afgegeven    .",
    "52",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heeft de marathonloper tijdens de persconferentie op het hobbelige parcours afgegeven    .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Gaf de automobilist bij de winkelbediende op de stijgende benzineprijzen  af   .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Is de helikopterpiloot door het stormachtige weer van zijn geplande route afgeweken    .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wijken zijn onderzoeksresultaten op een aantal punten van zijn verwachtingen  af   .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wijkt de vervalsing op een aantal punten van het origineel  af   .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zal de onervaren verdediger goed op de schijnbewegingen van de aanvaller anticiperen    .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ben jij al aan dat nieuwe boek begonnen    .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Zijn onze buren vandaag aan de verbouwing van hun huis begonnen    .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Willen jouw klasgenoten niet aan dat schaatstoernooi deelnemen    .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Kan de tennisser dankzij zijn vlotte revalidatie aan dat belangrijke toernooi deelnemen    .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wil jouw zusje echt aan een kookwedstrijd deelnemen    .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Denk je ook aan jouw ouders     .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heb je ooit aan de gevolgen van jouw pestgedrag gedacht    .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hebben jullie lekker van de vrije middag genoten    .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geniet je wel van jouw welverdiende vakantie     .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Houdt jouw kat niet van aandacht     .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hopen de supporters ondanks de slechte vooruitzichten op een snelle rentree van de vedette     .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Hoopt de organisatie van de marathon stiekem op een nieuw wereldrecord     .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Had je misschien op een betere afloop gehoopt    .",
@@ -609,7 +659,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Heb jij nooit van zoetigheid gehouden    .",
@@ -638,7 +689,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Houden buitenlandse toeristen vooral van de typisch Nederlandse grachten     .",
@@ -667,36 +719,8 @@
    "typisch,",
    "",
    "",
-   "x"
-  ],
-  [
-   " Na de val van het kabinet drong de leider van de oppositie op snelle verkiezingen  aan   .",
-   "53",
-   "de,het,de,de,",
-   "drong,",
-   "val,kabinet,leider,oppositie,verkiezingen,",
-   "",
-   "",
-   "",
-   "snelle,",
-   "Na,van,van,op,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "aan,",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

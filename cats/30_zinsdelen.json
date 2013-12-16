@@ -1,6 +1,6 @@
 {
  "category": 30,
- "date": "2013-12-13T20:10:53.924708",
+ "date": "2013-12-16T13:58:57.787528",
  "header": [
   "sentence",
   "category",
@@ -21,6 +21,25 @@
   "vzv"
  ],
  "sentences": [
+  [
+   " Het bezorgde baasje overhandigde de parkiet heel voorzichtig aan de dierenarts    .",
+   "30",
+   "x",
+   "",
+   "",
+   "overhandigde",
+   "aan de dierenarts",
+   "heel voorzichtig",
+   "",
+   "Het bezorgde baasje",
+   "de parkiet",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ],
   [
    " De bemanning van het Nederlandse marineschip heeft de kapers onmiddellijk aan de Somalische regering overgedragen   .",
    "30",
@@ -395,25 +414,6 @@
    "Mijn zusje",
    "haar telefoonnummer",
    "geven",
-   "",
-   "",
-   "",
-   "",
-   ""
-  ],
-  [
-   " Hem zal ik mijn pen nooit lenen   .",
-   "31",
-   "x",
-   "",
-   "",
-   "zal",
-   "Hem",
-   "nooit",
-   "",
-   "ik",
-   "mijn pen",
-   "lenen",
    "",
    "",
    "",

@@ -1,6 +1,6 @@
 {
  "category": 25,
- "date": "2013-12-14T14:55:27.076097",
+ "date": "2013-12-16T13:57:11.367879",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " De voetbalfans juichten uitbundig      .",
+   "25",
+   "De,",
+   "juichten,",
+   "voetbalfans,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "uitbundig,",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Mijn kleine zusje lacht de hele dag      .",
    "25",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn vader snurkt heel erg hard      .",
@@ -87,7 +119,8 @@
    "heel,erg,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " We zijn naar Haarlem gefietst     .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De vliegtuigen moesten in de mist landen     .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De kinderen wilden in de speeltuin spelen     .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De wegwerkers pauzeerden een kwartiertje      .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Haar oma is vorige week overleden     .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het vliegtuig vertrok met een grote vertraging      .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De trein uit Brussel kwam op spoor 7  aan    .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De zon scheen op het dakterras      .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De arrestant loog tijdens het politieverhoor      .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De pannenkoekenboot vaart door de haven      .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Jonge kuikentjes piepen heel zacht      .",
@@ -406,7 +449,8 @@
    "heel,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De eeuwenoude toren stortte na de explosie  in    .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Onze speciale gast arriveerde na ruim twee uur      .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De populariteit van de politicus is na zijn felle reactie afgenomen     .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De verwarde man schreeuwde de hele nacht      .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Haar trein arriveerde op het verkeerde perron      .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Onze ijsjes zijn in de zon gesmolten     .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn zusjes kunnen heel lang zeuren     .",
@@ -609,36 +659,8 @@
    "heel,",
    "",
    "",
-   "x"
-  ],
-  [
-   " De penalty werd door de reservekeeper gestopt     .",
-   "26",
-   "De,de,",
-   "gestopt,",
-   "penalty,reservekeeper,",
-   "",
-   "",
-   "",
-   "",
-   "door,",
-   "",
-   "",
-   "werd,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

@@ -1,6 +1,6 @@
 {
  "category": 41,
- "date": "2013-12-14T14:55:27.275466",
+ "date": "2013-12-16T13:57:11.581643",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Op een snelle revalidatie hoopte de geblesseerde atleet na de geslaagde operatie     .",
+   "41",
+   "een,de,de,",
+   "hoopte,",
+   "revalidatie,atleet,operatie,",
+   "",
+   "",
+   "",
+   "snelle,geblesseerde,geslaagde,",
+   "Op,na,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Op een eerlijk proces hoopten de Russische demonstranten na hun demonstratie     .",
    "41",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op veel nieuwe opdrachten hoopte de modeontwerper na de positieve jurybeoordeling     .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op een korte onderbreking drong de politicus tijdens de vergadering  aan   .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op een gele kaart drong de getackelde middenvelder bij de scheidsrechter  aan   .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op een oorlog met het buurland heeft de dictator na het zoveelste dreigement aangestuurd    .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op het ontslag van de bondscoach stuurde de spelersgroep na het teleurstellende toernooi  aan   .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op het beleid van de directie gaf de ontevreden werknemer de hele tijd  af   .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op zijn medespelers heeft de verwaande aanvoerder na de nederlaag afgegeven    .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Van de afgesproken route moest de piloot vanwege het noodweer afwijken    .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Van het gemiddelde niveau wijkt mijn cholesterolgehalte niet  af   .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op de voorzet van de tegenstander anticipeerde de keeper heel handig     .",
@@ -348,7 +389,8 @@
    "heel,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op de toenemende vraag naar elektrische auto's anticipeerde de autohandelaar onmiddellijk     .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Op de behoefte aan ervaren secretaresses heeft het uitzendbureau heel goed geanticipeerd    .",
@@ -406,7 +449,8 @@
    "heel,",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan mijn nieuwe trainingsschema ga ik morgen beginnen    .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Met het volgende hoofdstuk beginnen we volgende week     .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Met mijn nieuwe stage ben ik gisteren begonnen    .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan de marathon van Rotterdam zal mijn vader voor de zevende keer deelnemen    .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan die televisieshow mogen jongeren niet meedoen    .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan jou zal ik altijd blijven denken    .",
@@ -580,7 +629,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan onze vakantie in Amerika denk ik iedere dag     .",
@@ -609,7 +659,8 @@
    "",
    "iedere,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Aan de gezondheid van haar opa moest de bezorgde leerlinge de hele dag denken    .",
@@ -638,36 +689,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Dring bij de burgemeester op een oplossing van het conflict aan     .",
-   "42",
-   "de,een,het,",
-   "Dring,",
-   "burgemeester,oplossing,conflict,",
-   "",
-   "",
-   "",
-   "",
-   "bij,op,van,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "aan,",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

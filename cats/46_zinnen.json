@@ -1,6 +1,6 @@
 {
  "category": 46,
- "date": "2013-12-14T14:55:27.338863",
+ "date": "2013-12-16T13:57:11.651068",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " De multimiljonair heeft tijdens het benefietconcert het goede doel een aanzienlijk bedrag geschonken   .",
+   "46",
+   "De,het,het,een,",
+   "geschonken,",
+   "multimiljonair,benefietconcert,doel,bedrag,",
+   "",
+   "",
+   "",
+   "goede,aanzienlijk,",
+   "tijdens,",
+   "",
+   "",
+   "heeft,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " De politieagent gaf tijdens de verkeerscontrole fietsers zonder fietslicht een fikse bekeuring    .",
    "46",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Het gelukkige meisje mocht tijdens de huldiging van de Olympische sporters de medaillewinnaars een bosje bloemen geven   .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De automonteur heeft na de jaarlijkse controle de eigenaar van de auto het slechte nieuws meegedeeld   .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Mijn tante wilde na de lunch ons haar vakantiefoto's laten zien   .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Wij hebben gisteren de ober een flinke fooi gegeven   .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Ik heb per ongeluk mijn zieke klasgenootje het verkeerde huiswerk doorgegeven   .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De assistente moest tijdens de operatie de chirurg de medische instrumenten overhandigen   .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De geredde man heeft gisteren zijn redders een bedankje gestuurd   .",
@@ -261,7 +299,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De geopereerde conrector moest tijdens zijn revalidatieproces aan zijn collega zijn taken overdragen   .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De reizigers moesten tijdens de controle de controleurs hun vervoersbewijs laten zien   .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De architect heeft vorige week de opdrachtgevers de eerste tekeningen laten zien   .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Veel landen hadden na de hevige aardbeving de inwoners van het getroffen gebied medische hulp beloofd   .",
@@ -377,7 +419,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De politiek leider beloofde tijdens zijn verkiezingscampagne de bevolking gratis gezondheidszorg    .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Onze leraar heeft tijdens de laatste minuten van de les ons zijn favoriete liedje laten horen   .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De coach gaf na de wedstrijd zijn aanvoerder grote complimenten    .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De tandarts heeft tijdens het halfjaarlijkse onderzoek mijn vader een elektrische tandenborstel aangeraden   .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een zakkenroller probeerde tijdens de koopavond voorbijgangers gestolen telefoons te verkopen   .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Een stewardess moet in geval van nood de passagiers duidelijke instructies geven   .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De dolfijnentrainer geeft na iedere geslaagde oefening de dolfijnen een visje    .",
@@ -580,7 +629,8 @@
    "",
    "iedere,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " De bondscoach heeft tijdens de wedstrijd de jonge verdediger duidelijke aanwijzingen gegeven   .",
@@ -609,36 +659,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Mijn docent adviseerde mij vorige week dit huiswerkinstituut    .",
-   "47",
-   "",
-   "adviseerde,",
-   "docent,week,huiswerkinstituut,",
-   "Mijn,",
-   "",
-   "mij,",
-   "vorige,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "dit,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }

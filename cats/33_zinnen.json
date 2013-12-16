@@ -1,6 +1,6 @@
 {
  "category": 33,
- "date": "2013-12-14T14:55:27.176492",
+ "date": "2013-12-16T13:57:11.475517",
  "header": [
   "sentence",
   "category",
@@ -28,9 +28,40 @@
   "bwg",
   "nnb",
   "exception",
-  "Roel checked"
+  "Roel checked",
+  "link"
  ],
  "sentences": [
+  [
+   " Geef hem onmiddellijk zijn pen  terug   .",
+   "33",
+   "",
+   "Geef,",
+   "pen,",
+   "zijn,",
+   "",
+   "hem,",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "terug,",
+   "onmiddellijk,",
+   "",
+   "",
+   "",
+   "x",
+   ""
+  ],
   [
    " Geef het ambulancepersoneel nu een beetje ruimte     .",
    "33",
@@ -58,7 +89,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schenk ons na het voorgerecht een glaasje wijn  in   .",
@@ -87,7 +119,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Schenk het museum na mijn overlijden mijn kunstcollectie     .",
@@ -116,7 +149,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Lever het restaurant vanmiddag deze verse vissen     .",
@@ -145,7 +179,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Geef de ober straks een dikke fooi     .",
@@ -174,7 +209,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig de koningin na het diner dit bosje bloemen     .",
@@ -203,7 +239,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig de klanten met een vriendelijk gebaar hun gekochte waar     .",
@@ -232,7 +269,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Draag de studenten iedere dag jouw kennis  over   .",
@@ -261,7 +299,8 @@
    "",
    "iedere,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig de winnaar van de finale tijdens de ceremonie deze beker     .",
@@ -290,7 +329,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Overhandig de directeur na het gesprek de aanbevelingsbrief van jouw vorige baas     .",
@@ -319,7 +359,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Betaal mij binnen drie werkdagen de achterstallige huur     .",
@@ -348,7 +389,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leen hem nooit iets     .",
@@ -377,7 +419,8 @@
    "",
    "iets,",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Leen mij tot morgen jouw aantekeningenschrift     .",
@@ -406,7 +449,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bied haar straks een gratis drankje  aan   .",
@@ -435,7 +479,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bied de vrouw van de Japanse keizer na zijn toespraak deze zijden sjaal  aan   .",
@@ -464,7 +509,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Bied dat meisje onmiddellijk jouw excuses  aan   .",
@@ -493,7 +539,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Deel de afgewezen sollicitant per telefoon het slechte nieuws  mee   .",
@@ -522,7 +569,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Beloof jouw ouders plechtig betere resultaten     .",
@@ -551,7 +599,8 @@
    "",
    "",
    "",
-   "x"
+   "x",
+   ""
   ],
   [
    " Beloof jouw docent in een gesprek onder vier ogen een betere studiehouding     .",
@@ -580,36 +629,8 @@
    "",
    "",
    "",
-   "x"
-  ],
-  [
-   " Raad zwangere vrouwen dit geneesmiddel nooit aan    .",
-   "34",
-   "",
-   "Raad,",
-   "vrouwen,geneesmiddel,",
-   "",
-   "",
-   "",
-   "zwangere,",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "",
-   "dit,",
-   "",
-   "",
-   "",
-   "",
-   "aan,",
-   "nooit,",
-   "",
-   "",
-   "",
-   "x"
+   "x",
+   ""
   ]
  ]
 }
