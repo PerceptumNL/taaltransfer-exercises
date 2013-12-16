@@ -1,3 +1,35 @@
+function getURLParameters(paramName) 
+{
+        var sURL = window.document.URL.toString();  
+    if (sURL.indexOf("?") > 0)
+    {
+       var arrParams = sURL.split("?");         
+       var arrURLParams = arrParams[1].split("&");      
+       var arrParamNames = new Array(arrURLParams.length);
+       var arrParamValues = new Array(arrURLParams.length);     
+       var i = 0;
+       for (i=0;i<arrURLParams.length;i++)
+       {
+        var sParam =  arrURLParams[i].split("=");
+        arrParamNames[i] = sParam[0];
+        if (sParam[1] != "")
+            arrParamValues[i] = unescape(sParam[1]);
+        else
+            arrParamValues[i] = "No Value";
+       }
+
+       for (i=0;i<arrURLParams.length;i++)
+       {
+                if(arrParamNames[i] == paramName){
+            //alert("Param:"+arrParamValues[i]);
+                return arrParamValues[i];
+             }
+       }
+       return "";
+    }
+
+}
+    
 $.extend(KhanUtil, {
   /***
     Return array of sentence:category pairs
@@ -26,18 +58,35 @@ $.extend(KhanUtil, {
   },
 
   getRandomSentence: function(sentences) {
-    var sentence = KhanUtil.randFromArray(sentences['sentences']);
+    //Interfiere if debug is on, and find the specific sentence
+    var sentenceStr = getURLParameters("sentence", "")
+    var sentenceObj = null;
+    if (sentenceStr) {
+      for (var i=0;i<sentences['sentences'].length;i++) {
+        console.log(sentences['sentences'][i][0]);
+        if (sentences['sentences'][i][0] == sentenceStr) {
+          sentenceObj = sentences['sentences'][i]
+          break;
+        } 
+      }
+      console.error("Could not find sentence: " + sentenceStr);
+    } else {
+      sentenceObj = KhanUtil.randFromArray(sentences['sentences']);
+    }
     var obj = {};
     $.each(sentences['header'], function(idx, head) {
-        obj[head] = sentence[idx];
+        obj[head] = sentenceObj[idx];
     });
     return obj;
   },
+
   getZinsdelenSentence: function(cat) {
+    cat = getURLParameters("cat") || cat;
     var zinsdelen = this.readJSONFile("../cats/"+cat+"_zinsdelen.json");
     return this.getRandomSentence(zinsdelen);
   },
   getZinnenSentence: function(cat) {
+    cat = getURLParameters("cat") || cat;
     var zinnen = this.readJSONFile("../cats/"+cat+"_zinnen.json");
     return this.getRandomSentence(zinnen);
   },
