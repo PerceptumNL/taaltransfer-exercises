@@ -5,13 +5,59 @@ $.extend(KhanUtil, {
     newlines to separate the sentences.
     Type: Array of strings
   ***/
-  
   readFile: function(file){
     var words = $.ajax({type: "GET", url: file, async: false}).responseText;
     var wordArray = words.split(/\n/);
     return wordArray;
   },
   
+  readJSONFile: function(file){
+    var rslt;
+    $.ajax({
+      type: "GET", 
+      url: file,
+      async: false,
+      dataType: 'json',
+      success: function(data) {                      
+        rslt = data;                      
+      }        
+    });
+    return rslt;
+  },
+
+  getRandomSentence: function(sentences) {
+    var sentence = KhanUtil.randFromArray(sentences['sentences']);
+    var obj = {};
+    $.each(sentences['header'], function(idx, head) {
+        obj[head] = sentence[idx];
+    });
+    return obj;
+  },
+  getZinsdelenSentence: function(cat) {
+    var zinsdelen = this.readJSONFile("../cats/"+cat+"_zinsdelen.json");
+    return this.getRandomSentence(zinsdelen);
+  },
+  getZinnenSentence: function(cat) {
+    var zinnen = this.readJSONFile("../cats/"+cat+"_zinnen.json");
+    return this.getRandomSentence(zinnen);
+  },
+  
+  getWordID2: function(sentenceObj){
+    var _black_list = ["sentence", "category", "Roel checked"];
+    var tuples = []
+    var trimmed = sentenceObj['sentence'].replace(",","").replace(".", "").trim()
+    $.each(trimmed.split(" "), function(k,word) {
+      word = word.trim()
+      $.each(sentenceObj, function(type, type_words) {
+        if (_black_list.indexOf(type) == -1) {
+          if (word.length && type_words.split(",").indexOf(word) > -1) {
+            tuples.push([word, type]);
+          }
+        }
+      });
+    });
+    return tuples
+  },
   getWordID: function(sentence, allWords){
     sentence = sentence.replace(".","");
     var arr = sentence.split(" ");
@@ -330,6 +376,16 @@ $.extend(KhanUtil, {
     Type: string
   ***/
   
+  makeQuestion2: function(sentenceObj){
+    var _black_list = ["sentence", "category", "Roel checked"];
+    var sentence = []
+    $.each(sentenceObj, function(k,v) {
+      if ($.inArray(k, _black_list) == -1) {
+          sentence.push([v, k]);
+      }
+    });
+    return this.makeQuestion(sentence);
+  },
   makeQuestion: function(sentence){
     var pv = this.findNameIndex(sentence, "pv");
     var tmp = sentence[pv];
@@ -444,10 +500,11 @@ $.extend(KhanUtil, {
     var answers = [];
     var tmp = "";
     for(var i=0; i<array.length;i++){
-      tmp = $("."+array[i]).text();
-      if(tmp !==""){
-        answers.push(tmp.trim().toLowerCase());
-      }
+      $("."+array[i]).each(function() {
+        if($(this).text()!==""){
+          answers.push($(this).text().trim().toLowerCase());
+        }
+      });
     }
     
    /** $('#check-answer-button').on('click', function(event){
@@ -470,6 +527,7 @@ $.extend(KhanUtil, {
       var count = 0;
       var cLen = check.length;
       var aLen = answers.length;
+    
       if(cLen === aLen){
         for(var k=0; k<aLen;k++){
           if(check[k] === answers[k]){
@@ -491,6 +549,7 @@ $.extend(KhanUtil, {
   },
   
   makeSent: function(sentence){
+    console.log(sentence);
     var words = ['waarom','hoe','wanneer','welke','wie'];
     var verbs = ['hww','kww','hww'];
     for(var i=0; i<sentence.length;i++){
@@ -534,6 +593,32 @@ $.extend(KhanUtil, {
     Type: number
   ***/
   
+  checkCorrect: function(sentence, type) {
+    var correct = true;
+    $(".sentence").children().each(function() {
+        var word = $(this).html()
+        if ($(this).hasClass("selected")) {
+            if (sentence[type] != word)
+                correct = false;
+        } else {
+            if (sentence[type] == word)
+                correct = false
+        }
+    });
+    return correct;
+  },
+
+  createSentence: function(sentence, result) {
+    var self = this;
+    var sentence_str = sentence["sentence"];
+    $.each(sentence_str.split(" "), function(idx, word) {
+        $word = $("<span>" + word + "</span>");
+        $word.click(function() {
+            $(this).toggleClass("selected");
+        });
+        $(".sentence").append($word);
+    }); 
+  },
   regParts: function(sentence){
     var length = sentence.length;
     var els = 0;

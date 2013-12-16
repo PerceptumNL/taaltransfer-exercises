@@ -117,5 +117,13 @@
 }
 
 
+/*level1a-copy.html*/
+.sentence span {
+  padding: 2px;
+  cursor: pointer;
+}
+.sentence span.selected {
+  background-color: orange;
+}
 
 
