@@ -45,12 +45,12 @@ class TaalSpread(object):
 
 
     def get_category_sentences(self, category):
-        row_indexes = [idx+1 for idx, cat in enumerate(self.categories_col) if cat and cat.isdigit() and int(cat) == category]
+        row_indexes = [idx for idx, cat in enumerate(self.categories_col) if cat and cat.isdigit() and int(cat) == category]
         sentences = [] 
         for idx, row_index in enumerate(row_indexes): 
             if row_index in self.valids:
                 row = self.all_rows[row_index]
-                print "category %d: %d/%d " % (category, idx + 1, len(row_indexes))
+                print "category %d: %d/%d " % (category, idx, len(row_indexes))
                 sentences.append(row)
         return sentences
             
@@ -87,9 +87,9 @@ class ZinsdelenSpread(TaalSpread):
 print "ZinnenSpread"
 s = ZinnenSpread(USER, PWD, SH_ZINNEN)
 s.write_all_categories()
-#print "ZinsdelenSpread"
-#s = ZinsdelenSpread(USER, PWD, SH_ZINSDELEN)
-#s.write_all_categories()
+print "ZinsdelenSpread"
+s = ZinsdelenSpread(USER, PWD, SH_ZINSDELEN)
+s.write_all_categories()
 
 #print s.write_category(1)
 
