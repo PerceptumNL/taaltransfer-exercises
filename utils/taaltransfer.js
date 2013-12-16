@@ -69,7 +69,8 @@ $.extend(KhanUtil, {
           break;
         } 
       }
-      console.error("Could not find sentence: " + sentenceStr);
+      if (sentenceObj == null)
+        console.error("Could not find sentence: " + sentenceStr);
     } else {
       sentenceObj = KhanUtil.randFromArray(sentences['sentences']);
     }
@@ -79,6 +80,8 @@ $.extend(KhanUtil, {
     });
     return obj;
   },
+
+  _black_list: ["sentence", "category", "Roel checked"],
 
   getZinsdelenSentence: function(cat) {
     cat = getURLParameters("cat") || cat;
@@ -90,15 +93,37 @@ $.extend(KhanUtil, {
     var zinnen = this.readJSONFile("../cats/"+cat+"_zinnen.json");
     return this.getRandomSentence(zinnen);
   },
+
+  convert2Grammar: function(sentenceObj){
+    var self = this;
+    var grammar = []
+    var trimmed = sentenceObj['sentence'].replace(",","").replace(".", "").trim()
+    var parts = [];
+    //Find grammar parts in order
+    $.each(sentenceObj, function(type, part) {
+      if (self._black_list.indexOf(type) == -1 && part.length) {
+        if (trimmed.indexOf(part) > -1) {
+          parts[trimmed.indexOf(part)] = [part, type];
+        }
+      }
+    });
+    //Rearrange order
+    for (var i=0;i<parts.length;i++) {
+      if (parts[i]) {
+        grammar.push(parts[i]);
+      }
+    }
+    return grammar;
+  },
   
-  getWordID2: function(sentenceObj){
-    var _black_list = ["sentence", "category", "Roel checked"];
+  convert2Tuple: function(sentenceObj){
+    var self = this;
     var tuples = []
     var trimmed = sentenceObj['sentence'].replace(",","").replace(".", "").trim()
     $.each(trimmed.split(" "), function(k,word) {
       word = word.trim()
       $.each(sentenceObj, function(type, type_words) {
-        if (_black_list.indexOf(type) == -1) {
+        if (self._black_list.indexOf(type) == -1) {
           if (word.length && type_words.split(",").indexOf(word) > -1) {
             tuples.push([word, type]);
           }
@@ -425,16 +450,6 @@ $.extend(KhanUtil, {
     Type: string
   ***/
   
-  makeQuestion2: function(sentenceObj){
-    var _black_list = ["sentence", "category", "Roel checked"];
-    var sentence = []
-    $.each(sentenceObj, function(k,v) {
-      if ($.inArray(k, _black_list) == -1) {
-          sentence.push([v, k]);
-      }
-    });
-    return this.makeQuestion(sentence);
-  },
   makeQuestion: function(sentence){
     var pv = this.findNameIndex(sentence, "pv");
     var tmp = sentence[pv];

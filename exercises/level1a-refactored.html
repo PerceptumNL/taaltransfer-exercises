@@ -13,11 +13,12 @@
     <div class="vars">
         <var id="CATS">[1,2,16,18,25,27,50]</var>
         <var id="CAT">randFromArray(CATS)</var>
-        <var id="SENTENCE">getZinsdelenSentence(CAT)</var>
-        <var id="PV">SENTENCE["pv"]</var>
-        <var id="OND">SENTENCE["ond"]</var>
-        <var id="LV">SENTENCE["lv"]</var>
-        <var id="WWG">SENTENCE["wwg"]</var>
+        <var id="SENTENCE_OBJ">getZinsdelenSentence(CAT)</var>
+        <var id="GRAMMAR">convert2Grammar(SENTENCE_OBJ)</var>
+        <var id="PV">SENTENCE_OBJ["pv"]</var>
+        <var id="OND">SENTENCE_OBJ["ond"]</var>
+        <var id="LV">SENTENCE_OBJ["lv"]</var>
+        <var id="WWG">SENTENCE_OBJ["wwg"]</var>
     </div>
     
     <div class="problems">
@@ -38,7 +39,7 @@
 
     <div class="hints">
     <p>Om achter de persoonsvorm te komen maken we van de zin een vraag. De persoonsvorm komt dan vooraan te staan:</p>
-    <p><var>makeQuestion2(SENTENCE)</var></p>
+    <p><var>makeQuestion(GRAMMAR)</var></p>
     <p>De persoonsvorm is dus "<b><var>PV</var></b>".</p>
     </div>
     </div>

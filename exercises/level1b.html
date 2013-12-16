@@ -11,14 +11,10 @@
 <body>
     <div class="exercise">
     <div class="vars">
-        <var id="SENTENCES">readFile("../csv/zinnen.csv")</var>
-        <var id="WORDS">readFile("../csv/woorden.csv")</var>
-        <var id="CAT">[1,2,16,18,25,27,50]</var>
-        <var id="NUMBER">makeNumber(CAT, SENTENCES)</var>
-        <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var>
-        <var id="FIX">fixSentence(SENTENCES[NUMBER])</var>
-        <var id="TUPLE">getWordID(ZIN, WORDS)</var>
-
+        <var id="CATS">[1,2,16,18,25,27,50]</var>
+        <var id="CAT">randFromArray(CATS)</var>
+        <var id="SENTENCE_OBJ">getZinnenSentence(CAT)</var>
+        <var id="TUPLE">convert2Tuple(SENTENCE_OBJ)</var>
     </div>
     
     <div class="problems">
