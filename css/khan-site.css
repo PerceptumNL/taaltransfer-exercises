@@ -10,6 +10,9 @@
 
 /* Layout helpers
 ----------------------------------*/
+*{
+  font-family: "Open Sans";
+}
 .ui-helper-hidden {
     display: none;
 }
@@ -2704,7 +2707,7 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans";
     font-size: 12px;
     margin: 0;
     color: #444;
@@ -2795,10 +2798,17 @@ h5 {
 }
 
 p {
-    font-size: 14px;
+    font-size: 20px;
     margin: 22px 0;
 }
+#hintsarea p {
+    font-size: 17px;
+    margin: 0;
+    padding-right: 310px;
+    padding: 0px 310px 20px 20px;
+}
 
+}
 .pulls {
     margin-bottom: 9px;
 }
@@ -4822,6 +4832,7 @@ span.youTube:hover {
     padding: 10px 0 5px;
 }
 
+
 .info-box #answer {
     width: 100px;
 }
@@ -4931,6 +4942,9 @@ span.youTube:hover {
 
     display: none;
     z-index: 100;
+}
+.check-answer-wrapper .orange {
+    padding-left: 44px;
 }
 
 #back-to-top a.text {
@@ -10438,7 +10452,7 @@ a.big-button:active > div {
 }
 
 .exercises-card {
-    width: 86%;
+    width: 85%;
 }
 
 .exercises-card.full-width {
@@ -10620,11 +10634,11 @@ a.big-button:active > div {
 }
 
 .current-card #problemarea {
-    margin-top: 35px;
+
 }
 
 .current-card #workarea {
-    margin-top: 22px;
+
 }
 
 .current-card #answer_area_wrap {
@@ -11272,7 +11286,7 @@ a.big-button:active > div {
 }
 
 div.exercises-card {
-    width: 753px;
+   
 }
 
 body.debug #workarea,
@@ -11282,4 +11296,27 @@ body.debug #hintsarea {
 
 body.debug #extras .debug-mode {
     display: none;
+}
+.els {
+    cursor:pointer;
+    padding: 3px;
+}
+.hint-container {
+  
+    position: relative;
+}
+.hint-custom {
+    padding: 20px;
+
+}
+#negative-reinforcement{
+    display:none;
+    position: relative;
+    width: 0;
+    height: 0;
+}
+#negative-reinforcement img{
+    position: absolute;
+    top: -55px;
+    left: -82px;
 }

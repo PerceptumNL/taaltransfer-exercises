@@ -84,6 +84,9 @@ function problemTemplateRendered() {
 
     // Next question button
     $("#next-question-button").click(function() {
+        $('#check-answer-button').removeClass('orange');
+        $('#check-answer-button').addClass('green');
+        $('#negative-reinforcement').css('display','none');
         $(Exercises).trigger("gotoNextProblem");
 
         // Disable next question button until next time
@@ -91,11 +94,14 @@ function problemTemplateRendered() {
         $(this)
             .attr("disabled", true)
             .addClass("buttonDisabled");
+       
     });
 
     // If happy face is clicked, pass click on through.
     $("#positive-reinforcement").click(function() {
-        $("#next-question-button").click();
+        $("#next-question-button").click(function(){
+             $(this).addClass('green');
+        });
     });
 
     // Let users close the warning bar when appropriate
@@ -242,14 +248,16 @@ function handleAttempt(data) {
         $("#positive-reinforcement").show();
         $("#skip-question-button").prop("disabled", true);
         $("#opt-out-button").prop("disabled", true);
+        $('#negative-reinforcement').css('display','none');
     } else {
         // Wrong answer. Enable all the input elements
-
-        $("#check-answer-button")
+        $('#negative-reinforcement').css('display','inline-block');
+        $("#check-answer-button, #negative-reinforcement")
             .parent()  // .check-answer-wrapper makes shake behave
             .effect("shake", {times: 3, distance: 5}, 480)
             .val($._("Try Again"));
 
+        
         if (framework === "perseus") {
             // TODO(alpert)?
         } else if (framework === "khan-exercises") {
@@ -260,8 +268,8 @@ function handleAttempt(data) {
     if (!hintsAreFree) {
         hintsAreFree = true;
         $(".hint-box")
-            .css("position", "relative")
-            .animate({top: -10}, 250)
+//            .css("position", "relative")
+//            .animate({top: -10}, 250)
             .find(".info-box-header")
                 .slideUp(250)
                 .end()

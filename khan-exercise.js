@@ -1254,6 +1254,17 @@ var Khan = (function() {
 
         // problem has to be child of visible #workarea for MathJax metrics to all work right
         $("#workarea").append(problem);
+        var hint_box = '<div class="hint-container"><div class="hint-custom hint-box">'+
+                '    <div id="get-hint-button-container">'+
+                '        <input class="simple-button orange full-width" id="hint" name="hint" type="button" value="I\'d like a hint">'+
+                '    </div>'+
+                '    <span id="hint-remainder"></span>'+
+                '</div>'+
+                '<div id="hintsarea"></div></div>';
+        $(hint_box).insertAfter(".question").runModules(problem);
+        $("#hint").click(function() {
+            $(Khan).trigger("showHint");
+        });
 
         // If there's an original problem, add inherited elements
         var parentType = problem.data("type");
@@ -1562,11 +1573,12 @@ var Khan = (function() {
 
         }
 
+    
         return answerType;
     }
 
     function showHint() {
-        // Called when user hits hint button triggering showHint event or when
+        // Called when user hits hint button triggering showHint event or when'
         // the server side data says the last_count_hints is not 0 when
         // exercise is loaded.
         var hint = hints.shift();
@@ -1585,6 +1597,8 @@ var Khan = (function() {
         if (hints.length === 0) {
             $(hint).addClass("last-hint");
         }
+
+
 
         // TODO(james): figure out a way to trigger hintUsed to ensure that the
         // cards are updated properly, but make sure the ajax calls to

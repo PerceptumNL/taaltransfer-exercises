@@ -251,7 +251,7 @@ $.extend(KhanUtil, {
       });
       $('#bool').remove();      
       if(userPick === x){
-        $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
+        $('<span id="bool" style="display:none">true</span>').appendTo('.answers');
       }
       else{
         $('#bool').remove();
@@ -308,7 +308,7 @@ $.extend(KhanUtil, {
       
       if(corrAns === answer.length){
         $('#bool').remove();
-        $('<span id="bool" style="visibility:hidden">true</span>').appendTo('.answers');
+        $('<span id="bool" style="display:none">true</span>').appendTo('.answers');
       }
       else{
         $('#bool').remove();
@@ -497,10 +497,10 @@ $.extend(KhanUtil, {
     var qWords = ['Waarom','Hoeveel','Waar','Hoe','Wanneer','Welke'];
     for(var j=0; j<sLen; j++){
       if(sent[j] === pv.text().trim()){
-        $('<span id="pv" class = "els">' + sent[j] + ' </span>').appendTo('.answers');
+        $('<span id="pv" class = "els">' + sent[j] + '</span>').appendTo('.answers');
       }
       else{
-        $('<span class = "els">' + sent[j] + ' </span>').appendTo('.answers');
+        $('<span class = "els">' + sent[j] + '</span>').appendTo('.answers');
       }
     }
   },
@@ -541,19 +541,25 @@ $.extend(KhanUtil, {
       if(len === 1){
         if($(answers[0]).attr('id') == 'pv'){
           $("#bool").remove();
-          $('<span style="visibility:hidden" id="bool">true</span>').appendTo('.answers');
+          $('<span style="display:none" id="bool">true</span>').appendTo('.answers');
           $('.fakeDrag').addClass("correct2");          
         }
         else{
           $("#bool").remove();
-          $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
+          $('<span style="display:none" id="bool">false</span>').appendTo('.answers');
           $('.fakeDrag').addClass("incorrect2");
+          $('#check-answer-button').removeClass("green");
+          $('#check-answer-button').addClass("orange");
+          $('#negative-reinforcement').css('display','inline-block');
         }
       }
       else{
         $("#bool").remove();
-        $('<span style="visibility:hidden" id="bool">false</span>').appendTo('.answers');
-        $('.fakeDrag').addClass("incorrect2");        
+        $('<span style="display:none" id="bool">false</span>').appendTo('.answers');
+        $('.fakeDrag').addClass("incorrect2");
+        $('#check-answer-button').removeClass("green");
+        $('#check-answer-button').addClass("orange");
+      
       }
       
     });
@@ -601,7 +607,7 @@ $.extend(KhanUtil, {
       }
       $("#bool").remove();
       if(count === aLen){
-        $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
+        $("<span id='bool' style='display:none'>" + true + "</span>").appendTo(".question");
       }
     });
   },
@@ -688,7 +694,7 @@ $.extend(KhanUtil, {
     var els = 0;
     for(var i=0; i<length;i++){
       if(sentence[i][0] !== ""){
-        $("<span class='els' style='visibility:hidden' id ='" + sentence[i][1] + "' > " + sentence[i][0] + " </span> ").appendTo('.question');
+        $("<span class='els' style='display:none' id ='" + sentence[i][1] + "' > " + sentence[i][0] + " </span> ").appendTo('.question');
         els++;
       }
     }
@@ -867,7 +873,7 @@ $.extend(KhanUtil, {
     $('#check-answer-button').mousedown(function(){
       var len = $(".c").length;
       if(len === zinlen){
-        $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
+        $("<span id='bool' style='display:none'>" + true + "</span>").appendTo(".question");
       }
     });
     
@@ -1018,7 +1024,7 @@ $.extend(KhanUtil, {
       $('.corr2').removeClass('incorrect2');
       var cLen = $('.corr').length;
       if(cLen == zinlen){
-        $("<span id='bool' style='visibility:hidden'>" + true + "</span>").appendTo(".question");
+        $("<span id='bool' style='display:none'>" + true + "</span>").appendTo(".question");
       }
     });
   },

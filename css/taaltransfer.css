@@ -1,3 +1,7 @@
+*{
+  font-family: "Open Sans";
+
+}
 .drag{
   color:black;
   border:1px dotted grey;
@@ -9,12 +13,13 @@
 }
 .fakeDrag{
   color:black;
-  border:1px dotted grey;
+  border:1px dotted #aaa;
   margin:1px;
   padding:3px;
   width:100px;
   height:100px;
   border-radius:5px;
+  background-color: #ccc;
 }
 
 .drop{
@@ -119,6 +124,10 @@
 
 /*level1a-copy.html*/
 .sentence span {
+  padding: 2px;
+  cursor: pointer;
+}
+.answer span {
   padding: 2px;
   cursor: pointer;
 }

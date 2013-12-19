@@ -16,42 +16,24 @@
     <span id="warning-bar-content"></span>
     <span id="warning-bar-close">(<a href="">close</a>)</span>
 </div>
+   
 <div id="problem-and-answer">
     <form id="answerform" name="answerform">
         <div id="problemarea">
             <div id="scratchpad"><div></div></div>
             <div id="workarea"></div>
-            <div id="hintsarea"></div>
+            <div id="hintsarea2">
+            </div>
         </div>
+      <!--
         <div id="answer_area_wrap"><div id="answer_area">
             <input style="position: absolute; left: -9999px; width: 1px; height: 1px" type="submit">
-            <div class="info-box" id="answercontent">
-                <span id="examples-show">Acceptable formats</span>
-                <span class="info-box-header">Answer</span>
-                <div class="fancy-scrollbar" id="solutionarea"></div>
-                <ul id="examples" style="display: none"></ul>
-                <div class="answer-buttons">
-                <div class="check-answer-wrapper">
-                    <input class="simple-button green" id="check-answer-button" type="button" value="Check Answer">
-                </div>
-                <input class="simple-button green" id="next-question-button" name="correctnextbutton" style="display:none;" type="button" value="Correct! Next Question...">
-                <div id="positive-reinforcement"><img src="/images/face-smiley.png"></div>
-                <span id="show-solution-button-container"></span>
-                <div id="check-answer-results"><p class="check-answer-message info-box-sub-description"></p></div>
-                </div>
-            </div>
             <div class="info-box" id="readonly">
                 <span class="info-box-header" id="readonly-problem"></span>
                 <span class="info-box-subheader" id="readonly-title">You are viewing a problem.</span>
                 <span class="info-box-sub-description">To work on problems like this, <a href="" id="readonly-start">start this exercise</a>.</span>
             </div>
-            <div class="info-box hint-box">
-                <span class="info-box-header">Need help?</span>
-                <div id="get-hint-button-container">
-                    <input class="simple-button orange full-width" id="hint" name="hint" type="button" value="I'd like a hint">
-                </div>
-                <span id="hint-remainder"></span>
-            </div>
+         
             <div class="info-box related-video-box" style="display:none;">
                 <div id="related-video-content">
                     <span class="info-box-header">Stuck? Watch a video.</span>
@@ -127,8 +109,22 @@
             </div>
         </div>
     </div></div>
+            --> 
     </form>
+    
     <div style="clear: both;"></div>
 </div>
+    <div class="" id="answercontent">
+                <div class="answer-buttons">
+                <div class="check-answer-wrapper">
+                    <input class="simple-button green" id="check-answer-button" type="button" value="Check Answer">
+                </div>
+                <div id="positive-reinforcement"><img src="/images/face-smiley.png"></div>
+                <div id="negative-reinforcement"><img src="/images/face-sad.png"></div>
+                <input class="simple-button green" id="next-question-button" name="correctnextbutton" style="display:none;" type="button" value="Correct! Next Question...">
+                <span id="show-solution-button-container"></span>
+                <div id="check-answer-results"><p class="check-answer-message info-box-sub-description"></p></div>
+                </div>
+            </div>
 </body>
 </html>
