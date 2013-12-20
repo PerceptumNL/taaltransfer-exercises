@@ -99,10 +99,10 @@ div.definition {
     color: white;
 }
 #hintsarea p:last-child {
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 #hintsarea p:first-child {
-    padding-top: 20px;
+    padding-top: 30px;
 }
 #answer_area ul { list-style: none; }
 #answer_area li { padding: 7px 0; }

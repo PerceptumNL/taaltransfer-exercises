@@ -623,7 +623,7 @@ $.extend(KhanUtil, {
     var words = ['waarom','hoe','wanneer','welke','wie'];
     var verbs = ['hww','kww','hww'];
     for(var i=0; i<sentence.length;i++){
-      $('<span class = "words ' + sentence[i][1] + '"> ' + sentence[i][0] +'</span>').appendTo('.answers');
+      $('<span class = "words ' + sentence[i][1] + '">' + sentence[i][0] +'</span>').appendTo('.answers');
     }
     if(words.indexOf(sentence[0][0].trim().toLowerCase()) > -1 || verbs.indexOf(sentence[0][1].trim().toLowerCase()) > -1){
       $('<span>?</span>').appendTo('.answers');      

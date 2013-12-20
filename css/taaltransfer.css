@@ -119,6 +119,7 @@
   border-radius:5px;
   padding:3px;
   margin:3px;
+  background-color: #ccc;
 }
 
 
@@ -135,4 +136,8 @@
   background-color: orange;
 }
 
+.words {
+    cursor: pointer;
+    padding: 3px;
+}
 
