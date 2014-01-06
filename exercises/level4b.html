@@ -21,8 +21,8 @@
         <!-- <var id="NUMBER">makeNumber(CAT, SENTENCES)</var> -->
         <!-- <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var> -->
         <!-- <var id="TUPLE">getWordID(ZIN, WORDS)</var> -->
-        <var id="PER">SENTENCE_OBJ['per']</var>
-        <var id="BEZ">SENTENCE_OBJ['bez']</var>
+        <var id="PER">SENTENCE_OBJ['per'].substring(0, SENTENCE_OBJ['per'].length - 1)</var>
+        <var id="BEZ">SENTENCE_OBJ['bez'].substring(0, SENTENCE_OBJ['bez'].length - 1)</var>
         <var id="HWW">SENTENCE_OBJ['hww']</var>
         <var id="ZWW">SENTENCE_OBJ['zww']</var>
 
@@ -48,8 +48,8 @@
         <p>Een persoonlijk voornaamwoord kan voor de persoonsvorm staan, maar ook achter de persoonsvorm.</p>
         <p>Een bezittelijk voornaamwoord vormt een combinatie met een zelfstandig naamwoord.</p>
         <p>Een bezittelijk voornaamwoord staat altijd voor het zelfstandig naamwoord.</p>
-        <p>De persoonlijk voornaamwoorden zijn "<var>PER</var>".</p>
-        <p>De bezittelijk voornaamwoorden zijn "<var>BEZ</var>".</p>
+        <p>De persoonlijk voornaamwoorden zijn "<var>PER</var>".<br>
+        De bezittelijk voornaamwoorden zijn "<var>BEZ</var>".</p>
     </div>
 </body>
 </html>

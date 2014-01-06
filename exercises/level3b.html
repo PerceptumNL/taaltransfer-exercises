@@ -21,11 +21,11 @@
         <!-- <var id="NUMBER">makeNumber(CAT, SENTENCES)</var> -->
         <!-- <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var> -->
         <!-- <var id="TUPLE">getWordID(ZIN, WORDS)</var> -->
-        <var id="LW" >SENTENCE_OBJ["lw"]</var>
-        <var id="ZNW">SENTENCE_OBJ["znw"]</var>
-        <var id="BVN">SENTENCE_OBJ["bvn"]</var>
-        <var id="HWW">SENTENCE_OBJ["hww"]</var>
-        <var id="ZWW">SENTENCE_OBJ["zww"]</var>
+        <var id="LW" >SENTENCE_OBJ["lw"].substring(0, SENTENCE_OBJ['lw'].length - 1)</var>
+        <var id="ZNW">SENTENCE_OBJ["znw"].substring(0, SENTENCE_OBJ['znw'].length - 1)</var>
+        <var id="BVN">SENTENCE_OBJ["bvn"].substring(0, SENTENCE_OBJ['bvn'].length - 1)</var>
+        <var id="HWW">SENTENCE_OBJ["hww"].substring(0, SENTENCE_OBJ['hww'].length - 1)</var>
+        <var id="ZWW">SENTENCE_OBJ["zww"].substring(0, SENTENCE_OBJ['zww'].length - 1)</var>
 
     </div>
     
@@ -43,7 +43,7 @@
             
         </div>
     </div>
-
+    
     <div class="hints">
         <p>Als een zin met een werkwoordelijk gezegde slechts één werkwoord heeft, dan is dat werkwoord altijd het zelfstandige werkwoord.</p>
         <p>Als een zin met een werkwoordelijk twee werkwoorden heeft, is de persoonsvorm altijd een hulpwerkwoord en het andere werkwoord het zelfstandige werkwoord.</p>
@@ -51,8 +51,9 @@
         <p>Er kan maar één zelfstandig werkwoord in een zin staan.</p>
         <p>Na de hulpwerkwoorden 'hebben', 'zijn' of 'worden' volgt altijd een voltooid deelwoord. Dit voltooid deelwoord is het zelfstandige werkwoord.</p>
         <p>Na de modale hulpwerkwoorden 'willen', 'kunnen', 'mogen', 'zullen', 'moeten' en 'hoeven' (of een vervoeging van deze werkwoorden) volgt altijd een infinitief. Dit infinitief is het zelfstandige werkwoord.</p>
-        <p>Het zelfstandige werkwoord is "<var>ZWW</var>".</p>
-        <p>De (eventuele) hulpwerkwoorden zijn "<var>HWW</var>".</p>
+        <p>Het zelfstandige werkwoord is: "<var>ZWW</var>". <br>
+        De (eventuele) hulpwerkwoorden zijn: "<var>HWW</var>".</p>
     </div>
+</div>
 </body>
 </html>
