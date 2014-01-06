@@ -11,12 +11,21 @@
 <body>
     <div class="exercise">
     <div class="vars">
-        <var id="SENTENCES">readFile("../csv/zinnen.csv")</var>
-        <var id="WORDS">readFile("../csv/woorden.csv")</var>
-        <var id="CAT">[1,25,2,27,16,50]</var>
-        <var id="NUMBER">makeNumber(CAT, SENTENCES)</var>
-        <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var>
-        <var id="TUPLE">getWordID(ZIN, WORDS)</var>
+        <!-- <var id="SENTENCES">readFile("../csv/zinnen.csv")</var> -->
+        <!-- <var id="WORDS">readFile("../csv/woorden.csv")</var> -->
+        <!-- <var id="CAT">[1,25,2,27,16,50]</var> -->
+        <var id="CATS">[1,25,2,27,16,50]</var>
+        <var id="CAT">randFromArray(CATS)</var>
+        <var id="SENTENCE_OBJ">getZinnenSentence(CAT)</var>
+        <var id="TUPLE">convert2Tuple(SENTENCE_OBJ)</var>
+        <!-- <var id="NUMBER">makeNumber(CAT, SENTENCES)</var> -->
+        <!-- <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var> -->
+        <!-- <var id="TUPLE">getWordID(ZIN, WORDS)</var> -->
+        <var id="LW" >SENTENCE_OBJ["lw"]</var>
+        <var id="ZNW">SENTENCE_OBJ["znw"]</var>
+        <var id="BVN">SENTENCE_OBJ["bvn"]</var>
+        <var id="HWW">SENTENCE_OBJ["hww"]</var>
+        <var id="ZWW">SENTENCE_OBJ["zww"]</var>
 
     </div>
     
@@ -36,6 +45,14 @@
     </div>
 
     <div class="hints">
+        <p>Als een zin met een werkwoordelijk gezegde slechts één werkwoord heeft, dan is dat werkwoord altijd het zelfstandige werkwoord.</p>
+        <p>Als een zin met een werkwoordelijk twee werkwoorden heeft, is de persoonsvorm altijd een hulpwerkwoord en het andere werkwoord het zelfstandige werkwoord.</p>
+        <p>Een zelfstandig werkwoord geeft een actie aan: 'eten', kopen', 'bespreken', 'wandelen'. Werkwoorden die een actie aangeven noem je altijd zelfstandig werkwoorden.</p>
+        <p>Er kan maar één zelfstandig werkwoord in een zin staan.</p>
+        <p>Na de hulpwerkwoorden 'hebben', 'zijn' of 'worden' volgt altijd een voltooid deelwoord. Dit voltooid deelwoord is het zelfstandige werkwoord.</p>
+        <p>Na de modale hulpwerkwoorden 'willen', 'kunnen', 'mogen', 'zullen', 'moeten' en 'hoeven' (of een vervoeging van deze werkwoorden) volgt altijd een infinitief. Dit infinitief is het zelfstandige werkwoord.</p>
+        <p>Het zelfstandige werkwoord is "<var>ZWW</var>".</p>
+        <p>De (eventuele) hulpwerkwoorden zijn "<var>HWW</var>".</p>
     </div>
 </body>
 </html>
