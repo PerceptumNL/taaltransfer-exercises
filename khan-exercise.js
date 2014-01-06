@@ -941,6 +941,8 @@ var Khan = (function() {
             $("div.exercise").not("[data-name]").data("name", exerciseId);
 
             var remoteExercises = $("div.exercise[data-name]");
+            console.debug("remoteExercises");
+            console.debug(remoteExercises);
 
             remoteExercises.each(function() {
                 promises.push(loadExercise(this));

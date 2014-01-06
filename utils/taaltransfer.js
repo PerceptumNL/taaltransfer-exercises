@@ -85,12 +85,12 @@ $.extend(KhanUtil, {
 
   getZinsdelenSentence: function(cat) {
     cat = getURLParameters("cat") || cat;
-    var zinsdelen = this.readJSONFile("../cats/"+cat+"_zinsdelen.json");
+    var zinsdelen = this.readJSONFile("/khan-exercises/cats/"+cat+"_zinsdelen.json");
     return this.getRandomSentence(zinsdelen);
   },
   getZinnenSentence: function(cat) {
     cat = getURLParameters("cat") || cat;
-    var zinnen = this.readJSONFile("../cats/"+cat+"_zinnen.json");
+    var zinnen = this.readJSONFile("/khan-exercises/cats/"+cat+"_zinnen.json");
     return this.getRandomSentence(zinnen);
   },
 

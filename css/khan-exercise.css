@@ -570,51 +570,6 @@ html.exercise-browser {
 	text-shadow: none;
 }
 
-#warning-bar {
-	width: 100%;
-	height: 35px;
-	text-align: center;
-	font-size: 15px;
-	display: none;
-	padding: 6px 0;
-	position: relative;
-	z-index: 2;
-}
-
-#warning-bar span {
-	position: relative;
-	top: 5px;
-}
-
-#warning-bar-close {
-	top: 5px;
-	float: right;
-	right: 20px;
-	position: relative;
-}
-
-#warning-bar-content a {
-	text-decoration: underline;
-}
-
-#warning-bar.error {
-  background-color: #D61914;
-  color: #eee;
-}
-
-#warning-bar.error a {
-  color: #eee;
-}
-
-#warning-bar.warning {
-  background-color: #f5e722;
-  color: #222;
-}
-
-#warning-bar.warning a {
-  color: #222;
-}
-
 /* Faux table styles that allow revealing data row by row in hints */
 
 .fake_header > span {
@@ -967,4 +922,378 @@ body.debug span.error {
     font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4em;
     margin: 0px 4px;
+}
+
+#answer_area_wrap {
+    float: right;
+    width: 27%;
+    margin-right: 10px;
+}
+
+/* A simple 3D button style */
+.simple-button {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #bbb;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+    background-color: #f8f8f8;
+    background-image: -moz-linear-gradient(top, #ffffff, #eeeeee);
+    background-image: -ms-linear-gradient(top, #ffffff, #eeeeee);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#eeeeee));
+    background-image: -webkit-linear-gradient(top, #ffffff, #eeeeee);
+    background-image: -o-linear-gradient(top, #ffffff, #eeeeee);
+    background-image: linear-gradient(top, #ffffff, #eeeeee);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#eeeeee', GradientType = 0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    color: #595959 !important;
+    cursor: pointer !important;
+    font-family: inherit;
+    /* input[type=button] won't inherit by default */
+
+    line-height: 22px;
+    margin: 0;
+    padding: 5px 10px;
+    position: relative;
+    text-decoration: none !important;
+    text-shadow: 0 -1px 0 #ffffff;
+    /* Special button types */
+
+}
+
+.simple-button:hover,
+.simple-button:active,
+.simple-button.active,
+.simple-button.disabled,
+.simple-button[disabled] {
+    background-color: #eeeeee;
+}
+
+.simple-button:active,
+.simple-button.active {
+    background-color: #d5d5d5    \9;
+}
+
+.simple-button:hover {
+    border-color: #aaaaaa;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 0 50px 5px rgba(255, 255, 255, .2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 0 50px 5px rgba(255, 255, 255, .2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4), inset 0 0 50px 5px rgba(255, 255, 255, .2);
+}
+
+.simple-button:active,
+.simple-button.toggled {
+    -webkit-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3), inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.simple-button:disabled,
+.simple-button.disabled {
+    background-image: none !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    cursor: not-allowed !important;
+    opacity: 0.5;
+    filter: alpha(opacity = 50);
+    top: 0 !important;
+}
+
+.simple-button.blue,
+.simple-button.secondary {
+    border-color: #2c3747 !important;
+    border-bottom-color: #000000 !important;
+    background-color: #364253;
+    background-image: -moz-linear-gradient(top, #3a4759, #303b4a);
+    background-image: -ms-linear-gradient(top, #3a4759, #303b4a);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3a4759), to(#303b4a));
+    background-image: -webkit-linear-gradient(top, #3a4759, #303b4a);
+    background-image: -o-linear-gradient(top, #3a4759, #303b4a);
+    background-image: linear-gradient(top, #3a4759, #303b4a);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#3a4759', endColorstr = '#303b4a', GradientType = 0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    color: #ffffff !important;
+    text-shadow: 0 -1px 0 #050608;
+}
+
+.simple-button.blue:hover,
+.simple-button.secondary:hover,
+.simple-button.blue:active,
+.simple-button.secondary:active,
+.simple-button.blue.active,
+.simple-button.secondary.active,
+.simple-button.blue.disabled,
+.simple-button.secondary.disabled,
+.simple-button.blue[disabled],
+.simple-button.secondary[disabled] {
+    background-color: #303b4a;
+}
+
+.simple-button.blue:active,
+.simple-button.secondary:active,
+.simple-button.blue.active,
+.simple-button.secondary.active {
+    background-color: #1c222b    \9;
+}
+
+.simple-button.green,
+.simple-button.primary {
+    border-color: #76a005 !important;
+    border-bottom-color: #526f03 !important;
+    background-color: #7fac05;
+    background-image: -moz-linear-gradient(top, #8aba08, #6e9700);
+    background-image: -ms-linear-gradient(top, #8aba08, #6e9700);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8aba08), to(#6e9700));
+    background-image: -webkit-linear-gradient(top, #8aba08, #6e9700);
+    background-image: -o-linear-gradient(top, #8aba08, #6e9700);
+    background-image: linear-gradient(top, #8aba08, #6e9700);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#8aba08', endColorstr = '#6e9700', GradientType = 0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    color: #ffffff !important;
+    text-shadow: 0 -1px 0 #526f03;
+}
+
+.simple-button.green:hover,
+.simple-button.primary:hover,
+.simple-button.green:active,
+.simple-button.primary:active,
+.simple-button.green.active,
+.simple-button.primary.active,
+.simple-button.green.disabled,
+.simple-button.primary.disabled,
+.simple-button.green[disabled],
+.simple-button.primary[disabled] {
+    background-color: #6e9700;
+}
+
+.simple-button.green:active,
+.simple-button.primary:active,
+.simple-button.green.active,
+.simple-button.primary.active {
+    background-color: #496400    \9;
+}
+
+.simple-button.orange,
+.simple-button.warning {
+    border-color: #bf4f04 !important;
+    border-bottom-color: #8d3a03 !important;
+    background-color: #d55704;
+    background-image: -moz-linear-gradient(top, #e35d04, #bf4f04);
+    background-image: -ms-linear-gradient(top, #e35d04, #bf4f04);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e35d04), to(#bf4f04));
+    background-image: -webkit-linear-gradient(top, #e35d04, #bf4f04);
+    background-image: -o-linear-gradient(top, #e35d04, #bf4f04);
+    background-image: linear-gradient(top, #e35d04, #bf4f04);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#e35d04', endColorstr = '#bf4f04', GradientType = 0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    color: #ffffff !important;
+    text-shadow: 0 -1px 0 #743002;
+}
+
+.simple-button.orange:hover,
+.simple-button.warning:hover,
+.simple-button.orange:active,
+.simple-button.warning:active,
+.simple-button.orange.active,
+.simple-button.warning.active,
+.simple-button.orange.disabled,
+.simple-button.warning.disabled,
+.simple-button.orange[disabled],
+.simple-button.warning[disabled] {
+    background-color: #bf4f04;
+}
+
+.simple-button.orange:active,
+.simple-button.warning:active,
+.simple-button.orange.active,
+.simple-button.warning.active {
+    background-color: #8d3a03    \9;
+}
+
+.simple-button.seethrough {
+    /* Creating my own gradient instead of using a mixin because I explicitly
+         * do not want to set a background color which the mixin does by default.
+         */
+
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = 'rgba(255, 255, 255, 0.5)', endColorstr = 'rgba(255, 255, 255, 0)', GradientType = 0);
+    text-shadow: none;
+}
+
+.simple-button.with-icon {
+    padding-left: 30px;
+}
+
+.simple-button.with-icon img {
+    left: 7px;
+    position: absolute;
+    top: 3px;
+}
+
+.simple-button.social-button {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 9px;
+    max-width: 200px;
+    padding-top: 7px;
+    text-transform: uppercase;
+}
+
+.simple-button.social-button img {
+    height: 24px;
+    vertical-align: middle;
+    width: 24px;
+}
+
+.simple-button.donate-button {
+    bottom: 1px;
+    padding: 3px 7px;
+}
+
+.simple-button.big-button {
+    padding: 0 2em;
+    line-height: 2.5;
+}
+
+.info-box {
+    background: #eee;
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #aaa;
+    color: #333;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    padding: 10px;
+    position: relative;
+    z-index: 10;
+
+    -moz-box-shadow: 0 1px 2px #ccc;
+    -webkit-box-shadow: 0 1px 2px #ccc;
+    box-shadow: 0 1px 2px #ccc;
+}
+
+.info-box table {
+    border-collapse: collapse;
+}
+
+.info-box .info-box-header, .info-box .info-box-subheader {
+    color: #777;
+    display: block;
+    font-size: 18px;
+    line-height: 100%;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.info-box .info-box-subheader {
+    line-height: 200%;
+    font-size: 14px;
+    color: #333;
+}
+
+.info-box .related-content-title {
+    display: none;
+}
+
+.info-box #related-video-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.info-box #related-video-list li {
+    display: block;
+    margin: 0 0 5px 0;
+}
+
+.info-box #related-video-list a {
+    display: block;
+    float: left;
+    margin: 0;
+    width: 98%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info-box #related-video-list a .video-title {
+    white-space: nowrap;
+}
+
+.info-box #related-video-list .separator {
+    display: none;
+}
+
+/* Energy points badge look. Should be used wherever we display energy points */
+.info-box #related-video-list .video-energy-points,
+.extra-link-bar .video-energy-points,
+#user-info .energy-points-badge,
+.energy-points-badge {
+    background: #005987;
+    float: right;
+    line-height: 18px;
+    text-align: center;
+    padding: 2px 5px 3px;
+    color: white;
+    font-weight: bold;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: none;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#user-info .energy-points-badge {
+    float: none;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.info-box .info-box-sub-description {
+    display: block;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.info-box .info-box-sub-description strong {
+    color: #444;
+    font-style: italic;
+}
+
+.info-box #check-answer-results #feedback {
+    padding: 10px 0 5px;
+}
+
+.info-box #answer {
+    width: 100px;
+}
+
+article.exercises-content {
+  background: white;
+  padding: 20px 10px;
+  margin-top: 20px;
+  width: 100%;
+  min-height: 427px;
+}
+
+.container {
+  min-height: 630px;
 }

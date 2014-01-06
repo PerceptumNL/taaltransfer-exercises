@@ -13,6 +13,9 @@ _.defaults(Exercises, {
     khanExercisesUrlBase: "/khan-exercises/",
 
     getCurrentFramework: function(userExerciseOverride) {
+        return "khan-exercises";
+        console.debug(userExerciseOverride)
+        console.debug(userExercise)
         return (userExerciseOverride || userExercise).exerciseModel.fileName ?
             "khan-exercises" : "perseus";
     }
@@ -85,6 +88,7 @@ function problemTemplateRendered() {
     // Next question button
     $("#next-question-button").click(function() {
         $(Exercises).trigger("gotoNextProblem");
+        $(Exercises).trigger("readyForNextProblem");
 
         // Disable next question button until next time
         // TODO(alpert): Why? Is blurring not enough?
@@ -146,8 +150,8 @@ function newProblem(e, data) {
 
     // Update related videos
     if (data.userExercise) {
-        Exercises.RelatedVideos.render(
-                data.userExercise.exerciseModel.relatedVideos);
+    //    Exercises.RelatedVideos.render(
+    //            data.userExercise.exerciseModel.relatedVideos);
     }
 }
 
@@ -279,11 +283,12 @@ function handleAttempt(data) {
         fast: !localMode && userExercise.secondsPerFastProblem >= timeTaken
     });
 
-    if (localMode || Exercises.currentCard.get("preview")) {
+    //if (localMode || Exercises.currentCard.get("preview")) {
         // Skip the server; just pretend we have success
 //        return false;
-    }
+    //}
 
+    console.error("preview", previewingItem);
     if (previewingItem) {
         $("#next-question-button").prop("disabled", true);
 
@@ -545,7 +550,10 @@ function request(method, data) {
 
 
 function readyForNextProblem(e, data) {
-    userExercise = data.userExercise;
+    console.log(data);
+    console.log(userExercise);
+    userExercise = data ? data.userExercise : userExercise;
+    console.log(userExercise);
     problemNum = userExercise.totalDone + 1;
 
     $(Exercises).trigger("updateUserExercise", {userExercise: userExercise});
@@ -555,7 +563,7 @@ function readyForNextProblem(e, data) {
     if (framework === "perseus") {
         $(PerseusBridge).trigger("readyForNextProblem", data);
     } else if (framework === "khan-exercises") {
-        $(Khan).trigger("readyForNextProblem", data);
+        $(Khan).trigger("readyForNextProblem", {userExercise: userExercise});
     }
 }
 
@@ -585,6 +593,7 @@ function upcomingExercise(e, data) {
 
 
 function gotoNextProblem() {
+    console.error("Exercise.gotoNextProblem");
     var framework = Exercises.getCurrentFramework();
     if (framework === "perseus") {
         // TODO(alpert)
@@ -622,6 +631,7 @@ function enableCheckAnswer() {
 }
 
 function disableCheckAnswer() {
+    console.error("disable");
     $("#check-answer-button")
         .prop("disabled", true)
         .addClass("buttonDisabled")
@@ -651,7 +661,8 @@ function clearExistingProblem() {
     $("#positive-reinforcement").hide();
 
     // Wipe out any previous problem
-    PerseusBridge.cleanupProblem() || Khan.cleanupProblem();
+    //PerseusBridge.cleanupProblem()
+    Khan.cleanupProblem();
     $("#workarea, #hintsarea, #solutionarea").empty();
 
     // Take off the event handlers for disabling check answer; we'll rebind
