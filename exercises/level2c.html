@@ -17,7 +17,8 @@
         <var id="TUPLE">convert2Tuple(SENTENCE_OBJ)</var>
         <var id="LW" >SENTENCE_OBJ['lw'].substring(0, SENTENCE_OBJ['lw'].length - 1)</var>
         <var id="ZNW">SENTENCE_OBJ['znw'].substring(0, SENTENCE_OBJ['znw'].length - 1)</var>
-        <var id="BNW">SENTENCE_OBJ['bnw'].substring(0, SENTENCE_OBJ['bnw'].length - 1)</var>
+        <var id="BNW">SENTENCE_OBJ['bvn'].substring(0, SENTENCE_OBJ['bvn'].length - 1)</var>
+        console.log(convert2Tuple(SENTENCE_OBJ))
 
     </div>
     
@@ -44,9 +45,12 @@
     <p>Geeft het woord een eigenschaap of kenmerk van het woord (bijv: 'lief', 'groot', 'mooi')? <br>
         Dan is het een bijvoeglijk naamwoord.</p>
 
-    <p>De lidwoord in deze zin zijn: "<var>LW</var>"<br>
-    De zelfstandig naamwoorden in deze zin zijn: "<var>ZNW</var>"<br>
-    De bijvoeglijk naamwoorden in deze zin zijn: "<var>BNW</var>"</p>
+    <p data-if="LW !== ''"><b>De lidwoord in deze zin zijn: "<var>LW</var>"</b></p>
+    <p data-else=""><b>Er is geen lidwoord in deze zin.</b></p>
+    <p data-if="ZNW !== ''"><b>De zelfstandig naamwoorden in deze zin zijn: "<var>ZNW</var>"</b></p>
+    <p data-else=""><b>Er is geen zelfstandig naamwoorden in deze zin.</b></p>
+    <p data-if="BNW !== ''"><b>De bijvoeglijk naamwoorden in deze zin zijn: "<var>BNW</var>"</b></p>
+    <p data-else=""><b>Er is geen bijvoeglijk naamwoorden in deze zin.</b></p>
     </div>
 </body>
 </html>
