@@ -1,6 +1,6 @@
 {
  "category": 97,
- "date": "2013-12-17T11:00:05.119883",
+ "date": "2014-01-09T11:50:07.340109",
  "header": [
   "sentence",
   "category",
@@ -22,7 +22,7 @@
  ],
  "sentences": [
   [
-   " Waarom heeft die docent voor aanstaande dinsdag alweer een woordjestoets aan ons opgegeven .",
+   " Waarom heeft die docent voor aanstaande dinsdag alweer een woordjestoets aan ons opgegeven ?",
    "97",
    "x",
    "",
@@ -250,7 +250,7 @@
    ""
   ],
   [
-   " Waarom vertel je nu pas het volledige verhaal aan mij  .",
+   " Waarom vertel je nu pas het volledige verhaal aan mij\u00a0 ?",
    "97",
    "x",
    "",
@@ -440,7 +440,7 @@
    ""
   ],
   [
-   " Waarom heb je in hemelsnaam juist die film aan ons aangeraden .",
+   " Waarom heb je in hemelsnaam juist die film aan ons aangeraden ?",
    "97",
    "x",
    "",
