@@ -1,6 +1,6 @@
 {
  "category": 29,
- "date": "2013-12-17T10:58:19.458824",
+ "date": "2014-01-09T11:15:13.541425",
  "header": [
   "sentence",
   "category",
@@ -351,7 +351,7 @@
    "x"
   ],
   [
-   " Wie heeft gisteren zijn regenjas aan mij geleend   .",
+   " Wie heeft gisteren zijn regenjas aan mij geleend\u00a0\u00a0 ?",
    "29",
    "",
    "geleend,",
@@ -380,7 +380,7 @@
    "x"
   ],
   [
-   " Welke weldoener heeft vorige maand zo'n groot bedrag aan onze stichting geschonken   .",
+   " Welke weldoener heeft vorige maand zo'n groot bedrag aan onze stichting geschonken\u00a0\u00a0 ?",
    "29",
    "",
    "geschonken,",
@@ -409,7 +409,7 @@
    "x"
   ],
   [
-   " Wie zal straks deze fles wijn aan de gastspreker aanbieden   .",
+   " Wie zal straks deze fles wijn aan de gastspreker aanbieden\u00a0\u00a0 ?",
    "29",
    "de,",
    "aanbieden,",
@@ -438,7 +438,7 @@
    "x"
   ],
   [
-   " Wie heeft toch deze medicijnen aan jou aangeraden   .",
+   " Wie heeft toch deze medicijnen aan jou aangeraden\u00a0\u00a0 ?",
    "29",
    "",
    "aangeraden,",

@@ -1,6 +1,6 @@
 {
  "category": 94,
- "date": "2013-12-17T10:58:20.406276",
+ "date": "2014-01-09T11:15:14.445172",
  "header": [
   "sentence",
   "category",
@@ -61,7 +61,7 @@
    "x"
   ],
   [
-   " Waarom heb jij je tijdens dat etentje zo belachelijk gedragen  .",
+   " Waarom heb jij je tijdens dat etentje zo belachelijk gedragen\u00a0 ?",
    "94",
    "",
    "gedragen,",
@@ -496,7 +496,7 @@
    "x"
   ],
   [
-   " Misschien hebben jullie je niet op tijd ingeschreven  .",
+   " Misschien hebben jullie je niet op tijd ingeschreven\u00a0 ?",
    "94",
    "",
    "ingeschreven,",
@@ -525,7 +525,7 @@
    "x"
   ],
   [
-   " Waarom hebben jullie je vandaag als stripfiguren verkleed  .",
+   " Waarom hebben jullie je vandaag als stripfiguren verkleed\u00a0 ?",
    "94",
    "",
    "verkleed,",

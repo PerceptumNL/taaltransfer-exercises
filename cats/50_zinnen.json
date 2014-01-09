@@ -1,6 +1,6 @@
 {
  "category": 50,
- "date": "2013-12-17T10:58:19.757700",
+ "date": "2014-01-09T11:15:13.822308",
  "header": [
   "sentence",
   "category",
@@ -61,7 +61,7 @@
    "x"
   ],
   [
-   " Waarom huilde jouw zusje      .",
+   " Waarom huilde jouw zusje\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "",
    "huilde,",
@@ -90,7 +90,7 @@
    "x"
   ],
   [
-   " Wanneer zal ons vliegtuig vertrekken     .",
+   " Wanneer zal ons vliegtuig vertrekken\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "",
    "vertrekken,",
@@ -119,7 +119,7 @@
    "x"
   ],
   [
-   " Hoe kon die zeecontainer omslaan     .",
+   " Hoe kon die zeecontainer omslaan\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "",
    "omslaan,",
@@ -380,7 +380,7 @@
    "x"
   ],
   [
-   " Waarom is zijn recordpoging mislukt     .",
+   " Waarom is zijn recordpoging mislukt\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "",
    "mislukt,",
@@ -409,7 +409,7 @@
    "x"
   ],
   [
-   " Waarom heb je gelogen     .",
+   " Waarom heb je gelogen\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "",
    "gelogen,",
@@ -438,7 +438,7 @@
    "x"
   ],
   [
-   " Hoe reageerden de leraren      .",
+   " Hoe reageerden de leraren\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "de,",
    "reageerden,",
@@ -467,7 +467,7 @@
    "x"
   ],
   [
-   " Hoe laat landt het vliegtuig van jouw oma      .",
+   " Hoe laat landt het vliegtuig van jouw oma\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "het,",
    "landt,",
@@ -612,7 +612,7 @@
    "x"
   ],
   [
-   " Hoe laat landen we      .",
+   " Hoe laat landen we\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "",
    "landen,",
@@ -728,7 +728,7 @@
    "x"
   ],
   [
-   " Waar zullen de kosmonauten landen     .",
+   " Waar zullen de kosmonauten landen\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "de,",
    "landen,",
@@ -786,7 +786,7 @@
    "x"
   ],
   [
-   " Waarom moest je lachen     .",
+   " Waarom moest je lachen\u00a0\u00a0\u00a0\u00a0 ?",
    "50",
    "",
    "lachen,",

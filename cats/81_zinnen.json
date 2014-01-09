@@ -1,6 +1,6 @@
 {
  "category": 81,
- "date": "2013-12-17T10:58:20.209880",
+ "date": "2014-01-09T11:15:14.264839",
  "header": [
   "sentence",
   "category",
@@ -177,7 +177,7 @@
    "x"
   ],
   [
-   " Waarom geniet je niet van dit prachtige weer    .",
+   " Waarom geniet je niet van dit prachtige weer\u00a0\u00a0\u00a0 ?",
    "81",
    "",
    "geniet,",
@@ -206,7 +206,7 @@
    "x"
   ],
   [
-   " Waarom is hij niet op onze uitnodiging ingegaan   .",
+   " Waarom is hij niet op onze uitnodiging ingegaan\u00a0 ?",
    "81",
    "",
    "ingegaan,",
@@ -235,7 +235,7 @@
    "x"
   ],
   [
-   " Waarom wil je niet naar mij luisteren   .",
+   " Waarom wil je niet naar mij luisteren\u00a0\u00a0 ?",
    "81",
    "",
    "luisteren,",
@@ -380,7 +380,7 @@
    "x"
   ],
   [
-   " Waarom schreeuw je zo tegen jouw klasgenoten    .",
+   " Waarom schreeuw je zo tegen jouw klasgenoten\u00a0\u00a0\u00a0 ?",
    "81",
    "",
    "schreeuw,",
@@ -438,7 +438,7 @@
    "x"
   ],
   [
-   " Waarom heb je niet op mij gewacht   .",
+   " Waarom heb je niet op mij gewacht\u00a0\u00a0 ?",
    "81",
    "",
    "gewacht,",
@@ -699,7 +699,7 @@
    "x"
   ],
   [
-   " Hoe lang heb je uiteindelijk over dat nieuwe contract moeten nadenken   .",
+   " Hoe lang heb je uiteindelijk over dat nieuwe contract moeten nadenken\u00a0\u00a0 ?",
    "81",
    "",
    "nadenken,",

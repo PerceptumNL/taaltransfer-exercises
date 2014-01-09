@@ -1,6 +1,6 @@
 {
  "category": 16,
- "date": "2013-12-17T10:58:19.273959",
+ "date": "2014-01-09T11:15:13.334580",
  "header": [
   "sentence",
   "category",
@@ -32,7 +32,7 @@
  ],
  "sentences": [
   [
-   " Slapen de kinderen       .",
+   " Slapen de kinderen\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "Slapen,",
@@ -61,7 +61,7 @@
    "x"
   ],
   [
-   " Hebben de katten gegeten      .",
+   " Hebben de katten gegeten\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "gegeten,",
@@ -90,7 +90,7 @@
    "x"
   ],
   [
-   " Stappen de reizigers  in     .",
+   " Stappen de reizigers  in\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "Stappen,",
@@ -119,7 +119,7 @@
    "x"
   ],
   [
-   " Is het vliegtuig geland      .",
+   " Is het vliegtuig geland\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "het,",
    "geland,",
@@ -148,7 +148,7 @@
    "x"
   ],
   [
-   " Hebben jullie gekampeerd      .",
+   " Hebben jullie gekampeerd\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "",
    "gekampeerd,",
@@ -177,7 +177,7 @@
    "x"
   ],
   [
-   " Is de trein vertrokken      .",
+   " Is de trein vertrokken\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "vertrokken,",
@@ -206,7 +206,7 @@
    "x"
   ],
   [
-   " Staakt het personeel van de luchtvaartmaatschappij       .",
+   " Staakt het personeel van de luchtvaartmaatschappij\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "het,de,",
    "Staakt,",
@@ -235,7 +235,7 @@
    "x"
   ],
   [
-   " Demonstreert het ziekenhuispersoneel       .",
+   " Demonstreert het ziekenhuispersoneel\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "het,",
    "Demonstreert,",
@@ -264,7 +264,7 @@
    "x"
   ],
   [
-   " Stopt de trein       .",
+   " Stopt de trein\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "Stopt,",
@@ -293,7 +293,7 @@
    "x"
   ],
   [
-   " Heeft het publiek gelachen      .",
+   " Heeft het publiek gelachen\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "het,",
    "gelachen,",
@@ -322,7 +322,7 @@
    "x"
   ],
   [
-   " Mocht jij helpen      .",
+   " Mocht jij helpen\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "",
    "helpen,",
@@ -351,7 +351,7 @@
    "x"
   ],
   [
-   " Klemt de deur       .",
+   " Klemt de deur\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "Klemt,",
@@ -380,7 +380,7 @@
    "x"
   ],
   [
-   " Huilt het meisje       .",
+   " Huilt het meisje\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "het,",
    "Huilt,",
@@ -409,7 +409,7 @@
    "x"
   ],
   [
-   " Is jouw salaris gestegen      .",
+   " Is jouw salaris gestegen\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "",
    "gestegen,",
@@ -438,7 +438,7 @@
    "x"
   ],
   [
-   " Is de economie gekrompen      .",
+   " Is de economie gekrompen\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "gekrompen,",
@@ -467,7 +467,7 @@
    "x"
   ],
   [
-   " Heeft de scheidsrechter gefloten      .",
+   " Heeft de scheidsrechter gefloten\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "gefloten,",
@@ -496,7 +496,7 @@
    "x"
   ],
   [
-   " Is de wind gedraaid      .",
+   " Is de wind gedraaid\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "gedraaid,",
@@ -525,7 +525,7 @@
    "x"
   ],
   [
-   " Heeft de operazangeres geschitterd      .",
+   " Heeft de operazangeres geschitterd\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "geschitterd,",
@@ -554,7 +554,7 @@
    "x"
   ],
   [
-   " Bloeien de bloemetjes       .",
+   " Bloeien de bloemetjes\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "Bloeien,",
@@ -583,7 +583,7 @@
    "x"
   ],
   [
-   " Pauzeren de bouwvakkers       .",
+   " Pauzeren de bouwvakkers\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "16",
    "de,",
    "Pauzeren,",
