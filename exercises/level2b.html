@@ -48,10 +48,10 @@
     <p>Om het onderwerp te vinden, stel je de vraag: Wie / wat <b><var>PV</var></b>? Het antwoord is het onderwerp.</p>
     <p>Dat is dus "<b><var>OND</var></b>".</p>
     <p>Het werkwoordelijk gezegde bevat alle werkwoorden.</p>
-    <p>Dat is dus de persoonsvorm "<b><var>PV</var></b>" plus <span data-if="findNameIndex(GRAMMAR,'wwg')>-1">de</span> <span data-else>eventuele</span> andere werkwoorden:</p>
+    <p>Dat is dus de persoonsvorm "<b><var>PV</var></b>" plus <span data-if="WWG !== ''">de</span> <span data-else>eventuele</span> andere werkwoorden:</p>
     <p>Het werkwoordelijk gezegde is dus "<b><var>PV + " " + WWG</var></b>".</p>
-    <p data-if="findNameIndex(GRAMMAR, 'lv') > -1">Het lijdend voorwerp bepalen we door ons af te vragen wie of wat <var>OND.toLowerCase() + " " + PV + " " + WWG</var>.</p>
-    <p data-if="findNameIndex(GRAMMAR, 'lv') > -1">Dat is dus "<b><var>LV</var></b>".</p>
+    <p data-if="LV !== ''">Het lijdend voorwerp bepalen we door ons af te vragen wie of wat <var>OND.toLowerCase() + " " + PV + " " + WWG</var>.</p>
+    <p data-if="LV !== ''">Dat is dus "<b><var>LV</var></b>".</p>
     </div>
     </div>
 </body>
