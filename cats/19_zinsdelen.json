@@ -1,6 +1,6 @@
 {
  "category": 19,
- "date": "2013-12-17T11:00:04.029008",
+ "date": "2014-01-09T11:50:06.176736",
  "header": [
   "sentence",
   "category",
@@ -22,7 +22,7 @@
  ],
  "sentences": [
   [
-   " Waren de hotelovernachtingen duur      .",
+   " Waren de hotelovernachtingen duur\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -41,7 +41,7 @@
    ""
   ],
   [
-   " Waren de kinderen heel erg verlegen      .",
+   " Waren de kinderen heel erg verlegen\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -60,7 +60,7 @@
    ""
   ],
   [
-   " Is het leven van een topsporter zwaar      .",
+   " Is het leven van een topsporter zwaar\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -79,7 +79,7 @@
    ""
   ],
   [
-   " Is Frits geloofwaardig      .",
+   " Is Frits geloofwaardig\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -98,7 +98,7 @@
    ""
   ],
   [
-   " Is het meubilair van mijn grootouders ouderwets      .",
+   " Is het meubilair van mijn grootouders ouderwets\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -117,7 +117,7 @@
    ""
   ],
   [
-   " Is de wonderdokter een oplichter gebleken     .",
+   " Is de wonderdokter een oplichter gebleken\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -136,7 +136,7 @@
    ""
   ],
   [
-   " Waren die paddenstoelen giftig      .",
+   " Waren die paddenstoelen giftig\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -155,7 +155,7 @@
    ""
   ],
   [
-   " Is die chirurg bekwaam      .",
+   " Is die chirurg bekwaam\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -174,7 +174,7 @@
    ""
   ],
   [
-   " Wordt het Nederlands elftal wereldkampioen      .",
+   " Wordt het Nederlands elftal wereldkampioen\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -193,7 +193,7 @@
    ""
   ],
   [
-   " Waren de dure bijlessen nuttig      .",
+   " Waren de dure bijlessen nuttig\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -212,7 +212,7 @@
    ""
   ],
   [
-   " Lijkt de spits dikker te zijn geworden     .",
+   " Lijkt de spits dikker te zijn geworden\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -231,7 +231,7 @@
    ""
   ],
   [
-   " Bleek het gedumpte afval gevaarlijk te zijn     .",
+   " Bleek het gedumpte afval gevaarlijk te zijn\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -250,7 +250,7 @@
    ""
   ],
   [
-   " Was de behandeling succesvol      .",
+   " Was de behandeling succesvol\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -269,7 +269,7 @@
    ""
   ],
   [
-   " Waren de leerlingen bang      .",
+   " Waren de leerlingen bang\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -288,7 +288,7 @@
    ""
   ],
   [
-   " Is deze oefening te moeilijk      .",
+   " Is deze oefening te moeilijk\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -307,7 +307,7 @@
    ""
   ],
   [
-   " Was het televisieprogramma een kijkcijferhit geworden     .",
+   " Was het televisieprogramma een kijkcijferhit geworden\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -326,7 +326,7 @@
    ""
   ],
   [
-   " Was de muziek te luid      .",
+   " Was de muziek te luid\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -345,7 +345,7 @@
    ""
   ],
   [
-   " Was de assistent van de dokter behulpzaam      .",
+   " Was de assistent van de dokter behulpzaam\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -364,7 +364,7 @@
    ""
   ],
   [
-   " Is het schilderen van het plafond een tijdrovende klus      .",
+   " Is het schilderen van het plafond een tijdrovende klus\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -383,7 +383,7 @@
    ""
   ],
   [
-   " Waren de jonge kinderen bang      .",
+   " Waren de jonge kinderen bang\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -402,7 +402,7 @@
    ""
   ],
   [
-   " Is de nieuwe behandelmethode een succes      .",
+   " Is de nieuwe behandelmethode een succes\u00a0\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",
@@ -421,7 +421,7 @@
    ""
   ],
   [
-   " Zullen Anne en Marieke goede vrienden worden     .",
+   " Zullen Anne en Marieke goede vrienden worden\u00a0\u00a0\u00a0\u00a0 ?",
    "19",
    "x",
    "",

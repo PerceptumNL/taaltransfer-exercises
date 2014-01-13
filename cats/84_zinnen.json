@@ -1,6 +1,6 @@
 {
  "category": 84,
- "date": "2013-12-17T10:58:20.252316",
+ "date": "2014-01-09T11:47:36.402205",
  "header": [
   "sentence",
   "category",
@@ -90,7 +90,7 @@
    "x"
   ],
   [
-   " Waarom zijn bananen volgens jou krom    .",
+   " Waarom zijn bananen volgens jou krom\u00a0\u00a0\u00a0 ?",
    "84",
    "",
    "",
@@ -815,7 +815,7 @@
    "x"
   ],
   [
-   " Op welke leeftijd ben jij eigenlijk moeder geworden   .",
+   " Op welke leeftijd ben jij eigenlijk moeder geworden\u00a0\u00a0 ?",
    "84",
    "",
    "",
@@ -902,7 +902,7 @@
    "x"
   ],
   [
-   " Hoe vaak ben jij met jouw basketbalteam kampioen geworden   .",
+   " Hoe vaak ben jij met jouw basketbalteam kampioen geworden\u00a0\u00a0 ?",
    "84",
    "",
    "",

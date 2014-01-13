@@ -1,6 +1,6 @@
 {
  "category": 85,
- "date": "2013-12-17T11:00:04.941357",
+ "date": "2014-01-09T11:50:07.134756",
  "header": [
   "sentence",
   "category",
@@ -117,7 +117,7 @@
    ""
   ],
   [
-   " Waarom heb je hem toch jouw dierbare sieraden verkocht  .",
+   " Waarom heb je hem toch jouw dierbare sieraden verkocht\u00a0 ?",
    "85",
    "x",
    "",
@@ -345,7 +345,7 @@
    ""
   ],
   [
-   " Waarom heb jij onze dochter vorige week een nieuwe laptop beloofd  .",
+   " Waarom heb jij onze dochter vorige week een nieuwe laptop beloofd\u00a0 ?",
    "85",
    "x",
    "",
@@ -459,7 +459,7 @@
    ""
   ],
   [
-   " Waarom heeft de dokter jou eigenlijk deze medicijnen aangeraden  .",
+   " Waarom heeft de dokter jou eigenlijk deze medicijnen aangeraden\u00a0 ?",
    "85",
    "x",
    "",

@@ -135,6 +135,94 @@
 .sentence span.selected {
   background-color: orange;
 }
+.answers {
+  position: relative;
+}
+
+.answers .word {
+  padding: 8px;
+  height: 30px;
+  display: inline-block;
+  vertical-align: top;
+}
+/*
+.answers .box-border {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+.answers .box-start {
+  border-left: 2px solid black;
+}
+.answers .box-end {
+  border-right: 2px solid black;
+}
+*/
+.answers .split {
+  position: absolute;
+  width: 11px;
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 100%;
+  top: 5px;
+  bottom: 5px;
+}
+
+.answers .split:hover {
+  background-color: black;
+}
+
+
+.bg-navy {
+  background-color: #001f3f; }
+
+.bg-blue {
+  background-color: #0074d9; }
+
+.bg-aqua {
+  background-color: #7fdbff; }
+
+.bg-teal {
+  background-color: #39cccc; }
+
+.bg-olive {
+  background-color: #3d9970; }
+
+.bg-green {
+  background-color: #2ecc40; }
+
+.bg-lime {
+  background-color: #01ff70; }
+
+.bg-yellow {
+  background-color: #ffdc00; }
+
+.bg-orange {
+  background-color: #ff851b; }
+
+.bg-red {
+  background-color: #ff4136; }
+
+.bg-fuchsia {
+  background-color: #f012be; }
+
+.bg-purple {
+  background-color: #b10dc9; }
+
+.bg-maroon {
+  background-color: #85144b; }
+
+.bg-white {
+  background-color: white; }
+
+.bg-gray {
+  background-color: #aaaaaa; }
+
+.bg-silver {
+  background-color: #dddddd; }
+
+.bg-black {
+  background-color: #111111; }
+
 
 .words {
     cursor: pointer;

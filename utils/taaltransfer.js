@@ -63,7 +63,6 @@ $.extend(KhanUtil, {
     var sentenceObj = null;
     if (sentenceStr) {
       for (var i=0;i<sentences['sentences'].length;i++) {
-        console.log(sentences['sentences'][i][0]);
         if (sentences['sentences'][i][0] == sentenceStr) {
           sentenceObj = sentences['sentences'][i]
           break;
@@ -709,14 +708,14 @@ $.extend(KhanUtil, {
   answerBoxes: function(level){
     var selected = [];
     var levelOne = ['pv'];
-    var levelTwo = ['pv','ond','rest'];
-    var levelThree = ['pv','ond','wwg','rest'];
-    var levelFour = ['pv','ond','lv','wwg','rest'];
-    var levelSix = ['pv','ond','lv','rest'];
-    var levelTen = ['pv','ond','lv','mwv','rest'];
-    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','rest'];
-    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','rest'];
-    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','rest'];    
+    var levelTwo = ['pv','ond','overige zinsdelen'];
+    var levelThree = ['pv','ond','wwg','overige zinsdelen'];
+    var levelFour = ['pv','ond','lv','wwg','overige zinsdelen'];
+    var levelSix = ['pv','ond','lv','overige zinsdelen'];
+    var levelTen = ['pv','ond','lv','mwv','overige zinsdelen'];
+    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','overige zinsdelen'];
+    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','overige zinsdelen'];
+    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','overige zinsdelen'];    
     switch(level){
       case 1: 
         selected = levelOne;
@@ -764,6 +763,7 @@ $.extend(KhanUtil, {
   ***/
   
   makePick: function(sentence){
+    console.log(sentence);
     var sentString = "";
     var len = sentence.length;
     for (var i=0; i<len; i++){
@@ -808,6 +808,126 @@ $.extend(KhanUtil, {
       }
     }
     return count;
+  },
+  calcBoxes: function() {
+    var colors = ["yellow", "orange", "green", "red", "fuchsia", "teal", "aqua", "blue", "maroon", "white", "silver", "purple", "lime", "olive", "gray"]
+    $(".answers").children().each(function() {
+      $(this).removeClass("box-border box-start box-end")
+      var $ele = $(this);
+      $(colors).each(function(i, color) {
+        $ele.removeClass("bg-"+color);
+      });
+    });
+  
+    //nothing to do
+    if ($(".answers .selected").length == 0) { return }
+
+    //select until every split
+    var lastIdx = 0;
+    $(".answers .selected").each(function() {
+      var idx = $(this).index()
+      var color = colors.shift()
+      $(".answers").children().eq(lastIdx).addClass("box-start");
+      for (var i=lastIdx; i<idx; i++) {
+        $(".answers").children().eq(i).addClass("box-border bg-"+color);
+      }
+      $(".answers").children().eq(idx-1).addClass("box-end");
+      lastIdx = idx + 1;
+    });
+
+    var color = colors.shift()
+    var idx = $(".answers").children().last().index()
+    $(".answers").children().eq(lastIdx).addClass("box-start");
+    for (var i=lastIdx; i<=idx; i++) {
+      $(".answers").children().eq(i).addClass("box-border bg-"+color);
+    }
+    $(".answers").children().eq(idx-1).addClass("box-end");
+    lastIdx = idx + 1;
+
+  },
+
+  isPart: function(sentenceObj, part) {
+    var keys = ["aa",
+      "bb",
+      "dng",
+      "lv",
+      "mv",
+      "mwv",
+      "nwg",
+      "ond",
+      "ons",
+      "pv",
+      "restpv",
+      "vzv",
+      "wi",
+      "wwg"];
+    part = part.replace("?","").replace(".","");
+    for (i in keys) {
+      var key = keys[i];
+      if (part == sentenceObj[key]) {
+        return true;
+      }
+    }
+    return false;
+  },
+
+  hasSplit: function() {
+    return $(".answers .split.selected").length;
+  },
+
+  checkCorrectSplit: function(sentenceObj) {
+    var self = this;
+    var lastIdx = 0;
+    var correct = true;
+    var $words = $(".answers").children();
+    $(".answers .split.selected").each(function() {
+      var idx = $(this).index()
+      var part = "";
+      for (var i=lastIdx;i<idx;i++) {
+        if ($words.eq(i).hasClass("word")) { 
+          if (part.length) part += " ";
+          part += $words.eq(i).html();
+        }
+      }
+      if (!self.isPart(sentenceObj, part)) {
+        correct = false;
+        return;
+      }
+      lastIdx = idx;
+    });
+    return correct;
+  },
+
+  sentenceSplitter: function(sentence_obj) {
+    if (sentence_obj.sentence.indexOf(".")) {
+      sentence_obj.hasDot = true;
+      sentence_obj.hasQuestion = false;
+    } else if (sentence_obj.sentence.indexOf("?")) {
+      sentence_obj.hasDot = false;
+      sentence_obj.hasQuestion = true;
+    } else {
+      sentence_obj.hasDot = false;
+      sentence_obj.hasQuestion = false;
+    }
+    var sentence = sentence_obj.sentence
+                    .replace(/\s+/g, ' ') //removes multiple whitespaces
+                    .replace("?", "").replace(".","").trim()
+    var words = sentence.split(" ");
+    words[words.length-1] += sentence_obj.hasDot ? "." : "?";
+    var self = this;
+    $.each(words, function(i, word) {
+      $word = $("<span class='word'>"+word+"</span>").appendTo(".answers");
+      if (i < words.length-1) {
+        var left = $word.position().left + $word.width() + 10;
+        $("<span class='split'></span>")
+          .appendTo(".answers")
+          .css("left", left + "px")
+          .click(function() {
+            $(this).toggleClass("selected");
+            self.calcBoxes();
+          });
+      }
+    });
   },
 
   userPick2: function(zin){

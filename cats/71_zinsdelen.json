@@ -1,6 +1,6 @@
 {
  "category": 71,
- "date": "2013-12-17T11:00:04.749438",
+ "date": "2014-01-09T11:50:06.910411",
  "header": [
   "sentence",
   "category",
@@ -136,7 +136,7 @@
    ""
   ],
   [
-   " Wat wilde jij zojuist in de klas aan mij vertellen  .",
+   " Wat wilde jij zojuist in de klas aan mij vertellen\u00a0 ?",
    "71",
    "x",
    "",
@@ -155,7 +155,7 @@
    ""
   ],
   [
-   " Wat heeft hij gisteren allemaal aan jullie verteld  .",
+   " Wat heeft hij gisteren allemaal aan jullie verteld\u00a0 ?",
    "71",
    "x",
    "",
@@ -193,7 +193,7 @@
    ""
   ],
   [
-   " Welke medicijnen had de dokter vorige keer tegen jouw hoofdpijn aan jou voorgeschreven  .",
+   " Welke medicijnen had de dokter vorige keer tegen jouw hoofdpijn aan jou voorgeschreven\u00a0 ?",
    "71",
    "x",
    "",
@@ -212,7 +212,7 @@
    ""
   ],
   [
-   " Welk hoofdgerecht kunt u deze keer weer aan ons aanraden  .",
+   " Welk hoofdgerecht kunt u deze keer weer aan ons aanraden\u00a0 ?",
    "71",
    "x",
    "",
@@ -231,7 +231,7 @@
    ""
   ],
   [
-   " Wat heeft de fysiotherapeut vorige week tijdens de behandeling aan jou geadviseerd  .",
+   " Wat heeft de fysiotherapeut vorige week tijdens de behandeling aan jou geadviseerd\u00a0 ?",
    "71",
    "x",
    "",

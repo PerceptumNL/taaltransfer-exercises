@@ -1,6 +1,6 @@
 {
  "category": 64,
- "date": "2013-12-17T10:58:19.961068",
+ "date": "2014-01-09T11:47:35.975076",
  "header": [
   "sentence",
   "category",
@@ -177,7 +177,7 @@
    "x"
   ],
   [
-   " Wanneer heb jij die kantoorartikelen aan mij geleverd   .",
+   " Wanneer heb jij die kantoorartikelen aan mij geleverd\u00a0\u00a0 ?",
    "64",
    "",
    "geleverd,",
@@ -206,7 +206,7 @@
    "x"
   ],
   [
-   " Wanneer heeft die dictator de macht aan zijn zoon overgedragen   .",
+   " Wanneer heeft die dictator de macht aan zijn zoon overgedragen\u00a0\u00a0 ?",
    "64",
    "de,",
    "overgedragen,",
@@ -235,7 +235,7 @@
    "x"
   ],
   [
-   " Wanneer heeft het marineschip de piraten aan de marechaussee overgedragen   .",
+   " Wanneer heeft het marineschip de piraten aan de marechaussee overgedragen\u00a0\u00a0 ?",
    "64",
    "het,de,de,",
    "overgedragen,",
@@ -380,7 +380,7 @@
    "x"
   ],
   [
-   " Waarom heb je jouw kostbare horloge aan hem geleend   .",
+   " Waarom heb je jouw kostbare horloge aan hem geleend\u00a0\u00a0 ?",
    "64",
    "",
    "geleend,",
@@ -409,7 +409,7 @@
    "x"
   ],
   [
-   " Waarom wilde je jouw auto aan hem verkopen   .",
+   " Waarom wilde je jouw auto aan hem verkopen\u00a0\u00a0 ?",
    "64",
    "",
    "verkopen,",
@@ -438,7 +438,7 @@
    "x"
   ],
   [
-   " Waarom probeerde zij haar zilveren ketting aan jou te verkopen   .",
+   " Waarom probeerde zij haar zilveren ketting aan jou te verkopen\u00a0\u00a0 ?",
    "64",
    "",
    "verkopen,",
@@ -467,7 +467,7 @@
    "x"
   ],
   [
-   " Waarom leverde Nederland wapens aan die gewelddadige groepering    .",
+   " Waarom leverde Nederland wapens aan die gewelddadige groepering\u00a0\u00a0\u00a0 ?",
    "64",
    "",
    "leverde,",
@@ -583,7 +583,7 @@
    "x"
   ],
   [
-   " Wanneer heeft die docent deze begrippen aan ons uitgelegd   .",
+   " Wanneer heeft die docent deze begrippen aan ons uitgelegd\u00a0\u00a0 ?",
    "64",
    "",
    "uitgelegd,",
@@ -612,7 +612,7 @@
    "x"
   ],
   [
-   " Waarom heeft die bekende sportarts deze verboden middelen aan de sporters voorgeschreven   .",
+   " Waarom heeft die bekende sportarts deze verboden middelen aan de sporters voorgeschreven\u00a0\u00a0 ?",
    "64",
    "de,",
    "voorgeschreven,",
@@ -699,7 +699,7 @@
    "x"
   ],
   [
-   " Wanneer heeft de afdelingsleider informatie over het uitstapje naar Parijs aan ons gegeven   .",
+   " Wanneer heeft de afdelingsleider informatie over het uitstapje naar Parijs aan ons gegeven\u00a0\u00a0 ?",
    "64",
    "de,het,",
    "gegeven,",

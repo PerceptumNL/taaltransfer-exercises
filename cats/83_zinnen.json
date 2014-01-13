@@ -1,6 +1,6 @@
 {
  "category": 83,
- "date": "2013-12-17T10:58:20.238307",
+ "date": "2014-01-09T11:47:36.379439",
  "header": [
   "sentence",
   "category",
@@ -177,7 +177,7 @@
    "x"
   ],
   [
-   " Waarom misdraag jij je altijd    .",
+   " Waarom misdraag jij je altijd\u00a0\u00a0\u00a0 ?",
    "83",
    "",
    "misdraag,",
@@ -293,7 +293,7 @@
    "x"
   ],
   [
-   " Hopelijk hebben jullie je niet misdragen   .",
+   " Hopelijk hebben jullie je niet misdragen\u00a0\u00a0 ?",
    "83",
    "",
    "misdragen,",
@@ -496,7 +496,7 @@
    "x"
   ],
   [
-   " Misschien hebben jullie je te laat aangemeld   .",
+   " Misschien hebben jullie je te laat aangemeld\u00a0\u00a0 ?",
    "83",
    "",
    "aangemeld,",
@@ -670,7 +670,7 @@
    "x"
   ],
   [
-   " Waarom hebben jullie je zo gedragen   .",
+   " Waarom hebben jullie je zo gedragen\u00a0\u00a0 ?",
    "83",
    "",
    "gedragen,",
@@ -844,7 +844,7 @@
    "x"
   ],
   [
-   " Waar hadden de overvallers zich volgens de politie verstopt   .",
+   " Waar hadden de overvallers zich volgens de politie verstopt\u00a0\u00a0 ?",
    "83",
    "de,de,",
    "verstopt,",

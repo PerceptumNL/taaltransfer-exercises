@@ -1,6 +1,6 @@
 {
  "category": 5,
- "date": "2013-12-17T10:58:19.118115",
+ "date": "2014-01-09T11:47:34.982412",
  "header": [
   "sentence",
   "category",
@@ -32,7 +32,7 @@
  ],
  "sentences": [
   [
-   " Geef de planten water      .",
+   " Geef de planten water\u00a0\u00a0\u00a0\u00a0\u00a0 .",
    "5",
    "de,",
    "Geef,",
@@ -61,7 +61,7 @@
    "x"
   ],
   [
-   " Geef mij dat boek      .",
+   " Geef mij dat boek\u00a0\u00a0\u00a0\u00a0\u00a0 .",
    "5",
    "",
    "Geef,",
@@ -90,7 +90,7 @@
    "x"
   ],
   [
-   " Overhandig de museumbezoekers de kaartjes      .",
+   " Overhandig de museumbezoekers de kaartjes\u00a0\u00a0\u00a0\u00a0\u00a0 .",
    "5",
    "de,de,",
    "Overhandig,",
@@ -119,7 +119,7 @@
    "x"
   ],
   [
-   " Overhandig de bibliothecaresse de geleende boeken      .",
+   " Overhandig de bibliothecaresse de geleende boeken\u00a0\u00a0\u00a0\u00a0\u00a0 .",
    "5",
    "de,de,",
    "Overhandig,",
@@ -148,7 +148,7 @@
    "x"
   ],
   [
-   " Betaal de dierenarts de openstaande rekening      .",
+   " Betaal de dierenarts de openstaande rekening\u00a0\u00a0\u00a0\u00a0\u00a0 .",
    "5",
    "de,de,",
    "Betaal,",
@@ -177,7 +177,7 @@
    "x"
   ],
   [
-   " Verkoop de natgeregende toeristen paraplu's en poncho's      .",
+   " Verkoop de natgeregende toeristen paraplu's en poncho's\u00a0\u00a0\u00a0\u00a0\u00a0 .",
    "5",
    "de,",
    "Verkoop,",
@@ -206,7 +206,7 @@
    "x"
   ],
   [
-   " Raad onze klanten de asperges aan     .",
+   " Raad onze klanten de asperges aan\u00a0\u00a0\u00a0\u00a0 .",
    "5",
    "de,",
    "Raad,",
