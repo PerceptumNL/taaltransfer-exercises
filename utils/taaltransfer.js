@@ -702,14 +702,14 @@ $.extend(KhanUtil, {
   answerBoxes: function(level){
     var selected = [];
     var levelOne = ['pv'];
-    var levelTwo = ['pv','ond','rest'];
-    var levelThree = ['pv','ond','wwg','rest'];
-    var levelFour = ['pv','ond','lv','wwg','rest'];
-    var levelSix = ['pv','ond','lv','rest'];
-    var levelTen = ['pv','ond','lv','mwv','rest'];
-    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','rest'];
-    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','rest'];
-    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','rest'];    
+    var levelTwo = ['pv','ond','overige zinsdelen'];
+    var levelThree = ['pv','ond','wwg','overige zinsdelen'];
+    var levelFour = ['pv','ond','lv','wwg','overige zinsdelen'];
+    var levelSix = ['pv','ond','lv','overige zinsdelen'];
+    var levelTen = ['pv','ond','lv','mwv','overige zinsdelen'];
+    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','overige zinsdelen'];
+    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','overige zinsdelen'];
+    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','overige zinsdelen'];    
     switch(level){
       case 1: 
         selected = levelOne;
