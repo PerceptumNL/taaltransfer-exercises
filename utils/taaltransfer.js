@@ -214,7 +214,7 @@ $.extend(KhanUtil, {
         $('<span class = "dropWord" id ="' + tuple[z][1] + '">"' + tuple[z][0] + '" = </span>').appendTo('.answers');
       }
     }
-    $('<span class = "dropWord" id="geen"> Niet in deze zin = </span>').appendTo('.answers'); Delete 'niet in deze zin'
+    $('<span class = "dropWord" id="geen"> Niet in deze zin = </span>').appendTo('.answers');
     
     $(".dragWord").draggable({containment:'#problemarea', cursor:'move', addClasses: false});
     var correct = [];    
