@@ -903,7 +903,7 @@ $.extend(KhanUtil, {
         $selected.eq(i).index() : $(".answers").children().last().index()
       var color = _colors[Object.keys(_colors)[0]];
       delete _colors[Object.keys(_colors)[0]];
-      this.selectWords(startIdx, endIdx, color);
+      this.selectWords(startIdx, endIdx, shadeColor(color,30));
       startIdx = endIdx;
     }
   },
@@ -1025,12 +1025,12 @@ $.extend(KhanUtil, {
       try {
         var $word = $(wordEle);
         var $nextWord = $(".answers .word").eq(i+1)
-        var right = $nextWord.position().left - 5;
+        var right = $nextWord.position().left - 3;
         $(".answers .pipe").eq(i)
           .css("left", right + "px")
 
         var left = $word.position().left + $word.width() / 2 + 6;
-        var width = $word.width() / 2 + $nextWord.width() / 2 + 16;
+        var width = $word.width() / 2 + $nextWord.width() / 2 + 19;
         $(".answers .split").eq(i)
           .css("left", left + "px")
           .css("width", width + "px")
@@ -1076,6 +1076,7 @@ $.extend(KhanUtil, {
           .insertAfter($pipe)
           .click(function() {
               $(this).toggleClass("selected");
+              $pipe.toggleClass("selected");
               self.calcBoxes();
             })
           .hover(function() {

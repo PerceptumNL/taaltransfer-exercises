@@ -154,7 +154,8 @@
   padding: 8px;
   height: 30px;
   display: inline-block;
-  vertical-align: top;
+  line-height: 27px;
+  vertical-align:middle;
 }
 /*
 .answers .box-border {
@@ -175,16 +176,19 @@
 }
 .pipe {
   position: absolute;
-  width: 10px;
+  width: 6px;
   background-color: #ddd;
-  border-radius: 100%;
   top: 5px;
   bottom: 5px;
-  height: 30px;
+  height: 35px;
 }
 
 .answers .pipe.hover {
   background-color: black;
+}
+.answers .pipe.selected {
+  background-color: black;
+  
 }
 
 
