@@ -1,6 +1,6 @@
 {
  "category": 32,
- "date": "2013-12-17T11:00:04.202633",
+ "date": "2014-01-09T11:50:06.360179",
  "header": [
   "sentence",
   "category",
@@ -41,7 +41,7 @@
    ""
   ],
   [
-   " Wie heeft hij gisteren zijn grafische rekenmachine geleend   .",
+   " Wie heeft hij gisteren zijn grafische rekenmachine geleend\u00a0\u00a0 ?",
    "32",
    "x",
    "",
@@ -60,7 +60,7 @@
    ""
   ],
   [
-   " Welke bedrijven heb jij de afgelopen maanden een sollicitatiebrief gestuurd   .",
+   " Welke bedrijven heb jij de afgelopen maanden een sollicitatiebrief gestuurd\u00a0\u00a0 ?",
    "32",
    "x",
    "",
@@ -79,7 +79,7 @@
    ""
   ],
   [
-   " Welk meisje had jij tijdens dat feestje jouw telefoonnummer gegeven   .",
+   " Welk meisje had jij tijdens dat feestje jouw telefoonnummer gegeven\u00a0\u00a0 ?",
    "32",
    "x",
    "",
@@ -98,7 +98,7 @@
    ""
   ],
   [
-   " Aan wie heeft de leraar na de les het klassenboek gegeven   .",
+   " Aan wie heeft de leraar na de les het klassenboek gegeven\u00a0\u00a0 ?",
    "32",
    "x",
    "",
@@ -269,7 +269,7 @@
    ""
   ],
   [
-   " Wie heeft hij vorige week zijn laptop geleend   .",
+   " Wie heeft hij vorige week zijn laptop geleend\u00a0\u00a0 ?",
    "32",
    "x",
    "",

@@ -11,15 +11,23 @@
 <body>
     <div class="exercise">
     <div class="vars">
-        <var id="SENTENCES">readFile("../csv/zinnen.csv")</var>
-        <var id="WORDS">readFile("../csv/woorden.csv")</var>
-        <var id="CAT">[1,25,2,27,16,50]</var>
-        <var id="NUMBER">makeNumber(CAT, SENTENCES)</var>
-        <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var>
-        <var id="TUPLE">getWordID(ZIN, WORDS)</var>
+        <!-- <var id="SENTENCES">readFile("../csv/zinnen.csv")</var> -->
+        <!-- <var id="WORDS">readFile("../csv/woorden.csv")</var> -->
+
+        <var id="CATS">[1,25,2,27,16,50]</var>
+        <var id="CAT">randFromArray(CATS)</var>
+        <var id="SENTENCE_OBJ">getZinnenSentence(CAT)</var>
+        <var id="TUPLE">convert2Tuple(SENTENCE_OBJ)</var>
+        <!-- <var id="NUMBER">makeNumber(CAT, SENTENCES)</var> -->
+        <!-- <var id="ZIN">fixSentence2(SENTENCES[NUMBER])</var> -->
+        <!-- <var id="TUPLE">getWordID(ZIN, WORDS)</var> -->
+        <var id="PER1">SENTENCE_OBJ['per1'].substring(0, SENTENCE_OBJ['per1'].length - 1)</var>
+        <var id="PER2">SENTENCE_OBJ['per2'].substring(0, SENTENCE_OBJ['per2'].length - 1)</var>
+        <var id="BEZ">SENTENCE_OBJ['bez'].substring(0, SENTENCE_OBJ['bez'].length - 1)</var>
+        <var id="HWW">SENTENCE_OBJ['hww']</var>
+        <var id="ZWW">SENTENCE_OBJ['zww']</var>
 
     </div>
-    
     <div class="problems">
         <div>
             <p class="question">Sleep in onderstaande zin de juiste naam naar de woorden in de vakken.</p><p><var>showSentence(TUPLE,['per','bez','hww','zww'])</var><br></p>
@@ -36,6 +44,15 @@
     </div>
 
     <div class="hints">
+        <p>Een persoonlijk voornaamwoord vormt een combinatie met de persoonsvorm.</p>
+        <p>Een persoonlijk voornaamwoord kan voor de persoonsvorm staan, maar ook achter de persoonsvorm.</p>
+        <p>Een bezittelijk voornaamwoord vormt een combinatie met een zelfstandig naamwoord.</p>
+        <p>Een bezittelijk voornaamwoord staat altijd voor het zelfstandig naamwoord.</p>
+        <p data-if="PER1 !== ''"><b>De persoonlijk voornaamwoorden zijn "<var>PER1</var>".</b></p>
+        <p data-else-if="PER2 !== ''"><b>De persoonlijk voornaamwoorden zijn "<var>PER2</var>".</b></p>
+        <p data-else=""><b>Er is geen persoonlijk voornaamwoorden in deze zin.</b></p>
+        <p data-if="BEZ !== ''"><b>De bezittelijk voornaamwoorden zijn "<var>BEZ</var>".</b></p>
+        <p data-else=""><b>Er is geen bezittelijk voornaamwoorden in deze zin.</b></p>
     </div>
 </body>
 </html>

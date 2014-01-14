@@ -1,3 +1,15 @@
+function shadeColor(color, percent) {   
+    var num = parseInt(color.slice(1),16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, G = (num >> 8 & 0x00FF) + amt, B = (num & 0x0000FF) + amt;
+    return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
+}
+function rgb2hex(rgb) {
+    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    function hex(x) {
+        return ("0" + parseInt(x).toString(16)).slice(-2);
+    }
+    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+
 function getURLParameters(paramName) 
 {
         var sURL = window.document.URL.toString();  
@@ -63,7 +75,6 @@ $.extend(KhanUtil, {
     var sentenceObj = null;
     if (sentenceStr) {
       for (var i=0;i<sentences['sentences'].length;i++) {
-        console.log(sentences['sentences'][i][0]);
         if (sentences['sentences'][i][0] == sentenceStr) {
           sentenceObj = sentences['sentences'][i]
           break;
@@ -607,7 +618,10 @@ $.extend(KhanUtil, {
       }
       $("#bool").remove();
       if(count === aLen){
+        console.log("CORRECTO");
         $("<span id='bool' style='display:none'>" + true + "</span>").appendTo(".question");
+      } else {
+        console.log("INCORRECTO");
       }
     });
   },
@@ -653,6 +667,45 @@ $.extend(KhanUtil, {
     }
     return els;
   },
+
+  checkCorrectSelection: function(sentenceObj, types) {
+    var correct = true;
+    var missing = false;
+    $(".sentence").children().each(function() {
+        var word = $(this).html()
+        if ($(this).hasClass("selected")) {
+            var found = false;
+            for (var i=0;i<types.length;i++) {
+              if (sentenceObj[types[i]].indexOf(word) >= 0) {
+                found = true;
+                break;
+              }
+            }
+            if (found == false) {
+              $(this).addClass("incorrect");
+              correct = false;
+            } else {
+              $(this).addClass("correct");
+            }
+        } else {
+            for (var i=0;i<types.length;i++) {
+              if (sentenceObj[types[i]].indexOf(word) >= 0) {
+                missing = true;
+                break;
+              }
+            }
+        }
+        console.log(word);
+        console.log('missing', missing);
+        console.log('correct', correct);
+    });
+    if (missing && correct) {
+      alert("MISSING");
+      correct = false;
+    }
+    
+    return correct;
+  },
   
   /***
     Creates an invisible element for each word in the sentence by appending an element with
@@ -678,10 +731,12 @@ $.extend(KhanUtil, {
     return correct;
   },
 
-  createSentence: function(sentence, result) {
+  createSentence: function(sentenceObj, result) {
     var self = this;
-    var sentence_str = sentence["sentence"];
-    $.each(sentence_str.split(" "), function(idx, word) {
+    var sentenceStr = sentenceObj.sentence
+                    .replace(/\s+/g, ' ') //removes multiple whitespaces
+                    .replace("?", "").replace(".","").trim()
+    $.each(sentenceStr.split(" "), function(idx, word) {
         $word = $("<span>" + word + "</span>");
         $word.click(function() {
             $(this).toggleClass("selected");
@@ -689,6 +744,7 @@ $.extend(KhanUtil, {
         $(".sentence").append($word);
     }); 
   },
+
   regParts: function(sentence){
     var length = sentence.length;
     var els = 0;
@@ -701,6 +757,53 @@ $.extend(KhanUtil, {
     return els;
   },
   
+  answerBoxes2: function(level){
+    console.trace();
+    var selected = [];
+    var levelOne = ['pv'];
+    var levelTwo = ['pv','ond','overige zinsdelen'];
+    var levelThree = ['pv','ond','wwg','overige zinsdelen'];
+    var levelFour = ['pv','ond','lv','wwg','overige zinsdelen'];
+    var levelSix = ['pv','ond','lv','overige zinsdelen'];
+    var levelTen = ['pv','ond','lv','mwv','overige zinsdelen'];
+    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','overige zinsdelen'];
+    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','overige zinsdelen'];
+    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','overige zinsdelen'];    
+    switch(level){
+      case 1: 
+        selected = levelOne;
+        break;      
+      case 2:
+        selected = levelTwo;
+        break;
+      case 3:
+        selected = levelThree;
+        break;
+      case 4:
+        selected = levelFour;
+        break;
+      case 6:
+        selected = levelSix;
+        break;
+      case 10:
+        selected = levelTen;
+        break;
+      case 12:
+        selected = levelTwelve;
+        break;
+      case 14:
+        selected = levelFourteen;
+        break;
+      case 16:
+        selected = levelSixteen;
+        break;
+    }
+    var length = selected.length;
+    for (var i=0;i<selected.length - 1;i++) {
+      $box = $("<div class='parts'><span class='part-name'>" + selected[i] + "</span><span class='part-target'></span></div>");
+      $box.appendTo(".boxes");
+    }
+  },
   /***
     Generate answerBoxes for each category
     Type: void
@@ -709,14 +812,14 @@ $.extend(KhanUtil, {
   answerBoxes: function(level){
     var selected = [];
     var levelOne = ['pv'];
-    var levelTwo = ['pv','ond','rest'];
-    var levelThree = ['pv','ond','wwg','rest'];
-    var levelFour = ['pv','ond','lv','wwg','rest'];
-    var levelSix = ['pv','ond','lv','rest'];
-    var levelTen = ['pv','ond','lv','mwv','rest'];
-    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','rest'];
-    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','rest'];
-    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','rest'];    
+    var levelTwo = ['pv','ond','overige zinsdelen'];
+    var levelThree = ['pv','ond','wwg','overige zinsdelen'];
+    var levelFour = ['pv','ond','lv','wwg','overige zinsdelen'];
+    var levelSix = ['pv','ond','lv','overige zinsdelen'];
+    var levelTen = ['pv','ond','lv','mwv','overige zinsdelen'];
+    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','overige zinsdelen'];
+    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','overige zinsdelen'];
+    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','overige zinsdelen'];    
     switch(level){
       case 1: 
         selected = levelOne;
@@ -764,6 +867,7 @@ $.extend(KhanUtil, {
   ***/
   
   makePick: function(sentence){
+    console.log(sentence);
     var sentString = "";
     var len = sentence.length;
     for (var i=0; i<len; i++){
@@ -808,6 +912,267 @@ $.extend(KhanUtil, {
       }
     }
     return count;
+  },
+  selectWords: function(startIdx, endIdx, color) {
+    $(".answers").children().eq(startIdx).addClass("box-start");
+    for (var i=startIdx; i<=endIdx; i++) {
+      if (!$(".answers").children().eq(i).hasClass("word")) continue;
+      $(".answers").children().eq(i)
+        .addClass("box-border")
+        .animate({ backgroundColor: color }, 100)
+        .data("color", color);
+    }
+    $(".answers").children().eq(endIdx-1).addClass("box-end");
+  },
+  calcBoxes: function() {
+    $(".answers").children().each(function() {
+      $(this).removeClass("box-border box-start box-end")
+    });
+  
+    //nothing to do
+    if ($(".answers .selected").length == 0) { 
+      pColor = $(".answers").parent().css("background-color");
+      $(".answers").find(".word").animate({backgroundColor: pColor}, 100);
+      return;
+    }
+
+    //select until every split
+    var _colors = $.extend([], colors);
+    var startIdx = 0;
+    var $selected = $(".answers .selected");
+    for (var i=0;i<=$selected.length;i++) {
+      var endIdx = i<$selected.length ? 
+        $selected.eq(i).index() : $(".answers").children().last().index()
+      var color = _colors[Object.keys(_colors)[0]];
+      delete _colors[Object.keys(_colors)[0]];
+      this.selectWords(startIdx, endIdx, shadeColor(color,30));
+      startIdx = endIdx;
+    }
+  },
+
+  getPart: function(sentenceObj, part) {
+    var keys = ["aa",
+      "bb",
+      "dng",
+      "lv",
+      "mv",
+      "mwv",
+      "nwg",
+      "ond",
+      "ons",
+      "pv",
+      "restpv",
+      "vzv",
+      "wi",
+      "wwg"
+    ];
+    part = part.replace("?","").replace(".","");
+    for (i in keys) {
+      var key = keys[i];
+      if (part == sentenceObj[key]) {
+        return part;
+      }
+    }
+    return false;
+  },
+
+  hasSplit: function() {
+    return $(".answers .split.selected").length;
+  },
+
+  checkCorrectSplit: function(sentenceObj) {
+    var self = this;
+    var startIdx = 0;
+    var correct = true;
+    var $words = $(".answers").children();
+    var $selected = $(".answers .split.selected");
+    if ($selected.length == 0) return false;
+    $selected.each(function() {
+      var endIdx = $(this).index()
+      var part = "";
+      for (var i=startIdx;i<endIdx;i++) {
+        if ($words.eq(i).hasClass("word")) { 
+          if (part.length) part += " ";
+          part += $words.eq(i).html();
+        }
+      }
+      if (!self.getPart(sentenceObj, part)) {
+        correct = false;
+        return;
+      }
+      startIdx = endIdx;
+    });
+    return correct;
+  },
+  wordGroup: function(word) {
+    var bgColor = $(word).data("color");
+    var words = [];
+    $(word).parent().find(".word").each(function() {
+      //console.log(bgColor, $(this).data("color"));
+      if ($(this).data("color") == bgColor) {
+        words.push(this);
+      }
+    });
+    return words;
+  },
+  onClickBox: function(ele) {
+    var self = this;
+    $(".word").removeClass("selected");
+    var words = self.wordGroup(ele);
+    $(words).addClass("selected");
+    $(".boxes").find(".parts, .part-name").addClass("highlight");
+    $(".boxes").children().click(function() {
+      pColor = $(".answers").parent().css("background-color");
+      $(".word.selected").animate({"background-color": pColor}, 100);
+      var color = $(".word.selected").data("color");
+      $clone = $(".word.selected").clone();
+      $clone.css({"position":"absolute", "background-color":""});
+      var first = null;
+      $clone.each(function(i, ele) {
+        var pos = $(".word.selected").eq(i).offset()
+        if (first == null) first = pos.left;
+        $(this).css({
+          "left": pos.left + "px",
+          "top": pos.top + "px"
+        });
+      });
+      var $target = $(this).find(".part-target");
+      $(this).animate({"background-color": color}, 100);
+      $clone.appendTo($target);
+      $(this).animate({"background-color": color}, 100);
+      var newPos = $target.offset();
+      var incLeft = newPos.left - first + 20;
+      var newTop = newPos.top;
+      var lastTop = $clone.offset().top
+      $clone.animate({left:"+="+incLeft+"px", top:newTop+"px"});
+      $clone.data({
+        incLeft: incLeft,
+        newTop: newTop,
+        lastTop: lastTop
+      });
+      $(".boxes").children().unbind("click");
+      $(this).click(function() {
+        var pColor = $(".answers").parent().css("background-color");
+        $(this).animate({"background-color": pColor}, 100);
+        $clone.animate({left:"-="+incLeft+"px", top:lastTop+"px"}, function() {
+          $(this).remove();
+        });
+      });
+      $(words).unbind('mouseenter mouseleave').removeClass("selectable");
+    });
+  },
+  startCheckSplitButton: function(sentenceObj, answerBoxes2Index) {
+    var self = this;
+    //$("#check-answer-button").hide();
+    
+    $("#answercontent").hide();
+    $("#check-split").click(function() {
+      if (self.checkCorrectSplit(sentenceObj)) {
+      } else {
+        $(".check-split-wrapper").effect("shake", {times: 3, distance: 5}, 480)
+        $("#check-split").val("Try again!");
+        return;
+      }
+      $(this).fadeOut(function() {
+        $(".answers .pipe").fadeOut();
+        $(".answers .split").hide();
+        $(".boxes").hide();
+        self.answerBoxes2(answerBoxes2Index);
+        //$(".boxes").prepend("Select a part");
+        $(".boxes").fadeIn();
+        $(".answers .word").addClass("selectable").hover(function() {
+          var words = self.wordGroup(this);
+          console.log(words);
+          $(words).animate({backgroundColor: shadeColor($(this).data("color"), 10)}, 100);
+        }, function() {
+          var words = self.wordGroup(this);
+          $(words).animate({backgroundColor: $(this).data("color")}, 100);
+        })
+        .click(function() {
+          self.onClickBox(this);
+        })
+      });
+    });
+  },
+
+  test2b: function() {
+    setTimeout(function() {
+    $(".split").eq(0).click();
+    $("#check-split").click();
+    }, 100);
+  },
+
+  updatePipePos: function() {
+    var $words = $(".answers .word");
+    $words.each(function(i, wordEle) {
+      if (i == $words.length - 1) return;
+      try {
+        var $word = $(wordEle);
+        var $nextWord = $(".answers .word").eq(i+1)
+        var right = $nextWord.position().left - 3;
+        $(".answers .pipe").eq(i)
+          .css("left", right + "px")
+
+        var left = $word.position().left + $word.width() / 2 + 6;
+        var width = $word.width() / 2 + $nextWord.width() / 2 + 19;
+        $(".answers .split").eq(i)
+          .css("left", left + "px")
+          .css("width", width + "px")
+      } catch(err) {
+        console.log(err);
+      }
+    });
+
+  },
+  
+  sentenceSplitter: function(sentence_obj) {
+    if (sentence_obj.sentence.indexOf(".")) {
+      sentence_obj.hasDot = true;
+      sentence_obj.hasQuestion = false;
+    } else if (sentence_obj.sentence.indexOf("?")) {
+      sentence_obj.hasDot = false;
+      sentence_obj.hasQuestion = true;
+    } else {
+      sentence_obj.hasDot = false;
+      sentence_obj.hasQuestion = false;
+    }
+    var sentence = sentence_obj.sentence
+                    .replace(/\s+/g, ' ') //removes multiple whitespaces
+                    .replace("?", "").replace(".","").trim()
+    var words = sentence.split(" ");
+    //add punctuation
+    words[words.length-1] += sentence_obj.hasDot ? ".":"?";
+    var self = this;
+    //place words
+    $.each(words, function(i, word) {
+      $("<span class='word'>"+word+"</span>").appendTo(".answers");
+    });
+    //$("<span class='punctuation'>"+(sentence_obj.hasDot ? ".":"?")+"</span>").appendTo(".answers");
+    //add pipes and splitters
+    $(".answers .word").each(function(i, wordEle) {
+      $word = $(wordEle);
+      if (i < words.length-1) {
+        //place them in order
+        var $pipe = $("<span class='pipe'></span>")
+          .insertAfter(this);
+
+        var $split = $("<span class='split'></span>")
+          .insertAfter($pipe)
+          .click(function() {
+              $(this).toggleClass("selected");
+              $pipe.toggleClass("selected");
+              self.calcBoxes();
+            })
+          .hover(function() {
+              $pipe.addClass("hover");
+            }, function() {
+              $pipe.removeClass("hover");
+            });
+      }
+    });
+    //update the splitter and pipes positions programatically
+    self.updatePipePos();
+    $(window).resize(self.updatePipePos);
   },
 
   userPick2: function(zin){

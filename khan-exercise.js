@@ -277,7 +277,6 @@ var Khan = (function() {
                 link.href = urlBase + url;
                 document.getElementsByTagName("head")[0].appendChild(link);
             };
-
             addLink("css/taaltransfer.css");
             addLink("css/khan-site.css");
             addLink("css/khan-exercise.css");
@@ -868,6 +867,7 @@ var Khan = (function() {
         // Load in jQuery and underscore, as well as the interface glue code
         // TODO(cbhl): Don't load history.js if we aren't in readOnly mode.
         var initScripts = [
+                "../colors.js",
                 "../local-only/jquery.js",
                 "../local-only/jquery-migrate-1.1.1.js",
                 /**"../local-only/jquery.ui.core.js",
@@ -1592,7 +1592,7 @@ var Khan = (function() {
         var problem = $(hint).parent();
 
         // Append first so MathJax can sense the surrounding CSS context properly
-        $(hint).appendTo("#hintsarea").runModules(problem);
+        $(hint).hide().appendTo("#hintsarea").slideDown("fast").runModules(problem);
 
         if (hints.length === 0) {
             $(hint).addClass("last-hint");
