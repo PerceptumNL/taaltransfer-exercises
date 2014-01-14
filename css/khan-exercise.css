@@ -94,15 +94,17 @@ div.definition {
 #workarea { 
     width: 100%;
 }
+#hintsarea:empty { 
+    padding: 0;
+}
 #hintsarea { 
     background-color: #615F5F;
     color: white;
+    padding: 30px 0 10px 0;
 }
 #hintsarea p:last-child {
-    padding-bottom: 30px;
 }
 #hintsarea p:first-child {
-    padding-top: 30px;
 }
 #answer_area ul { list-style: none; }
 #answer_area li { padding: 7px 0; }

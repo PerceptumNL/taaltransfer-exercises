@@ -1,3 +1,15 @@
+function shadeColor(color, percent) {   
+    var num = parseInt(color.slice(1),16), amt = Math.round(2.55 * percent), R = (num >> 16) + amt, G = (num >> 8 & 0x00FF) + amt, B = (num & 0x0000FF) + amt;
+    return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
+}
+function rgb2hex(rgb) {
+    rgb = rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    function hex(x) {
+        return ("0" + parseInt(x).toString(16)).slice(-2);
+    }
+    return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+}
+
 function getURLParameters(paramName) 
 {
         var sURL = window.document.URL.toString();  
@@ -700,6 +712,56 @@ $.extend(KhanUtil, {
     return els;
   },
   
+  answerBoxes2: function(level){
+    console.trace();
+    var selected = [];
+    var levelOne = ['pv'];
+    var levelTwo = ['pv','ond','overige zinsdelen'];
+    var levelThree = ['pv','ond','wwg','overige zinsdelen'];
+    var levelFour = ['pv','ond','lv','wwg','overige zinsdelen'];
+    var levelSix = ['pv','ond','lv','overige zinsdelen'];
+    var levelTen = ['pv','ond','lv','mwv','overige zinsdelen'];
+    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','overige zinsdelen'];
+    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','overige zinsdelen'];
+    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','overige zinsdelen'];    
+    switch(level){
+      case 1: 
+        selected = levelOne;
+        break;      
+      case 2:
+        selected = levelTwo;
+        break;
+      case 3:
+        selected = levelThree;
+        break;
+      case 4:
+        selected = levelFour;
+        break;
+      case 6:
+        selected = levelSix;
+        break;
+      case 10:
+        selected = levelTen;
+        break;
+      case 12:
+        selected = levelTwelve;
+        break;
+      case 14:
+        selected = levelFourteen;
+        break;
+      case 16:
+        selected = levelSixteen;
+        break;
+    }
+    var length = selected.length;
+    for (var i=0;i<selected.length - 1;i++) {
+      $box = $("<div class='target-part'>" + selected[i] + "</div>");
+      $box.appendTo(".boxes");
+    }
+    //$(".answers .split").eq(0).click();
+    //$(".answers .split").eq(1).click();
+    //$("#check-split").click();
+  },
   /***
     Generate answerBoxes for each category
     Type: void
@@ -809,44 +871,44 @@ $.extend(KhanUtil, {
     }
     return count;
   },
+  selectWords: function(startIdx, endIdx, color) {
+    $(".answers").children().eq(startIdx).addClass("box-start");
+    for (var i=startIdx; i<=endIdx; i++) {
+      if (!$(".answers").children().eq(i).hasClass("word")) continue;
+      $(".answers").children().eq(i)
+        .addClass("box-border")
+        .animate({ backgroundColor: color }, 100)
+        .data("color", color);
+    }
+    $(".answers").children().eq(endIdx-1).addClass("box-end");
+  },
   calcBoxes: function() {
-    var colors = ["yellow", "orange", "green", "red", "fuchsia", "teal", "aqua", "blue", "maroon", "white", "silver", "purple", "lime", "olive", "gray"]
     $(".answers").children().each(function() {
       $(this).removeClass("box-border box-start box-end")
-      var $ele = $(this);
-      $(colors).each(function(i, color) {
-        $ele.removeClass("bg-"+color);
-      });
     });
   
     //nothing to do
-    if ($(".answers .selected").length == 0) { return }
+    if ($(".answers .selected").length == 0) { 
+      pColor = $(".answers").parent().css("background-color");
+      $(".answers").find(".word").animate({backgroundColor: pColor}, 100);
+      return;
+    }
 
     //select until every split
-    var lastIdx = 0;
-    $(".answers .selected").each(function() {
-      var idx = $(this).index()
-      var color = colors.shift()
-      $(".answers").children().eq(lastIdx).addClass("box-start");
-      for (var i=lastIdx; i<idx; i++) {
-        $(".answers").children().eq(i).addClass("box-border bg-"+color);
-      }
-      $(".answers").children().eq(idx-1).addClass("box-end");
-      lastIdx = idx + 1;
-    });
-
-    var color = colors.shift()
-    var idx = $(".answers").children().last().index()
-    $(".answers").children().eq(lastIdx).addClass("box-start");
-    for (var i=lastIdx; i<=idx; i++) {
-      $(".answers").children().eq(i).addClass("box-border bg-"+color);
+    var _colors = $.extend([], colors);
+    var startIdx = 0;
+    var $selected = $(".answers .selected");
+    for (var i=0;i<=$selected.length;i++) {
+      var endIdx = i<$selected.length ? 
+        $selected.eq(i).index() : $(".answers").children().last().index()
+      var color = _colors[Object.keys(_colors)[0]];
+      delete _colors[Object.keys(_colors)[0]];
+      this.selectWords(startIdx, endIdx, color);
+      startIdx = endIdx;
     }
-    $(".answers").children().eq(idx-1).addClass("box-end");
-    lastIdx = idx + 1;
-
   },
 
-  isPart: function(sentenceObj, part) {
+  getPart: function(sentenceObj, part) {
     var keys = ["aa",
       "bb",
       "dng",
@@ -860,12 +922,13 @@ $.extend(KhanUtil, {
       "restpv",
       "vzv",
       "wi",
-      "wwg"];
+      "wwg"
+    ];
     part = part.replace("?","").replace(".","");
     for (i in keys) {
       var key = keys[i];
       if (part == sentenceObj[key]) {
-        return true;
+        return part;
       }
     }
     return false;
@@ -877,27 +940,107 @@ $.extend(KhanUtil, {
 
   checkCorrectSplit: function(sentenceObj) {
     var self = this;
-    var lastIdx = 0;
+    var startIdx = 0;
     var correct = true;
     var $words = $(".answers").children();
-    $(".answers .split.selected").each(function() {
-      var idx = $(this).index()
+    var $selected = $(".answers .split.selected");
+    if ($selected.length == 0) return false;
+    $selected.each(function() {
+      var endIdx = $(this).index()
       var part = "";
-      for (var i=lastIdx;i<idx;i++) {
+      for (var i=startIdx;i<endIdx;i++) {
         if ($words.eq(i).hasClass("word")) { 
           if (part.length) part += " ";
           part += $words.eq(i).html();
         }
       }
-      if (!self.isPart(sentenceObj, part)) {
+      if (!self.getPart(sentenceObj, part)) {
         correct = false;
         return;
       }
-      lastIdx = idx;
+      startIdx = endIdx;
     });
     return correct;
   },
+  wordGroup: function(word) {
+    var bgColor = $(word).data("color");
+    var words = [];
+    $(word).parent().find(".word").each(function() {
+      //console.log(bgColor, $(this).data("color"));
+      if ($(this).data("color") == bgColor) {
+        words.push(this);
+      }
+    });
+    return words;
+  },
+  checkSplitButton: function(sentenceObj) {
+    var self = this;
+    //$("#check-answer-button").hide();
+    $("#check-split").click(function() {
+      if (self.checkCorrectSplit(sentenceObj)) {
+      }
+      $(".answers .split").fadeOut();
+      $(".boxes").prepend("Select a part");
+      $(".answers .word").addClass("selectable").hover(function() {
+        var words = self.wordGroup(this);
+        console.log(words);
+        $(words).animate({backgroundColor: shadeColor($(this).data("color"), 10)}, 100);
+      }, function() {
+        var words = self.wordGroup(this);
+        $(words).animate({backgroundColor: $(this).data("color")}, 100);
+      })
+      .click(function() {
+        $(".word").removeClass("selected");
+        var words = self.wordGroup(this);
+        $(words).addClass("selected");
+        $(".boxes").children().addClass("droppable");
+        $(".boxes").children().click(function() {
+          $(".word.selected").animate({"background-color": "none"}, 100);
+          $clone = $(".word.selected").clone();
+          $clone.css({"position":"absolute", "background-color":""});
+          var first = null;
+          $clone.each(function(i, ele) {
+            var pos = $(".word.selected").eq(i).offset()
+            if (first == null) first = pos.left;
+            $(this).css({
+              "left": pos.left + "px",
+              "top": pos.top + "px"
+            });
+            
+          });
+          $clone.appendTo(".boxes");
+          var newPos = $(this).position();
+          var incLeft = newPos.left - first + 50;
+          $clone.animate({left:"+="+incLeft+"px", top:newPos.top+"px"});
+          //$(".word.selected").clone().appendTo($(this));
+        });
+      })
+    });
+  },
 
+  updatePipePos: function() {
+    var $words = $(".answers .word");
+    $words.each(function(i, wordEle) {
+      if (i == $words.length - 1) return;
+      try {
+        var $word = $(wordEle);
+        var $nextWord = $(".answers .word").eq(i+1)
+        var right = $nextWord.position().left - 5;
+        $(".answers .pipe").eq(i)
+          .css("left", right + "px")
+
+        var left = $word.position().left + $word.width() / 2 + 6;
+        var width = $word.width() / 2 + $nextWord.width() / 2 + 16;
+        $(".answers .split").eq(i)
+          .css("left", left + "px")
+          .css("width", width + "px")
+      } catch(err) {
+        console.log(err);
+      }
+    });
+
+  },
+  
   sentenceSplitter: function(sentence_obj) {
     if (sentence_obj.sentence.indexOf(".")) {
       sentence_obj.hasDot = true;
@@ -913,21 +1056,38 @@ $.extend(KhanUtil, {
                     .replace(/\s+/g, ' ') //removes multiple whitespaces
                     .replace("?", "").replace(".","").trim()
     var words = sentence.split(" ");
-    words[words.length-1] += sentence_obj.hasDot ? "." : "?";
+    //add punctuation
+    words[words.length-1] += sentence_obj.hasDot ? ".":"?";
     var self = this;
+    //place words
     $.each(words, function(i, word) {
-      $word = $("<span class='word'>"+word+"</span>").appendTo(".answers");
+      $("<span class='word'>"+word+"</span>").appendTo(".answers");
+    });
+    //$("<span class='punctuation'>"+(sentence_obj.hasDot ? ".":"?")+"</span>").appendTo(".answers");
+    //add pipes and splitters
+    $(".answers .word").each(function(i, wordEle) {
+      $word = $(wordEle);
       if (i < words.length-1) {
-        var left = $word.position().left + $word.width() + 10;
-        $("<span class='split'></span>")
-          .appendTo(".answers")
-          .css("left", left + "px")
+        //place them in order
+        var $pipe = $("<span class='pipe'></span>")
+          .insertAfter(this);
+
+        var $split = $("<span class='split'></span>")
+          .insertAfter($pipe)
           .click(function() {
-            $(this).toggleClass("selected");
-            self.calcBoxes();
-          });
+              $(this).toggleClass("selected");
+              self.calcBoxes();
+            })
+          .hover(function() {
+              $pipe.addClass("hover");
+            }, function() {
+              $pipe.removeClass("hover");
+            });
       }
     });
+    //update the splitter and pipes positions programatically
+    self.updatePipePos();
+    $(window).resize(self.updatePipePos);
   },
 
   userPick2: function(zin){
