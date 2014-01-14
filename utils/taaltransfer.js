@@ -668,36 +668,44 @@ $.extend(KhanUtil, {
     return els;
   },
 
+  getWordType: function(sentenceObj, word) {
+    var word =  word.replace("?", "").replace(".","").trim()
+    var types = ["lw", "zww","znw", "bez", "per1", "per2", 
+      "bvn", "vz","kww","vra","hww","wed","brt","bht","aan",
+      "oht","voe","wederkerig","ort","restpv","bijw","bwg","nnb", 
+      "exception"];
+    for (i in types) {
+      var type = types[i];
+      var wordsInType = sentenceObj[type].split(",");
+      for (var j=0; j<wordsInType.length; j++) {
+        if (wordsInType[j] == word) 
+          return type;
+      }
+    }
+    return false;
+  },
+
   checkCorrectSelection: function(sentenceObj, types) {
+    var self = this;
     var correct = true;
     var missing = false;
     $(".sentence").children().each(function() {
-        var word = $(this).html()
-        if ($(this).hasClass("selected")) {
-            var found = false;
-            for (var i=0;i<types.length;i++) {
-              if (sentenceObj[types[i]].indexOf(word) >= 0) {
-                found = true;
-                break;
-              }
-            }
-            if (found == false) {
-              $(this).addClass("incorrect");
-              correct = false;
-            } else {
-              $(this).addClass("correct");
-            }
+      var word = $(this).html()
+      var type = self.getWordType(sentenceObj, word);
+      var found = $.inArray(type, types) >= 0;
+      //console.log(word, type, found);
+      if ($(this).hasClass("selected")) {
+        if (found) {
+          $(this).addClass("correct");
         } else {
-            for (var i=0;i<types.length;i++) {
-              if (sentenceObj[types[i]].indexOf(word) >= 0) {
-                missing = true;
-                break;
-              }
-            }
+          $(this).addClass("incorrect");
+          correct = false;
         }
-        console.log(word);
-        console.log('missing', missing);
-        console.log('correct', correct);
+      } else {
+        if (found) {
+          missing = true;
+        }
+      }
     });
     if (missing && correct) {
       $(".message_warning").show();
@@ -711,7 +719,6 @@ $.extend(KhanUtil, {
       $(".sentence").children().one("click", handler);
       correct = false;
     }
-    
     return correct;
   },
   
@@ -766,7 +773,6 @@ $.extend(KhanUtil, {
   },
   
   answerBoxes2: function(level){
-    console.trace();
     var selected = [];
     var levelOne = ['pv'];
     var levelTwo = ['pv','ond','overige zinsdelen'];
@@ -952,32 +958,20 @@ $.extend(KhanUtil, {
       var endIdx = i<$selected.length ? 
         $selected.eq(i).index() : $(".answers").children().last().index()
       var color = _colors[Object.keys(_colors)[0]];
+      console.log("color",Object.keys(_colors)[0]);
       delete _colors[Object.keys(_colors)[0]];
-      this.selectWords(startIdx, endIdx, shadeColor(color,30));
+      this.selectWords(startIdx, endIdx, shadeColor(color,0));
       startIdx = endIdx;
     }
   },
 
-  getPart: function(sentenceObj, part) {
-    var keys = ["aa",
-      "bb",
-      "dng",
-      "lv",
-      "mv",
-      "mwv",
-      "nwg",
-      "ond",
-      "ons",
-      "pv",
-      "restpv",
-      "vzv",
-      "wi",
-      "wwg"
-    ];
+  getPartType: function(sentenceObj, part) {
     part = part.replace("?","").replace(".","");
-    for (i in keys) {
-      var key = keys[i];
-      if (part == sentenceObj[key]) {
+    var types  = ["aa", "bb", "dng", "lv", "mv", "mwv",
+      "nwg", "ond", "ons", "pv", "restpv", "vzv", "wi", "wwg"];
+    for (i in types) {
+      var type = types[i];
+      if (part == sentenceObj[type]) {
         return part;
       }
     }
@@ -1004,7 +998,7 @@ $.extend(KhanUtil, {
           part += $words.eq(i).html();
         }
       }
-      if (!self.getPart(sentenceObj, part)) {
+      if (!self.getPartType(sentenceObj, part)) {
         correct = false;
         return;
       }
@@ -1015,7 +1009,7 @@ $.extend(KhanUtil, {
   wordGroup: function(word) {
     var bgColor = $(word).data("color");
     var words = [];
-    $(word).parent().find(".word").each(function() {
+    $(".answers").find(".word").each(function() {
       //console.log(bgColor, $(this).data("color"));
       if ($(this).data("color") == bgColor) {
         words.push(this);
@@ -1030,19 +1024,23 @@ $.extend(KhanUtil, {
     $(words).addClass("selected");
     $(".boxes").find(".parts, .part-name").addClass("highlight");
     $(".boxes").children().click(function() {
+      $(this).addClass("filled");
+      if ($(this).find(".part-target").is(":empty") == false) return;
       pColor = $(".answers").parent().css("background-color");
       $(".word.selected").animate({"background-color": pColor}, 100);
       var color = $(".word.selected").data("color");
-      $clone = $(".word.selected").clone();
+      var $clone = $(".word.selected").clone();
       $clone.css({"position":"absolute", "background-color":""});
+      $clone.removeClass("selectable");
       var first = null;
       $clone.each(function(i, ele) {
+        var color = $(".word.selected").eq(i).data("color")
         var pos = $(".word.selected").eq(i).offset()
         if (first == null) first = pos.left;
         $(this).css({
           "left": pos.left + "px",
           "top": pos.top + "px"
-        });
+        }).data("color", color);
       });
       var $target = $(this).find(".part-target");
       $(this).animate({"background-color": color}, 100);
@@ -1058,16 +1056,61 @@ $.extend(KhanUtil, {
         newTop: newTop,
         lastTop: lastTop
       });
-      $(".boxes").children().unbind("click");
+      $(this).unbind("click");
+      //disable click events
+      $(".boxes").children().each(function(i, ele) {
+        if ($(ele).find(".part-target").is(":empty")) {
+          console.log('unbind click', ele);
+          $(ele).unbind("click");
+        }
+      });
       $(this).click(function() {
+        //recover words to their positions
         var pColor = $(".answers").parent().css("background-color");
         $(this).animate({"background-color": pColor}, 100);
+        var $firstWord = $(this).find(".word").first();
+        var words = self.wordGroup($firstWord);
+        console.log("words", words);
+        $(words).animate({"background-color": $firstWord.data("color")}, 100);
         $clone.animate({left:"-="+incLeft+"px", top:lastTop+"px"}, function() {
           $(this).remove();
         });
+        self.attachHover(words);
+        self.checkFinish();
+        
       });
-      $(words).unbind('mouseenter mouseleave').removeClass("selectable");
+      self.checkFinish();
+      $(words).unbind('click mouseenter mouseleave').removeClass("selectable");
     });
+  },
+  checkFinish: function() {
+    var oneEmpty = false;
+    $(".boxes").children().each(function() {
+      console.log("boxes");
+      console.log(this);
+      if ($(this).find(".part-target").is(":empty")) {
+        oneEmpty = true;
+      };
+    });
+    if (oneEmpty) {
+      $("#answercontent").fadeOut();
+    } else {
+      $("#answercontent").fadeIn();
+    }
+  },
+  attachHover: function(words) {
+    var self = this;
+    $(words).addClass("selectable").hover(function() {
+      var words = self.wordGroup(this);
+      console.log(words);
+      $(words).animate({backgroundColor: shadeColor($(this).data("color"), 10)}, 100);
+    }, function() {
+      var words = self.wordGroup(this);
+      $(words).animate({backgroundColor: $(this).data("color")}, 100);
+    })
+    .click(function() {
+      self.onClickBox(this);
+    })
   },
   startCheckSplitButton: function(sentenceObj, answerBoxes2Index) {
     var self = this;
@@ -1087,25 +1130,15 @@ $.extend(KhanUtil, {
         $(".boxes").hide();
         self.answerBoxes2(answerBoxes2Index);
         //$(".boxes").prepend("Select a part");
+        self.attachHover($(".answers .word"));
         $(".boxes").fadeIn();
-        $(".answers .word").addClass("selectable").hover(function() {
-          var words = self.wordGroup(this);
-          console.log(words);
-          $(words).animate({backgroundColor: shadeColor($(this).data("color"), 10)}, 100);
-        }, function() {
-          var words = self.wordGroup(this);
-          $(words).animate({backgroundColor: $(this).data("color")}, 100);
-        })
-        .click(function() {
-          self.onClickBox(this);
-        })
       });
     });
   },
 
   test2b: function() {
     setTimeout(function() {
-    $(".split").eq(0).click();
+    $(".split").eq(1).click();
     $("#check-split").click();
     }, 100);
   },
@@ -1167,7 +1200,6 @@ $.extend(KhanUtil, {
         var $split = $("<span class='split'></span>")
           .insertAfter($pipe)
           .click(function() {
-              $(this).toggleClass("selected");
               $pipe.toggleClass("selected");
               self.calcBoxes();
             })

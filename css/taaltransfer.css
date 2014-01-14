@@ -245,11 +245,17 @@
 .bg-black {
   background-color: #111111; }
 
+.parts.filled {
+  cursor: crosshair;
+}
 .parts {
   width: 50%;
   border: 2px solid grey;
   margin: 10px auto;
   height: 50px;
+}
+.parts.remove {
+  cursor: crosshair;
 }
 .parts.highlight,
 .part-name.highlight {
