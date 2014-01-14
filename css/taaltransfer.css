@@ -139,7 +139,14 @@
   cursor: pointer;
 }
 .sentence span.selected {
-  background-color: orange;
+  color: black;
+  border: 1px dotted #aaa;
+  margin: 1px;
+  padding: 3px;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: #ccc;
 }
 .answers {
   position: relative;
