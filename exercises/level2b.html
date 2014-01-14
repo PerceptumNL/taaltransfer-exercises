@@ -25,8 +25,14 @@
         <div>
             <p class="question">Ontleed de volgende zin redekundig en vul de onderdelen in:<var>sentenceSplitter(SENTENCE_OBJ)</var></p>
             <p class='answers'></p>
-            <p class='checkSplit'><input id="check-split" class="simple-button green" style="text-align:center" value="Check sentence"></input><var>checkSplitButton(SENTENCE_OBJ)</var></p>
-            <p class="boxes"><var>answerBoxes2(2)</var></p>                   
+            <p class='check-split-wrapper'>
+              <input id="check-split" class="simple-button green" value="Check sentence"></input>
+              <var>startCheckSplitButton(SENTENCE_OBJ, 2)</var>
+            </p>
+            <p class="boxes">
+              <var>test2b()</var>
+            </p>                   
+    
             <span class="solution" data-type="custom">
               <div class="instruction">Sleep elk zinsdeel naar de correcte plaats.</div>
               <div class="guess">1</div>
