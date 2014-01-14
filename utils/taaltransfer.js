@@ -987,7 +987,7 @@ $.extend(KhanUtil, {
     var startIdx = 0;
     var correct = true;
     var $words = $(".answers").children();
-    var $selected = $(".answers .split.selected");
+    var $selected = $(".answers .pipe.selected");
     if ($selected.length == 0) return false;
     $selected.each(function() {
       var endIdx = $(this).index()
@@ -998,7 +998,8 @@ $.extend(KhanUtil, {
           part += $words.eq(i).html();
         }
       }
-      if (!self.getPartType(sentenceObj, part)) {
+      var partType = self.getPartType(sentenceObj, part)
+      if (!partType) {
         correct = false;
         return;
       }
