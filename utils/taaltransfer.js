@@ -700,7 +700,15 @@ $.extend(KhanUtil, {
         console.log('correct', correct);
     });
     if (missing && correct) {
-      alert("MISSING");
+      $(".message_warning").show();
+      $(".message_warning").one("click", function() {
+        $(this).fadeOut()
+      });
+      function handler() {
+        $(".message_warning").fadeOut();
+        $(".sentence").children().unbind("click", handler);
+      }
+      $(".sentence").children().one("click", handler);
       correct = false;
     }
     
