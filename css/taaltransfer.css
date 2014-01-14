@@ -35,6 +35,7 @@
   border-radius:5px;
 }
 
+.sentence span.selected.correct,
 .correct2{
   width:200px;
   background-color:#80ac07;
@@ -43,6 +44,7 @@
   padding:5px;
 }
 
+.sentence span.selected.incorrect,
 .incorrect2{
   width: 200px;
   background-color:#d55704;
@@ -243,9 +245,26 @@
 .bg-black {
   background-color: #111111; }
 
-.target-part {
+.parts {
   width: 50%;
   border: 2px solid grey;
+  margin: 10px auto;
+  height: 50px;
+}
+.parts.highlight,
+.part-name.highlight {
+  border-color: orange;
+}
+.part-name {
+  border-right: 2px solid grey;
+  margin: 0 auto;
+  display: inline-block;
+  line-height: 50px;
+  text-align: center;
+  width: 50px;
+}
+.part-target {
+  padding: 0px 20px;
 }
 
 .words {
@@ -265,4 +284,13 @@
 }
 .boxes .word {
   margin: 2px;
+}
+.check-split-wrapper {
+  text-align: center;
+}
+#check-split {
+  text-align: center;
+  padding: 14px;
+  font-size: 17px;
+  line-height: 15px;
 }

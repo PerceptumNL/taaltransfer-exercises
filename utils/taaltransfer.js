@@ -618,7 +618,10 @@ $.extend(KhanUtil, {
       }
       $("#bool").remove();
       if(count === aLen){
+        console.log("CORRECTO");
         $("<span id='bool' style='display:none'>" + true + "</span>").appendTo(".question");
+      } else {
+        console.log("INCORRECTO");
       }
     });
   },
@@ -664,6 +667,45 @@ $.extend(KhanUtil, {
     }
     return els;
   },
+
+  checkCorrectSelection: function(sentenceObj, types) {
+    var correct = true;
+    var missing = false;
+    $(".sentence").children().each(function() {
+        var word = $(this).html()
+        if ($(this).hasClass("selected")) {
+            var found = false;
+            for (var i=0;i<types.length;i++) {
+              if (sentenceObj[types[i]].indexOf(word) >= 0) {
+                found = true;
+                break;
+              }
+            }
+            if (found == false) {
+              $(this).addClass("incorrect");
+              correct = false;
+            } else {
+              $(this).addClass("correct");
+            }
+        } else {
+            for (var i=0;i<types.length;i++) {
+              if (sentenceObj[types[i]].indexOf(word) >= 0) {
+                missing = true;
+                break;
+              }
+            }
+        }
+        console.log(word);
+        console.log('missing', missing);
+        console.log('correct', correct);
+    });
+    if (missing && correct) {
+      alert("MISSING");
+      correct = false;
+    }
+    
+    return correct;
+  },
   
   /***
     Creates an invisible element for each word in the sentence by appending an element with
@@ -689,10 +731,12 @@ $.extend(KhanUtil, {
     return correct;
   },
 
-  createSentence: function(sentence, result) {
+  createSentence: function(sentenceObj, result) {
     var self = this;
-    var sentence_str = sentence["sentence"];
-    $.each(sentence_str.split(" "), function(idx, word) {
+    var sentenceStr = sentenceObj.sentence
+                    .replace(/\s+/g, ' ') //removes multiple whitespaces
+                    .replace("?", "").replace(".","").trim()
+    $.each(sentenceStr.split(" "), function(idx, word) {
         $word = $("<span>" + word + "</span>");
         $word.click(function() {
             $(this).toggleClass("selected");
@@ -700,6 +744,7 @@ $.extend(KhanUtil, {
         $(".sentence").append($word);
     }); 
   },
+
   regParts: function(sentence){
     var length = sentence.length;
     var els = 0;
@@ -755,12 +800,9 @@ $.extend(KhanUtil, {
     }
     var length = selected.length;
     for (var i=0;i<selected.length - 1;i++) {
-      $box = $("<div class='target-part'>" + selected[i] + "</div>");
+      $box = $("<div class='parts'><span class='part-name'>" + selected[i] + "</span><span class='part-target'></span></div>");
       $box.appendTo(".boxes");
     }
-    //$(".answers .split").eq(0).click();
-    //$(".answers .split").eq(1).click();
-    //$("#check-split").click();
   },
   /***
     Generate answerBoxes for each category
@@ -973,49 +1015,91 @@ $.extend(KhanUtil, {
     });
     return words;
   },
-  checkSplitButton: function(sentenceObj) {
+  onClickBox: function(ele) {
+    var self = this;
+    $(".word").removeClass("selected");
+    var words = self.wordGroup(ele);
+    $(words).addClass("selected");
+    $(".boxes").find(".parts, .part-name").addClass("highlight");
+    $(".boxes").children().click(function() {
+      pColor = $(".answers").parent().css("background-color");
+      $(".word.selected").animate({"background-color": pColor}, 100);
+      var color = $(".word.selected").data("color");
+      $clone = $(".word.selected").clone();
+      $clone.css({"position":"absolute", "background-color":""});
+      var first = null;
+      $clone.each(function(i, ele) {
+        var pos = $(".word.selected").eq(i).offset()
+        if (first == null) first = pos.left;
+        $(this).css({
+          "left": pos.left + "px",
+          "top": pos.top + "px"
+        });
+      });
+      var $target = $(this).find(".part-target");
+      $(this).animate({"background-color": color}, 100);
+      $clone.appendTo($target);
+      $(this).animate({"background-color": color}, 100);
+      var newPos = $target.offset();
+      var incLeft = newPos.left - first + 20;
+      var newTop = newPos.top;
+      var lastTop = $clone.offset().top
+      $clone.animate({left:"+="+incLeft+"px", top:newTop+"px"});
+      $clone.data({
+        incLeft: incLeft,
+        newTop: newTop,
+        lastTop: lastTop
+      });
+      $(".boxes").children().unbind("click");
+      $(this).click(function() {
+        var pColor = $(".answers").parent().css("background-color");
+        $(this).animate({"background-color": pColor}, 100);
+        $clone.animate({left:"-="+incLeft+"px", top:lastTop+"px"}, function() {
+          $(this).remove();
+        });
+      });
+      $(words).unbind('mouseenter mouseleave').removeClass("selectable");
+    });
+  },
+  startCheckSplitButton: function(sentenceObj, answerBoxes2Index) {
     var self = this;
     //$("#check-answer-button").hide();
+    
+    $("#answercontent").hide();
     $("#check-split").click(function() {
       if (self.checkCorrectSplit(sentenceObj)) {
+      } else {
+        $(".check-split-wrapper").effect("shake", {times: 3, distance: 5}, 480)
+        $("#check-split").val("Try again!");
+        return;
       }
-      $(".answers .split").fadeOut();
-      $(".boxes").prepend("Select a part");
-      $(".answers .word").addClass("selectable").hover(function() {
-        var words = self.wordGroup(this);
-        console.log(words);
-        $(words).animate({backgroundColor: shadeColor($(this).data("color"), 10)}, 100);
-      }, function() {
-        var words = self.wordGroup(this);
-        $(words).animate({backgroundColor: $(this).data("color")}, 100);
-      })
-      .click(function() {
-        $(".word").removeClass("selected");
-        var words = self.wordGroup(this);
-        $(words).addClass("selected");
-        $(".boxes").children().addClass("droppable");
-        $(".boxes").children().click(function() {
-          $(".word.selected").animate({"background-color": "none"}, 100);
-          $clone = $(".word.selected").clone();
-          $clone.css({"position":"absolute", "background-color":""});
-          var first = null;
-          $clone.each(function(i, ele) {
-            var pos = $(".word.selected").eq(i).offset()
-            if (first == null) first = pos.left;
-            $(this).css({
-              "left": pos.left + "px",
-              "top": pos.top + "px"
-            });
-            
-          });
-          $clone.appendTo(".boxes");
-          var newPos = $(this).position();
-          var incLeft = newPos.left - first + 50;
-          $clone.animate({left:"+="+incLeft+"px", top:newPos.top+"px"});
-          //$(".word.selected").clone().appendTo($(this));
-        });
-      })
+      $(this).fadeOut(function() {
+        $(".answers .pipe").fadeOut();
+        $(".answers .split").hide();
+        $(".boxes").hide();
+        self.answerBoxes2(answerBoxes2Index);
+        //$(".boxes").prepend("Select a part");
+        $(".boxes").fadeIn();
+        $(".answers .word").addClass("selectable").hover(function() {
+          var words = self.wordGroup(this);
+          console.log(words);
+          $(words).animate({backgroundColor: shadeColor($(this).data("color"), 10)}, 100);
+        }, function() {
+          var words = self.wordGroup(this);
+          $(words).animate({backgroundColor: $(this).data("color")}, 100);
+        })
+        .click(function() {
+          self.onClickBox(this);
+        })
+      });
     });
+  },
+
+  test2b: function() {
+    setTimeout(function() {
+    $(".split").eq(0).click();
+    $("#check-split").click();
+    }, 100);
   },
 
   updatePipePos: function() {

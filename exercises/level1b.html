@@ -20,14 +20,17 @@
     <div class="problems">
         <div>
             <p class="question">Klik in onderstaande zin op alle werkwoorden.</p>
+            <p class="sentence"><var>createSentence(SENTENCE_OBJ)</var></p>
             <p class='answers'></p>    
+<!--
             <var>makeSent(TUPLE)</var>   
             <var>clickSent(TUPLE)</var>          
             <var>seeSelected(['hww','kww','zww'])</var>
+-->
             <span class="solution" data-type="custom">
               <div class="instruction">Klik op de werkwoorden.</div>
-              <div class="guess">$("#bool").text()</div>
-              <div class="validator-function">if(guess.trim() == "true"){return true}</div>
+              <div class="guess">1</div>
+              <div class="validator-function">return checkCorrectSelection(SENTENCE_OBJ, ["hww",'kww','zww'])</div>
               <div class="show-guess">guess</div>        
             </span>
             
