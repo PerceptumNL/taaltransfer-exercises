@@ -1168,10 +1168,10 @@ $.extend(KhanUtil, {
   },
   
   sentenceSplitter: function(sentence_obj) {
-    if (sentence_obj.sentence.indexOf(".")) {
+    if (sentence_obj.sentence.indexOf(".") >= 0) {
       sentence_obj.hasDot = true;
       sentence_obj.hasQuestion = false;
-    } else if (sentence_obj.sentence.indexOf("?")) {
+    } else if (sentence_obj.sentence.indexOf("?") >=0) {
       sentence_obj.hasDot = false;
       sentence_obj.hasQuestion = true;
     } else {
