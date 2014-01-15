@@ -1893,7 +1893,7 @@ var Khan = (function() {
 
         // Prepare for the debug info if requested
         if (localMode && Khan.query.debug != null) {
-            $('<div id="debug"></div>').appendTo("#answer_area");
+            $('<div id="debug"></div>').insertAfter("#answercontent");
         }
 
         // Likewise, if we're in browse mode, setup for that

@@ -106,6 +106,7 @@
   padding:3px;
   margin:1px;
   font-weight:normal;
+  z-index:100;
 }
 
 .dropWord{
@@ -161,23 +162,27 @@
 }
 .answers .word {
   padding: 8px;
+  border-top: 4px solid none;
+  border-bottom: 4px solid none;
   height: 30px;
   display: inline-block;
   line-height: 27px;
   vertical-align:middle;
 }
-/*
-.answers .box-border {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+.answers .box-border.selected {
+  padding-top: 4px;
+  border-top: 4px solid orange;
+  border-bottom: 4px solid orange;
+  padding-bottom: 4px;
 }
-.answers .box-start {
-  border-left: 2px solid black;
+.answers .box-start.selected {
+  padding-left: 4px;
+  border-left: 4px solid orange;
 }
-.answers .box-end {
-  border-right: 2px solid black;
+.answers .box-end.selected {
+  padding-right: 4px;
+  border-right: 4px solid orange;
 }
-*/
 .answers .split {
   position: absolute;
   cursor: pointer;
@@ -264,9 +269,10 @@
 .parts.remove {
   cursor: crosshair;
 }
-.parts.highlight,
-.part-name.highlight {
+.parts.selectable,
+.part-name.selectable {
   border-color: orange;
+  cursor: pointer;
 }
 .part-name {
   border-right: 2px solid grey;
@@ -279,12 +285,6 @@
 .part-target {
   padding: 0px 20px;
 }
-
-.words {
-    cursor: pointer;
-    padding: 3px;
-}
-
 .word.selectable {
   cursor: pointer;
 }
