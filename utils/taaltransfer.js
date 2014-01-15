@@ -960,7 +960,7 @@ $.extend(KhanUtil, {
       var color = _colors[Object.keys(_colors)[0]];
       console.log("color",Object.keys(_colors)[0]);
       delete _colors[Object.keys(_colors)[0]];
-      this.selectWords(startIdx, endIdx, shadeColor(color,0));
+      this.selectWords(startIdx, endIdx, shadeColor(color,30));
       startIdx = endIdx;
     }
   },
