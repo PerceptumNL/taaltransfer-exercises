@@ -242,6 +242,7 @@ $.extend(KhanUtil, {
     $("#answercontent").hide();
     $("#check-split").click(function() {
       if (self.checkCorrectSplit(sentenceObj)) {
+        $(this).unbind("click");
         $(this).fadeOut(function() {
           self.endSplitting();
           self.createAnswerBoxes(level);
@@ -263,43 +264,48 @@ $.extend(KhanUtil, {
     }, 100);
   },
   
-  moveCloneBack: function(target) {
+  moveCloneBack: function(cloned, cb) {
     var self = this;
-    var $target = $(target);
-    $cloned = $target.find(".word");
+    var $cloned = $(cloned);
     var incLeft = $cloned.data("incLeft");
     var prevTop = $cloned.data("prevTop");
     $cloned.animate({left:"-="+incLeft+"px", top:prevTop+"px"}, function() {
-      $(this).remove();
-      //disable check button
-      self.checkFinish();
+      cb(this);
     });
   },
 
   targetClickedBack: function(target) {
     var self = this;
     var $target = $(target);
-    //recover color 
-    $target.animate({"background-color": this.getBgColor()}, 100);
     //mark as empty
     $target.removeClass("filled")
-
+    //recover color 
+    $target.animate({"background-color": this.getBgColor()}, 100);
     //get original sentence group of words
     var $firstWord = $target.find(".word").first();
     var words = this.getPartWords($firstWord);
     $(words).animate({"background-color": $firstWord.data("color")}, 100);
-
     //place back cloned words;
-    this.moveCloneBack($target);
-    //make words clickable again
-    this.attachHover(words);
+    $cloned = $target.find(".word");
+    this.moveCloneBack($cloned, function() {
+        $cloned.remove();
+        //check if there is clicked word and highligh targets
+        if ($(".answers .word.selected").length) {
+          $target.addClass("selectable");
+          $target.find(".part-name").addClass("selectable");
+        }
+        //make words clickable again
+        self.attachHover(words);
+        //disable check button
+        self.checkFinish();
+    });
   },
 
   getBgColor: function() {
     return $(".answers").parent().css("background-color");
   },
 
-  moveClone2Target: function($clone, $target) {
+  moveClone2Target: function($clone, $target, cb) {
     var $target = $target.find(".part-target");
     $clone.appendTo($target);
     var pos = $clone.offset();
@@ -307,26 +313,35 @@ $.extend(KhanUtil, {
     var incLeft = newPos.left - pos.left + 20;
     $clone.animate({
       left:"+="+incLeft+"px", 
-      top:newPos.top+"px"}
-    ).data({
+      top:newPos.top+"px"
+    }, function() {
+      cb(this);
+    }).data({
       incLeft: incLeft,
       prevTop: pos.top
     });
   },
   
   targetClicked: function(target) {
+    var self = this;
     var $target = $(target);
+    var $words = $(".word.selected");
     if ($target.hasClass("filled")) return;
 
-    var self = this;
-    var $words = $(".word.selected");
+    //(FIX) double assigment of the click event
+    //check if there were words selected, otherwise return
+    //targetClickedBack will remove the click event
+    if ($words.length == 0) return;
+
     $words.removeClass("selected");
     var color = $words.first().data("color")
 
     //unselectable boxes
     $(".boxes").find(".parts, .part-name").removeClass("selectable");
-    //no more posible to click
+
+    //no more posible click, click will be overriden 
     $(".boxes").find(":not(.filled)").unbind("click");
+
     //mark target as used
     $target.addClass("filled");
     //restore bg color
@@ -335,7 +350,7 @@ $.extend(KhanUtil, {
        "border-color": this.getBgColor()
     }, 100);
     //remove click for words
-    $words.unbind('click mouseenter mouseleave').removeClass("selectable");
+    $words.unbind('click').removeClass("selectable");
     //clone words
     var $clone = $words.clone()
       .css({
@@ -355,11 +370,12 @@ $.extend(KhanUtil, {
     $target.animate({
       "background-color": color
     }, 100).unbind("click");
-    //add click to put it back
-    $target.click(function() {
-      self.targetClickedBack(this);
-    });
-    this.moveClone2Target($clone, $target)
+    this.moveClone2Target($clone, $target, function() {
+      //add click to put it back
+      $target.click(function() {
+        self.targetClickedBack(this);
+      });
+    })
 
     //check is disable/enable check button
     this.checkFinish();
