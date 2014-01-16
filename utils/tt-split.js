@@ -54,34 +54,56 @@ $.extend(KhanUtil, {
     });
   },
 
+  getSelectedParts: function() {
+    var $pipes = $(".answers .pipe");
+    //none selected
+    if ($pipes.length == 0) return false;
+
+    var $words = $(".answers .word");
+    var parts = [];
+    var part = [];
+    for (var i=0; i<=$pipes.length; i++) {
+      part.push($words.eq(i));  
+      if ($pipes.eq(i).hasClass("selected")) {
+        parts.push($(part));
+        part = [];
+      };
+    }
+    if (part.length) parts.push($(part));
+    return parts;
+  },
+
+  getPart2Str: function(part) {
+    var partStr = "";
+    $(part).each(function() {
+      if (partStr.length) partStr += " ";
+      partStr += $(this).html();
+    });
+    return partStr;
+  },
+
   //validate if the split is correct
   checkCorrectSplit: function(sentenceObj) {
-    var self = this;
-    var startIdx = 0;
-    var correct = true;
-    var $words = $(".answers").children();
-    var $selected = $(".answers .pipe.selected");
-    if ($selected.length == 0) return false;
-    console.log($selected);
-    $selected.each(function() {
-      console.log(this);
-      var endIdx = $(this).index()
-      var part = "";
-      for (var i=startIdx;i<endIdx;i++) {
-        if ($words.eq(i).hasClass("word")) { 
-          if (part.length) part += " ";
-          part += $words.eq(i).html();
-        }
-      }
-      var partType = self.getPartType(sentenceObj, part)
-      console.log("part", partType, part)
+    var parts = this.getSelectedParts();
+    if (parts == false) return false;
+
+    for (var i=0;i<parts.length;i++) {
+      var partStr = this.getPart2Str(parts[i]);
+      console.log(partStr);
+      console.log(partStr.length);
+      var partType = this.getPartType(sentenceObj, partStr)
+      console.log(partType);
       if (!partType) {
-        correct = false;
-        return;
+        return false;
       }
-      startIdx = endIdx;
-    });
-    return correct;
+    }
+    this.endSplitting();
+    return true;
+  },
+
+  endSplitting: function() {
+    $(".answers .split").hide();
+    $(".answers .pipe").fadeOut();
   },
 
   updateSelection: function() {
