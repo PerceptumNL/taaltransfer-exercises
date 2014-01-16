@@ -230,29 +230,6 @@ $.extend(KhanUtil, {
   attachHover: function(words) {
     var self = this;
     $(words).addClass("selectable")
-    /*
-        
-      .hover(function() {
-        $(this).data("hovered", true);
-        //group hovered
-        self.setLighterColor(self.getPartWords(this));
-      }, function() {
-        var $words = self.getPartWords(this);
-        $(this).data("hovered", false);
-        setTimeout(function() {
-          var count = 0;
-          $words.each(function() {
-            if ($(this).data("hovered") == true) {
-              count++;
-            }
-          });
-          if (count == 0) {
-            //group unhovered
-            self.setDefaultColor($words);
-          }
-        }, 1);
-      })
-    */
       .click(function() {
         var $words = self.getPartWords(this);
         self.partClicked($words);
@@ -383,14 +360,6 @@ $.extend(KhanUtil, {
       self.targetClickedBack(this);
     });
     this.moveClone2Target($clone, $target)
-
-    //$(".boxes").children().each(function(i, ele) {
-    //  if ($(ele).find(".part-target").is(":empty")) {
-    //    console.log('unbind click', ele);
-    //    $(ele).unbind("click");
-    //  }
-    //});
-    //var fistPos = $words.first().offset();
 
     //check is disable/enable check button
     this.checkFinish();
