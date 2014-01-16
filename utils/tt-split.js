@@ -222,7 +222,7 @@ $.extend(KhanUtil, {
   checkFinish: function() {
     var oneEmpty = false;
     $(".boxes").children().each(function() {
-      if ($(this).find(".part-target").is(":empty")) {
+      if ($(this).find(".part-target").length == 0) {
         oneEmpty = true;
       };
     });
@@ -348,6 +348,7 @@ $.extend(KhanUtil, {
 
     var self = this;
     var $words = $(".word.selected");
+    $words.removeClass("selected");
     var color = $words.first().data("color")
 
     //unselectable boxes
