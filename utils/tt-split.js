@@ -89,10 +89,7 @@ $.extend(KhanUtil, {
 
     for (var i=0;i<parts.length;i++) {
       var partStr = this.getPart2Str(parts[i]);
-      console.log(partStr);
-      console.log(partStr.length);
       var partType = this.getPartType(sentenceObj, partStr)
-      console.log(partType);
       if (!partType) {
         return false;
       }
@@ -129,7 +126,6 @@ $.extend(KhanUtil, {
       $part.first().addClass("box-start");
       $part.last().addClass("box-end");
       $part.addClass("box-border");
-      console.log("part", $part);
       this.setDefaultColor($part);
     }
   },
@@ -175,8 +171,6 @@ $.extend(KhanUtil, {
 
   setDefaultColor: function(ele) {
     var color = $(ele).first().data("color");
-    console.log($(ele));
-    console.log(color);
     $(ele).animate({
       backgroundColor: color,
  //     borderColor: color,
@@ -222,7 +216,7 @@ $.extend(KhanUtil, {
   checkFinish: function() {
     var oneEmpty = false;
     $(".boxes").children().each(function() {
-      if ($(this).find(".part-target").length == 0) {
+      if ($(this).find(".part-target").children().length == 0) {
         oneEmpty = true;
       };
     });
@@ -293,12 +287,15 @@ $.extend(KhanUtil, {
   },
   
   moveCloneBack: function(target) {
+    var self = this;
     var $target = $(target);
     $cloned = $target.find(".word");
     var incLeft = $cloned.data("incLeft");
     var prevTop = $cloned.data("prevTop");
     $cloned.animate({left:"-="+incLeft+"px", top:prevTop+"px"}, function() {
       $(this).remove();
+      //disable check button
+      self.checkFinish();
     });
   },
 
@@ -319,8 +316,6 @@ $.extend(KhanUtil, {
     this.moveCloneBack($target);
     //make words clickable again
     this.attachHover(words);
-    //disable check button
-    self.checkFinish();
   },
 
   getBgColor: function() {
@@ -439,7 +434,6 @@ $.extend(KhanUtil, {
         var partType = $(this).find(".part-name").html();
         var $part = $(this).find(".word")
         var partStr = self.getPart2Str($part);
-        console.log(partType, partStr,self.getPartType(sentenceObj, partStr));
         if (partType != self.getPartType(sentenceObj, partStr)) {
             correct = false; return;
         }
