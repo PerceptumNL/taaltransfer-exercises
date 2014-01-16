@@ -69,30 +69,52 @@ $.extend(KhanUtil, {
     return rslt;
   },
 
+  prepareSentenceObj: function(sentence, header) {
+    var sentenceObj = {};
+    $.each(header, function(idx, head) {
+      sentenceObj[head] = sentence[idx].trim();
+    });
+    sentenceObj.hasDot = false;
+    sentenceObj.hasQuestion = false;
+    if (sentenceObj.sentence.indexOf(".") >= 0) {
+      sentenceObj.hasDot = true;
+    } else if (sentenceObj.sentence.indexOf("?") >=0) {
+      sentenceObj.hasQuestion = true;
+    }
+
+    sentenceObj.originalSentence = sentenceObj.sentence;
+    sentenceObj.sentence = sentenceObj.sentence
+                    .replace(/\s+/g, ' ') //removes multiple whitespaces
+                    .replace("?", "").replace(".","").trim()
+    console.log(sentenceObj);
+    var words = sentenceObj.sentence.split(" ");
+    //add punctuation
+    words[words.length-1] += sentenceObj.hasDot ? ".":"?";
+    sentenceObj.words = words;
+    console.log(sentenceObj);
+    return sentenceObj;
+  },
+
   getRandomSentence: function(sentences) {
     //Interfiere if debug is on, and find the specific sentence
     var sentenceStr = getURLParameters("sentence", "")
-    var sentenceObj = null;
+    var sentence = null;
     if (sentenceStr) {
       for (var i=0;i<sentences['sentences'].length;i++) {
         if (sentences['sentences'][i][0] == sentenceStr) {
-          sentenceObj = sentences['sentences'][i]
+          sentence = sentences['sentences'][i]
           break;
         } 
       }
       if (sentenceObj == null)
         console.error("Could not find sentence: " + sentenceStr);
     } else {
-      sentenceObj = KhanUtil.randFromArray(sentences['sentences']);
+      sentence = KhanUtil.randFromArray(sentences['sentences']);
     }
-    var obj = {};
-    $.each(sentences['header'], function(idx, head) {
-        obj[head] = sentenceObj[idx];
-    });
-    return obj;
+    return this.prepareSentenceObj(sentence, sentences['header']);
   },
 
-  _black_list: ["sentence", "category", "Roel checked"],
+  _black_list: ["sentence", "category", "Roel checked", "words", "hasDot", "hasQuestion"],
 
   getZinsdelenSentence: function(cat) {
     cat = getURLParameters("cat") || cat;
@@ -501,7 +523,7 @@ $.extend(KhanUtil, {
         question = question.concat(sentence[i][0].toLowerCase() + " ");
       }
     }
-    question = question.concat("?");
+    question = question.trim().concat("?");
     question = question.replace(question[0], question[0].toUpperCase());
     return question;
   },
@@ -704,6 +726,9 @@ $.extend(KhanUtil, {
       "exception"];
     for (i in types) {
       var type = types[i];
+      console.log(sentenceObj);
+      console.log(type)
+      console.log(sentenceObj[type]);
       var wordsInType = sentenceObj[type].split(",");
       for (var j=0; j<wordsInType.length; j++) {
         if (wordsInType[j] == word) 
@@ -713,12 +738,44 @@ $.extend(KhanUtil, {
     return false;
   },
 
-  checkCorrectSelection: function(sentenceObj, types) {
+  checkCorrectPVSelection: function(sentenceObj) {
+    var self = this;
+    var correct = true;
+    $(".sentence").children().each(function() {
+      var word = $(this).html()
+      var type = self.getPartType(sentenceObj, word);
+      var found = (type == "pv")
+      //console.log(word, type, found);
+      if ($(this).hasClass("selected")) {
+        if (found) {
+          $(this).addClass("correct");
+        } else {
+          $(this).addClass("incorrect");
+          correct = false;
+        }
+      }
+    });
+    if (correct) {
+      $(".sentence").children().unbind("click").removeClass("selectable");
+    }
+    return correct;
+
+  },
+
+  canSelectOneWord: function() {
+    $(".sentence").children().click(function() {
+      $(".sentence").children().removeClass("selected");
+      $(this).addClass("selected");
+    })
+  },
+
+  checkCorrectWordsSelection: function(sentenceObj, types) {
     var self = this;
     var correct = true;
     var missing = false;
     $(".sentence").children().each(function() {
       var word = $(this).html()
+      console.log(word);
       var type = self.getWordType(sentenceObj, word);
       var found = $.inArray(type, types) >= 0;
       //console.log(word, type, found);
@@ -746,6 +803,9 @@ $.extend(KhanUtil, {
       }
       $(".sentence").children().one("click", handler);
       correct = false;
+    }
+    if (correct) {
+      $(".sentence").children().unbind("click").removeClass("selectable");
     }
     return correct;
   },
@@ -776,11 +836,8 @@ $.extend(KhanUtil, {
 
   createSentence: function(sentenceObj, result) {
     var self = this;
-    var sentenceStr = sentenceObj.sentence
-                    .replace(/\s+/g, ' ') //removes multiple whitespaces
-                    .replace("?", "").replace(".","").trim()
-    $.each(sentenceStr.split(" "), function(idx, word) {
-        $word = $("<span>" + word + "</span>");
+    $.each(sentenceObj.words, function(idx, word) {
+        $word = $("<span>" + word + "</span>").addClass("selectable");
         $word.click(function() {
             $(this).toggleClass("selected");
         });
@@ -800,52 +857,6 @@ $.extend(KhanUtil, {
     return els;
   },
   
-  answerBoxes2: function(level){
-    var selected = [];
-    var levelOne = ['pv'];
-    var levelTwo = ['pv','ond','overige zinsdelen'];
-    var levelThree = ['pv','ond','wwg','overige zinsdelen'];
-    var levelFour = ['pv','ond','lv','wwg','overige zinsdelen'];
-    var levelSix = ['pv','ond','lv','overige zinsdelen'];
-    var levelTen = ['pv','ond','lv','mwv','overige zinsdelen'];
-    var levelTwelve = ['pv','ond','lv', 'wwg','mwv','overige zinsdelen'];
-    var levelFourteen = ['pv','ond','lv', 'wwg','mwv', 'bb','overige zinsdelen'];
-    var levelSixteen = ['pv','ond','lv', 'wwg','mwv', 'bb','nwg','overige zinsdelen'];    
-    switch(level){
-      case 1: 
-        selected = levelOne;
-        break;      
-      case 2:
-        selected = levelTwo;
-        break;
-      case 3:
-        selected = levelThree;
-        break;
-      case 4:
-        selected = levelFour;
-        break;
-      case 6:
-        selected = levelSix;
-        break;
-      case 10:
-        selected = levelTen;
-        break;
-      case 12:
-        selected = levelTwelve;
-        break;
-      case 14:
-        selected = levelFourteen;
-        break;
-      case 16:
-        selected = levelSixteen;
-        break;
-    }
-    var length = selected.length;
-    for (var i=0;i<selected.length - 1;i++) {
-      $box = $("<div class='parts'><span class='part-name'>" + selected[i] + "</span><span class='part-target'></span></div>");
-      $box.appendTo(".boxes");
-    }
-  },
   /***
     Generate answerBoxes for each category
     Type: void
@@ -955,43 +966,6 @@ $.extend(KhanUtil, {
     }
     return count;
   },
-  selectWords: function(startIdx, endIdx, color) {
-    $(".answers").children().eq(startIdx).addClass("box-start");
-    for (var i=startIdx; i<=endIdx; i++) {
-      if (!$(".answers").children().eq(i).hasClass("word")) continue;
-      $(".answers").children().eq(i)
-        .addClass("box-border")
-        .animate({ backgroundColor: color }, 100)
-        .data("color", color);
-    }
-    $(".answers").children().eq(endIdx-1).addClass("box-end");
-  },
-  calcBoxes: function() {
-    $(".answers").children().each(function() {
-      $(this).removeClass("box-border box-start box-end")
-    });
-  
-    //nothing to do
-    if ($(".answers .selected").length == 0) { 
-      pColor = $(".answers").parent().css("background-color");
-      $(".answers").find(".word").animate({backgroundColor: pColor}, 100);
-      return;
-    }
-
-    //select until every split
-    var _colors = $.extend([], colors);
-    var startIdx = 0;
-    var $selected = $(".answers .selected");
-    for (var i=0;i<=$selected.length;i++) {
-      var endIdx = i<$selected.length ? 
-        $selected.eq(i).index() : $(".answers").children().last().index()
-      var color = _colors[Object.keys(_colors)[0]];
-      console.log("color",Object.keys(_colors)[0]);
-      delete _colors[Object.keys(_colors)[0]];
-      this.selectWords(startIdx, endIdx, shadeColor(color,30));
-      startIdx = endIdx;
-    }
-  },
 
   getPartType: function(sentenceObj, part) {
     part = part.replace("?","").replace(".","");
@@ -1000,248 +974,10 @@ $.extend(KhanUtil, {
     for (i in types) {
       var type = types[i];
       if (part == sentenceObj[type]) {
-        return part;
+        return type;
       }
     }
     return false;
-  },
-
-  hasSplit: function() {
-    return $(".answers .split.selected").length;
-  },
-
-  checkCorrectSplit: function(sentenceObj) {
-    var self = this;
-    var startIdx = 0;
-    var correct = true;
-    var $words = $(".answers").children();
-    var $selected = $(".answers .pipe.selected");
-    if ($selected.length == 0) return false;
-    $selected.each(function() {
-      var endIdx = $(this).index()
-      var part = "";
-      for (var i=startIdx;i<endIdx;i++) {
-        if ($words.eq(i).hasClass("word")) { 
-          if (part.length) part += " ";
-          part += $words.eq(i).html();
-        }
-      }
-      var partType = self.getPartType(sentenceObj, part)
-      if (!partType) {
-        correct = false;
-        return;
-      }
-      startIdx = endIdx;
-    });
-    return correct;
-  },
-  wordGroup: function(word) {
-    var bgColor = $(word).data("color");
-    var words = [];
-    $(".answers").find(".word").each(function() {
-      //console.log(bgColor, $(this).data("color"));
-      if ($(this).data("color") == bgColor) {
-        words.push(this);
-      }
-    });
-    return words;
-  },
-  onClickBox: function(ele) {
-    var self = this;
-    $(".word").removeClass("selected");
-    var words = self.wordGroup(ele);
-    $(words).addClass("selected");
-    $(".boxes").find(".parts, .part-name").addClass("highlight");
-    $(".boxes").children().click(function() {
-      $(this).addClass("filled");
-      if ($(this).find(".part-target").is(":empty") == false) return;
-      pColor = $(".answers").parent().css("background-color");
-      $(".word.selected").animate({"background-color": pColor}, 100);
-      var color = $(".word.selected").data("color");
-      var $clone = $(".word.selected").clone();
-      $clone.css({"position":"absolute", "background-color":""});
-      $clone.removeClass("selectable");
-      var first = null;
-      $clone.each(function(i, ele) {
-        var color = $(".word.selected").eq(i).data("color")
-        var pos = $(".word.selected").eq(i).offset()
-        if (first == null) first = pos.left;
-        $(this).css({
-          "left": pos.left + "px",
-          "top": pos.top + "px"
-        }).data("color", color);
-      });
-      var $target = $(this).find(".part-target");
-      $(this).animate({"background-color": color}, 100);
-      $clone.appendTo($target);
-      $(this).animate({"background-color": color}, 100);
-      var newPos = $target.offset();
-      var incLeft = newPos.left - first + 20;
-      var newTop = newPos.top;
-      var lastTop = $clone.offset().top
-      $clone.animate({left:"+="+incLeft+"px", top:newTop+"px"});
-      $clone.data({
-        incLeft: incLeft,
-        newTop: newTop,
-        lastTop: lastTop
-      });
-      $(this).unbind("click");
-      //disable click events
-      $(".boxes").children().each(function(i, ele) {
-        if ($(ele).find(".part-target").is(":empty")) {
-          console.log('unbind click', ele);
-          $(ele).unbind("click");
-        }
-      });
-      $(this).click(function() {
-        //recover words to their positions
-        var pColor = $(".answers").parent().css("background-color");
-        $(this).animate({"background-color": pColor}, 100);
-        var $firstWord = $(this).find(".word").first();
-        var words = self.wordGroup($firstWord);
-        console.log("words", words);
-        $(words).animate({"background-color": $firstWord.data("color")}, 100);
-        $clone.animate({left:"-="+incLeft+"px", top:lastTop+"px"}, function() {
-          $(this).remove();
-        });
-        self.attachHover(words);
-        self.checkFinish();
-        
-      });
-      self.checkFinish();
-      $(words).unbind('click mouseenter mouseleave').removeClass("selectable");
-    });
-  },
-  checkFinish: function() {
-    var oneEmpty = false;
-    $(".boxes").children().each(function() {
-      console.log("boxes");
-      console.log(this);
-      if ($(this).find(".part-target").is(":empty")) {
-        oneEmpty = true;
-      };
-    });
-    if (oneEmpty) {
-      $("#answercontent").fadeOut();
-    } else {
-      $("#answercontent").fadeIn();
-    }
-  },
-  attachHover: function(words) {
-    var self = this;
-    $(words).addClass("selectable").hover(function() {
-      var words = self.wordGroup(this);
-      console.log(words);
-      $(words).animate({backgroundColor: shadeColor($(this).data("color"), 10)}, 100);
-    }, function() {
-      var words = self.wordGroup(this);
-      $(words).animate({backgroundColor: $(this).data("color")}, 100);
-    })
-    .click(function() {
-      self.onClickBox(this);
-    })
-  },
-  startCheckSplitButton: function(sentenceObj, answerBoxes2Index) {
-    var self = this;
-    //$("#check-answer-button").hide();
-    
-    $("#answercontent").hide();
-    $("#check-split").click(function() {
-      if (self.checkCorrectSplit(sentenceObj)) {
-      } else {
-        $(".check-split-wrapper").effect("shake", {times: 3, distance: 5}, 480)
-        $("#check-split").val("Try again!");
-        return;
-      }
-      $(this).fadeOut(function() {
-        $(".answers .pipe").fadeOut();
-        $(".answers .split").hide();
-        $(".boxes").hide();
-        self.answerBoxes2(answerBoxes2Index);
-        //$(".boxes").prepend("Select a part");
-        self.attachHover($(".answers .word"));
-        $(".boxes").fadeIn();
-      });
-    });
-  },
-
-  test2b: function() {
-    setTimeout(function() {
-    $(".split").eq(1).click();
-    $("#check-split").click();
-    }, 100);
-  },
-
-  updatePipePos: function() {
-    var $words = $(".answers .word");
-    $words.each(function(i, wordEle) {
-      if (i == $words.length - 1) return;
-      try {
-        var $word = $(wordEle);
-        var $nextWord = $(".answers .word").eq(i+1)
-        var right = $nextWord.position().left - 3;
-        $(".answers .pipe").eq(i)
-          .css("left", right + "px")
-
-        var left = $word.position().left + $word.width() / 2 + 6;
-        var width = $word.width() / 2 + $nextWord.width() / 2 + 19;
-        $(".answers .split").eq(i)
-          .css("left", left + "px")
-          .css("width", width + "px")
-      } catch(err) {
-        console.log(err);
-      }
-    });
-
-  },
-  
-  sentenceSplitter: function(sentence_obj) {
-    if (sentence_obj.sentence.indexOf(".") >= 0) {
-      sentence_obj.hasDot = true;
-      sentence_obj.hasQuestion = false;
-    } else if (sentence_obj.sentence.indexOf("?") >=0) {
-      sentence_obj.hasDot = false;
-      sentence_obj.hasQuestion = true;
-    } else {
-      sentence_obj.hasDot = false;
-      sentence_obj.hasQuestion = false;
-    }
-    var sentence = sentence_obj.sentence
-                    .replace(/\s+/g, ' ') //removes multiple whitespaces
-                    .replace("?", "").replace(".","").trim()
-    var words = sentence.split(" ");
-    //add punctuation
-    words[words.length-1] += sentence_obj.hasDot ? ".":"?";
-    var self = this;
-    //place words
-    $.each(words, function(i, word) {
-      $("<span class='word'>"+word+"</span>").appendTo(".answers");
-    });
-    //$("<span class='punctuation'>"+(sentence_obj.hasDot ? ".":"?")+"</span>").appendTo(".answers");
-    //add pipes and splitters
-    $(".answers .word").each(function(i, wordEle) {
-      $word = $(wordEle);
-      if (i < words.length-1) {
-        //place them in order
-        var $pipe = $("<span class='pipe'></span>")
-          .insertAfter(this);
-
-        var $split = $("<span class='split'></span>")
-          .insertAfter($pipe)
-          .click(function() {
-              $pipe.toggleClass("selected");
-              self.calcBoxes();
-            })
-          .hover(function() {
-              $pipe.addClass("hover");
-            }, function() {
-              $pipe.removeClass("hover");
-            });
-      }
-    });
-    //update the splitter and pipes positions programatically
-    self.updatePipePos();
-    $(window).resize(self.updatePipePos);
   },
 
   userPick2: function(zin){

@@ -35,22 +35,14 @@
   border-radius:5px;
 }
 
-.sentence span.selected.correct,
-.correct2{
-  width:200px;
+.sentence span.selected.correct {
   background-color:#80ac07;
-  border-radius:5px;
   color:white;
-  padding:5px;
 }
 
-.sentence span.selected.incorrect,
-.incorrect2{
-  width: 200px;
+.sentence span.selected.incorrect {
   background-color:#d55704;
-  border-radius:5px;
   color:white;
-  padding:5px;
 }
 
 .right{color:green}
@@ -106,6 +98,7 @@
   padding:3px;
   margin:1px;
   font-weight:normal;
+  z-index:100;
 }
 
 .dropWord{
@@ -131,27 +124,24 @@
 
 /*level1a-copy.html*/
 .sentence span {
-  padding: 2px;
+  padding: 4px;
+  cursor: default;
+}
+.sentence span.selectable {
   cursor: pointer;
+}
+.sentence span.selected {
+  border-radius: 5px;
+  background-color: #ccc;
+}
+
+.answers {
+  position: relative;
 }
 .answer span {
   padding: 2px;
   cursor: pointer;
 }
-.sentence span.selected {
-  color: black;
-  border: 1px dotted #aaa;
-  margin: 1px;
-  padding: 3px;
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  background-color: #ccc;
-}
-.answers {
-  position: relative;
-}
-
 .answers .punctuation {
   padding: 8px 0;
   padding-right: 8px;
@@ -161,23 +151,28 @@
 }
 .answers .word {
   padding: 8px;
+  border-top: 4px solid none;
+  border-bottom: 4px solid none;
   height: 30px;
-  display: inline-block;
   line-height: 27px;
+  display: inline-block;
   vertical-align:middle;
+  cursor: default;
 }
-/*
-.answers .box-border {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
+.answers .box-border.selected {
+  padding-top: 4px;
+  border-top: 4px solid orange;
+  border-bottom: 4px solid orange;
+  padding-bottom: 4px;
 }
-.answers .box-start {
-  border-left: 2px solid black;
+.answers .box-start.selected {
+  padding-left: 4px;
+  border-left: 4px solid orange;
 }
-.answers .box-end {
-  border-right: 2px solid black;
+.answers .box-end.selected {
+  padding-right: 4px;
+  border-right: 4px solid orange;
 }
-*/
 .answers .split {
   position: absolute;
   cursor: pointer;
@@ -264,9 +259,10 @@
 .parts.remove {
   cursor: crosshair;
 }
-.parts.highlight,
-.part-name.highlight {
+.parts.selectable,
+.part-name.selectable {
   border-color: orange;
+  cursor: pointer;
 }
 .part-name {
   border-right: 2px solid grey;
@@ -279,12 +275,6 @@
 .part-target {
   padding: 0px 20px;
 }
-
-.words {
-    cursor: pointer;
-    padding: 3px;
-}
-
 .word.selectable {
   cursor: pointer;
 }
@@ -301,6 +291,7 @@
 .check-split-wrapper {
   text-align: center;
 }
+
 #check-split {
   text-align: center;
   padding: 14px;

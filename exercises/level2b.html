@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-require="math math-format graphie taaltransfer">
+<html data-require="math math-format graphie taaltransfer tt-split">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Redekundig ontleden: onderwerp en persoonsvorm</title>
@@ -16,27 +16,22 @@
         <var id="OND">findNameValue(GRAMMAR, "ond")</var>
         <var id="LV">findNameValue(GRAMMAR, "lv")</var>
         <var id="WWG">findNameValue(GRAMMAR, "wwg")</var>
-<!--
-        <var id="LEVEL">answerBoxes(2)</var>
--->
     </div>
     
     <div class="problems">
         <div>
-            <p class="question">Ontleed de volgende zin redekundig en vul de onderdelen in:<var>sentenceSplitter(SENTENCE_OBJ)</var></p>
+            <p class="question">Ontleed de volgende zin redekundig en vul de onderdelen in:<var>createSentenceSplitter(SENTENCE_OBJ)</var></p>
             <p class='answers'></p>
             <p class='check-split-wrapper'>
-              <input id="check-split" class="simple-button green" value="Check sentence"></input>
+              <button id="check-split" class="simple-button green" type="button">Check sentence</button>
               <var>startCheckSplitButton(SENTENCE_OBJ, 2)</var>
             </p>
-            <p class="boxes">
-              <var>test2b()</var>
-            </p>                   
+            <p class="boxes"></p>                   
     
             <span class="solution" data-type="custom">
               <div class="instruction">Sleep elk zinsdeel naar de correcte plaats.</div>
               <div class="guess">1</div>
-              <div class="validator-function">return checkCorrectSplit(SENTENCE_OBJ)</div>
+              <div class="validator-function">return checkCorrectPartsPlaced(SENTENCE_OBJ)</div>
               <div class="show-guess">guess</div>        
             </span>
         </div>
