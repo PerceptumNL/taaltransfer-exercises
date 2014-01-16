@@ -196,6 +196,34 @@ $.extend(KhanUtil, {
     return wordAll;
   },
   
+  createBoxes: function(tuple){
+    console.log("hi");
+    console.log(tuple);
+    //Decides on how many radioboxes to make//
+    for (i=0;i<tuple.length; i++) {
+      // console.log(tuple[i]);
+      if (tuple[i][1] === 'lw') {
+        console.log(tuple[i]);
+        $('<div class="radioboxbox"></div>').appendTo('.boxes_container');
+        // '<div class="radioboxbox"><p>'.concat(tuple[i][0]).concat('</p>').concat('<div class="radiobox"><input type="radio" name="wordtype" value="lw"/>LW<br><div class="radiobox"><input type="radio" name="wordtype" value="znw"/>ZNW<br><div class="radiobox"><input type="radio" name="wordtype" value="bvn"/>BVN</div></div>').appendTo('.boxes_container');
+      }
+      if (tuple[i][1] === 'znw') {
+        console.log(tuple[i]);
+        $('<div class="radioboxbox"><p>'.concat(tuple[i][0]).concat('</p>')).appendTo('.boxes_container');
+        $('<div class="radiobox"><input type="button" name="wordtype" value="znw"/><br>').appendTo('.boxes_container');
+        $('<div class="radiobox"><input type="button" name="wordtype" value="znw"/><br>').appendTo('.boxes_container');
+        $('<div class="radiobox"><input type="button" name="wordtype" value="bvn"/></div></div>').appendTo('.boxes_container');
+      }
+      if (tuple[i][1] === 'bvn') {
+        console.log(tuple[i]);
+        $('<div class="radioboxbox"><p>'.concat(tuple[i][0]).concat('</p>')).appendTo('.boxes_container');
+        $('<div class="radiobox"><input type="button" name="wordtype" value="bvn"/>BVN<br>').appendTo('.boxes_container');
+        $('<div class="radiobox"><input type="button" name="wordtype" value="znw"/>ZNW<br>').appendTo('.boxes_container');
+        $('<div class="radiobox"><input type="button" name="wordtype" value="bvn"/>BVN</div></div>').appendTo('.boxes_container');
+      } 
+
+    }
+  },
   showSentence: function(tuple,desired){
     var desTemp = desired;
     var begin = tuple[0][1].trim();
@@ -1436,3 +1464,4 @@ $.extend(KhanUtil, {
   },
    
 });
+
