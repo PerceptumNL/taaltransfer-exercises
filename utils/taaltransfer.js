@@ -770,10 +770,7 @@ $.extend(KhanUtil, {
 
   createSentence: function(sentenceObj, result) {
     var self = this;
-    var sentenceStr = sentenceObj.sentence
-                    .replace(/\s+/g, ' ') //removes multiple whitespaces
-                    .replace("?", "").replace(".","").trim()
-    $.each(sentenceStr.split(" "), function(idx, word) {
+    $.each(sentenceObj.words, function(idx, word) {
         $word = $("<span>" + word + "</span>");
         $word.click(function() {
             $(this).toggleClass("selected");
