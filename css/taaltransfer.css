@@ -125,6 +125,7 @@
 /*level1a-copy.html*/
 .sentence span {
   padding: 4px;
+  cursor: default;
 }
 .sentence span.selectable {
   cursor: pointer;
