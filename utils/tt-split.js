@@ -400,13 +400,18 @@ $.extend(KhanUtil, {
     var correct = true;
     $targets = $(".boxes .parts");
     $targets.each(function() {
-        var partType = $(this).find(".part-name").html();
-        var $part = $(this).find(".word")
-        var partStr = self.getPart2Str($part);
-        if (partType != self.getPartType(sentenceObj, partStr)) {
-            correct = false; return;
-        }
+      var partType = $(this).find(".part-name").html();
+      var $part = $(this).find(".word")
+      var partStr = self.getPart2Str($part);
+      if (partType != self.getPartType(sentenceObj, partStr)) {
+          correct = false; return;
+      }
     });
+    if (correct) {
+      $(".boxes").find(".parts, .part-name")
+        .removeClass("selectable filled")
+        .unbind("click");
+    }
     return correct;
   },
 })

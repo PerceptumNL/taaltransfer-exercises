@@ -132,7 +132,6 @@
 .sentence span.selected {
   border-radius: 5px;
   background-color: #ccc;
-  cursor: default;
 }
 
 .answers {
@@ -154,9 +153,10 @@
   border-top: 4px solid none;
   border-bottom: 4px solid none;
   height: 30px;
-  display: inline-block;
   line-height: 27px;
+  display: inline-block;
   vertical-align:middle;
+  cursor: default;
 }
 .answers .box-border.selected {
   padding-top: 4px;

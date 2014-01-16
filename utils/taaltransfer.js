@@ -495,7 +495,7 @@ $.extend(KhanUtil, {
         question = question.concat(sentence[i][0].toLowerCase() + " ");
       }
     }
-    question = question.concat("?");
+    question = question.trim().concat("?");
     question = question.replace(question[0], question[0].toUpperCase());
     return question;
   },
