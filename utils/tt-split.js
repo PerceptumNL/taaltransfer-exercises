@@ -63,7 +63,7 @@ $.extend(KhanUtil, {
     var parts = [];
     var part = [];
     for (var i=0; i<=$pipes.length; i++) {
-      part.push($words.eq(i));  
+      part.push($words[i]);  
       if ($pipes.eq(i).hasClass("selected")) {
         parts.push($(part));
         part = [];
@@ -107,67 +107,79 @@ $.extend(KhanUtil, {
   },
 
   updateSelection: function() {
-    $(".answers").children().each(function() {
-      $(this).removeClass("box-border box-start box-end")
-    });
+
+    var $words = $(".answers .word");
+    $words.removeClass("box-border box-start box-end")
   
     //nothing to do
     if ($(".answers .selected").length == 0) { 
-      pColor = $(".answers").parent().css("background-color");
-      $(".answers").find(".word").animate({backgroundColor: pColor}, 100);
+      this.setBgColor($words);
       return;
     }
 
     //select until every split
     var _colors = $.extend([], colors);
-    var startIdx = 0;
-    var $selected = $(".answers .selected");
-    for (var i=0;i<=$selected.length;i++) {
-      var endIdx = i<$selected.length ? 
-        $selected.eq(i).index() : $(".answers").children().last().index()
-      //wrong way to get colors
+    var parts = this.getSelectedParts()
+    for (var i=0;i<parts.length;i++) {
+      //inadecuate way to get colors
       var color = shadeColor(_colors[Object.keys(_colors)[0]], 30);
       delete _colors[Object.keys(_colors)[0]];
-      this.selectWords(startIdx, endIdx, color);
-      startIdx = endIdx+2;
+      $part = $(parts[i]);
+      $part.data("color", color);
+      $part.first().addClass("box-start");
+      $part.last().addClass("box-end");
+      $part.addClass("box-border");
+      console.log("part", $part);
+      this.setDefaultColor($part);
     }
   },
 
-  selectWords: function(startIdx, endIdx, color) {
-    var $ele = $(".answers").children().eq(startIdx);
-    this.setDefaultColor($ele);
-    $ele.addClass("box-start");
-    for (var i=startIdx; i<=endIdx; i++) {
+  selectPart: function(part, color) {
+    $(part).each(function() {
+      var $ele = $(".answers").children().eq(startIdx);
       this.setDefaultColor($ele);
-      var $ele = $(".answers").children().eq(i);
-      if (!$ele.hasClass("word")) continue;
-      $ele.addClass("box-border").data("color", color);
-    }
-    //look for end, depending if is a middle box or the last
-    for (var i=endIdx-1; i<=endIdx+1; i++) {
-      var $ele = $(".answers").children().eq(i);
-      if (!$ele.hasClass("word")) continue;
-      this.setDefaultColor($ele);
-      $ele.addClass("box-end");
-      break;
-    }
+      $ele.addClass("box-start");
+      for (var i=startIdx; i<=endIdx; i++) {
+        this.setDefaultColor($ele);
+        var $ele = $(".answers").children().eq(i);
+        if (!$ele.hasClass("word")) continue;
+        $ele.addClass("box-border").data("color", color);
+      }
+      //look for end, depending if is a middle box or the last
+      for (var i=endIdx-1; i<=endIdx+1; i++) {
+        var $ele = $(".answers").children().eq(i);
+        if (!$ele.hasClass("word")) continue;
+        this.setDefaultColor($ele);
+        $ele.addClass("box-end");
+        break;
+      }
+
+    });
   },
 
+  setBgColor: function(ele) {
+    $(ele).animate({
+      backgroundColor: this.getBgColor(),
+      borderColor: this.getBgColor(),
+    }, 100);
+  },
 
   setLighterColor: function(ele) {
     var color = $(ele).first().data("color");
-    color = shadeColor(color, 10);
+    color = shadecolor(color, 10);
     $(ele).animate({
-      backgroundColor: color,
-      borderColor: color,
+      backgroundcolor: color,
+      bordercolor: color,
     }, 100);
   },
 
   setDefaultColor: function(ele) {
     var color = $(ele).first().data("color");
+    console.log($(ele));
+    console.log(color);
     $(ele).animate({
       backgroundColor: color,
-      borderColor: color,
+ //     borderColor: color,
     }, 100);
   },
 
@@ -260,8 +272,7 @@ $.extend(KhanUtil, {
     $("#check-split").click(function() {
       if (self.checkCorrectSplit(sentenceObj)) {
         $(this).fadeOut(function() {
-          $(".answers .pipe").fadeOut();
-          $(".answers .split").hide();
+          self.endSplitting();
           self.createAnswerBoxes(level);
           self.attachHover($(".answers .word"));
           $(".boxes").fadeIn();
@@ -306,7 +317,6 @@ $.extend(KhanUtil, {
 
     //place back cloned words;
     this.moveCloneBack($target);
-
     //make words clickable again
     this.attachHover(words);
     //disable check button
@@ -336,11 +346,9 @@ $.extend(KhanUtil, {
     var $target = $(target);
     if ($target.hasClass("filled")) return;
 
-
     var self = this;
     var $words = $(".word.selected");
     var color = $words.first().data("color")
-
 
     //unselectable boxes
     $(".boxes").find(".parts, .part-name").removeClass("selectable");
@@ -408,6 +416,8 @@ $.extend(KhanUtil, {
     });
     $words.unbind('mouseenter mouseleave');
   },
+
+  //get the selected part looking by color!
   getPartWords: function(word) {
     var bgColor = $(word).data("color");
     var words = [];
@@ -417,5 +427,22 @@ $.extend(KhanUtil, {
       }
     });
     return $(words);
-  }
+  },
+
+  //validate if the placing of the parts is correct
+  checkCorrectPartsPlaced: function(sentenceObj) {
+    var self = this;
+    var correct = true;
+    $targets = $(".boxes .parts");
+    $targets.each(function() {
+        var partType = $(this).find(".part-name").html();
+        var $part = $(this).find(".word")
+        var partStr = self.getPart2Str($part);
+        console.log(partType, partStr,self.getPartType(sentenceObj, partStr));
+        if (partType != self.getPartType(sentenceObj, partStr)) {
+            correct = false; return;
+        }
+    });
+    return correct;
+  },
 })

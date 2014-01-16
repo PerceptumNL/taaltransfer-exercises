@@ -911,7 +911,7 @@ $.extend(KhanUtil, {
     for (i in types) {
       var type = types[i];
       if (part == sentenceObj[type]) {
-        return part;
+        return type;
       }
     }
     return false;
