@@ -698,6 +698,9 @@ $.extend(KhanUtil, {
       "exception"];
     for (i in types) {
       var type = types[i];
+      console.log(sentenceObj);
+      console.log(type)
+      console.log(sentenceObj[type]);
       var wordsInType = sentenceObj[type].split(",");
       for (var j=0; j<wordsInType.length; j++) {
         if (wordsInType[j] == word) 
@@ -707,12 +710,44 @@ $.extend(KhanUtil, {
     return false;
   },
 
-  checkCorrectSelection: function(sentenceObj, types) {
+  checkCorrectPVSelection: function(sentenceObj) {
+    var self = this;
+    var correct = true;
+    $(".sentence").children().each(function() {
+      var word = $(this).html()
+      var type = self.getPartType(sentenceObj, word);
+      var found = (type == "pv")
+      //console.log(word, type, found);
+      if ($(this).hasClass("selected")) {
+        if (found) {
+          $(this).addClass("correct");
+        } else {
+          $(this).addClass("incorrect");
+          correct = false;
+        }
+      }
+    });
+    if (correct) {
+      $(".sentence").children().unbind("click").removeClass("selectable");
+    }
+    return correct;
+
+  },
+
+  canSelectOneWord: function() {
+    $(".sentence").children().click(function() {
+      $(".sentence").children().removeClass("selected");
+      $(this).addClass("selected");
+    })
+  },
+
+  checkCorrectWordsSelection: function(sentenceObj, types) {
     var self = this;
     var correct = true;
     var missing = false;
     $(".sentence").children().each(function() {
       var word = $(this).html()
+      console.log(word);
       var type = self.getWordType(sentenceObj, word);
       var found = $.inArray(type, types) >= 0;
       //console.log(word, type, found);
@@ -740,6 +775,9 @@ $.extend(KhanUtil, {
       }
       $(".sentence").children().one("click", handler);
       correct = false;
+    }
+    if (correct) {
+      $(".sentence").children().unbind("click").removeClass("selectable");
     }
     return correct;
   },
@@ -771,7 +809,7 @@ $.extend(KhanUtil, {
   createSentence: function(sentenceObj, result) {
     var self = this;
     $.each(sentenceObj.words, function(idx, word) {
-        $word = $("<span>" + word + "</span>");
+        $word = $("<span>" + word + "</span>").addClass("selectable");
         $word.click(function() {
             $(this).toggleClass("selected");
         });
