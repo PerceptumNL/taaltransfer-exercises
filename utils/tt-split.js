@@ -257,9 +257,9 @@ $.extend(KhanUtil, {
     });
   },
 
-  test2b: function() {
+  test2b: function(sentenceObj) {
     setTimeout(function() {
-    $(".split").eq(1).click();
+    $(".split").eq(0).click();
     $("#check-split").click();
     }, 100);
   },
@@ -267,9 +267,20 @@ $.extend(KhanUtil, {
   moveCloneBack: function(cloned, cb) {
     var self = this;
     var $cloned = $(cloned);
-    var incLeft = $cloned.data("incLeft");
-    var prevTop = $cloned.data("prevTop");
-    $cloned.animate({left:"-="+incLeft+"px", top:prevTop+"px"}, function() {
+    var $first = $cloned.first();
+    var incLeft = $first.data("fromLeft") - $first.data("toLeft") - 2;
+    var incTop = $first.data("fromTop") - $first.data("toTop") - 2;
+    $cloned.each(function() {
+      $(this).css({
+        "position": "absolute",
+        "left": $(this).offset().left - 2,
+        "top": $(this).offset().top - 2,
+      });
+    });
+    $cloned.animate({
+      left:"+="+incLeft+"px", 
+      top:"+="+incTop+"px"
+    }, function() {
       cb(this);
     });
   },
@@ -306,15 +317,25 @@ $.extend(KhanUtil, {
   },
 
   moveClone2Target: function($clone, $target, cb) {
-    var $target = $target.find(".part-target");
-    $clone.appendTo($target);
     var pos = $clone.offset();
-    var newPos = $target.offset();
-    var incLeft = newPos.left - pos.left + 20;
+    $clone.each(function() {
+      $(this).css({
+        "position": "absolute",
+        "left": $(this).data("fromLeft"),
+        "top": $(this).data("fromTop"),
+        "visibility": ""
+      });
+    });
+
+    var $first = $clone.first();
+    var incLeft = $first.data("toLeft") - $first.data("fromLeft") - 2;
+    var incTop = $first.data("toTop") - $first.data("fromTop") - 2;
+    
     $clone.animate({
       left:"+="+incLeft+"px", 
-      top:newPos.top+"px"
+      top:"+="+incTop+"px"
     }, function() {
+      $clone.css("position", "");
       cb(this);
     }).data({
       incLeft: incLeft,
@@ -354,15 +375,20 @@ $.extend(KhanUtil, {
     //clone words
     var $clone = $words.clone()
       .css({
-        "position":"absolute", 
+        "visibility":"hidden", 
         "background-color":""
       })
-    //set the position
+      .appendTo($target.find(".part-target"));
+
+    //set the from/to position in data
     $clone.each(function(i, ele) {
-      var pos = $words.eq(i).offset()
-      $(this).css({
-        "left": pos.left + "px",
-        "top": pos.top + "px"
+      var fromPos = $words.eq(i).offset()
+      var toPos = $(this).offset()
+      $(this).data({
+        "fromLeft": fromPos.left,
+        "fromTop": fromPos.top,
+        "toLeft": toPos.left,
+        "toTop": toPos.top
       }).data("color", color);
     });
     //set target bg color as the same
